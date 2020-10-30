@@ -113,7 +113,7 @@ public class ERPINVClass {
         return ERPUserAttributes;
     }
 
-    public void doSetSCMErpApplicationGlobals() {
+    public void doSetINVErpApplicationGlobals() {
 
         ADFContext.getCurrent().getPageFlowScope().put("G_USER_SNO",1);
         ADFContext.getCurrent().getPageFlowScope().put("G_USER_CODE","FARRUKH");
@@ -288,7 +288,7 @@ public class ERPINVClass {
         }
     } 
     
-    public void scmhandleEvent(ClientEvent clientEvent) {
+    public void invhandleEvent(ClientEvent clientEvent) {
         //UIComponent form = clientEvent.getComponent().getChildren().get(1);
         //form=form.getChildren().get(0);
         AdfFacesContext afContext = AdfFacesContext.getCurrentInstance();
@@ -297,7 +297,7 @@ public class ERPINVClass {
        
       setErpScreenSize(screen);
       
-        System.out.println("this is scm java script"+ screen);
+        System.out.println("this is inv java script"+ screen);
             System.out.println("setScreenSize"+ getErpScreenSize());
        // afContext.addPartialTarget(getRit());  
         //System.out.println(form.getId() +" get form id");

@@ -32,5 +32,8 @@
         <name>taskFlowReturn1</name>
       </outcome>
     </task-flow-return>
+    <method-call id="doSetINVErpApplicationGlobals">
+      <method>#{pageFlowScope.OracleERPBean.doSetINVErpApplicationGlobals}</method>
+    </method-call>
   </task-flow-definition>
 </adfc-config>

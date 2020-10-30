@@ -34,4 +34,17 @@
       <property
          name="x">551.0</property>
    </TaskFlowReturn>
+   <MethodCall
+      id="MethodCall4">
+      <property
+         name="activityId">doSetINVErpApplicationGlobals</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doSetINVErpApplicationGlobals&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">17.948242</property>
+      <property
+         name="x">464.0</property>
+   </MethodCall>
 </SDM>
