@@ -8,6 +8,6 @@
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
-    Name="InvParameterVO1"
+    Name="InvParameterCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvParameterVO"/>
 </AppModule>
