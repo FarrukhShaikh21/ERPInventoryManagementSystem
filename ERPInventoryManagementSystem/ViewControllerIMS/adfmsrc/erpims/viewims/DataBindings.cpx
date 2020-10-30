@@ -3,9 +3,11 @@
              SeparateXMLFiles="false" Package="erpims.viewims" ClientType="Generic">
   <pageMap>
     <page path="/INV_0001.jsf" usageId="erpims_viewims_INV_0001PageDef"/>
+    <page path="/INV_MAIN.jsf" usageId="erpims_viewims_INV_MAINPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpims_viewims_INV_0001PageDef" path="erpims.viewims.pageDefs.INV_0001PageDef"/>
+    <page id="erpims_viewims_INV_MAINPageDef" path="erpims.viewims.pageDefs.INV_MAINPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPINVModuleDataControl" Package="erpims.modelims.imsam"
