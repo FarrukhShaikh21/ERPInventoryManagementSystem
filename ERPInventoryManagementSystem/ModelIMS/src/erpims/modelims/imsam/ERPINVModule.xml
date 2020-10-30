@@ -9,5 +9,9 @@
   ClearCacheOnRollback="true">
   <ViewUsage
     Name="InvParameterCRUD"
-    ViewObjectName="erpims.modelims.imsvo.InvParameterVO"/>
+    ViewObjectName="erpims.modelims.imsvo.InvParameterVO">
+    <ViewCriteriaUsage
+      Name="InvParameterByCompanyVC"
+      FullName="erpims.modelims.imsvo.InvParameterVO.InvParameterByCompanyVC"/>
+  </ViewUsage>
 </AppModule>

@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_COMPANY_ID"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
   <EntityUsage
     Name="InvParameter"
     Entity="erpims.modelims.imseo.InvParameter"/>
@@ -84,4 +88,40 @@
     EntityAttrName="IsActive"
     EntityUsage="InvParameter"
     AliasName="IS_ACTIVE"/>
+  <ViewCriteria
+    Name="InvParameterByCompanyVC"
+    ViewObjectName="erpims.modelims.imsvo.InvParameterVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InvParameterVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="InvParameterVOCriteria_InvParameterVOCriteria_row_0_CompanyId"
+        ViewAttribute="CompanyId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_COMPANY_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
 </ViewObject>
