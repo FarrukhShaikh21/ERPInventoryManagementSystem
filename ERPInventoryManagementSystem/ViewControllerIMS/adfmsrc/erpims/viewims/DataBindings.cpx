@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.2.1" id="DataBindings"
+             SeparateXMLFiles="false" Package="erpims.viewims" ClientType="Generic">
+  <pageMap>
+    <page path="/INV_0001.jsf" usageId="erpims_viewims_INV_0001PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="erpims_viewims_INV_0001PageDef" path="erpims.viewims.pageDefs.INV_0001PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ERPINVModuleDataControl" Package="erpims.modelims.imsam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPINVModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
