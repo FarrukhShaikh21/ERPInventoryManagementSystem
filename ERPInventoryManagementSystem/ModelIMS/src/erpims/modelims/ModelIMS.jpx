@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ModelIMS"
+  Version="12.1.3.2.1"
+  SeparateXMLFiles="true"
+  PackageName="erpims.modelims">
+  <DesignTime>
+    <Attr Name="_useAnsiJoinSyntax" Value="true"/>
+    <Attr Name="_jprName" Value="../../../ModelIMS.jpr"/>
+    <Attr Name="_jbo.SQLBuilder" Value="SQL92"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="Java"/>
+    <Attr Name="_NamedConnection" Value="ERPConnINV"/>
+    <Attr Name="_appModuleNames0" Value="erpims.modelims.imsam.ERPINVModule"/>
+  </DesignTime>
+  <Containee
+    Name="imsam"
+    PackageName="erpims.modelims.imsam"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="imseo"
+    PackageName="erpims.modelims.imseo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="imsvo"
+    PackageName="erpims.modelims.imsvo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

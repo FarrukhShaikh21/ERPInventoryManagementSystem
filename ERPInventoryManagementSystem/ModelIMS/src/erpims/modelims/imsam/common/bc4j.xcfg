@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="erpims.modelims.imsam.ERPINVModule">
+      <AppModuleConfig name="ERPINVModuleLocal" DeployPlatform="LOCAL" jbo.project="erpims.modelims.ModelIMS" ApplicationName="erpims.modelims.imsam.ERPINVModule">
+         <Database jbo.SQLBuilder="SQL92" jbo.TypeMapEntries="Java"/>
+         <Security AppModuleJndiName="erpims.modelims.imsam.ERPINVModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/ERPConnINVDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="ERPINVModuleShared" DeployPlatform="LOCAL" jbo.project="erpims.modelims.ModelIMS" ApplicationName="erpims.modelims.imsam.ERPINVModule">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.SQLBuilder="SQL92" jbo.TypeMapEntries="Java"/>
+         <Security AppModuleJndiName="erpims.modelims.imsam.ERPINVModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/ERPConnINVDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
