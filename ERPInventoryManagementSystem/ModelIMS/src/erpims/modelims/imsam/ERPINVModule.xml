@@ -16,5 +16,12 @@
   </ViewUsage>
   <ViewUsage
     Name="AdminCompanyVORO"
-    ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"/>
+    ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO">
+    <ViewCriteriaUsage
+      Name="AdminCompanyCOAUserAccessVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyCOAUserAccessVC"/>
+    <ViewCriteriaUsage
+      Name="AdminCompanyVOCompanyOnlyVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyVOCompanyOnlyVC"/>
+  </ViewUsage>
 </AppModule>

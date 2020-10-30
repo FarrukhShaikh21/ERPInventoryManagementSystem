@@ -85,6 +85,15 @@
         <fixed-outcome>ERP-ACT-GOTO-MAIN</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="INV_0001">
+      <page>/INV_0001.jsf</page>
+    </view>
+    <method-call id="doINVGotoErpActivity">
+      <method>#{pageFlowScope.ERPMainTempBean.doGotoErpActivity}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -129,6 +138,20 @@
       <control-flow-case id="__23">
         <from-outcome>ERP-ACT-GOTO-MAIN</from-outcome>
         <to-activity-id>INV_MAIN</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__16">
+      <from-activity-id>doINVGotoErpActivity</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome>ERP-ACT-INV_0001</from-outcome>
+        <to-activity-id>INV_0001</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__24">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome>doStartERPTaskFlow</from-outcome>
+        <to-activity-id>doINVGotoErpActivity</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
