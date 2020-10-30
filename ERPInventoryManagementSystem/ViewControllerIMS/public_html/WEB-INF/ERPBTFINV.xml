@@ -7,12 +7,18 @@
     </data-control-scope>
     <input-parameter-definition id="__1">
       <name>P_ADF_USER_SNO</name>
+      <value>#{pageFlowScope.OracleERPBean.ERPuserId}</value>
+      <class>erpims.viewims.ERPINVClass</class>
     </input-parameter-definition>
     <input-parameter-definition id="__2">
       <name>P_ADF_USER_CODE</name>
+      <value>#{pageFlowScope.OracleERPBean.ERPuserCode}</value>
+      <class>erpims.viewims.ERPINVClass</class>
     </input-parameter-definition>
     <input-parameter-definition id="__3">
       <name>P_ADF_USER_ATTRIBUTE</name>
+      <value>#{pageFlowScope.OracleERPBean.ERPUserAttributes}</value>
+      <class>erpims.viewims.ERPINVClass</class>
     </input-parameter-definition>
     <managed-bean id="__4">
       <managed-bean-name>OracleERPBean</managed-bean-name>
