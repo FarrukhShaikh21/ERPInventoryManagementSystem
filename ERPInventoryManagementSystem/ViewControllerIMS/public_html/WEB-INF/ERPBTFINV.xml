@@ -40,6 +40,9 @@
     </task-flow-return>
     <method-call id="doSetINVErpApplicationGlobals">
       <method>#{pageFlowScope.OracleERPBean.doSetINVErpApplicationGlobals}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
     </method-call>
     <task-flow-return id="ERPLOGOUTAPP">
       <outcome>
@@ -64,6 +67,24 @@
         <value>#{pageFlowScope.OracleERPBean.ERPUserAttributes}</value>
       </input-parameter>
     </task-flow-call>
+    <method-call id="ExeParaINVSetup">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeParaINVTrans">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeParaINVReports">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -82,5 +103,36 @@
         <to-activity-id>ERPINVRETURN</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id>doSetINVErpApplicationGlobals</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome>ERP-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>ExeParaINVSetup</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id>ExeParaINVSetup</from-activity-id>
+      <control-flow-case id="__19">
+        <from-outcome>ERP-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>ExeParaINVTrans</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__20">
+      <from-activity-id>ExeParaINVTrans</from-activity-id>
+      <control-flow-case id="__21">
+        <from-outcome>ERP-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>ExeParaINVReports</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id>ExeParaINVReports</from-activity-id>
+      <control-flow-case id="__23">
+        <from-outcome>ERP-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>INV_MAIN</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility>
+      <url-invoke-allowed/>
+    </visibility>
   </task-flow-definition>
 </adfc-config>

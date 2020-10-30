@@ -282,6 +282,14 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Oracle XML Parser v2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -305,14 +313,6 @@
             <value n="id" v="Connection Manager"/>
             <value n="isJDK" v="false"/>
          </hash>
-         <hash>
-            <value n="id" v="BC4J Oracle Domains"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Resource Bundle Support"/>
-            <value n="isJDK" v="false"/>
-         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
@@ -333,6 +333,14 @@
                <value n="description" v="ERPViewLIBGlobals.jar"/>
                <value n="id" v="ERPViewLIBGlobals.jar"/>
                <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../INVLibCall/ERPLibTemplate.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF Library"/>
+               <value n="id" v="ADF Library"/>
             </hash>
          </list>
       </hash>
@@ -426,10 +434,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="ADF_Library_Dependencies.library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="MySQL JDBC"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -439,6 +443,14 @@
          </hash>
          <hash>
             <value n="id" v="ERPViewLIBGlobals.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Library"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -463,14 +475,6 @@
          </hash>
          <hash>
             <value n="id" v="Connection Manager"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="BC4J Oracle Domains"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Resource Bundle Support"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

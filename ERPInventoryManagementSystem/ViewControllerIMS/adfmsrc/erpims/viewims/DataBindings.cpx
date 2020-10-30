@@ -4,16 +4,33 @@
   <pageMap>
     <page path="/INV_0001.jsf" usageId="erpims_viewims_INV_0001PageDef"/>
     <page path="/INV_MAIN.jsf" usageId="erpims_viewims_INV_MAINPageDef"/>
+    <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ExeParaINVSetup"
+          usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ExeParaINVTrans"
+          usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ExeParaINVReports"
+          usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpims_viewims_INV_0001PageDef" path="erpims.viewims.pageDefs.INV_0001PageDef"/>
     <page id="erpims_viewims_INV_MAINPageDef" path="erpims.viewims.pageDefs.INV_MAINPageDef"/>
+    <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef"
+          path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef"/>
+    <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1"
+          path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1"/>
+    <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11"
+          path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPINVModuleDataControl" Package="erpims.modelims.imsam"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="ERPINVModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ERPTemModuleDataControl" Package="erptemplate.modeltemp.temam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPTemModuleLocal" syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>
