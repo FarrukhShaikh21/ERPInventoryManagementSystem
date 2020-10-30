@@ -9,42 +9,88 @@
       <property
          name="page">/INV_MAIN.jsf</property>
       <property
-         name="start">true</property>
+         name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>INV_MAIN&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>INV_MAIN&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">127.396484</property>
+         name="y">230.89062</property>
       <property
-         name="x">361.5</property>
+         name="x">593.5</property>
    </View>
    <TaskFlowReturn
       id="TaskFlowReturn3">
       <property
-         name="activityId">taskFlowReturn1</property>
+         name="activityId">ERPINVRETURN</property>
       <property
          name="finish">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  taskFlowReturn1&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>ERPINVRETURN&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ERPINVRETURN&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">138.94824</property>
+         name="y">137.14355</property>
       <property
-         name="x">551.0</property>
+         name="x">496.0</property>
    </TaskFlowReturn>
    <MethodCall
       id="MethodCall4">
       <property
          name="activityId">doSetINVErpApplicationGlobals</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>doSetINVErpApplicationGlobals&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doSetINVErpApplicationGlobals&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">17.597656</property>
+         name="y">25.896484</property>
       <property
-         name="x">464.0</property>
+         name="x">396.0</property>
    </MethodCall>
+   <TaskFlowReturn
+      id="TaskFlowReturn5">
+      <property
+         name="activityId">ERPLOGOUTAPP</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ERPLOGOUTAPP&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ERPLOGOUTAPP&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">121.5459</property>
+      <property
+         name="x">716.0</property>
+   </TaskFlowReturn>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule6">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">5.5976562</property>
+      <property
+         name="x">588.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="WildcardControlFlowRule6"
+      to="View2">
+      <property
+         name="fromOutcome">ERPACTEXITFORM</property>
+      <property
+         name="sdm:polyPoints">B50,588.0,48.24707,593.5,176.54004,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">ERPACTEXITTASKFLOW</property>
+      <property
+         name="sdm:polyPoints">L50,552.5,230.54004,537.0,136.79297,R50</property>
+   </ControlFlowCase>
 </SDM>
