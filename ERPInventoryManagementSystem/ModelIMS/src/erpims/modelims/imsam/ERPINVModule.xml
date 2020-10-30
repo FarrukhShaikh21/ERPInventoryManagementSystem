@@ -14,4 +14,7 @@
       Name="InvParameterByCompanyVC"
       FullName="erpims.modelims.imsvo.InvParameterVO.InvParameterByCompanyVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="AdminCompanyVORO"
+    ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"/>
 </AppModule>
