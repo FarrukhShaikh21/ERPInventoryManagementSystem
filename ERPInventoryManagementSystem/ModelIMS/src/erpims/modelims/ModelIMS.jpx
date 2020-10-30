@@ -39,4 +39,28 @@
       <Attr Name="_VO" Value="true"/>
     </DesignTime>
   </Containee>
+  <AppContainee
+    Name="ModelFMS"
+    FullName="erpfms.modelfms.ModelFMS"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ERPModelLIBFinance.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="ModelGlobals"
+    FullName="erpglobals.modelglobals.ModelGlobals"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ERPModelLIBGlobals.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
+    Name="ModelADM"
+    FullName="erpadm.modeladm.ModelADM"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ERPModelLIBAdministration.jar"/>
+    </DesignTime>
+  </AppContainee>
 </JboProject>
