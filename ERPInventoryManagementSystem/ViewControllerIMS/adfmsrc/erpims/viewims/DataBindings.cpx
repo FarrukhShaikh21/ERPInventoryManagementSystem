@@ -10,6 +10,9 @@
           usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1"/>
     <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ExeParaINVReports"
           usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11"/>
+    <page path="/INV_0001_EDIT.jsf" usageId="erpims_viewims_INV_0001_EDITPageDef"/>
+    <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ExeAdmCompINV_0001"
+          usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecutePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpims_viewims_INV_0001PageDef" path="erpims.viewims.pageDefs.INV_0001PageDef"/>
@@ -20,6 +23,9 @@
           path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1"/>
     <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11"
           path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11"/>
+    <page id="erpims_viewims_INV_0001_EDITPageDef" path="erpims.viewims.pageDefs.INV_0001_EDITPageDef"/>
+    <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecutePageDef"
+          path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecutePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPINVModuleDataControl" Package="erpims.modelims.imsam"
