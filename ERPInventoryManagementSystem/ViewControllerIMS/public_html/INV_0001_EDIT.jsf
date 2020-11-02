@@ -73,15 +73,14 @@
                                               scrollPolicy="page">
                                         <af:column headerText="#{bindings.InvParameterByCompanyCRUD.hints.ParameterId.label}"
                                                    id="c1" width="200" displayIndex="-1">
-                                            <af:inputText value="#{row.bindings.ParameterId.inputValue}"
-                                                          label="#{bindings.InvParameterByCompanyCRUD.hints.ParameterId.label}"
-                                                          required="#{bindings.InvParameterByCompanyCRUD.hints.ParameterId.mandatory}"
-                                                          columns="#{bindings.InvParameterByCompanyCRUD.hints.ParameterId.displayWidth}"
-                                                          maximumLength="#{bindings.InvParameterByCompanyCRUD.hints.ParameterId.precision}"
-                                                          shortDesc="#{bindings.InvParameterByCompanyCRUD.hints.ParameterId.tooltip}"
-                                                          id="it5">
+                                            <af:selectOneChoice value="#{row.bindings.ParameterId.inputValue}"
+                                                                label="#{row.bindings.ParameterId.label}"
+                                                                required="#{bindings.InvParameterByCompanyCRUD.hints.ParameterId.mandatory}"
+                                                                shortDesc="#{bindings.InvParameterByCompanyCRUD.hints.ParameterId.tooltip}"
+                                                                id="soc2">
+                                                <f:selectItems value="#{row.bindings.ParameterId.items}" id="si2"/>
                                                 <f:validator binding="#{row.bindings.ParameterId.validator}"/>
-                                            </af:inputText>
+                                            </af:selectOneChoice>
                                         </af:column>
                                         <af:column headerText="#{bindings.InvParameterByCompanyCRUD.hints.ParameterValue.label}"
                                                    id="c2" width="200">
@@ -174,8 +173,8 @@
             </af:decorativeBox>
         </af:form>
         <f:facet name="metaContainer">
-            <af:resource type="javascript" source="/resources/js/ERPSCMJavaScript.js"/>
-            <af:resource type="css" source="/resources/css/ERPSCMStyleSheet.css"/>
+            <af:resource type="javascript" source="/resources/js/ERPINVJavaScript.js"/>
+            <af:resource type="css" source="/resources/css/ERPINVStyleSheet.css"/>
             <af:resource type="javascript" source="http://code.jquery.com/jquery-1.10.2.js"/>
         </f:facet>
     </af:document>

@@ -8,7 +8,7 @@
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
-    Name="InvParameterCRUD"
+    Name="InvParameterByCompanyCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvParameterVO">
     <ViewCriteriaUsage
       Name="InvParameterByCompanyVC"
@@ -23,5 +23,12 @@
     <ViewCriteriaUsage
       Name="AdminCompanyVOCompanyOnlyVC"
       FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyVOCompanyOnlyVC"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="AdminCompanyVOByCompanyRO"
+    ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO">
+    <ViewCriteriaUsage
+      Name="AdminCompanyByCompCodeVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyByCompCodeVC"/>
   </ViewUsage>
 </AppModule>

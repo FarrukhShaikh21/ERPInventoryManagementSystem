@@ -106,6 +106,12 @@
     <view id="INV_0001_EDIT">
       <page>/INV_0001_EDIT.jsf</page>
     </view>
+    <method-call id="ExeAdmCompByComINV_0001_EDIT">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-INV_0001_EDIT</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -177,7 +183,21 @@
       <from-activity-id>INV_0001</from-activity-id>
       <control-flow-case id="__27">
         <from-outcome>ERP-ACT-INV_0001_EDIT</from-outcome>
+        <to-activity-id>ExeAdmCompByComINV_0001_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id>ExeAdmCompByComINV_0001_EDIT</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome>ERP-ACT-INV_0001_EDIT</from-outcome>
         <to-activity-id>INV_0001_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__32">
+      <from-activity-id>INV_0001_EDIT</from-activity-id>
+      <control-flow-case id="__33">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>INV_0001</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

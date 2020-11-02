@@ -235,7 +235,7 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0001</property>
       <property
-         name="sdm:polyPoints">B50,293.0,70.143555,245.5,186.09766,T50</property>
+         name="sdm:polyPoints">L50,252.0,16.143555,166.5,104.69531,T50</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule23">
@@ -265,9 +265,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">240.44824</property>
+         name="y">159.0459</property>
       <property
-         name="x">245.5</property>
+         name="x">166.5</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
@@ -277,7 +277,7 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0001</property>
       <property
-         name="sdm:polyPoints">B50,245.5,294.09766,350.5,294.09766,350.5,160.44824,R50</property>
+         name="sdm:polyPoints">R50,207.5,158.69531,268.5,160.44824,L50</property>
    </ControlFlowCase>
    <View
       id="View27">
@@ -290,18 +290,51 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">386.79883</property>
+         name="y">427.09766</property>
       <property
-         name="x">273.69043</property>
+         name="x">275.69043</property>
    </View>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase28"
       from="View20"
+      to="MethodCall29">
+      <property
+         name="fromOutcome">ERP-ACT-INV_0001_EDIT</property>
+      <property
+         name="sdm:polyPoints">B50,309.5,214.44824,177.35156,279.09766,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall29">
+      <property
+         name="activityId">ExeAdmCompByComINV_0001_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeAdmCompByComINV_0001_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">333.44824</property>
+      <property
+         name="x">177.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase30"
+      from="MethodCall29"
       to="View27">
       <property
          name="fromOutcome">ERP-ACT-INV_0001_EDIT</property>
       <property
-         name="sdm:polyPoints">B50,309.5,214.44824,273.69043,332.44824,T50</property>
+         name="sdm:polyPoints">R50,218.35156,333.09766,234.69043,426.74707,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase31"
+      from="View27"
+      to="View20">
+      <property
+         name="fromOutcome">ERPBACKCRUD</property>
+      <property
+         name="sdm:polyPoints">T50,275.69043,372.74707,313.0,217.01337,B56</property>
    </ControlFlowCase>
 </SDM>
