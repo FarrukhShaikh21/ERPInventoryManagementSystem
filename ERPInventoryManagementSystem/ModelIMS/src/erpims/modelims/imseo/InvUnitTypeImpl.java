@@ -2,6 +2,8 @@ package erpims.modelims.imseo;
 
 import erpglobals.modelglobals.ERPEntityImpl;
 
+import erpglobals.modelglobals.ERPGlobalPLSQLClass;
+
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -383,6 +385,20 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation == DML_INSERT) {
+            
+            String result =
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "UNIT_TYPE_SNO",
+                                                              this.getEntityDef().getSource(), null, null);
+
+            populateAttributeAsChanged(UNITTYPESNO, Integer.parseInt(result));
+            result =
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "UNIT_TYPE_SHORT_CODE",
+                                                              this.getEntityDef().getSource(), "COMPANY_ID",
+                                                              getCompanyId().toString());
+            populateAttributeAsChanged(UNITTYPESHORTCODE, Integer.parseInt(result));
+
+        }        
         super.doDML(operation, e);
     }
 }
