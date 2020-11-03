@@ -348,8 +348,41 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">494.79883</property>
+         name="y">562.09766</property>
       <property
          name="x">414.5</property>
    </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase33"
+      from="MethodCall21"
+      to="MethodCall34">
+      <property
+         name="fromOutcome">ERP-ACT-INV_0002</property>
+      <property
+         name="sdm:polyPoints">R50,334.0,16.143555,413.5,390.39648,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall34">
+      <property
+         name="activityId">ExeAdmCompINV_0002</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeAdmCompINV_0002&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">444.74707</property>
+      <property
+         name="x">413.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase35"
+      from="MethodCall34"
+      to="View32">
+      <property
+         name="fromOutcome">ERP-ACT-INV_0002</property>
+      <property
+         name="sdm:polyPoints">B50,413.5,498.39648,414.5,507.74707,T50</property>
+   </ControlFlowCase>
 </SDM>
