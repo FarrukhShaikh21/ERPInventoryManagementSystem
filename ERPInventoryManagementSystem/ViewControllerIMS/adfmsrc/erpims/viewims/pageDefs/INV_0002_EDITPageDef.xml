@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="AdminCompanyVOByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="AdminCompanyVOByCompanyROIterator"/>
+    <iterator Binds="InvUnitTypeByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvUnitTypeByCompanyROIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="AdminCompanyVOByCompanyROIterator" id="CompCode">
@@ -28,5 +30,16 @@
         <Item Value="CompanyShortCode"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="InvUnitTypeByCompanyROIterator" id="InvUnitTypeByCompanyRO">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvUnitTypeVO" Name="InvUnitTypeByCompanyRO0">
+        <AttrNames>
+          <Item Value="UnitTypeShortCode"/>
+          <Item Value="UnitTypeShortName"/>
+          <Item Value="OpenDate"/>
+          <Item Value="UnitTypeName"/>
+          <Item Value="IsActive"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

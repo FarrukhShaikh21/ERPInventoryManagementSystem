@@ -112,6 +112,9 @@
         <fixed-outcome>ERP-ACT-INV_0001_EDIT</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="INV_0002">
+      <page>/INV_0002.jsf</page>
+    </view>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">

@@ -31,4 +31,11 @@
       Name="AdminCompanyByCompCodeVC"
       FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyByCompCodeVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="InvUnitTypeByCompanyRO"
+    ViewObjectName="erpims.modelims.imsvo.InvUnitTypeVO">
+    <ViewCriteriaUsage
+      Name="InvUnitTypeByCompanyIDVC"
+      FullName="erpims.modelims.imsvo.InvUnitTypeVO.InvUnitTypeByCompanyIDVC"/>
+  </ViewUsage>
 </AppModule>

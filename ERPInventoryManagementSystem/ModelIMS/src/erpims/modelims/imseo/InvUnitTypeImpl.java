@@ -37,7 +37,8 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
         SupervisedBy,
         SupervisedDate,
         UnSupervisedBy,
-        UnSupervisedDate;
+        UnSupervisedDate,
+        OpenDate;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -60,6 +61,7 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
             return vals;
         }
     }
+
     public static final int UNITTYPESNO = AttributesEnum.UnitTypeSno.index();
     public static final int UNITTYPESHORTCODE = AttributesEnum.UnitTypeShortCode.index();
     public static final int UNITTYPESHORTNAME = AttributesEnum.UnitTypeShortName.index();
@@ -77,11 +79,19 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
     public static final int SUPERVISEDDATE = AttributesEnum.SupervisedDate.index();
     public static final int UNSUPERVISEDBY = AttributesEnum.UnSupervisedBy.index();
     public static final int UNSUPERVISEDDATE = AttributesEnum.UnSupervisedDate.index();
+    public static final int OPENDATE = AttributesEnum.OpenDate.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public InvUnitTypeImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvUnitType");
     }
 
     /**
@@ -357,19 +367,29 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for OpenDate, using the alias name OpenDate.
+     * @return the value of OpenDate
+     */
+    public Date getOpenDate() {
+        return (Date) getAttributeInternal(OPENDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for OpenDate.
+     * @param value value to set the OpenDate
+     */
+    public void setOpenDate(Date value) {
+        setAttributeInternal(OPENDATE, value);
+    }
+
+
+    /**
      * @param unitTypeSno key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(Integer unitTypeSno) {
         return new Key(new Object[] { unitTypeSno });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvUnitType");
     }
 
     /**
