@@ -93,4 +93,40 @@
     EntityAttrName="LastUpdatedDate"
     EntityUsage="InvUnitType"
     AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UnSupervisedDate"
+    PrecisionRule="true"
+    EntityAttrName="UnSupervisedDate"
+    EntityUsage="InvUnitType"
+    AliasName="UN_SUPERVISED_DATE"/>
+  <ViewAttribute
+    Name="UnSupervisedBy"
+    PrecisionRule="true"
+    EntityAttrName="UnSupervisedBy"
+    EntityUsage="InvUnitType"
+    AliasName="UN_SUPERVISED_BY"/>
+  <ViewAttribute
+    Name="SupervisedDate"
+    PrecisionRule="true"
+    EntityAttrName="SupervisedDate"
+    EntityUsage="InvUnitType"
+    AliasName="SUPERVISED_DATE"/>
+  <ViewAttribute
+    Name="SupervisedBy"
+    PrecisionRule="true"
+    EntityAttrName="SupervisedBy"
+    EntityUsage="InvUnitType"
+    AliasName="SUPERVISED_BY"/>
+  <ViewAttribute
+    Name="IsSupervised"
+    PrecisionRule="true"
+    EntityAttrName="IsSupervised"
+    EntityUsage="InvUnitType"
+    AliasName="IS_SUPERVISED"/>
+  <ViewAttribute
+    Name="IsUnsupervised"
+    PrecisionRule="true"
+    EntityAttrName="IsUnsupervised"
+    EntityUsage="InvUnitType"
+    AliasName="IS_UNSUPERVISED"/>
 </ViewObject>

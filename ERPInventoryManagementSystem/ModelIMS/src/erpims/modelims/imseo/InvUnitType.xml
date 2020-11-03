@@ -9,10 +9,15 @@
   DBObjectType="table"
   DBObjectName="INV_UNIT_TYPE"
   AliasName="InvUnitType"
-  BindingStyle="JDBC">
+  BindingStyle="JDBC"
+  RowClass="erpims.modelims.imseo.InvUnitTypeImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_superClass" Value="erpglobals.modelglobals.ERPEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="UnitTypeSno"
-    IsNotNull="true"
     Precision="6"
     Scale="0"
     ColumnName="UNIT_TYPE_SNO"
@@ -20,21 +25,37 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_UNIT_TYPE"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.UnitTypeSno_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="UnitTypeShortCode"
     IsUnique="true"
-    IsNotNull="true"
     Precision="6"
     Scale="0"
     ColumnName="UNIT_TYPE_SHORT_CODE"
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_UNIT_TYPE"/>
+    TableName="INV_UNIT_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.UnitTypeShortCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="UnitTypeShortName"
-    IsNotNull="true"
     Precision="20"
     ColumnName="UNIT_TYPE_SHORT_NAME"
     SQLType="VARCHAR"
@@ -44,10 +65,17 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.UnitTypeShortName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="UnitTypeName"
-    IsNotNull="true"
     Precision="50"
     ColumnName="UNIT_TYPE_NAME"
     SQLType="VARCHAR"
@@ -57,18 +85,34 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.UnitTypeName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CompanyId"
     IsUnique="true"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="COMPANY_ID"
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_UNIT_TYPE"/>
+    TableName="INV_UNIT_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.CompanyId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="GlobalCompanyId"
     IsNotNull="true"
@@ -78,7 +122,18 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_UNIT_TYPE"/>
+    TableName="INV_UNIT_TYPE">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[erpglobals.modelglobals.ERPGlobalPLSQLClass.doGetModelGlobalDefCompany()]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.GlobalCompanyId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="IsActive"
     IsNotNull="true"
@@ -87,29 +142,55 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="INV_UNIT_TYPE">
+    TableName="INV_UNIT_TYPE"
+    DefaultValue="Y">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.IsActive_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_UNIT_TYPE"/>
+    TableName="INV_UNIT_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.CreatedBy_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="INV_UNIT_TYPE"/>
+    TableName="INV_UNIT_TYPE"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.CreatedDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LastUpdatedBy"
     Precision="5"
@@ -118,14 +199,145 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_UNIT_TYPE"/>
+    TableName="INV_UNIT_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.LastUpdatedBy_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LastUpdatedDate"
     ColumnName="LAST_UPDATED_DATE"
     SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="INV_UNIT_TYPE"
+    RetrievedOnUpdate="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.LastUpdatedDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="IsSupervised"
+    Precision="1"
+    ColumnName="IS_SUPERVISED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_UNIT_TYPE"
+    DefaultValue="N">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.IsSupervised_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="IsUnsupervised"
+    Precision="1"
+    ColumnName="IS_UNSUPERVISED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_UNIT_TYPE"
+    DefaultValue="N">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.IsUnsupervised_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="SupervisedBy"
+    Precision="5"
+    Scale="0"
+    ColumnName="SUPERVISED_BY"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="INV_UNIT_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.SupervisedBy_LABEL"/>
+        <DISPLAYHEIGHT
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="SupervisedDate"
+    ColumnName="SUPERVISED_DATE"
+    SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="INV_UNIT_TYPE"/>
+    TableName="INV_UNIT_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.SupervisedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UnSupervisedBy"
+    Precision="5"
+    Scale="0"
+    ColumnName="UN_SUPERVISED_BY"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="INV_UNIT_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.UnSupervisedBy_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UnSupervisedDate"
+    ColumnName="UN_SUPERVISED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="INV_UNIT_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvUnitType.UnSupervisedDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Key
     Name="PkInvUnitType"
     PrimaryKey="true">
@@ -147,4 +359,8 @@
       <Item Value="erpims.modelims.imseo.InvUnitType.CompanyId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
 </Entity>
