@@ -43,5 +43,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="InvUnitTypeByCompanyROIterator" id="UnitTypeSno">
+      <AttrNames>
+        <Item Value="UnitTypeSno"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

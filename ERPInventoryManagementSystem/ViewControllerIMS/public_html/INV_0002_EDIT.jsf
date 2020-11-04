@@ -105,6 +105,15 @@
                     <af:panelGroupLayout id="pgl5" styleClass="WBCardSize" layout="vertical">
                       <af:panelBox text="PanelBox4" id="pb3" showDisclosure="false" showHeader="never">
                         <f:facet name="toolbar"/>
+                        <af:inputText value="#{bindings.UnitTypeSno.inputValue}"
+                                      label="#{bindings.UnitTypeSno.hints.label}"
+                                      required="#{bindings.UnitTypeSno.hints.mandatory}"
+                                      columns="#{bindings.UnitTypeSno.hints.displayWidth}"
+                                      maximumLength="#{bindings.UnitTypeSno.hints.precision}"
+                                      shortDesc="#{bindings.UnitTypeSno.hints.tooltip}" id="it1" rendered="false">
+                          <f:validator binding="#{bindings.UnitTypeSno.validator}"/>
+                          <af:convertNumber groupingUsed="false" pattern="#{bindings.UnitTypeSno.format}"/>
+                        </af:inputText>
                         <af:panelGridLayout id="pgl4">
                           <af:gridRow marginTop="5px" height="auto" id="gr11">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12"
