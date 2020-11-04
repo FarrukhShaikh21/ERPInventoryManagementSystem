@@ -443,4 +443,19 @@
       <property
          name="sdm:polyPoints">R50,385.69043,668.44824,455.5,561.7471,R50</property>
    </ControlFlowCase>
+   <View
+      id="View41">
+      <property
+         name="activityId">INV_0002_EDIT_EDIT</property>
+      <property
+         name="page">/INV_0002_EDIT_EDIT.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INV_0002_EDIT_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">809.7988</property>
+      <property
+         name="x">452.69434</property>
+   </View>
 </SDM>

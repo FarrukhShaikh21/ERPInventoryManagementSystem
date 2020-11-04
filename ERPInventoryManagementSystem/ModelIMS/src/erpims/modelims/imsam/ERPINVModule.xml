@@ -38,4 +38,11 @@
       Name="InvUnitTypeByCompanyIDVC"
       FullName="erpims.modelims.imsvo.InvUnitTypeVO.InvUnitTypeByCompanyIDVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="InvUnitTypeCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvUnitTypeVO">
+    <ViewCriteriaUsage
+      Name="InvUnitTypeByUnitTypeSnoVC"
+      FullName="erpims.modelims.imsvo.InvUnitTypeVO.InvUnitTypeByUnitTypeSnoVC"/>
+  </ViewUsage>
 </AppModule>
