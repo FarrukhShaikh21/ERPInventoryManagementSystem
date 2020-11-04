@@ -133,6 +133,18 @@
     <view id="INV_0002_EDIT_EDIT">
       <page>/INV_0002_EDIT_EDIT.jsf</page>
     </view>
+    <method-call id="ExeUnitTypeByIDINV_0002_EDIT_EDIT">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-EDIT-ACT-INV_0002</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="CWPInvUnitTypeINV_0002">
+      <method>#{bindings.CreateWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ADD-ACT-INV_0002</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -251,6 +263,35 @@
       <control-flow-case id="__42">
         <from-outcome>ERPBACKCRUD</from-outcome>
         <to-activity-id>INV_0002</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__45">
+        <from-outcome>ERP-EDIT-ACT-INV_0002</from-outcome>
+        <to-activity-id>ExeUnitTypeByIDINV_0002_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__48">
+        <from-outcome>ERP-ADD-ACT-INV_0002</from-outcome>
+        <to-activity-id>CWPInvUnitTypeINV_0002</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__43">
+      <from-activity-id>INV_0002_EDIT_EDIT</from-activity-id>
+      <control-flow-case id="__44">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>INV_0002_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__46">
+      <from-activity-id>ExeUnitTypeByIDINV_0002_EDIT_EDIT</from-activity-id>
+      <control-flow-case id="__47">
+        <from-outcome>ERP-EDIT-ACT-INV_0002</from-outcome>
+        <to-activity-id>INV_0002_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__51">
+      <from-activity-id>CWPInvUnitTypeINV_0002</from-activity-id>
+      <control-flow-case id="__52">
+        <from-outcome>ERP-ADD-ACT-INV_0002</from-outcome>
+        <to-activity-id>INV_0002_EDIT_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

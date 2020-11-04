@@ -122,7 +122,7 @@
                                                               required="#{bindings.OpenDate.hints.mandatory}"
                                                               columns="#{bindings.OpenDate.hints.displayWidth}"
                                                               shortDesc="#{bindings.OpenDate.hints.tooltip}" id="id1"
-                                                              simple="true" contentStyle="width:100%">
+                                                              simple="true" contentStyle="width:80%">
                                                     <f:validator binding="#{bindings.OpenDate.validator}"/>
                                                     <af:convertDateTime pattern="#{bindings.OpenDate.format}"/>
                                                 </af:inputDate>
@@ -167,26 +167,8 @@
                                             </af:link>
                                             <af:link actionListener="#{bindings.CreateWithParams.execute}"
                                                      text="CreateWithParams"
-                                                     disabled="#{!bindings.CreateWithParams.enabled}" id="l4"
-                                                     rendered="false" partialSubmit="true"/>
-                                            <af:link text="Add" id="l1" icon="#{resource['images:imgAddRecord.png']}"
-                                                     iconPosition="top" partialSubmit="true"
-                                                     action="#{pageFlowScope.OracleERPBean.doERPAddRecordWithPara}"
-                                                     disabled="#{pageFlowScope.ERPMainTempBean.LERPAllowAdd=='N'}">
-                                                <af:setActionListener from="#{'GlChartOfAccountsByCOIDCRUDIterator'}"
-                                                                      to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
-                                            </af:link>
-                                            <af:link actionListener="#{bindings.Delete.execute}" text="Delete"
-                                                     disabled="#{!bindings.Delete.enabled}" id="l6" rendered="false"
-                                                     partialSubmit="true"/>
-                                            <af:link text="Delete" id="l11"
-                                                     icon="#{resource['images:imgDeleteRecord.png']}"
-                                                     iconPosition="top" partialSubmit="true"
-                                                     disabled="#{bindings.InvUnitTypeCRUDIterator.estimatedRowCount==0 ||pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' ||bindings.IsSupervised.inputValue=='Y'}"
-                                                     partialTriggers="d2 d3"
-                                                     actionListener="#{bindings.Delete.execute}">
-                                                <af:showPopupBehavior popupId="p1"/>
-                                            </af:link>
+                                                     disabled="#{!bindings.CreateWithParams.enabled}" id="l9"
+                                                     rendered="false"/>
                                             <af:link text="Supervise" id="l19" partialSubmit="true"
                                                      icon="#{resource['images:imgSuperviseRecord.png']}"
                                                      iconPosition="top"
@@ -202,6 +184,24 @@
                                                      disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.UnitTypeShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
                                                 <af:setActionListener from="#{'ScmCustomerTypeCRUDIterator'}"
                                                                       to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
+                                            </af:link>
+                                            <af:link text="Add" id="l1" icon="#{resource['images:imgAddRecord.png']}"
+                                                     iconPosition="top" partialSubmit="true"
+                                                     action="#{pageFlowScope.OracleERPBean.doERPAddRecordWithPara}"
+                                                     disabled="#{pageFlowScope.ERPMainTempBean.LERPAllowAdd=='N'}">
+                                                <af:setActionListener from="#{'GlChartOfAccountsByCOIDCRUDIterator'}"
+                                                                      to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
+                                            </af:link>
+                                            <af:link actionListener="#{bindings.Delete.execute}" text="Delete"
+                                                     disabled="#{!bindings.Delete.enabled}" id="l6" rendered="false"
+                                                     partialSubmit="true"/>
+                                            <af:link text="Delete" id="l11"
+                                                     icon="#{resource['images:imgDeleteRecord.png']}" iconPosition="top"
+                                                     partialSubmit="true"
+                                                     disabled="#{bindings.InvUnitTypeCRUDIterator.estimatedRowCount==0 ||pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' ||bindings.IsSupervised.inputValue=='Y'}"
+                                                     partialTriggers="d2 d3"
+                                                     actionListener="#{bindings.Delete.execute}">
+                                                <af:showPopupBehavior popupId="p1"/>
                                             </af:link>
                                             <af:link actionListener="#{bindings.Commit.execute}" text="Commit" id="l8"
                                                      rendered="false" partialSubmit="true"/>

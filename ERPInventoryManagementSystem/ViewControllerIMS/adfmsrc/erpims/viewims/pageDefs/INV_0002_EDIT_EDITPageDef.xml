@@ -44,5 +44,10 @@
       </AttrNames>
     </attributeValues>
     <action IterBinding="InvUnitTypeCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="InvUnitTypeCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="CompanyId" NDValue="#{data.erpims_viewims_INV_0002_EDITPageDef.CompCode.inputValue}"
+                 NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>
