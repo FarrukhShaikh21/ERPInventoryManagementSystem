@@ -121,6 +121,15 @@
         <fixed-outcome>ERP-ACT-INV_0002</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="INV_0002_EDIT">
+      <page>/INV_0002_EDIT.jsf</page>
+    </view>
+    <method-call id="ExeComByCompIDINV_0002_EDIT">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-QRY-ACT-INV_0002</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -217,6 +226,27 @@
       <from-activity-id>ExeAdmCompINV_0002</from-activity-id>
       <control-flow-case id="__36">
         <from-outcome>ERP-ACT-INV_0002</from-outcome>
+        <to-activity-id>INV_0002</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__37">
+      <from-activity-id>INV_0002</from-activity-id>
+      <control-flow-case id="__38">
+        <from-outcome>ERP-QRY-ACT-INV_0002</from-outcome>
+        <to-activity-id>ExeComByCompIDINV_0002_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__39">
+      <from-activity-id>ExeComByCompIDINV_0002_EDIT</from-activity-id>
+      <control-flow-case id="__40">
+        <from-outcome>ERP-QRY-ACT-INV_0002</from-outcome>
+        <to-activity-id>INV_0002_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__41">
+      <from-activity-id>INV_0002_EDIT</from-activity-id>
+      <control-flow-case id="__42">
+        <from-outcome>ERPBACKCRUD</from-outcome>
         <to-activity-id>INV_0002</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

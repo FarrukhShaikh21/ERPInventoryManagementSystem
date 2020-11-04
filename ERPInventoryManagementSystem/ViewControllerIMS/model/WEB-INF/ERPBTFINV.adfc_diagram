@@ -385,4 +385,62 @@
       <property
          name="sdm:polyPoints">B50,413.5,498.39648,414.5,507.74707,T50</property>
    </ControlFlowCase>
+   <View
+      id="View36">
+      <property
+         name="activityId">INV_0002_EDIT</property>
+      <property
+         name="page">/INV_0002_EDIT.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INV_0002_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">668.7988</property>
+      <property
+         name="x">344.69043</property>
+   </View>
+   <MethodCall
+      id="MethodCall37">
+      <property
+         name="activityId">ExeComByCompIDINV_0002_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeComByCompIDINV_0002_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">596.44824</property>
+      <property
+         name="x">313.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase38"
+      from="View32"
+      to="MethodCall37">
+      <property
+         name="fromOutcome">ERP-QRY-ACT-INV_0002</property>
+      <property
+         name="sdm:polyPoints">L50,373.5,561.7471,354.35156,596.09766,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase39"
+      from="MethodCall37"
+      to="View36">
+      <property
+         name="fromOutcome">ERP-QRY-ACT-INV_0002</property>
+      <property
+         name="sdm:polyPoints">L50,272.35156,596.09766,272.35156,722.44824,344.69043,722.44824,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase40"
+      from="View36"
+      to="View32">
+      <property
+         name="fromOutcome">ERPBACKCRUD</property>
+      <property
+         name="sdm:polyPoints">R50,385.69043,668.44824,455.5,561.7471,R50</property>
+   </ControlFlowCase>
 </SDM>
