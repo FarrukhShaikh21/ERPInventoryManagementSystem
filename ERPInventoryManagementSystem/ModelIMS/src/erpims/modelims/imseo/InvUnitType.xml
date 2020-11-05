@@ -294,7 +294,8 @@
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="INV_UNIT_TYPE">
+    TableName="INV_UNIT_TYPE"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -328,7 +329,8 @@
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="INV_UNIT_TYPE">
+    TableName="INV_UNIT_TYPE"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH

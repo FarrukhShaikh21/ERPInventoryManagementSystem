@@ -145,6 +145,18 @@
         <fixed-outcome>ERP-ADD-ACT-INV_0002</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="InvUnitTypeByCompINV_0002">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>ERPBACKCRUD</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeUnitTypeByCompINV_0002">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-QRY-ACT-INV_0002</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -255,7 +267,7 @@
       <from-activity-id>ExeComByCompIDINV_0002_EDIT</from-activity-id>
       <control-flow-case id="__40">
         <from-outcome>ERP-QRY-ACT-INV_0002</from-outcome>
-        <to-activity-id>INV_0002_EDIT</to-activity-id>
+        <to-activity-id>ExeUnitTypeByCompINV_0002</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__41">
@@ -277,7 +289,7 @@
       <from-activity-id>INV_0002_EDIT_EDIT</from-activity-id>
       <control-flow-case id="__44">
         <from-outcome>ERPBACKCRUD</from-outcome>
-        <to-activity-id>INV_0002_EDIT</to-activity-id>
+        <to-activity-id>InvUnitTypeByCompINV_0002</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__46">
@@ -292,6 +304,20 @@
       <control-flow-case id="__52">
         <from-outcome>ERP-ADD-ACT-INV_0002</from-outcome>
         <to-activity-id>INV_0002_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__49">
+      <from-activity-id>InvUnitTypeByCompINV_0002</from-activity-id>
+      <control-flow-case id="__50">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>INV_0002_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__53">
+      <from-activity-id>ExeUnitTypeByCompINV_0002</from-activity-id>
+      <control-flow-case id="__54">
+        <from-outcome>ERP-QRY-ACT-INV_0002</from-outcome>
+        <to-activity-id>INV_0002_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

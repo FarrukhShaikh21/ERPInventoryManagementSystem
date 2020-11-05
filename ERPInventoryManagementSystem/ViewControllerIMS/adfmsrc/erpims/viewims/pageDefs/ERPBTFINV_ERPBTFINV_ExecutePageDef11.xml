@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1"
+                id="ERPBTFINV_ERPBTFINV_ExecutePageDef11" Package="erpims.viewims.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="InvUnitTypeByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvUnitTypeByCompanyROIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="InvUnitTypeByCompanyROIterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>
