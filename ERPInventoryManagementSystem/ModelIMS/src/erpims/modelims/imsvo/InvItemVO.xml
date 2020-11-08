@@ -360,4 +360,10 @@
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemCostOfGoodsSoldCOACogsIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

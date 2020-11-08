@@ -1,5 +1,7 @@
 package erpims.modelims.imseo;
 
+import erpfms.modelfms.fmseo.GlChartOfAccountsImpl;
+
 import erpglobals.modelglobals.ERPEntityImpl;
 
 import java.math.BigDecimal;
@@ -63,7 +65,8 @@ public class InvItemImpl extends ERPEntityImpl {
         SupervisedBy,
         UnSupervisedBy,
         EndDate,
-        StartDate;
+        StartDate,
+        GlChartOfAccounts;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -86,6 +89,8 @@ public class InvItemImpl extends ERPEntityImpl {
             return vals;
         }
     }
+
+
     public static final int ITEMID = AttributesEnum.ItemId.index();
     public static final int ITEMSHORTCODE = AttributesEnum.ItemShortCode.index();
     public static final int ITEMSHORTNAME = AttributesEnum.ItemShortName.index();
@@ -129,12 +134,21 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int UNSUPERVISEDBY = AttributesEnum.UnSupervisedBy.index();
     public static final int ENDDATE = AttributesEnum.EndDate.index();
     public static final int STARTDATE = AttributesEnum.StartDate.index();
+    public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public InvItemImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvItem");
+    }
+
 
     /**
      * Gets the attribute value for ItemId, using the alias name ItemId.
@@ -825,19 +839,27 @@ public class InvItemImpl extends ERPEntityImpl {
     }
 
     /**
+     * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public GlChartOfAccountsImpl getGlChartOfAccounts() {
+        return (GlChartOfAccountsImpl) getAttributeInternal(GLCHARTOFACCOUNTS);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public void setGlChartOfAccounts(GlChartOfAccountsImpl value) {
+        setAttributeInternal(GLCHARTOFACCOUNTS, value);
+    }
+
+
+    /**
      * @param itemId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(Integer itemId) {
         return new Key(new Object[] { itemId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvItem");
     }
 
     /**
