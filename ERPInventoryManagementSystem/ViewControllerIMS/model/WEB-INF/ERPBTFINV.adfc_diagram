@@ -360,7 +360,7 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0002</property>
       <property
-         name="sdm:polyPoints">B44,289.5,71.82012,413.5,390.39648,T50</property>
+         name="sdm:polyPoints">B44,289.5,71.82177,413.5,390.39648,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall34">
@@ -589,7 +589,7 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">436.39648</property>
+         name="y">436.0459</property>
       <property
          name="x">571.5</property>
    </MethodCall>
@@ -620,7 +620,7 @@
       <property
          name="fromsrcid">__16</property>
       <property
-         name="sdm:polyPoints">B56,296.5,70.143555,530.5,436.39648,L50</property>
+         name="sdm:polyPoints">B56,296.5,70.143555,530.5,435.6953,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -630,6 +630,6 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0003</property>
       <property
-         name="sdm:polyPoints">R50,612.5,436.39648,717.5,477.74707,L50</property>
+         name="sdm:polyPoints">R50,612.5,435.6953,717.5,477.74707,L50</property>
    </ControlFlowCase>
 </SDM>
