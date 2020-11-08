@@ -141,12 +141,6 @@
     EntityUsage="InvItem"
     AliasName="TAX_GROUP_SNO"/>
   <ViewAttribute
-    Name="Qty"
-    PrecisionRule="true"
-    EntityAttrName="Qty"
-    EntityUsage="InvItem"
-    AliasName="QTY"/>
-  <ViewAttribute
     Name="CompanyId"
     IsUnique="true"
     PrecisionRule="true"
