@@ -680,4 +680,14 @@
       <property
          name="sdm:polyPoints">L50,768.35156,618.3965,630.6904,613.7471,R50</property>
    </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase63"
+      from="View59"
+      to="View55">
+      <property
+         name="fromOutcome">ERPBACKCRUD</property>
+      <property
+         name="sdm:polyPoints">T50,589.6904,559.7471,717.5,481.24707,L54</property>
+   </ControlFlowCase>
 </SDM>

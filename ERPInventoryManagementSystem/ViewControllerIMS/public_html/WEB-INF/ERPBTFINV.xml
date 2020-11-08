@@ -363,6 +363,13 @@
         <to-activity-id>INV_0003_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
+    <control-flow-rule id="__64">
+      <from-activity-id>INV_0003_EDIT</from-activity-id>
+      <control-flow-case id="__65">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>INV_0003</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <visibility>
       <url-invoke-allowed/>
     </visibility>
