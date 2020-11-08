@@ -630,7 +630,7 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0003</property>
       <property
-         name="sdm:polyPoints">R50,612.5,435.6953,717.5,477.74707,L50</property>
+         name="sdm:polyPoints">R50,612.5,435.6953,717.5,474.24707,L46</property>
    </ControlFlowCase>
    <View
       id="View59">
@@ -674,11 +674,11 @@
       islink="true"
       id="ControlFlowCase62"
       from="MethodCall60"
-      to="View59">
+      to="MethodCall64">
       <property
          name="fromOutcome">ERP-QRY-ACT-INV_0003</property>
       <property
-         name="sdm:polyPoints">L50,768.35156,618.3965,630.6904,613.7471,R50</property>
+         name="sdm:polyPoints">L50,768.35156,618.3965,737.35156,723.09766,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -689,5 +689,28 @@
          name="fromOutcome">ERPBACKCRUD</property>
       <property
          name="sdm:polyPoints">T50,589.6904,559.7471,717.5,481.24707,L54</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall64">
+      <property
+         name="activityId">ExeInvItemByCompINV_0003_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeInvItemByCompINV_0003_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">723.44824</property>
+      <property
+         name="x">778.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase65"
+      from="MethodCall64"
+      to="View59">
+      <property
+         name="fromOutcome">ERP-QRY-ACT-INV_0003</property>
+      <property
+         name="sdm:polyPoints">L54,731.111,726.59766,630.6904,613.7471,R50</property>
    </ControlFlowCase>
 </SDM>

@@ -36,6 +36,8 @@
     <page path="/INV_0003.jsf" usageId="erpims_viewims_INV_0003PageDef"/>
     <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ExeAdminCompByCompINV_0003_EDIT"
           usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1111111"/>
+    <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ExeInvItemByCompINV_0003_EDIT"
+          usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11111111"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpims_viewims_INV_0001PageDef" path="erpims.viewims.pageDefs.INV_0001PageDef"/>
@@ -72,6 +74,8 @@
     <page id="erpims_viewims_INV_0003PageDef" path="erpims.viewims.pageDefs.INV_0003PageDef"/>
     <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1111111"
           path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1111111"/>
+    <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11111111"
+          path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11111111"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPINVModuleDataControl" Package="erpims.modelims.imsam"
