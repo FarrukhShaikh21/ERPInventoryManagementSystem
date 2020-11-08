@@ -139,18 +139,6 @@
     EntityUsage="InvItem"
     AliasName="QTY"/>
   <ViewAttribute
-    Name="InstrumentNo"
-    PrecisionRule="true"
-    EntityAttrName="InstrumentNo"
-    EntityUsage="InvItem"
-    AliasName="INSTRUMENT_NO"/>
-  <ViewAttribute
-    Name="ModelNo"
-    PrecisionRule="true"
-    EntityAttrName="ModelNo"
-    EntityUsage="InvItem"
-    AliasName="MODEL_NO"/>
-  <ViewAttribute
     Name="CompanyId"
     IsUnique="true"
     PrecisionRule="true"
