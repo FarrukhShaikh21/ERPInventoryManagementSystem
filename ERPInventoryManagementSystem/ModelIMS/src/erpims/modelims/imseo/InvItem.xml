@@ -764,6 +764,39 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="EndDate"
+    ColumnName="END_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="INV_ITEM">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.EndDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    IsNotNull="true"
+    ColumnName="START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="INV_ITEM">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.StartDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Key
     Name="PkInvItem"
     PrimaryKey="true">

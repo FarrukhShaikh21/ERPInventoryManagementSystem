@@ -678,7 +678,7 @@
       <property
          name="fromOutcome">ERP-QRY-ACT-INV_0003</property>
       <property
-         name="sdm:polyPoints">L50,768.35156,618.3965,737.35156,723.09766,L50</property>
+         name="sdm:polyPoints">L50,768.35156,618.3965,737.35156,719.59766,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"

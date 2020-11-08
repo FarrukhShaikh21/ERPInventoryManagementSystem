@@ -277,6 +277,19 @@
     EntityAttrName="UnSupervisedBy"
     EntityUsage="InvItem"
     AliasName="UN_SUPERVISED_BY"/>
+  <ViewAttribute
+    Name="StartDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="InvItem"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="InvItem"
+    AliasName="END_DATE"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
