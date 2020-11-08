@@ -632,4 +632,52 @@
       <property
          name="sdm:polyPoints">R50,612.5,435.6953,717.5,477.74707,L50</property>
    </ControlFlowCase>
+   <View
+      id="View59">
+      <property
+         name="activityId">INV_0003_EDIT</property>
+      <property
+         name="page">/INV_0003_EDIT.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INV_0003_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">614.09766</property>
+      <property
+         name="x">589.6904</property>
+   </View>
+   <MethodCall
+      id="MethodCall60">
+      <property
+         name="activityId">ExeAdminCompByCompINV_0003_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeAdminCompByCompINV_0003_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">618.7471</property>
+      <property
+         name="x">809.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase61"
+      from="View55"
+      to="MethodCall60">
+      <property
+         name="fromOutcome">ERP-QRY-ACT-INV_0003</property>
+      <property
+         name="sdm:polyPoints">B50,758.5,531.7471,809.35156,564.3965,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase62"
+      from="MethodCall60"
+      to="View59">
+      <property
+         name="fromOutcome">ERP-QRY-ACT-INV_0003</property>
+      <property
+         name="sdm:polyPoints">L50,768.35156,618.3965,630.6904,613.7471,R50</property>
+   </ControlFlowCase>
 </SDM>

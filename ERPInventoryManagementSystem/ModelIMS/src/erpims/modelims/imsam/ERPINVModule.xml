@@ -47,7 +47,11 @@
   </ViewUsage>
   <ViewUsage
     Name="InvItemByCompanyRO"
-    ViewObjectName="erpims.modelims.imsvo.InvItemVO"/>
+    ViewObjectName="erpims.modelims.imsvo.InvItemVO">
+    <ViewCriteriaUsage
+      Name="InvItemByCompanyByIDVC"
+      FullName="erpims.modelims.imsvo.InvItemVO.InvItemByCompanyByIDVC"/>
+  </ViewUsage>
   <ViewUsage
     Name="InvItemCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"/>
