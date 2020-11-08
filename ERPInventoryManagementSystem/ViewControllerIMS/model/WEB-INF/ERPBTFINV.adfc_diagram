@@ -509,7 +509,7 @@
       <property
          name="fromOutcome">ERP-ADD-ACT-INV_0002</property>
       <property
-         name="sdm:polyPoints">R54,384.88635,771.5459,590.01953,736.09766,L50</property>
+         name="sdm:polyPoints">R54,377.9012,771.5459,556.01953,792.6953,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall49">
@@ -520,9 +520,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">736.44824</property>
+         name="y">793.0459</property>
       <property
-         name="x">631.01953</property>
+         name="x">597.01953</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
@@ -532,7 +532,7 @@
       <property
          name="fromOutcome">ERP-ADD-ACT-INV_0002</property>
       <property
-         name="sdm:polyPoints">B50,631.01953,790.09766,646.69434,926.0459,T50</property>
+         name="sdm:polyPoints">B50,597.01953,846.6953,646.69434,926.0459,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall50">
@@ -713,4 +713,19 @@
       <property
          name="sdm:polyPoints">L54,731.111,726.59766,630.6904,613.7471,R50</property>
    </ControlFlowCase>
+   <View
+      id="View66">
+      <property
+         name="activityId">INV_0003_EDIT_EDIT</property>
+      <property
+         name="page">/INV_0003_EDIT_EDIT.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INV_0003_EDIT_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">829.09766</property>
+      <property
+         name="x">904.69434</property>
+   </View>
 </SDM>
