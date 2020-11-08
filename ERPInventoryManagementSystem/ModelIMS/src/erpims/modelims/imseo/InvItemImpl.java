@@ -66,6 +66,7 @@ public class InvItemImpl extends ERPEntityImpl {
         UnSupervisedBy,
         EndDate,
         StartDate,
+        txtCOACOGSDescription,
         GlChartOfAccounts;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -134,6 +135,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int UNSUPERVISEDBY = AttributesEnum.UnSupervisedBy.index();
     public static final int ENDDATE = AttributesEnum.EndDate.index();
     public static final int STARTDATE = AttributesEnum.StartDate.index();
+    public static final int TXTCOACOGSDESCRIPTION = AttributesEnum.txtCOACOGSDescription.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
 
     /**
@@ -836,6 +838,22 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setStartDate(Date value) {
         setAttributeInternal(STARTDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for txtCOACOGSDescription, using the alias name txtCOACOGSDescription.
+     * @return the value of txtCOACOGSDescription
+     */
+    public String gettxtCOACOGSDescription() {
+        return (String) getAttributeInternal(TXTCOACOGSDESCRIPTION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtCOACOGSDescription.
+     * @param value value to set the txtCOACOGSDescription
+     */
+    public void settxtCOACOGSDescription(String value) {
+        setAttributeInternal(TXTCOACOGSDESCRIPTION, value);
     }
 
     /**
