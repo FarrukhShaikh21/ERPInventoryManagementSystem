@@ -157,6 +157,15 @@
         <fixed-outcome>ERP-QRY-ACT-INV_0002</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="ExeCompINV_0002">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-INV_0003</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="INV_0003">
+      <page>/INV_0003.jsf</page>
+    </view>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -212,6 +221,10 @@
       <control-flow-case id="__34">
         <from-outcome>ERP-ACT-INV_0002</from-outcome>
         <to-activity-id>ExeAdmCompINV_0002</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__57">
+        <from-outcome>ERP-ACT-INV_0003</from-outcome>
+        <to-activity-id>ExeCompINV_0002</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__24">
@@ -318,6 +331,13 @@
       <control-flow-case id="__54">
         <from-outcome>ERP-QRY-ACT-INV_0002</from-outcome>
         <to-activity-id>INV_0002_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__58">
+      <from-activity-id>ExeCompINV_0002</from-activity-id>
+      <control-flow-case id="__59">
+        <from-outcome>ERP-ACT-INV_0003</from-outcome>
+        <to-activity-id>INV_0003</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

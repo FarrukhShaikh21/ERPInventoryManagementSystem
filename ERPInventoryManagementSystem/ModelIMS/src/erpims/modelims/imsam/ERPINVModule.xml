@@ -45,4 +45,10 @@
       Name="InvUnitTypeByUnitTypeSnoVC"
       FullName="erpims.modelims.imsvo.InvUnitTypeVO.InvUnitTypeByUnitTypeSnoVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="InvItemByCompanyRO"
+    ViewObjectName="erpims.modelims.imsvo.InvItemVO"/>
+  <ViewUsage
+    Name="InvItemCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvItemVO"/>
 </AppModule>
