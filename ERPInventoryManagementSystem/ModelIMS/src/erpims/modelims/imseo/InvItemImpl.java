@@ -69,9 +69,11 @@ public class InvItemImpl extends ERPEntityImpl {
         txtCOACOGSDescription,
         txtCoaBillPriceVarDescription,
         txtCoaExRateVarDescription,
+        txtQuantityAdjustDescription,
         GlChartOfAccounts,
         GlChartOfAccounts1,
-        GlChartOfAccounts2;
+        GlChartOfAccounts2,
+        GlChartOfAccounts3;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -142,9 +144,11 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int TXTCOACOGSDESCRIPTION = AttributesEnum.txtCOACOGSDescription.index();
     public static final int TXTCOABILLPRICEVARDESCRIPTION = AttributesEnum.txtCoaBillPriceVarDescription.index();
     public static final int TXTCOAEXRATEVARDESCRIPTION = AttributesEnum.txtCoaExRateVarDescription.index();
+    public static final int TXTQUANTITYADJUSTDESCRIPTION = AttributesEnum.txtQuantityAdjustDescription.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
+    public static final int GLCHARTOFACCOUNTS3 = AttributesEnum.GlChartOfAccounts3.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -897,6 +901,22 @@ public class InvItemImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtQuantityAdjustDescription, using the alias name txtQuantityAdjustDescription.
+     * @return the value of txtQuantityAdjustDescription
+     */
+    public String gettxtQuantityAdjustDescription() {
+        return (String) getAttributeInternal(TXTQUANTITYADJUSTDESCRIPTION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtQuantityAdjustDescription.
+     * @param value value to set the txtQuantityAdjustDescription
+     */
+    public void settxtQuantityAdjustDescription(String value) {
+        setAttributeInternal(TXTQUANTITYADJUSTDESCRIPTION, value);
+    }
+
+    /**
      * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
      */
     public GlChartOfAccountsImpl getGlChartOfAccounts() {
@@ -938,6 +958,21 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setGlChartOfAccounts2(GlChartOfAccountsImpl value) {
         setAttributeInternal(GLCHARTOFACCOUNTS2, value);
+    }
+
+
+    /**
+     * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public GlChartOfAccountsImpl getGlChartOfAccounts3() {
+        return (GlChartOfAccountsImpl) getAttributeInternal(GLCHARTOFACCOUNTS3);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public void setGlChartOfAccounts3(GlChartOfAccountsImpl value) {
+        setAttributeInternal(GLCHARTOFACCOUNTS3, value);
     }
 
 

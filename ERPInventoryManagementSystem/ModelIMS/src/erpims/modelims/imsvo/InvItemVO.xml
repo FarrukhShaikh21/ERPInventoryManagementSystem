@@ -101,6 +101,31 @@
     <DisplayCriteria
       Name="GlChartOfAccountsVOFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtQuantityAdjustDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtQuantityAdjustDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaQuantityAdjustment"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -406,7 +431,23 @@
     EntityAttrName="txtCoaExRateVarDescription"
     EntityUsage="InvItem"
     AliasName="TXT_COA_EX_RATE_VAR_DESCRIPTIO"
-    LOVName="LovtxtCoaExRateVarDescription">
+    LOVName="LovtxtCoaExRateVarDescription"
+    IsQueriable="false"
+    IsPersistent="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtQuantityAdjustDescription"
+    PrecisionRule="true"
+    EntityAttrName="txtQuantityAdjustDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_QUANTITY_ADJUST_DESCRIPTIO"
+    LOVName="LovtxtQuantityAdjustDescription">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -501,6 +542,12 @@
   <ViewLinkAccessor
     Name="GlChartOfAccountsVO2"
     ViewLink="erpims.modelims.imsvo.GlCOAInvItemExchangeRateVarCOAIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO3"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemQuantityAdjustCOAIDVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
