@@ -825,7 +825,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_ITEM">
+    IsPersistent="false"
+    IsQueriable="false">
     <TransientExpression
       trustMode="untrusted"><![CDATA[GlChartOfAccounts?.Description]]></TransientExpression>
     <Properties>
@@ -848,7 +849,15 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_ITEM"/>
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[GlChartOfAccounts1?.Description]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="CoaBillPriceVariance"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="GlChartOfAccounts"
     Association="erpims.modelims.imseo.GlCOAInvItemCostOfGoodsSoldCOACogsIDAsso"

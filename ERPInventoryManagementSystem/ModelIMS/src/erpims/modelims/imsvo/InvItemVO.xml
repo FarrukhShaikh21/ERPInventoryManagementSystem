@@ -51,6 +51,31 @@
     <DisplayCriteria
       Name="GlChartOfAccountsVOFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtCoaBillPriceVarDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCoaBillPriceVarDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaBillPriceVariance"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -324,7 +349,25 @@
     EntityAttrName="txtCOACOGSDescription"
     EntityUsage="InvItem"
     AliasName="TXT_COACOGSDESCRIPTION"
-    LOVName="LovtxtCOACOGSDescription">
+    LOVName="LovtxtCOACOGSDescription"
+    IsQueriable="false"
+    IsPersistent="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtCoaBillPriceVarDescription"
+    PrecisionRule="true"
+    EntityAttrName="txtCoaBillPriceVarDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_COA_BILL_PRICE_VAR_DESCRIP"
+    IsQueriable="false"
+    IsPersistent="false"
+    LOVName="LovtxtCoaBillPriceVarDescription">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
