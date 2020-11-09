@@ -21,6 +21,36 @@
     Name="P_ADF_ITEM_ID"
     Kind="viewcriteria"
     Type="java.lang.Integer"/>
+  <ViewAccessor
+    Name="AccGlChartOfAccountsVO"
+    ViewObjectName="erpfms.modelfms.fmsvo.GlChartOfAccountsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtCOACOGSDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCOACOGSDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaCostOfGoodsSold"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+      <Item Value="txtParentCOADescription"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -288,6 +318,20 @@
     EntityAttrName="EndDate"
     EntityUsage="InvItem"
     AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="txtCOACOGSDescription"
+    PrecisionRule="true"
+    EntityAttrName="txtCOACOGSDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_COACOGSDESCRIPTION"
+    LOVName="LovtxtCOACOGSDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -363,6 +407,12 @@
   <ViewLinkAccessor
     Name="GlChartOfAccountsVO"
     ViewLink="erpims.modelims.imsvo.GlCOAInvItemCostOfGoodsSoldCOACogsIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO1"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemCoaBillPriceVarCOACogsIDVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

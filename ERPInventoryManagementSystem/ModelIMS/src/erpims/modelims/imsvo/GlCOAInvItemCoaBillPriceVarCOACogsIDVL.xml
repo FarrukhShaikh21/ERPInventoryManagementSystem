@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GlCOAInvItemCoaBillPriceVarCOACogsIDVL"
+  Version="12.1.3.2.1"
+  InheritPersonalization="merge"
+  EntityAssociation="erpims.modelims.imseo.GlCOAInvItemCoaBillPriceVarCOACogsIDAsso">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpims.modelims.imsvo.GlCOAInvItemCoaBillPriceVarCOACogsIDVL_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="GlChartOfAccountsVO1"
+    Cardinality="1"
+    Source="true"
+    Owner="erpfms.modelfms.fmsvo.GlChartOfAccountsVO">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="GlChartOfAccountsVO1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpfms.modelfms.fmsvo.GlChartOfAccountsVO.ChartOfAccountId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="InvItemVO"
+    Cardinality="-1"
+    Owner="erpims.modelims.imsvo.InvItemVO">
+    <DesignTime>
+      <Attr Name="_accessor" Value="false"/>
+      <Attr Name="_finderName" Value="InvItemVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsvo.InvItemVO.CoaPurchasePriceVariance"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
+</ViewLink>

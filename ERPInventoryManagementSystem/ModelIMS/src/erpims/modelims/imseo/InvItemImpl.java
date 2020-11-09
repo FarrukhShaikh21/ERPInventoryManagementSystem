@@ -67,7 +67,9 @@ public class InvItemImpl extends ERPEntityImpl {
         EndDate,
         StartDate,
         txtCOACOGSDescription,
-        GlChartOfAccounts;
+        txtCoaBillPriceVarDescription,
+        GlChartOfAccounts,
+        GlChartOfAccounts1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -136,7 +138,9 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int ENDDATE = AttributesEnum.EndDate.index();
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int TXTCOACOGSDESCRIPTION = AttributesEnum.txtCOACOGSDescription.index();
+    public static final int TXTCOABILLPRICEVARDESCRIPTION = AttributesEnum.txtCoaBillPriceVarDescription.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
+    public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -857,6 +861,22 @@ public class InvItemImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtCoaBillPriceVarDescription, using the alias name txtCoaBillPriceVarDescription.
+     * @return the value of txtCoaBillPriceVarDescription
+     */
+    public String gettxtCoaBillPriceVarDescription() {
+        return (String) getAttributeInternal(TXTCOABILLPRICEVARDESCRIPTION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtCoaBillPriceVarDescription.
+     * @param value value to set the txtCoaBillPriceVarDescription
+     */
+    public void settxtCoaBillPriceVarDescription(String value) {
+        setAttributeInternal(TXTCOABILLPRICEVARDESCRIPTION, value);
+    }
+
+    /**
      * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
      */
     public GlChartOfAccountsImpl getGlChartOfAccounts() {
@@ -868,6 +888,21 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setGlChartOfAccounts(GlChartOfAccountsImpl value) {
         setAttributeInternal(GLCHARTOFACCOUNTS, value);
+    }
+
+
+    /**
+     * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public GlChartOfAccountsImpl getGlChartOfAccounts1() {
+        return (GlChartOfAccountsImpl) getAttributeInternal(GLCHARTOFACCOUNTS1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public void setGlChartOfAccounts1(GlChartOfAccountsImpl value) {
+        setAttributeInternal(GLCHARTOFACCOUNTS1, value);
     }
 
 
