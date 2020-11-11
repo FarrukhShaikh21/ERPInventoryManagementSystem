@@ -70,10 +70,12 @@ public class InvItemImpl extends ERPEntityImpl {
         txtCoaBillPriceVarDescription,
         txtCoaExRateVarDescription,
         txtQuantityAdjustDescription,
+        txtCoaWipDescription,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
-        GlChartOfAccounts3;
+        GlChartOfAccounts3,
+        GlChartOfAccounts4;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -145,10 +147,12 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int TXTCOABILLPRICEVARDESCRIPTION = AttributesEnum.txtCoaBillPriceVarDescription.index();
     public static final int TXTCOAEXRATEVARDESCRIPTION = AttributesEnum.txtCoaExRateVarDescription.index();
     public static final int TXTQUANTITYADJUSTDESCRIPTION = AttributesEnum.txtQuantityAdjustDescription.index();
+    public static final int TXTCOAWIPDESCRIPTION = AttributesEnum.txtCoaWipDescription.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
     public static final int GLCHARTOFACCOUNTS3 = AttributesEnum.GlChartOfAccounts3.index();
+    public static final int GLCHARTOFACCOUNTS4 = AttributesEnum.GlChartOfAccounts4.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -916,6 +920,23 @@ public class InvItemImpl extends ERPEntityImpl {
         setAttributeInternal(TXTQUANTITYADJUSTDESCRIPTION, value);
     }
 
+
+    /**
+     * Gets the attribute value for txtCoaWipDescription, using the alias name txtCoaWipDescription.
+     * @return the value of txtCoaWipDescription
+     */
+    public String gettxtCoaWipDescription() {
+        return (String) getAttributeInternal(TXTCOAWIPDESCRIPTION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtCoaWipDescription.
+     * @param value value to set the txtCoaWipDescription
+     */
+    public void settxtCoaWipDescription(String value) {
+        setAttributeInternal(TXTCOAWIPDESCRIPTION, value);
+    }
+
     /**
      * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
      */
@@ -973,6 +994,21 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setGlChartOfAccounts3(GlChartOfAccountsImpl value) {
         setAttributeInternal(GLCHARTOFACCOUNTS3, value);
+    }
+
+
+    /**
+     * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public GlChartOfAccountsImpl getGlChartOfAccounts4() {
+        return (GlChartOfAccountsImpl) getAttributeInternal(GLCHARTOFACCOUNTS4);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public void setGlChartOfAccounts4(GlChartOfAccountsImpl value) {
+        setAttributeInternal(GLCHARTOFACCOUNTS4, value);
     }
 
 

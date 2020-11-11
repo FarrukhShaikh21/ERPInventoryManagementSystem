@@ -455,6 +455,14 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtCoaWipDescription"
+    PrecisionRule="true"
+    EntityAttrName="txtCoaWipDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_COA_WIP_DESCRIPTION"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -548,6 +556,12 @@
   <ViewLinkAccessor
     Name="GlChartOfAccountsVO3"
     ViewLink="erpims.modelims.imsvo.GlCOAInvItemQuantityAdjustCOAIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO4"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemWIPCOAIDVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
