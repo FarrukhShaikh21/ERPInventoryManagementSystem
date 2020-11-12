@@ -481,6 +481,14 @@
     EntityAttrName="txtCoaShipmentDescription"
     EntityUsage="InvItem"
     AliasName="TXT_COA_SHIPMENT_DESCRIPTION"/>
+  <ViewAttribute
+    Name="txtCoaSaleRetVarDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCoaSaleRetVarDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_COA_SALE_RET_VAR_DESCRIPTI"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -592,6 +600,12 @@
   <ViewLinkAccessor
     Name="GlChartOfAccountsVO6"
     ViewLink="erpims.modelims.imsvo.GlCOAInvItemCOAShipmentCOAIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO7"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemCoaSaleRetVarCOAIDVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
