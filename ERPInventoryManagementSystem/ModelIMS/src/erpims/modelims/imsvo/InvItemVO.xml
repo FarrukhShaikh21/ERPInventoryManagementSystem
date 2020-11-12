@@ -447,7 +447,9 @@
     EntityAttrName="txtQuantityAdjustDescription"
     EntityUsage="InvItem"
     AliasName="TXT_QUANTITY_ADJUST_DESCRIPTIO"
-    LOVName="LovtxtQuantityAdjustDescription">
+    LOVName="LovtxtQuantityAdjustDescription"
+    IsQueriable="false"
+    IsPersistent="false">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -471,6 +473,14 @@
     EntityAttrName="txtCOAIncomeDescription"
     EntityUsage="InvItem"
     AliasName="TXT_COAINCOME_DESCRIPTION"/>
+  <ViewAttribute
+    Name="txtCoaShipmentDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCoaShipmentDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_COA_SHIPMENT_DESCRIPTION"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -576,6 +586,12 @@
   <ViewLinkAccessor
     Name="GlChartOfAccountsVO5"
     ViewLink="erpims.modelims.imsvo.GlCOAInvItemCOAIncomeCOAIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO6"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemCOAShipmentCOAIDVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
