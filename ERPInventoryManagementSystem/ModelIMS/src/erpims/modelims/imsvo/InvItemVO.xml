@@ -756,4 +756,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO12"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemCoaAssetCOAIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>
