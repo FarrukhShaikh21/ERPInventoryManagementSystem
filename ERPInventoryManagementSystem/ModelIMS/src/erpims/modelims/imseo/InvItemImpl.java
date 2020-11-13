@@ -77,6 +77,8 @@ public class InvItemImpl extends ERPEntityImpl {
         txtPurchaseRetDescription,
         txtCoaPurchPriceVariance,
         txtCoaInventoryDescription,
+        txtGainLossDescription,
+        txtCoaAssetDescription,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
@@ -168,6 +170,8 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int TXTPURCHASERETDESCRIPTION = AttributesEnum.txtPurchaseRetDescription.index();
     public static final int TXTCOAPURCHPRICEVARIANCE = AttributesEnum.txtCoaPurchPriceVariance.index();
     public static final int TXTCOAINVENTORYDESCRIPTION = AttributesEnum.txtCoaInventoryDescription.index();
+    public static final int TXTGAINLOSSDESCRIPTION = AttributesEnum.txtGainLossDescription.index();
+    public static final int TXTCOAASSETDESCRIPTION = AttributesEnum.txtCoaAssetDescription.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
@@ -1059,6 +1063,38 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void settxtCoaInventoryDescription(String value) {
         setAttributeInternal(TXTCOAINVENTORYDESCRIPTION, value);
+    }
+
+    /**
+     * Gets the attribute value for txtGainLossDescription, using the alias name txtGainLossDescription.
+     * @return the value of txtGainLossDescription
+     */
+    public String gettxtGainLossDescription() {
+        return (String) getAttributeInternal(TXTGAINLOSSDESCRIPTION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtGainLossDescription.
+     * @param value value to set the txtGainLossDescription
+     */
+    public void settxtGainLossDescription(String value) {
+        setAttributeInternal(TXTGAINLOSSDESCRIPTION, value);
+    }
+
+    /**
+     * Gets the attribute value for txtCoaAssetDescription, using the alias name txtCoaAssetDescription.
+     * @return the value of txtCoaAssetDescription
+     */
+    public String gettxtCoaAssetDescription() {
+        return (String) getAttributeInternal(TXTCOAASSETDESCRIPTION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtCoaAssetDescription.
+     * @param value value to set the txtCoaAssetDescription
+     */
+    public void settxtCoaAssetDescription(String value) {
+        setAttributeInternal(TXTCOAASSETDESCRIPTION, value);
     }
 
     /**

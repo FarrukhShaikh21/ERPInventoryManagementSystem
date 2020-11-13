@@ -612,6 +612,22 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtCoaAssetDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCoaAssetDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_COA_ASSET_DESCRIPTION"/>
+  <ViewAttribute
+    Name="txtGainLossDescription"
+    PrecisionRule="true"
+    EntityAttrName="txtGainLossDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_GAIN_LOSS_DESCRIPTION"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"

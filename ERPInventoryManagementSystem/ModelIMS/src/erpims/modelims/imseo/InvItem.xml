@@ -808,7 +808,7 @@
     ColumnType="DATE"
     TableName="INV_ITEM">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -828,7 +828,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -852,7 +852,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts1?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts1?.Description]]></TransientExpression>
     <Dependencies>
       <Item
         Value="CoaBillPriceVariance"/>
@@ -874,7 +874,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts2?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts2?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -898,7 +898,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts3?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts3?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -918,7 +918,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts4?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts4?.Description]]></TransientExpression>
     <Dependencies>
       <Item
         Value="CoaWip"/>
@@ -942,7 +942,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts5?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts5?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -962,7 +962,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts6?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts6?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -982,7 +982,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts7?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts7?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -1002,7 +1002,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts8?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts8?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -1022,7 +1022,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts9?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts9?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -1042,11 +1042,52 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[GlChartOfAccounts10?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[GlChartOfAccounts10?.Description]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="erpims.modelims.imseo.InvItem.txtCoaInventoryDescription_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtGainLossDescription"
+    Precision="80"
+    ColumnName="TXT_GAIN_LOSS_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_ITEM"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[GlChartOfAccounts11?.Description]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.txtGainLossDescription_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtCoaAssetDescription"
+    Precision="80"
+    ColumnName="TXT_COA_ASSET_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[GlChartOfAccounts12?.Description]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.txtCoaAssetDescription_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>
