@@ -74,6 +74,7 @@ public class InvItemImpl extends ERPEntityImpl {
         txtCOAIncomeDescription,
         txtCoaShipmentDescription,
         txtCoaSaleRetVarDescription,
+        txtPurchaseRetDescription,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
@@ -81,7 +82,8 @@ public class InvItemImpl extends ERPEntityImpl {
         GlChartOfAccounts4,
         GlChartOfAccounts5,
         GlChartOfAccounts6,
-        GlChartOfAccounts7;
+        GlChartOfAccounts7,
+        GlChartOfAccounts8;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -157,6 +159,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int TXTCOAINCOMEDESCRIPTION = AttributesEnum.txtCOAIncomeDescription.index();
     public static final int TXTCOASHIPMENTDESCRIPTION = AttributesEnum.txtCoaShipmentDescription.index();
     public static final int TXTCOASALERETVARDESCRIPTION = AttributesEnum.txtCoaSaleRetVarDescription.index();
+    public static final int TXTPURCHASERETDESCRIPTION = AttributesEnum.txtPurchaseRetDescription.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
@@ -165,6 +168,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int GLCHARTOFACCOUNTS5 = AttributesEnum.GlChartOfAccounts5.index();
     public static final int GLCHARTOFACCOUNTS6 = AttributesEnum.GlChartOfAccounts6.index();
     public static final int GLCHARTOFACCOUNTS7 = AttributesEnum.GlChartOfAccounts7.index();
+    public static final int GLCHARTOFACCOUNTS8 = AttributesEnum.GlChartOfAccounts8.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -998,6 +1002,22 @@ public class InvItemImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtPurchaseRetDescription, using the alias name txtPurchaseRetDescription.
+     * @return the value of txtPurchaseRetDescription
+     */
+    public String gettxtPurchaseRetDescription() {
+        return (String) getAttributeInternal(TXTPURCHASERETDESCRIPTION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtPurchaseRetDescription.
+     * @param value value to set the txtPurchaseRetDescription
+     */
+    public void settxtPurchaseRetDescription(String value) {
+        setAttributeInternal(TXTPURCHASERETDESCRIPTION, value);
+    }
+
+    /**
      * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
      */
     public GlChartOfAccountsImpl getGlChartOfAccounts() {
@@ -1114,6 +1134,21 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setGlChartOfAccounts7(GlChartOfAccountsImpl value) {
         setAttributeInternal(GLCHARTOFACCOUNTS7, value);
+    }
+
+
+    /**
+     * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public GlChartOfAccountsImpl getGlChartOfAccounts8() {
+        return (GlChartOfAccountsImpl) getAttributeInternal(GLCHARTOFACCOUNTS8);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public void setGlChartOfAccounts8(GlChartOfAccountsImpl value) {
+        setAttributeInternal(GLCHARTOFACCOUNTS8, value);
     }
 
 

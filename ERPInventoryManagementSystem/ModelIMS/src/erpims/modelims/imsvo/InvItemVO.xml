@@ -126,6 +126,31 @@
     <DisplayCriteria
       Name="GlChartOfAccountsVOFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtCoaWipDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCoaWipDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaPurchaseReturnVariance"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -464,7 +489,15 @@
     EntityUsage="InvItem"
     AliasName="TXT_COA_WIP_DESCRIPTION"
     IsQueriable="false"
-    IsPersistent="false"/>
+    IsPersistent="false"
+    LOVName="LovtxtCoaWipDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtCOAIncomeDescription"
     IsQueriable="false"
@@ -489,6 +522,14 @@
     EntityAttrName="txtCoaSaleRetVarDescription"
     EntityUsage="InvItem"
     AliasName="TXT_COA_SALE_RET_VAR_DESCRIPTI"/>
+  <ViewAttribute
+    Name="txtPurchaseRetDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtPurchaseRetDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_PURCHASE_RET_DESCRIPTION"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -606,6 +647,12 @@
   <ViewLinkAccessor
     Name="GlChartOfAccountsVO7"
     ViewLink="erpims.modelims.imsvo.GlCOAInvItemCoaSaleRetVarCOAIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO8"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemCOAPurchaseRetCOAIDVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
