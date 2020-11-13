@@ -83,7 +83,8 @@ public class InvItemImpl extends ERPEntityImpl {
         GlChartOfAccounts5,
         GlChartOfAccounts6,
         GlChartOfAccounts7,
-        GlChartOfAccounts8;
+        GlChartOfAccounts8,
+        GlChartOfAccounts9;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -169,6 +170,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int GLCHARTOFACCOUNTS6 = AttributesEnum.GlChartOfAccounts6.index();
     public static final int GLCHARTOFACCOUNTS7 = AttributesEnum.GlChartOfAccounts7.index();
     public static final int GLCHARTOFACCOUNTS8 = AttributesEnum.GlChartOfAccounts8.index();
+    public static final int GLCHARTOFACCOUNTS9 = AttributesEnum.GlChartOfAccounts9.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1149,6 +1151,21 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setGlChartOfAccounts8(GlChartOfAccountsImpl value) {
         setAttributeInternal(GLCHARTOFACCOUNTS8, value);
+    }
+
+
+    /**
+     * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public GlChartOfAccountsImpl getGlChartOfAccounts9() {
+        return (GlChartOfAccountsImpl) getAttributeInternal(GLCHARTOFACCOUNTS9);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
+     */
+    public void setGlChartOfAccounts9(GlChartOfAccountsImpl value) {
+        setAttributeInternal(GLCHARTOFACCOUNTS9, value);
     }
 
 
