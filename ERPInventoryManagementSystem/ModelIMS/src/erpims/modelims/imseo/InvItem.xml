@@ -1012,6 +1012,27 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtCoaPurchPriceVariance"
+    Precision="80"
+    ColumnName="TXT_COA_PURCH_PRICE_VARIANCE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_ITEM"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[GlChartOfAccounts9?.Description]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.txtCoaPurchPriceVariance_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="GlChartOfAccounts"
     Association="erpims.modelims.imseo.GlCOAInvItemCostOfGoodsSoldCOACogsIDAsso"

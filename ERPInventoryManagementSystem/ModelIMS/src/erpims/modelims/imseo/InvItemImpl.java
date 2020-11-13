@@ -75,6 +75,7 @@ public class InvItemImpl extends ERPEntityImpl {
         txtCoaShipmentDescription,
         txtCoaSaleRetVarDescription,
         txtPurchaseRetDescription,
+        txtCoaPurchPriceVariance,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
@@ -161,6 +162,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int TXTCOASHIPMENTDESCRIPTION = AttributesEnum.txtCoaShipmentDescription.index();
     public static final int TXTCOASALERETVARDESCRIPTION = AttributesEnum.txtCoaSaleRetVarDescription.index();
     public static final int TXTPURCHASERETDESCRIPTION = AttributesEnum.txtPurchaseRetDescription.index();
+    public static final int TXTCOAPURCHPRICEVARIANCE = AttributesEnum.txtCoaPurchPriceVariance.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
@@ -1017,6 +1019,22 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void settxtPurchaseRetDescription(String value) {
         setAttributeInternal(TXTPURCHASERETDESCRIPTION, value);
+    }
+
+    /**
+     * Gets the attribute value for txtCoaPurchPriceVariance, using the alias name txtCoaPurchPriceVariance.
+     * @return the value of txtCoaPurchPriceVariance
+     */
+    public String gettxtCoaPurchPriceVariance() {
+        return (String) getAttributeInternal(TXTCOAPURCHPRICEVARIANCE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtCoaPurchPriceVariance.
+     * @param value value to set the txtCoaPurchPriceVariance
+     */
+    public void settxtCoaPurchPriceVariance(String value) {
+        setAttributeInternal(TXTCOAPURCHPRICEVARIANCE, value);
     }
 
     /**
