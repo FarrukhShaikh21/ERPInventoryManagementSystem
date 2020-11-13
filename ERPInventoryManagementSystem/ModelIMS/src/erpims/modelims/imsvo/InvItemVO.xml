@@ -176,6 +176,31 @@
     <DisplayCriteria
       Name="GlChartOfAccountsVOFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtCoaInventoryDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCoaInventoryDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaInventory"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -571,6 +596,22 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtCoaInventoryDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCoaInventoryDescription"
+    EntityUsage="InvItem"
+    AliasName="TXT_COA_INVENTORY_DESCRIPTION"
+    LOVName="LovtxtCoaInventoryDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -700,6 +741,12 @@
   <ViewLinkAccessor
     Name="GlChartOfAccountsVO9"
     ViewLink="erpims.modelims.imsvo.GlCOAInvItemCOAPurchPriceVarCOAIDVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlChartOfAccountsVO10"
+    ViewLink="erpims.modelims.imsvo.GlCOAInvItemCOAInventoryCOAIDVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
