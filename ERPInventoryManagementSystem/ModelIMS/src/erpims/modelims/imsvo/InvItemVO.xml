@@ -201,6 +201,81 @@
     <DisplayCriteria
       Name="GlChartOfAccountsVOFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtCoaAssetDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCoaAssetDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaAsset"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtPurchaseRetDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtPurchaseRetDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaPurchaseReturnVariance"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtCoaSaleRetVarDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCoaSaleRetVarDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaSaleReturnVariance"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -571,7 +646,15 @@
     PrecisionRule="true"
     EntityAttrName="txtCoaSaleRetVarDescription"
     EntityUsage="InvItem"
-    AliasName="TXT_COA_SALE_RET_VAR_DESCRIPTI"/>
+    AliasName="TXT_COA_SALE_RET_VAR_DESCRIPTI"
+    LOVName="LovtxtCoaSaleRetVarDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtPurchaseRetDescription"
     IsQueriable="false"
@@ -579,7 +662,15 @@
     PrecisionRule="true"
     EntityAttrName="txtPurchaseRetDescription"
     EntityUsage="InvItem"
-    AliasName="TXT_PURCHASE_RET_DESCRIPTION"/>
+    AliasName="TXT_PURCHASE_RET_DESCRIPTION"
+    LOVName="LovtxtPurchaseRetDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtCoaPurchPriceVariance"
     IsQueriable="false"
@@ -619,7 +710,15 @@
     PrecisionRule="true"
     EntityAttrName="txtCoaAssetDescription"
     EntityUsage="InvItem"
-    AliasName="TXT_COA_ASSET_DESCRIPTION"/>
+    AliasName="TXT_COA_ASSET_DESCRIPTION"
+    LOVName="LovtxtCoaAssetDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtGainLossDescription"
     PrecisionRule="true"
