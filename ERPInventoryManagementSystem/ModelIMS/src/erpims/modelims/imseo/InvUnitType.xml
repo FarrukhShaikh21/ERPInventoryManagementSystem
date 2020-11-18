@@ -123,8 +123,7 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_UNIT_TYPE">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[erpglobals.modelglobals.ERPGlobalPLSQLClass.doGetModelGlobalDefCompany()]]></TransientExpression>
+    <TransientExpression><![CDATA[erpglobals.modelglobals.ERPGlobalPLSQLClass.doGetModelGlobalDefCompany()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -357,6 +356,13 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <AccessorAttribute
+    Name="InvItem"
+    Association="erpims.modelims.imseo.InvUnitInvItemUnitTypeSnoAsso"
+    AssociationEnd="erpims.modelims.imseo.InvUnitInvItemUnitTypeSnoAsso.InvItem"
+    AssociationOtherEnd="erpims.modelims.imseo.InvUnitInvItemUnitTypeSnoAsso.InvUnitType"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkInvUnitType"
     PrimaryKey="true">

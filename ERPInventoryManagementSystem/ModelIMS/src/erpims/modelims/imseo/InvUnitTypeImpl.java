@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
 // ---------------------------------------------------------------------
@@ -38,7 +39,8 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
         SupervisedDate,
         UnSupervisedBy,
         UnSupervisedDate,
-        OpenDate;
+        OpenDate,
+        InvItem;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -62,6 +64,7 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
         }
     }
 
+
     public static final int UNITTYPESNO = AttributesEnum.UnitTypeSno.index();
     public static final int UNITTYPESHORTCODE = AttributesEnum.UnitTypeShortCode.index();
     public static final int UNITTYPESHORTNAME = AttributesEnum.UnitTypeShortName.index();
@@ -80,6 +83,7 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
     public static final int UNSUPERVISEDBY = AttributesEnum.UnSupervisedBy.index();
     public static final int UNSUPERVISEDDATE = AttributesEnum.UnSupervisedDate.index();
     public static final int OPENDATE = AttributesEnum.OpenDate.index();
+    public static final int INVITEM = AttributesEnum.InvItem.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -93,6 +97,7 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvUnitType");
     }
+
 
     /**
      * Gets the attribute value for UnitTypeSno, using the alias name UnitTypeSno.
@@ -380,6 +385,14 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
      */
     public void setOpenDate(Date value) {
         setAttributeInternal(OPENDATE, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInvItem() {
+        return (RowIterator) getAttributeInternal(INVITEM);
     }
 
 

@@ -94,7 +94,8 @@ public class InvItemImpl extends ERPEntityImpl {
         GlChartOfAccounts9,
         GlChartOfAccounts10,
         GlChartOfAccounts11,
-        GlChartOfAccounts12;
+        GlChartOfAccounts12,
+        InvUnitType;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -189,6 +190,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int GLCHARTOFACCOUNTS10 = AttributesEnum.GlChartOfAccounts10.index();
     public static final int GLCHARTOFACCOUNTS11 = AttributesEnum.GlChartOfAccounts11.index();
     public static final int GLCHARTOFACCOUNTS12 = AttributesEnum.GlChartOfAccounts12.index();
+    public static final int INVUNITTYPE = AttributesEnum.InvUnitType.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1311,6 +1313,21 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setGlChartOfAccounts12(GlChartOfAccountsImpl value) {
         setAttributeInternal(GLCHARTOFACCOUNTS12, value);
+    }
+
+
+    /**
+     * @return the associated entity InvUnitTypeImpl.
+     */
+    public InvUnitTypeImpl getInvUnitType() {
+        return (InvUnitTypeImpl) getAttributeInternal(INVUNITTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity InvUnitTypeImpl.
+     */
+    public void setInvUnitType(InvUnitTypeImpl value) {
+        setAttributeInternal(INVUNITTYPE, value);
     }
 
 

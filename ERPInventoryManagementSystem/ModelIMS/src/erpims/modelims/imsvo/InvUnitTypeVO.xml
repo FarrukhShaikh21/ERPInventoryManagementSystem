@@ -350,4 +350,9 @@
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewLinkAccessor
+    Name="InvItemVO"
+    ViewLink="erpims.modelims.imsvo.InvUnitInvItemUnitTypeSnoVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

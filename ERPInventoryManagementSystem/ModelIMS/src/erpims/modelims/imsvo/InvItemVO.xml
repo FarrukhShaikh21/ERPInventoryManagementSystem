@@ -973,4 +973,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvUnitTypeVO"
+    ViewLink="erpims.modelims.imsvo.InvUnitInvItemUnitTypeSnoVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

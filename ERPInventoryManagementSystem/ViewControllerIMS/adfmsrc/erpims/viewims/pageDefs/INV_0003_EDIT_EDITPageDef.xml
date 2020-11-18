@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="INV_0003_EDIT_EDITPageDef"
+                Package="erpims.viewims.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvItemCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl" id="InvItemCRUDIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="ItemShortCode">
+      <AttrNames>
+        <Item Value="ItemShortCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="ItemShortName">
+      <AttrNames>
+        <Item Value="ItemShortName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovIsActive" id="IsActive" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="InvItemCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="InvItemCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="ItemId" NDValue="#{data.erpims_viewims_INV_0003_EDITPageDef.CompCode.inputValue}"
+                 NDType="java.lang.String"/>
+    </action>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPINVModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="ReorderQty">
+      <AttrNames>
+        <Item Value="ReorderQty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="MinLevel">
+      <AttrNames>
+        <Item Value="MinLevel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="MaxLevel">
+      <AttrNames>
+        <Item Value="MaxLevel"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

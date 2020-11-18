@@ -157,23 +157,59 @@
                                         <af:gridRow marginTop="5px" height="auto" id="gr6">
                                             <af:gridCell marginStart="5px" width="13%" id="gc9" halign="center"
                                                          marginEnd="5px" valign="middle">
-                                                <af:outputLabel id="ol5"/>
+                                                <af:outputLabel id="ol5" value="#{bindings.ReorderQty.hints.label}"/>
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="20%" marginEnd="5px" id="gc10"
-                                                         halign="stretch" valign="middle"/>
+                                                         halign="stretch" valign="middle">
+                                                <af:inputText value="#{bindings.ReorderQty.inputValue}"
+                                                              label="#{bindings.ReorderQty.hints.label}"
+                                                              required="#{bindings.ReorderQty.hints.mandatory}"
+                                                              columns="#{bindings.ReorderQty.hints.displayWidth}"
+                                                              maximumLength="#{bindings.ReorderQty.hints.precision}"
+                                                              shortDesc="#{bindings.ReorderQty.hints.tooltip}" id="it4"
+                                                              simple="true">
+                                                    <f:validator binding="#{bindings.ReorderQty.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.ReorderQty.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
                                             <af:gridCell id="gc39" width="13%" halign="center" marginStart="5px"
                                                          marginEnd="5px" valign="middle">
                                                 <af:outputLabel
                                                                 id="ol19"/>
                                             </af:gridCell>
                                             <af:gridCell id="gc40" width="20%" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch" valign="middle"/>
+                                                         halign="stretch" valign="middle">
+                                                <af:inputText value="#{bindings.MinLevel.inputValue}"
+                                                              label="#{bindings.MinLevel.hints.label}"
+                                                              required="#{bindings.MinLevel.hints.mandatory}"
+                                                              columns="#{bindings.MinLevel.hints.displayWidth}"
+                                                              maximumLength="#{bindings.MinLevel.hints.precision}"
+                                                              shortDesc="#{bindings.MinLevel.hints.tooltip}" id="it5"
+                                                              simple="true">
+                                                    <f:validator binding="#{bindings.MinLevel.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MinLevel.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
                                             <af:gridCell id="gc41" width="13%" halign="center" marginStart="5px"
                                                          marginEnd="5px" valign="middle">
-                                                <af:outputLabel id="ol20"/>
+                                                <af:outputLabel id="ol20" value="#{bindings.MaxLevel.hints.label}"/>
                                             </af:gridCell>
                                             <af:gridCell id="gc42" width="21%" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch" valign="middle"/>
+                                                         halign="stretch" valign="middle">
+                                                <af:inputText value="#{bindings.MaxLevel.inputValue}"
+                                                              label="#{bindings.MaxLevel.hints.label}"
+                                                              required="#{bindings.MaxLevel.hints.mandatory}"
+                                                              columns="#{bindings.MaxLevel.hints.displayWidth}"
+                                                              maximumLength="#{bindings.MaxLevel.hints.precision}"
+                                                              shortDesc="#{bindings.MaxLevel.hints.tooltip}" id="it6"
+                                                              simple="true">
+                                                    <f:validator binding="#{bindings.MaxLevel.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MaxLevel.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr7" marginBottom="5px">
                                             <af:gridCell marginStart="5px" width="13%" id="gc13" halign="center"
