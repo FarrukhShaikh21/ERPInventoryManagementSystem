@@ -220,15 +220,15 @@ public class InvItemImpl extends ERPEntityImpl {
      * Gets the attribute value for ItemShortCode, using the alias name ItemShortCode.
      * @return the value of ItemShortCode
      */
-    public Integer getItemShortCode() {
-        return (Integer) getAttributeInternal(ITEMSHORTCODE);
+    public String getItemShortCode() {
+        return (String) getAttributeInternal(ITEMSHORTCODE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ItemShortCode.
      * @param value value to set the ItemShortCode
      */
-    public void setItemShortCode(Integer value) {
+    public void setItemShortCode(String value) {
         setAttributeInternal(ITEMSHORTCODE, value);
     }
 
