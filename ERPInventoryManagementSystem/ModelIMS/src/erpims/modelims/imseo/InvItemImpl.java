@@ -4,6 +4,8 @@ import erpfms.modelfms.fmseo.GlChartOfAccountsImpl;
 
 import erpglobals.modelglobals.ERPEntityImpl;
 
+import erpglobals.modelglobals.ERPGlobalPLSQLClass;
+
 import java.math.BigDecimal;
 
 import java.sql.Date;
@@ -37,11 +39,8 @@ public class InvItemImpl extends ERPEntityImpl {
         IsActive,
         CreatedBy,
         CreatedDate,
-        LastUpdateBy,
-        LastUpdateDate,
         IsTaxable,
         TaxGroupSno,
-        Qty,
         CompanyId,
         ItemPictureName,
         CostingMethodSno,
@@ -79,6 +78,10 @@ public class InvItemImpl extends ERPEntityImpl {
         txtCoaInventoryDescription,
         txtGainLossDescription,
         txtCoaAssetDescription,
+        ItemHierarchyPath,
+        ParentItemId,
+        LastUpdatedBy,
+        LastUpdatedDate,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
@@ -130,11 +133,8 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int ISACTIVE = AttributesEnum.IsActive.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
-    public static final int LASTUPDATEBY = AttributesEnum.LastUpdateBy.index();
-    public static final int LASTUPDATEDATE = AttributesEnum.LastUpdateDate.index();
     public static final int ISTAXABLE = AttributesEnum.IsTaxable.index();
     public static final int TAXGROUPSNO = AttributesEnum.TaxGroupSno.index();
-    public static final int QTY = AttributesEnum.Qty.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int ITEMPICTURENAME = AttributesEnum.ItemPictureName.index();
     public static final int COSTINGMETHODSNO = AttributesEnum.CostingMethodSno.index();
@@ -172,6 +172,10 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int TXTCOAINVENTORYDESCRIPTION = AttributesEnum.txtCoaInventoryDescription.index();
     public static final int TXTGAINLOSSDESCRIPTION = AttributesEnum.txtGainLossDescription.index();
     public static final int TXTCOAASSETDESCRIPTION = AttributesEnum.txtCoaAssetDescription.index();
+    public static final int ITEMHIERARCHYPATH = AttributesEnum.ItemHierarchyPath.index();
+    public static final int PARENTITEMID = AttributesEnum.ParentItemId.index();
+    public static final int LASTUPDATEDBY = AttributesEnum.LastUpdatedBy.index();
+    public static final int LASTUPDATEDDATE = AttributesEnum.LastUpdatedDate.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
@@ -424,37 +428,6 @@ public class InvItemImpl extends ERPEntityImpl {
         setAttributeInternal(CREATEDDATE, value);
     }
 
-    /**
-     * Gets the attribute value for LastUpdateBy, using the alias name LastUpdateBy.
-     * @return the value of LastUpdateBy
-     */
-    public Integer getLastUpdateBy() {
-        return (Integer) getAttributeInternal(LASTUPDATEBY);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for LastUpdateBy.
-     * @param value value to set the LastUpdateBy
-     */
-    public void setLastUpdateBy(Integer value) {
-        setAttributeInternal(LASTUPDATEBY, value);
-    }
-
-    /**
-     * Gets the attribute value for LastUpdateDate, using the alias name LastUpdateDate.
-     * @return the value of LastUpdateDate
-     */
-    public Date getLastUpdateDate() {
-        return (Date) getAttributeInternal(LASTUPDATEDATE);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for LastUpdateDate.
-     * @param value value to set the LastUpdateDate
-     */
-    public void setLastUpdateDate(Date value) {
-        setAttributeInternal(LASTUPDATEDATE, value);
-    }
 
     /**
      * Gets the attribute value for IsTaxable, using the alias name IsTaxable.
@@ -488,21 +461,6 @@ public class InvItemImpl extends ERPEntityImpl {
         setAttributeInternal(TAXGROUPSNO, value);
     }
 
-    /**
-     * Gets the attribute value for Qty, using the alias name Qty.
-     * @return the value of Qty
-     */
-    public BigDecimal getQty() {
-        return (BigDecimal) getAttributeInternal(QTY);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Qty.
-     * @param value value to set the Qty
-     */
-    public void setQty(BigDecimal value) {
-        setAttributeInternal(QTY, value);
-    }
 
     /**
      * Gets the attribute value for CompanyId, using the alias name CompanyId.
@@ -1098,6 +1056,70 @@ public class InvItemImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for ItemHierarchyPath, using the alias name ItemHierarchyPath.
+     * @return the value of ItemHierarchyPath
+     */
+    public String getItemHierarchyPath() {
+        return (String) getAttributeInternal(ITEMHIERARCHYPATH);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemHierarchyPath.
+     * @param value value to set the ItemHierarchyPath
+     */
+    public void setItemHierarchyPath(String value) {
+        setAttributeInternal(ITEMHIERARCHYPATH, value);
+    }
+
+    /**
+     * Gets the attribute value for ParentItemId, using the alias name ParentItemId.
+     * @return the value of ParentItemId
+     */
+    public BigDecimal getParentItemId() {
+        return (BigDecimal) getAttributeInternal(PARENTITEMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ParentItemId.
+     * @param value value to set the ParentItemId
+     */
+    public void setParentItemId(BigDecimal value) {
+        setAttributeInternal(PARENTITEMID, value);
+    }
+
+    /**
+     * Gets the attribute value for LastUpdatedBy, using the alias name LastUpdatedBy.
+     * @return the value of LastUpdatedBy
+     */
+    public Integer getLastUpdatedBy() {
+        return (Integer) getAttributeInternal(LASTUPDATEDBY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LastUpdatedBy.
+     * @param value value to set the LastUpdatedBy
+     */
+    public void setLastUpdatedBy(Integer value) {
+        setAttributeInternal(LASTUPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for LastUpdatedDate, using the alias name LastUpdatedDate.
+     * @return the value of LastUpdatedDate
+     */
+    public Date getLastUpdatedDate() {
+        return (Date) getAttributeInternal(LASTUPDATEDDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LastUpdatedDate.
+     * @param value value to set the LastUpdatedDate
+     */
+    public void setLastUpdatedDate(Date value) {
+        setAttributeInternal(LASTUPDATEDDATE, value);
+    }
+
+    /**
      * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
      */
     public GlChartOfAccountsImpl getGlChartOfAccounts() {
@@ -1329,6 +1351,20 @@ public class InvItemImpl extends ERPEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation == DML_INSERT) {
+            
+            String result =
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_ID",
+                                                              this.getEntityDef().getSource(), null, null);
+
+            populateAttributeAsChanged(ITEMID, Integer.parseInt(result));
+            result =
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_SHORT_CODE",
+                                                              this.getEntityDef().getSource(), "COMPANY_ID",
+                                                              getCompanyId().toString());
+            populateAttributeAsChanged(ITEMSHORTCODE, result);
+
+        }
         super.doDML(operation, e);
     }
 }

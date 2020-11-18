@@ -38,7 +38,6 @@
   <Attribute
     Name="ItemShortCode"
     IsUnique="true"
-    IsNotNull="true"
     Precision="50"
     ColumnName="ITEM_SHORT_CODE"
     SQLType="NUMERIC"
@@ -245,12 +244,13 @@
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.IsActive_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="CREATED_BY"
@@ -269,7 +269,6 @@
   </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
     Type="java.sql.Date"
@@ -280,41 +279,6 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="erpims.modelims.imseo.InvItem.CreatedDate_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
-    Name="LastUpdateBy"
-    Precision="5"
-    Scale="0"
-    ColumnName="LAST_UPDATE_BY"
-    SQLType="NUMERIC"
-    Type="java.lang.Integer"
-    ColumnType="NUMBER"
-    TableName="INV_ITEM">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvItem.LastUpdateBy_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
-    Name="LastUpdateDate"
-    ColumnName="LAST_UPDATE_DATE"
-    SQLType="DATE"
-    Type="java.sql.Date"
-    ColumnType="DATE"
-    TableName="INV_ITEM"
-    RetrievedOnUpdate="true">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvItem.LastUpdateDate_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>
@@ -354,24 +318,6 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="erpims.modelims.imseo.InvItem.TaxGroupSno_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
-    Name="Qty"
-    Precision="19"
-    Scale="6"
-    ColumnName="QTY"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="INV_ITEM">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvItem.Qty_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>
@@ -1072,6 +1018,78 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="erpims.modelims.imseo.InvItem.txtCoaAssetDescription_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ItemHierarchyPath"
+    Precision="50"
+    ColumnName="ITEM_HIERARCHY_PATH"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_ITEM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.ItemHierarchyPath_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ParentItemId"
+    Precision="10"
+    Scale="0"
+    ColumnName="PARENT_ITEM_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="INV_ITEM">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.ParentItemId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    Precision="5"
+    Scale="0"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="INV_ITEM">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.LastUpdatedBy_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedDate"
+    ColumnName="LAST_UPDATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="INV_ITEM">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.LastUpdatedDate_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>

@@ -25,6 +25,23 @@
     Name="AccGlChartOfAccountsVO"
     ViewObjectName="erpfms.modelfms.fmsvo.GlChartOfAccountsVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSysGeneralValueVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SysGeneralValueActiveVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueActiveVC"/>
+    <ViewCriteriaUsage
+      Name="SysGeneralValueByValueSetIDVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueByValueSetIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_VALUE_SET_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[4]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtCOACOGSDescription"
     ListVOName="AccGlChartOfAccountsVO"
@@ -276,6 +293,61 @@
     <DisplayCriteria
       Name="GlChartOfAccountsVOFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovIsSupervised"
+    ListVOName="AccSysGeneralValueVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IsSupervised"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ValueCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ValueDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovIsTaxable"
+    ListVOName="AccSysGeneralValueVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IsTaxable"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ValueCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ValueDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovIsActive"
+    ListVOName="AccSysGeneralValueVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IsActive"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ValueCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ValueDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -356,7 +428,15 @@
     PrecisionRule="true"
     EntityAttrName="IsActive"
     EntityUsage="InvItem"
-    AliasName="IS_ACTIVE"/>
+    AliasName="IS_ACTIVE"
+    LOVName="LovIsActive">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     IsNotNull="true"
@@ -372,23 +452,19 @@
     EntityUsage="InvItem"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
-    Name="LastUpdateBy"
-    PrecisionRule="true"
-    EntityAttrName="LastUpdateBy"
-    EntityUsage="InvItem"
-    AliasName="LAST_UPDATE_BY"/>
-  <ViewAttribute
-    Name="LastUpdateDate"
-    PrecisionRule="true"
-    EntityAttrName="LastUpdateDate"
-    EntityUsage="InvItem"
-    AliasName="LAST_UPDATE_DATE"/>
-  <ViewAttribute
     Name="IsTaxable"
     PrecisionRule="true"
     EntityAttrName="IsTaxable"
     EntityUsage="InvItem"
-    AliasName="IS_TAXABLE"/>
+    AliasName="IS_TAXABLE"
+    LOVName="LovIsTaxable">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TaxGroupSno"
     PrecisionRule="true"
@@ -498,7 +574,15 @@
     PrecisionRule="true"
     EntityAttrName="IsSupervised"
     EntityUsage="InvItem"
-    AliasName="IS_SUPERVISED"/>
+    AliasName="IS_SUPERVISED"
+    LOVName="LovIsSupervised">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SupervisedDate"
     PrecisionRule="true"
@@ -727,6 +811,18 @@
     AliasName="TXT_GAIN_LOSS_DESCRIPTION"
     IsQueriable="false"
     IsPersistent="false"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="InvItem"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="InvItem"
+    AliasName="LAST_UPDATED_DATE"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"

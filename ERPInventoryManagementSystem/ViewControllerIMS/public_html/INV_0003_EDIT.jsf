@@ -56,16 +56,7 @@
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow marginTop="5px" height="auto" id="gr3">
-                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center">
-                          <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
-                                         value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
-                                         model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
-                                         queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
-                            <f:facet name="end">
-                              <af:commandLink text="Advanced" rendered="false" id="cl1"/>
-                            </f:facet>
-                          </af:quickQuery>
-                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center"/>
                       </af:gridRow>
                       <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
                         <af:gridCell marginStart="5px" width="0%" marginEnd="5px" id="gc5" valign="stretch"/>
@@ -83,7 +74,7 @@
                       <af:link id="l1" icon="#{resource['images:imgCloseDialog.png']}" action="ERPBACKCRUD"
                                partialSubmit="true"/>
                       <af:link id="l2" partialSubmit="true" icon="#{resource['images:imgNewDocument.png']}"
-                               action="ERP-ADD-ACT-INV_0002"/>
+                               action="ERP-ADD-ACT_INV_0003"/>
                     </af:gridCell>
                   </af:gridRow>
                 </af:panelGridLayout>
@@ -95,14 +86,6 @@
           <af:decorativeBox id="db3">
             <f:facet name="center">
               <af:panelGroupLayout id="pgl3" halign="center" layout="scroll">
-                <af:inputText value="#{bindings.UnitTypeSno.inputValue}" label="#{bindings.UnitTypeSno.hints.label}"
-                              required="#{bindings.UnitTypeSno.hints.mandatory}"
-                              columns="#{bindings.UnitTypeSno.hints.displayWidth}"
-                              maximumLength="#{bindings.UnitTypeSno.hints.precision}"
-                              shortDesc="#{bindings.UnitTypeSno.hints.tooltip}" id="it1" rendered="false">
-                  <f:validator binding="#{bindings.UnitTypeSno.validator}"/>
-                  <af:convertNumber groupingUsed="false" pattern="#{bindings.UnitTypeSno.format}"/>
-                </af:inputText>
                 <af:panelGridLayout id="pgl4">
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr14">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15" halign="stretch"/>
@@ -111,7 +94,10 @@
                 <af:listView value="#{bindings.InvItemByCompanyRO.collectionModel}" var="item"
                              emptyText="#{bindings.InvItemByCompanyRO.viewable ? 'No data to display.' : 'Access Denied.'}"
                              fetchSize="#{bindings.InvItemByCompanyRO.rangeSize}" id="lv2"
-                             styleClass="WBDisplayBlockCenter">
+                             styleClass="WBDisplayBlockCenter"
+                             selectionListener="#{bindings.InvItemByCompanyRO.treeModel.makeCurrent}"
+                             selectedRowKeys="#{bindings.InvItemByCompanyRO.collectionModel.selectedRow}"
+                             selection="single">
                   <af:listItem id="li2" styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo">
                     <af:panelGroupLayout id="pgl5" styleClass="WBCardSize" layout="vertical">
                       <af:panelBox text="PanelBox4" id="pb3" showDisclosure="false" showHeader="never">
@@ -120,8 +106,17 @@
                           <af:gridRow marginTop="5px" height="auto" id="gr6">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="stretch">
                               <af:panelGroupLayout id="pgl6" layout="horizontal">
+                                <af:inputText value="#{bindings.ItemId.inputValue}"
+                                              label="#{bindings.ItemId.hints.label}"
+                                              required="#{bindings.ItemId.hints.mandatory}"
+                                              columns="#{bindings.ItemId.hints.displayWidth}"
+                                              maximumLength="#{bindings.ItemId.hints.precision}"
+                                              shortDesc="#{bindings.ItemId.hints.tooltip}" id="it1" rendered="false">
+                                  <f:validator binding="#{bindings.ItemId.validator}"/>
+                                  <af:convertNumber groupingUsed="false" pattern="#{bindings.ItemId.format}"/>
+                                </af:inputText>
                                 <af:link id="l8" partialSubmit="true" icon="#{resource['images:imgView.png']}"
-                                         action="ERP-EDIT-ACT-INV_0002"/>
+                                         action="ERP-EDIT-ACT_INV_0003"/>
                                 <af:outputFormatted value="#{item.bindings.ItemShortName.inputValue}" id="of6"
                                                     styleClass="ERPHeroBannerFont"/>
                               </af:panelGroupLayout>

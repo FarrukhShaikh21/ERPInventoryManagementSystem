@@ -4,7 +4,15 @@
                 SkipValidation="true">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
+    <iterator Binds="InvItemCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl" id="InvItemCRUDIterator"
+              Refresh="never"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <action IterBinding="InvItemCRUDIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="P_ADF_COMPANY_ID" NDType="java.lang.Integer"/>
+      <NamedData NDName="P_ADF_ITEM_ID" NDValue="#{data.erpims_viewims_INV_0003_EDITPageDef.ItemId.inputValue}"
+                 NDType="java.lang.Integer"/>
+    </action>
+  </bindings>
 </pageDefinition>
