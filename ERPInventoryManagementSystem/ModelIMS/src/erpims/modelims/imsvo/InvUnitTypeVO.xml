@@ -355,4 +355,8 @@
     ViewLink="erpims.modelims.imsvo.InvUnitInvItemUnitTypeSnoVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
 </ViewObject>

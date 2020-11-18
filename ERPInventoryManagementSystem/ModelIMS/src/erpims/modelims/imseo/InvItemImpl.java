@@ -82,6 +82,7 @@ public class InvItemImpl extends ERPEntityImpl {
         ParentItemId,
         LastUpdatedBy,
         LastUpdatedDate,
+        txtUnitTypeName,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
@@ -177,6 +178,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int PARENTITEMID = AttributesEnum.ParentItemId.index();
     public static final int LASTUPDATEDBY = AttributesEnum.LastUpdatedBy.index();
     public static final int LASTUPDATEDDATE = AttributesEnum.LastUpdatedDate.index();
+    public static final int TXTUNITTYPENAME = AttributesEnum.txtUnitTypeName.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
@@ -1119,6 +1121,22 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setLastUpdatedDate(Date value) {
         setAttributeInternal(LASTUPDATEDDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for txtUnitTypeName, using the alias name txtUnitTypeName.
+     * @return the value of txtUnitTypeName
+     */
+    public String gettxtUnitTypeName() {
+        return (String) getAttributeInternal(TXTUNITTYPENAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtUnitTypeName.
+     * @param value value to set the txtUnitTypeName
+     */
+    public void settxtUnitTypeName(String value) {
+        setAttributeInternal(TXTUNITTYPENAME, value);
     }
 
     /**
