@@ -176,7 +176,7 @@
                                             <af:gridCell id="gc39" width="13%" halign="center" marginStart="5px"
                                                          marginEnd="5px" valign="middle">
                                                 <af:outputLabel
-                                                                id="ol19"/>
+                                                                id="ol19" value="#{bindings.MinLevel.hints.label}"/>
                                             </af:gridCell>
                                             <af:gridCell id="gc40" width="20%" marginStart="5px" marginEnd="5px"
                                                          halign="stretch" valign="middle">
@@ -313,6 +313,93 @@
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="87%" marginEnd="5px" id="gc18"
                                                          halign="stretch" columnSpan="5" rowSpan="1" valign="middle"/>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                                <af:panelBox text="Accounting Information" id="pb4" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl1">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                            <af:gridCell marginStart="5px" width="13%" id="gc1" halign="center">
+                                                <af:outputLabel value="#{bindings.txtCOACOGSDescription.hints.label}" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc2">
+                                                <af:inputComboboxListOfValues id="txtCOACOGSDescriptionId"
+                                                                              popupTitle="Search and Select: #{bindings.txtCOACOGSDescription.hints.label}"
+                                                                              value="#{bindings.txtCOACOGSDescription.inputValue}"
+                                                                              label="#{bindings.txtCOACOGSDescription.hints.label}"
+                                                                              model="#{bindings.txtCOACOGSDescription.listOfValuesModel}"
+                                                                              required="#{bindings.txtCOACOGSDescription.hints.mandatory}"
+                                                                              columns="#{bindings.txtCOACOGSDescription.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtCOACOGSDescription.hints.tooltip}"
+                                                                              simple="true">
+                                                    <f:validator binding="#{bindings.txtCOACOGSDescription.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc19" halign="center">
+                                                <af:outputLabel value="#{bindings.txtCOAIncomeDescription.hints.label}" id="ol12"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc20">
+                                                <af:inputComboboxListOfValues id="txtCOAIncomeDescriptionId"
+                                                                              popupTitle="Search and Select: #{bindings.txtCOAIncomeDescription.hints.label}"
+                                                                              value="#{bindings.txtCOAIncomeDescription.inputValue}"
+                                                                              label="#{bindings.txtCOAIncomeDescription.hints.label}"
+                                                                              model="#{bindings.txtCOAIncomeDescription.listOfValuesModel}"
+                                                                              required="#{bindings.txtCOAIncomeDescription.hints.mandatory}"
+                                                                              columns="#{bindings.txtCOAIncomeDescription.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtCOAIncomeDescription.hints.tooltip}"
+                                                                              simple="true">
+                                                    <f:validator binding="#{bindings.txtCOAIncomeDescription.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc21" halign="center">
+                                                <af:outputLabel value="#{bindings.txtGainLossDescription.hints.label}" id="ol13"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc22">
+                                                <af:inputComboboxListOfValues id="txtGainLossDescriptionId"
+                                                                              popupTitle="Search and Select: #{bindings.txtGainLossDescription.hints.label}"
+                                                                              value="#{bindings.txtGainLossDescription.inputValue}"
+                                                                              label="#{bindings.txtGainLossDescription.hints.label}"
+                                                                              model="#{bindings.txtGainLossDescription.listOfValuesModel}"
+                                                                              required="#{bindings.txtGainLossDescription.hints.mandatory}"
+                                                                              columns="#{bindings.txtGainLossDescription.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtGainLossDescription.hints.tooltip}"
+                                                                              simple="true">
+                                                    <f:validator binding="#{bindings.txtGainLossDescription.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr10">
+                                            <af:gridCell marginStart="5px" width="13%" id="gc25"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc26"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc27"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc28"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc29"/>
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc30"/>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr11">
+                                            <af:gridCell marginStart="5px" width="13%" id="gc31"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc32"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc34"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc36"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc51"/>
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc52"/>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr12">
+                                            <af:gridCell marginStart="5px" width="13%" id="gc53"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc54"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc55"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc56"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc57"/>
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc58"/>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
+                                            <af:gridCell marginStart="5px" width="13%" id="gc59"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc60"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc61"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc62"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc63"/>
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc64"/>
                                         </af:gridRow>
                                     </af:panelGridLayout>
                                 </af:panelBox>
