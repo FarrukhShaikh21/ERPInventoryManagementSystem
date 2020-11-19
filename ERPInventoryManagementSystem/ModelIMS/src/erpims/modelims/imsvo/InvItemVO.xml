@@ -376,6 +376,30 @@
     <DisplayCriteria
       Name="InvUnitTypeFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtPurchaseUnitTypeName"
+    ListVOName="AccInvUnitTypeVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtPurchaseUnitTypeName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="PurchaseUnitTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UnitTypeName"/>
+      <Item Value="UnitTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="UnitTypeName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InvUnitTypeFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -867,6 +891,22 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtPurchaseUnitTypeName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtPurchaseUnitTypeName"
+    EntityUsage="InvItem"
+    AliasName="TXT_PURCHASE_UNIT_TYPE_NAME"
+    LOVName="LovtxtPurchaseUnitTypeName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -1020,6 +1060,12 @@
   <ViewLinkAccessor
     Name="InvUnitTypeVO"
     ViewLink="erpims.modelims.imsvo.InvUnitInvItemUnitTypeSnoVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvUnitTypeVO1"
+    ViewLink="erpims.modelims.imsvo.InvUnitTypeInvItemPurchaseUnitTypeSnoVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

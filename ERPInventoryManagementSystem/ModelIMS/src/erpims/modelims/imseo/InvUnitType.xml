@@ -363,6 +363,13 @@
     AssociationOtherEnd="erpims.modelims.imseo.InvUnitInvItemUnitTypeSnoAsso.InvUnitType"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InvItem1"
+    Association="erpims.modelims.imseo.InvUnitTypeInvItemPurchaseUnitTypeSnoAsso"
+    AssociationEnd="erpims.modelims.imseo.InvUnitTypeInvItemPurchaseUnitTypeSnoAsso.InvItem1"
+    AssociationOtherEnd="erpims.modelims.imseo.InvUnitTypeInvItemPurchaseUnitTypeSnoAsso.InvUnitType1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkInvUnitType"
     PrimaryKey="true">

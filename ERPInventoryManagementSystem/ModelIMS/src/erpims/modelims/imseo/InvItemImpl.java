@@ -83,6 +83,7 @@ public class InvItemImpl extends ERPEntityImpl {
         LastUpdatedBy,
         LastUpdatedDate,
         txtUnitTypeName,
+        txtPurchaseUnitTypeName,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
@@ -96,7 +97,8 @@ public class InvItemImpl extends ERPEntityImpl {
         GlChartOfAccounts10,
         GlChartOfAccounts11,
         GlChartOfAccounts12,
-        InvUnitType;
+        InvUnitType,
+        InvUnitType1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -179,6 +181,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int LASTUPDATEDBY = AttributesEnum.LastUpdatedBy.index();
     public static final int LASTUPDATEDDATE = AttributesEnum.LastUpdatedDate.index();
     public static final int TXTUNITTYPENAME = AttributesEnum.txtUnitTypeName.index();
+    public static final int TXTPURCHASEUNITTYPENAME = AttributesEnum.txtPurchaseUnitTypeName.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
@@ -193,6 +196,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int GLCHARTOFACCOUNTS11 = AttributesEnum.GlChartOfAccounts11.index();
     public static final int GLCHARTOFACCOUNTS12 = AttributesEnum.GlChartOfAccounts12.index();
     public static final int INVUNITTYPE = AttributesEnum.InvUnitType.index();
+    public static final int INVUNITTYPE1 = AttributesEnum.InvUnitType1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1140,6 +1144,22 @@ public class InvItemImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtPurchaseUnitTypeName, using the alias name txtPurchaseUnitTypeName.
+     * @return the value of txtPurchaseUnitTypeName
+     */
+    public String gettxtPurchaseUnitTypeName() {
+        return (String) getAttributeInternal(TXTPURCHASEUNITTYPENAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtPurchaseUnitTypeName.
+     * @param value value to set the txtPurchaseUnitTypeName
+     */
+    public void settxtPurchaseUnitTypeName(String value) {
+        setAttributeInternal(TXTPURCHASEUNITTYPENAME, value);
+    }
+
+    /**
      * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
      */
     public GlChartOfAccountsImpl getGlChartOfAccounts() {
@@ -1346,6 +1366,21 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setInvUnitType(InvUnitTypeImpl value) {
         setAttributeInternal(INVUNITTYPE, value);
+    }
+
+
+    /**
+     * @return the associated entity InvUnitTypeImpl.
+     */
+    public InvUnitTypeImpl getInvUnitType1() {
+        return (InvUnitTypeImpl) getAttributeInternal(INVUNITTYPE1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity InvUnitTypeImpl.
+     */
+    public void setInvUnitType1(InvUnitTypeImpl value) {
+        setAttributeInternal(INVUNITTYPE1, value);
     }
 
 
