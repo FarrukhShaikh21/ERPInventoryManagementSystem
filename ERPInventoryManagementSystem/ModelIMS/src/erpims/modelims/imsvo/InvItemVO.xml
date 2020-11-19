@@ -159,7 +159,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
-      <Item Value="CoaPurchaseReturnVariance"/>
+      <Item Value="CoaWip"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Description"/>

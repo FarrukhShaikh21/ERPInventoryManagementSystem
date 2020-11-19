@@ -305,15 +305,6 @@
                                             <af:gridCell id="gc50" width="21%" halign="stretch" marginStart="5px"
                                                          marginEnd="5px" valign="middle"/>
                                         </af:gridRow>
-                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr9">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc17" halign="center"
-                                                         marginEnd="5px" valign="middle">
-                                                <af:outputLabel
-                                                                id="ol8"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="87%" marginEnd="5px" id="gc18"
-                                                         halign="stretch" columnSpan="5" rowSpan="1" valign="middle"/>
-                                        </af:gridRow>
                                     </af:panelGridLayout>
                                 </af:panelBox>
                                 <af:panelBox text="Accounting Information" id="pb4" showDisclosure="false">
@@ -355,7 +346,8 @@
                                             <af:gridCell marginStart="5px" width="13%" id="gc21" halign="center">
                                                 <af:outputLabel value="#{bindings.txtGainLossDescription.hints.label}" id="ol13"/>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc22">
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc22"
+                                                         halign="stretch">
                                                 <af:inputComboboxListOfValues id="txtGainLossDescriptionId"
                                                                               popupTitle="Search and Select: #{bindings.txtGainLossDescription.hints.label}"
                                                                               value="#{bindings.txtGainLossDescription.inputValue}"
@@ -364,7 +356,7 @@
                                                                               required="#{bindings.txtGainLossDescription.hints.mandatory}"
                                                                               columns="#{bindings.txtGainLossDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtGainLossDescription.hints.tooltip}"
-                                                                              simple="true">
+                                                                              simple="true" contentStyle="width:90%">
                                                     <f:validator binding="#{bindings.txtGainLossDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -405,7 +397,8 @@
                                             <af:gridCell marginStart="5px" width="13%" id="gc29" halign="center">
                                                 <af:outputLabel value="#{bindings.txtCoaInventoryDescription.hints.label}" id="ol16"/>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc30">
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc30"
+                                                         halign="stretch">
                                                 <af:inputComboboxListOfValues id="txtCoaInventoryDescriptionId"
                                                                               popupTitle="Search and Select: #{bindings.txtCoaInventoryDescription.hints.label}"
                                                                               value="#{bindings.txtCoaInventoryDescription.inputValue}"
@@ -414,7 +407,7 @@
                                                                               required="#{bindings.txtCoaInventoryDescription.hints.mandatory}"
                                                                               columns="#{bindings.txtCoaInventoryDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaInventoryDescription.hints.tooltip}"
-                                                                              simple="true">
+                                                                              simple="true" contentStyle="width:90%">
                                                     <f:validator binding="#{bindings.txtCoaInventoryDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -455,7 +448,8 @@
                                             <af:gridCell marginStart="5px" width="13%" id="gc51" halign="center">
                                                 <af:outputLabel value="#{bindings.txtPurchaseRetDescription.hints.label}" id="ol25"/>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc52">
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc52"
+                                                         halign="stretch">
                                                 <af:inputComboboxListOfValues id="txtPurchaseRetDescriptionId"
                                                                               popupTitle="Search and Select: #{bindings.txtPurchaseRetDescription.hints.label}"
                                                                               value="#{bindings.txtPurchaseRetDescription.inputValue}"
@@ -464,7 +458,7 @@
                                                                               required="#{bindings.txtPurchaseRetDescription.hints.mandatory}"
                                                                               columns="#{bindings.txtPurchaseRetDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtPurchaseRetDescription.hints.tooltip}"
-                                                                              simple="true">
+                                                                              simple="true" contentStyle="width:90%">
                                                     <f:validator binding="#{bindings.txtPurchaseRetDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -489,7 +483,7 @@
                                             <af:gridCell marginStart="5px" width="13%" id="gc55" halign="center">
                                                 <af:outputLabel value="#{bindings.txtCoaBillPriceVarDescription.hints.label}" id="ol27"/>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc56">
+                                            <af:gridCell marginStart="5px" width="20%" id="gc56" halign="stretch">
                                                 <af:inputComboboxListOfValues id="txtCoaBillPriceVarDescriptionId"
                                                                               popupTitle="Search and Select: #{bindings.txtCoaBillPriceVarDescription.hints.label}"
                                                                               value="#{bindings.txtCoaBillPriceVarDescription.inputValue}"
@@ -502,12 +496,41 @@
                                                     <f:validator binding="#{bindings.txtCoaBillPriceVarDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc57"/>
-                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc58"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc57" halign="center">
+                                                <af:outputLabel value="#{bindings.txtCoaAssetDescription.hints.label}" id="ol28"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc58"
+                                                         halign="stretch">
+                                                <af:inputComboboxListOfValues id="iclov1"
+                                                                              popupTitle="Search and Select: #{bindings.txtCoaAssetDescription.hints.label}"
+                                                                              value="#{bindings.txtCoaAssetDescription.inputValue}"
+                                                                              label="#{bindings.txtCoaAssetDescription.hints.label}"
+                                                                              model="#{bindings.txtCoaAssetDescription.listOfValuesModel}"
+                                                                              required="#{bindings.txtCoaAssetDescription.hints.mandatory}"
+                                                                              columns="#{bindings.txtCoaAssetDescription.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtCoaAssetDescription.hints.tooltip}"
+                                                                              simple="true" contentStyle="width:90%">
+                                                    <f:validator binding="#{bindings.txtCoaAssetDescription.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc59"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc60"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc59" halign="center">
+                                                <af:outputLabel value="#{bindings.txtCoaWipDescription.hints.label}" id="ol29"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc60">
+                                                <af:inputComboboxListOfValues id="txtCoaWipDescriptionId"
+                                                                              popupTitle="Search and Select: #{bindings.txtCoaWipDescription.hints.label}"
+                                                                              value="#{bindings.txtCoaWipDescription.inputValue}"
+                                                                              label="#{bindings.txtCoaWipDescription.hints.label}"
+                                                                              model="#{bindings.txtCoaWipDescription.listOfValuesModel}"
+                                                                              required="#{bindings.txtCoaWipDescription.hints.mandatory}"
+                                                                              columns="#{bindings.txtCoaWipDescription.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtCoaWipDescription.hints.tooltip}"
+                                                                              simple="true">
+                                                    <f:validator binding="#{bindings.txtCoaWipDescription.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
                                             <af:gridCell marginStart="5px" width="13%" id="gc61"/>
                                             <af:gridCell marginStart="5px" width="20%" id="gc62"/>
                                             <af:gridCell marginStart="5px" width="13%" id="gc63"/>
