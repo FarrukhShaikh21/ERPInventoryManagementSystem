@@ -400,6 +400,30 @@
     <DisplayCriteria
       Name="InvUnitTypeFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtSaleUnitTypeName"
+    ListVOName="AccInvUnitTypeVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSaleUnitTypeName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="SaleUnitTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UnitTypeName"/>
+      <Item Value="UnitTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="UnitTypeName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InvUnitTypeFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -914,7 +938,15 @@
     PrecisionRule="true"
     EntityAttrName="txtSaleUnitTypeName"
     EntityUsage="InvItem"
-    AliasName="TXT_SALE_UNIT_TYPE_NAME"/>
+    AliasName="TXT_SALE_UNIT_TYPE_NAME"
+    LOVName="LovtxtSaleUnitTypeName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"

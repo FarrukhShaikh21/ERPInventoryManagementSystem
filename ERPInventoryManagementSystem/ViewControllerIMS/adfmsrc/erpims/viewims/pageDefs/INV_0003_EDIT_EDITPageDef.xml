@@ -61,5 +61,7 @@
     <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtUnitTypeName" id="txtUnitTypeName"/>
     <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtPurchaseUnitTypeName"
                   id="txtPurchaseUnitTypeName"/>
+    <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtSaleUnitTypeName"
+                  id="txtSaleUnitTypeName"/>
   </bindings>
 </pageDefinition>
