@@ -499,6 +499,31 @@
     <DisplayCriteria
       Name="GlChartOfAccountsVOFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtCoaShipmentDescription"
+    ListVOName="AccGlChartOfAccountsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCoaShipmentDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CoaShipment"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="ChartOfAccountCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlChartOfAccountsVOFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -881,7 +906,15 @@
     PrecisionRule="true"
     EntityAttrName="txtCoaShipmentDescription"
     EntityUsage="InvItem"
-    AliasName="TXT_COA_SHIPMENT_DESCRIPTION"/>
+    AliasName="TXT_COA_SHIPMENT_DESCRIPTION"
+    LOVName="LovtxtCoaShipmentDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtCoaSaleRetVarDescription"
     IsQueriable="false"
