@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1"
+                id="ERPBTFINV_ERPBTFINV_CreateWithParametersPageDef1" Package="erpims.viewims.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="InvItemCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl" id="InvItemCRUDIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="InvItemCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="CompanyId" NDValue="#{data.erpims_viewims_INV_0003_EDITPageDef.CompCode.inputValue}"
+                 NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

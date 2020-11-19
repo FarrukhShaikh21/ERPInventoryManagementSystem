@@ -214,10 +214,23 @@
                                         <af:gridRow marginTop="5px" height="auto" id="gr7" marginBottom="5px">
                                             <af:gridCell marginStart="5px" width="13%" id="gc13" halign="center"
                                                          marginEnd="5px" valign="middle">
-                                                <af:outputLabel id="ol6"/>
+                                                <af:outputLabel id="ol6"
+                                                                value="#{bindings.txtUnitTypeName.hints.label}"/>
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="20%" marginEnd="5px" id="gc14"
-                                                         halign="stretch" valign="middle"/>
+                                                         halign="stretch" valign="middle">
+                                                <af:inputComboboxListOfValues id="txtUnitTypeNameId"
+                                                                              popupTitle="Search and Select: #{bindings.txtUnitTypeName.hints.label}"
+                                                                              value="#{bindings.txtUnitTypeName.inputValue}"
+                                                                              label="#{bindings.txtUnitTypeName.hints.label}"
+                                                                              model="#{bindings.txtUnitTypeName.listOfValuesModel}"
+                                                                              required="#{bindings.txtUnitTypeName.hints.mandatory}"
+                                                                              columns="#{bindings.txtUnitTypeName.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtUnitTypeName.hints.tooltip}"
+                                                                              simple="true">
+                                                    <f:validator binding="#{bindings.txtUnitTypeName.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
                                             <af:gridCell id="gc43" width="13%" halign="center" marginStart="5px"
                                                          marginEnd="5px" valign="middle">
                                                 <af:outputLabel id="ol21"/>
