@@ -907,6 +907,14 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtSaleUnitTypeName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSaleUnitTypeName"
+    EntityUsage="InvItem"
+    AliasName="TXT_SALE_UNIT_TYPE_NAME"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -1066,6 +1074,12 @@
   <ViewLinkAccessor
     Name="InvUnitTypeVO1"
     ViewLink="erpims.modelims.imsvo.InvUnitTypeInvItemPurchaseUnitTypeSnoVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvUnitTypeVO2"
+    ViewLink="erpims.modelims.imsvo.InvUnitTypeInvSaleUnitTypeSnoVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

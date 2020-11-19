@@ -360,6 +360,11 @@
     ViewLink="erpims.modelims.imsvo.InvUnitTypeInvItemPurchaseUnitTypeSnoVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvItemVO2"
+    ViewLink="erpims.modelims.imsvo.InvUnitTypeInvSaleUnitTypeSnoVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpims.modelims.ModelIMSBundle"/>

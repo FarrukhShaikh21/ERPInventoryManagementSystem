@@ -1114,6 +1114,10 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="UnitTypeSno"/>
+    </Dependencies>
   </Attribute>
   <Attribute
     Name="txtPurchaseUnitTypeName"
@@ -1134,6 +1138,34 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="PurchaseUnitTypeSno"/>
+    </Dependencies>
+  </Attribute>
+  <Attribute
+    Name="txtSaleUnitTypeName"
+    Precision="80"
+    ColumnName="TXT_SALE_UNIT_TYPE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InvUnitType2?.UnitTypeName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.txtSaleUnitTypeName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="SaleUnitTypeSno"/>
+    </Dependencies>
   </Attribute>
   <AccessorAttribute
     Name="GlChartOfAccounts"
@@ -1238,6 +1270,13 @@
     Association="erpims.modelims.imseo.InvUnitTypeInvItemPurchaseUnitTypeSnoAsso"
     AssociationEnd="erpims.modelims.imseo.InvUnitTypeInvItemPurchaseUnitTypeSnoAsso.InvUnitType1"
     AssociationOtherEnd="erpims.modelims.imseo.InvUnitTypeInvItemPurchaseUnitTypeSnoAsso.InvItem1"
+    Type="erpims.modelims.imseo.InvUnitTypeImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvUnitType2"
+    Association="erpims.modelims.imseo.InvUnitTypeInvSaleUnitTypeSnoAsso"
+    AssociationEnd="erpims.modelims.imseo.InvUnitTypeInvSaleUnitTypeSnoAsso.InvUnitType2"
+    AssociationOtherEnd="erpims.modelims.imseo.InvUnitTypeInvSaleUnitTypeSnoAsso.InvItem2"
     Type="erpims.modelims.imseo.InvUnitTypeImpl"
     IsUpdateable="true"/>
   <Key
@@ -1347,6 +1386,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvItem.PurchaseUnitTypeSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvItem16">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_INV_UNIT_TYPE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_ITEM16"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvItem.SaleUnitTypeSno"/>
     </AttrArray>
   </Key>
   <Key
