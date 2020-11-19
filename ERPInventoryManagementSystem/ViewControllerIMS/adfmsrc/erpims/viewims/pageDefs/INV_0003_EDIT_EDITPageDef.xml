@@ -75,5 +75,9 @@
                   id="txtCoaAssetDescription"/>
     <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtQuantityAdjustDescription"
                   id="txtQuantityAdjustDescription"/>
+    <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtCoaInventoryDescription"
+                  id="txtCoaInventoryDescription"/>
+    <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtCoaPurchPriceVariance"
+                  id="txtCoaPurchPriceVariance"/>
   </bindings>
 </pageDefinition>

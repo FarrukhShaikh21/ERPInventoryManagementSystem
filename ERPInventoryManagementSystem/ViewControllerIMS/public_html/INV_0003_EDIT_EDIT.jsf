@@ -402,12 +402,40 @@
                                                     <f:validator binding="#{bindings.txtQuantityAdjustDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc29"/>
-                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc30"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc29" halign="center">
+                                                <af:outputLabel value="#{bindings.txtCoaInventoryDescription.hints.label}" id="ol16"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc30">
+                                                <af:inputComboboxListOfValues id="txtCoaInventoryDescriptionId"
+                                                                              popupTitle="Search and Select: #{bindings.txtCoaInventoryDescription.hints.label}"
+                                                                              value="#{bindings.txtCoaInventoryDescription.inputValue}"
+                                                                              label="#{bindings.txtCoaInventoryDescription.hints.label}"
+                                                                              model="#{bindings.txtCoaInventoryDescription.listOfValuesModel}"
+                                                                              required="#{bindings.txtCoaInventoryDescription.hints.mandatory}"
+                                                                              columns="#{bindings.txtCoaInventoryDescription.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtCoaInventoryDescription.hints.tooltip}"
+                                                                              simple="true">
+                                                    <f:validator binding="#{bindings.txtCoaInventoryDescription.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr11">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc31"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc32"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc31" halign="center">
+                                                <af:outputLabel value="#{bindings.txtCoaPurchPriceVariance.hints.label}" id="ol17"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc32">
+                                                <af:inputComboboxListOfValues id="txtCoaPurchPriceVarianceId"
+                                                                              popupTitle="Search and Select: #{bindings.txtCoaPurchPriceVariance.hints.label}"
+                                                                              value="#{bindings.txtCoaPurchPriceVariance.inputValue}"
+                                                                              label="#{bindings.txtCoaPurchPriceVariance.hints.label}"
+                                                                              model="#{bindings.txtCoaPurchPriceVariance.listOfValuesModel}"
+                                                                              required="#{bindings.txtCoaPurchPriceVariance.hints.mandatory}"
+                                                                              columns="#{bindings.txtCoaPurchPriceVariance.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtCoaPurchPriceVariance.hints.tooltip}"
+                                                                              simple="true">
+                                                    <f:validator binding="#{bindings.txtCoaPurchPriceVariance.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
                                             <af:gridCell marginStart="5px" width="13%" id="gc34"/>
                                             <af:gridCell marginStart="5px" width="20%" id="gc36"/>
                                             <af:gridCell marginStart="5px" width="13%" id="gc51"/>
