@@ -424,6 +424,30 @@
     <DisplayCriteria
       Name="InvUnitTypeFindVC"/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtStockUnitTypeName"
+    ListVOName="AccInvUnitTypeVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtStockUnitTypeName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="StockUnitTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UnitTypeName"/>
+      <Item Value="UnitTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="UnitTypeName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InvUnitTypeFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItem"
     Entity="erpims.modelims.imseo.InvItem"/>
@@ -947,6 +971,22 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtStockUnitTypeName"
+    PrecisionRule="true"
+    EntityAttrName="txtStockUnitTypeName"
+    EntityUsage="InvItem"
+    AliasName="TXT_STOCK_UNIT_TYPE_NAME"
+    LOVName="LovtxtStockUnitTypeName"
+    IsQueriable="false"
+    IsPersistent="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -1112,6 +1152,12 @@
   <ViewLinkAccessor
     Name="InvUnitTypeVO2"
     ViewLink="erpims.modelims.imsvo.InvUnitTypeInvSaleUnitTypeSnoVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvUnitTypeVO3"
+    ViewLink="erpims.modelims.imsvo.InvUnitTypeInvItemStockUnitTypeSnoVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

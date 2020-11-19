@@ -85,6 +85,7 @@ public class InvItemImpl extends ERPEntityImpl {
         txtUnitTypeName,
         txtPurchaseUnitTypeName,
         txtSaleUnitTypeName,
+        txtStockUnitTypeName,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
@@ -100,7 +101,8 @@ public class InvItemImpl extends ERPEntityImpl {
         GlChartOfAccounts12,
         InvUnitType,
         InvUnitType1,
-        InvUnitType2;
+        InvUnitType2,
+        InvUnitType3;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -185,6 +187,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int TXTUNITTYPENAME = AttributesEnum.txtUnitTypeName.index();
     public static final int TXTPURCHASEUNITTYPENAME = AttributesEnum.txtPurchaseUnitTypeName.index();
     public static final int TXTSALEUNITTYPENAME = AttributesEnum.txtSaleUnitTypeName.index();
+    public static final int TXTSTOCKUNITTYPENAME = AttributesEnum.txtStockUnitTypeName.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
@@ -201,6 +204,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int INVUNITTYPE = AttributesEnum.InvUnitType.index();
     public static final int INVUNITTYPE1 = AttributesEnum.InvUnitType1.index();
     public static final int INVUNITTYPE2 = AttributesEnum.InvUnitType2.index();
+    public static final int INVUNITTYPE3 = AttributesEnum.InvUnitType3.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1180,6 +1184,22 @@ public class InvItemImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtStockUnitTypeName, using the alias name txtStockUnitTypeName.
+     * @return the value of txtStockUnitTypeName
+     */
+    public String gettxtStockUnitTypeName() {
+        return (String) getAttributeInternal(TXTSTOCKUNITTYPENAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtStockUnitTypeName.
+     * @param value value to set the txtStockUnitTypeName
+     */
+    public void settxtStockUnitTypeName(String value) {
+        setAttributeInternal(TXTSTOCKUNITTYPENAME, value);
+    }
+
+    /**
      * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
      */
     public GlChartOfAccountsImpl getGlChartOfAccounts() {
@@ -1416,6 +1436,21 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setInvUnitType2(InvUnitTypeImpl value) {
         setAttributeInternal(INVUNITTYPE2, value);
+    }
+
+
+    /**
+     * @return the associated entity InvUnitTypeImpl.
+     */
+    public InvUnitTypeImpl getInvUnitType3() {
+        return (InvUnitTypeImpl) getAttributeInternal(INVUNITTYPE3);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity InvUnitTypeImpl.
+     */
+    public void setInvUnitType3(InvUnitTypeImpl value) {
+        setAttributeInternal(INVUNITTYPE3, value);
     }
 
 
