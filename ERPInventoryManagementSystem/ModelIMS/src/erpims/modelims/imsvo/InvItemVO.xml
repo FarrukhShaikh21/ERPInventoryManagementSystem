@@ -1087,6 +1087,14 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtParentItemName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtParentItemName"
+    EntityUsage="InvItem"
+    AliasName="TXT_PARENT_ITEM_NAME"/>
   <ViewCriteria
     Name="InvItemByCompanyByIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
@@ -1260,5 +1268,16 @@
     ViewLink="erpims.modelims.imsvo.InvUnitTypeInvItemStockUnitTypeSnoVL"
     Type="oracle.jbo.Row"
     Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvItemVO"
+    ViewLink="erpims.modelims.imsvo.InvItemInvItemItemIdParentItemIdVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvItemVO_2"
+    ViewLink="erpims.modelims.imsvo.InvItemInvItemItemIdParentItemIdVL"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

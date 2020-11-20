@@ -1194,6 +1194,31 @@
         Value="StockUnitTypeSno"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtParentItemName"
+    Precision="80"
+    ColumnName="TXT_PARENT_ITEM_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_ITEM"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ParentItemIdInvItem?.Description]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItem.txtParentItemName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="ParentItemId"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="GlChartOfAccounts"
     Association="erpims.modelims.imseo.GlCOAInvItemCostOfGoodsSoldCOACogsIDAsso"
@@ -1312,6 +1337,20 @@
     AssociationEnd="erpims.modelims.imseo.InvUnitTypeInvItemStockUnitTypeSnoAsso.InvUnitType3"
     AssociationOtherEnd="erpims.modelims.imseo.InvUnitTypeInvItemStockUnitTypeSnoAsso.InvItem3"
     Type="erpims.modelims.imseo.InvUnitTypeImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvItem"
+    Association="erpims.modelims.imseo.InvItemInvItemItemIdParentItemIdAsso"
+    AssociationEnd="erpims.modelims.imseo.InvItemInvItemItemIdParentItemIdAsso.InvItem"
+    AssociationOtherEnd="erpims.modelims.imseo.InvItemInvItemItemIdParentItemIdAsso.ParentItemIdInvItem"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ParentItemIdInvItem"
+    Association="erpims.modelims.imseo.InvItemInvItemItemIdParentItemIdAsso"
+    AssociationEnd="erpims.modelims.imseo.InvItemInvItemItemIdParentItemIdAsso.ParentItemIdInvItem"
+    AssociationOtherEnd="erpims.modelims.imseo.InvItemInvItemItemIdParentItemIdAsso.InvItem"
+    Type="erpims.modelims.imseo.InvItemImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkInvItem"
@@ -1442,6 +1481,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvItem.StockUnitTypeSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvItem18">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_INV_ITEM"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_ITEM18"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvItem.ParentItemId"/>
     </AttrArray>
   </Key>
   <Key

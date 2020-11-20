@@ -12,6 +12,7 @@ import java.sql.Date;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
 // ---------------------------------------------------------------------
@@ -86,6 +87,7 @@ public class InvItemImpl extends ERPEntityImpl {
         txtPurchaseUnitTypeName,
         txtSaleUnitTypeName,
         txtStockUnitTypeName,
+        txtParentItemName,
         GlChartOfAccounts,
         GlChartOfAccounts1,
         GlChartOfAccounts2,
@@ -102,7 +104,9 @@ public class InvItemImpl extends ERPEntityImpl {
         InvUnitType,
         InvUnitType1,
         InvUnitType2,
-        InvUnitType3;
+        InvUnitType3,
+        InvItem,
+        ParentItemIdInvItem;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -188,6 +192,7 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int TXTPURCHASEUNITTYPENAME = AttributesEnum.txtPurchaseUnitTypeName.index();
     public static final int TXTSALEUNITTYPENAME = AttributesEnum.txtSaleUnitTypeName.index();
     public static final int TXTSTOCKUNITTYPENAME = AttributesEnum.txtStockUnitTypeName.index();
+    public static final int TXTPARENTITEMNAME = AttributesEnum.txtParentItemName.index();
     public static final int GLCHARTOFACCOUNTS = AttributesEnum.GlChartOfAccounts.index();
     public static final int GLCHARTOFACCOUNTS1 = AttributesEnum.GlChartOfAccounts1.index();
     public static final int GLCHARTOFACCOUNTS2 = AttributesEnum.GlChartOfAccounts2.index();
@@ -205,6 +210,8 @@ public class InvItemImpl extends ERPEntityImpl {
     public static final int INVUNITTYPE1 = AttributesEnum.InvUnitType1.index();
     public static final int INVUNITTYPE2 = AttributesEnum.InvUnitType2.index();
     public static final int INVUNITTYPE3 = AttributesEnum.InvUnitType3.index();
+    public static final int INVITEM = AttributesEnum.InvItem.index();
+    public static final int PARENTITEMIDINVITEM = AttributesEnum.ParentItemIdInvItem.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1200,6 +1207,22 @@ public class InvItemImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtParentItemName, using the alias name txtParentItemName.
+     * @return the value of txtParentItemName
+     */
+    public String gettxtParentItemName() {
+        return (String) getAttributeInternal(TXTPARENTITEMNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtParentItemName.
+     * @param value value to set the txtParentItemName
+     */
+    public void settxtParentItemName(String value) {
+        setAttributeInternal(TXTPARENTITEMNAME, value);
+    }
+
+    /**
      * @return the associated entity erpfms.modelfms.fmseo.GlChartOfAccountsImpl.
      */
     public GlChartOfAccountsImpl getGlChartOfAccounts() {
@@ -1451,6 +1474,28 @@ public class InvItemImpl extends ERPEntityImpl {
      */
     public void setInvUnitType3(InvUnitTypeImpl value) {
         setAttributeInternal(INVUNITTYPE3, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInvItem() {
+        return (RowIterator) getAttributeInternal(INVITEM);
+    }
+
+    /**
+     * @return the associated entity InvItemImpl.
+     */
+    public InvItemImpl getParentItemIdInvItem() {
+        return (InvItemImpl) getAttributeInternal(PARENTITEMIDINVITEM);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity InvItemImpl.
+     */
+    public void setParentItemIdInvItem(InvItemImpl value) {
+        setAttributeInternal(PARENTITEMIDINVITEM, value);
     }
 
 
