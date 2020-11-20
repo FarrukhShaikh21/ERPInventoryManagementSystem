@@ -386,7 +386,7 @@
     Scale="0"
     ColumnName="COA_COST_OF_GOODS_SOLD"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_ITEM">
     <Properties>
@@ -404,7 +404,7 @@
     Scale="0"
     ColumnName="COA_BILL_PRICE_VARIANCE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_ITEM">
     <Properties>
@@ -795,6 +795,8 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression><![CDATA[GlChartOfAccounts1?.Description]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Dependencies>
       <Item
         Value="CoaBillPriceVariance"/>
@@ -1175,7 +1177,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_ITEM"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression

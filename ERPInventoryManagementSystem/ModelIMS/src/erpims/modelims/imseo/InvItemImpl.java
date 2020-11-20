@@ -530,15 +530,15 @@ public class InvItemImpl extends ERPEntityImpl {
      * Gets the attribute value for CoaCostOfGoodsSold, using the alias name CoaCostOfGoodsSold.
      * @return the value of CoaCostOfGoodsSold
      */
-    public BigDecimal getCoaCostOfGoodsSold() {
-        return (BigDecimal) getAttributeInternal(COACOSTOFGOODSSOLD);
+    public Integer getCoaCostOfGoodsSold() {
+        return (Integer) getAttributeInternal(COACOSTOFGOODSSOLD);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CoaCostOfGoodsSold.
      * @param value value to set the CoaCostOfGoodsSold
      */
-    public void setCoaCostOfGoodsSold(BigDecimal value) {
+    public void setCoaCostOfGoodsSold(Integer value) {
         setAttributeInternal(COACOSTOFGOODSSOLD, value);
     }
 
@@ -546,15 +546,15 @@ public class InvItemImpl extends ERPEntityImpl {
      * Gets the attribute value for CoaBillPriceVariance, using the alias name CoaBillPriceVariance.
      * @return the value of CoaBillPriceVariance
      */
-    public BigDecimal getCoaBillPriceVariance() {
-        return (BigDecimal) getAttributeInternal(COABILLPRICEVARIANCE);
+    public Integer getCoaBillPriceVariance() {
+        return (Integer) getAttributeInternal(COABILLPRICEVARIANCE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CoaBillPriceVariance.
      * @param value value to set the CoaBillPriceVariance
      */
-    public void setCoaBillPriceVariance(BigDecimal value) {
+    public void setCoaBillPriceVariance(Integer value) {
         setAttributeInternal(COABILLPRICEVARIANCE, value);
     }
 

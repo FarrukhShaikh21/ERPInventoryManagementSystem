@@ -89,5 +89,7 @@
                   id="txtCoaBillPriceVarDescription"/>
     <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtCoaWipDescription"
                   id="txtCoaWipDescription"/>
+    <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtCoaShipmentDescription"
+                  id="txtCoaShipmentDescription"/>
   </bindings>
 </pageDefinition>

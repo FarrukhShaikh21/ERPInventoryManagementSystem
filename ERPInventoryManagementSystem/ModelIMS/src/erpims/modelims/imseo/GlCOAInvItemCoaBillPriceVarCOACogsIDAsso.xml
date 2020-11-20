@@ -33,11 +33,10 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InvItem"/>
-      <Attr Name="_foreignKey" Value="erpims.modelims.imseo.InvItem.fk_InvItem1"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpims.modelims.imseo.InvItem.CoaPurchasePriceVariance"/>
+      <Item Value="erpims.modelims.imseo.InvItem.CoaBillPriceVariance"/>
     </AttrArray>
   </AssociationEnd>
 </Association>
