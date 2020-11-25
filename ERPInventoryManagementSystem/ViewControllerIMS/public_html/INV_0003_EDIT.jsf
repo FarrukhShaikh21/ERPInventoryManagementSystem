@@ -56,7 +56,16 @@
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow marginTop="5px" height="auto" id="gr3">
-                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center"/>
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center">
+                          <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                         value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                         model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                         queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+                            <f:facet name="end">
+                              <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+                            </f:facet>
+                          </af:quickQuery>
+                        </af:gridCell>
                       </af:gridRow>
                       <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
                         <af:gridCell marginStart="5px" width="0%" marginEnd="5px" id="gc5" valign="stretch"/>
@@ -85,12 +94,7 @@
         <f:facet name="second">
           <af:decorativeBox id="db3">
             <f:facet name="center">
-              <af:panelGroupLayout id="pgl3" halign="center" layout="scroll">
-                <af:panelGridLayout id="pgl4">
-                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr14">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15" halign="stretch"/>
-                  </af:gridRow>
-                </af:panelGridLayout>
+              <af:panelGroupLayout id="pgl3" halign="center" layout="scroll" partialTriggers="qryId1">
                 <af:listView value="#{bindings.InvItemByCompanyRO.collectionModel}" var="item"
                              emptyText="#{bindings.InvItemByCompanyRO.viewable ? 'No data to display.' : 'Access Denied.'}"
                              fetchSize="#{bindings.InvItemByCompanyRO.rangeSize}" id="lv2"

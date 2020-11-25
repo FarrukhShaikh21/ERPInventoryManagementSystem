@@ -54,5 +54,9 @@
   </ViewUsage>
   <ViewUsage
     Name="InvItemCRUD"
-    ViewObjectName="erpims.modelims.imsvo.InvItemVO"/>
+    ViewObjectName="erpims.modelims.imsvo.InvItemVO">
+    <ViewCriteriaUsage
+      Name="InvItemVOByItemIDVC"
+      FullName="erpims.modelims.imsvo.InvItemVO.InvItemVOByItemIDVC"/>
+  </ViewUsage>
 </AppModule>

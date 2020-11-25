@@ -8,6 +8,8 @@
               id="AdminCompanyVOByCompanyROIterator"/>
     <iterator Binds="InvItemByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="InvItemByCompanyROIterator"/>
+    <searchRegion Criteria="InvItemFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvItemByCompanyROIterator" id="ImplicitViewCriteriaQuery" InitialQueryOverridden="true"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="AdminCompanyVOByCompanyROIterator" id="CompCode">

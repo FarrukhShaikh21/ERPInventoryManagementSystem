@@ -196,6 +196,12 @@
         <fixed-outcome>ERP-ADD-ACT_INV_0003</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="ExeInvItemByCompINV_0003">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>ERPBACKCRUD</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -410,7 +416,7 @@
       <from-activity-id>INV_0003_EDIT_EDIT</from-activity-id>
       <control-flow-case id="__56">
         <from-outcome>ERPBACKCRUD</from-outcome>
-        <to-activity-id>INV_0003_EDIT</to-activity-id>
+        <to-activity-id>ExeInvItemByCompINV_0003</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__69">
@@ -425,6 +431,13 @@
       <control-flow-case id="__73">
         <from-outcome>ERP-ADD-ACT_INV_0003</from-outcome>
         <to-activity-id>INV_0003_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__74">
+      <from-activity-id>ExeInvItemByCompINV_0003</from-activity-id>
+      <control-flow-case id="__75">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>INV_0003_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
