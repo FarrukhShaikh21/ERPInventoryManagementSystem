@@ -37,7 +37,7 @@ public class ERPINVClass {
     private ERPUserAttribute ERPUserAttributes;
     private String lIteratorDetailName;
     private String ERPBackActionName="ERPBACKCRUD";
-    private String lIteratorName="SysUsersCRUDIterator";
+    private String lIteratorName="InvItemCRUDIterator";
     private String erpScreenSize;
     private RichPopup lerpSupervisePopupConfirm;
     private RichPopup lerpUnSupervisePopupConfirm;

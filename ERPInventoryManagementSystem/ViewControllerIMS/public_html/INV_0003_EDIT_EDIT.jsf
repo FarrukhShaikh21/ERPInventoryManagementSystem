@@ -148,7 +148,7 @@
                                                     <f:validator binding="#{bindings.ItemShortName.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
-                                            <af:gridCell id="gc65" width="13%" halign="stretch" marginStart="5px"
+                                            <af:gridCell id="gc65" width="13%" halign="center" marginStart="5px"
                                                          marginEnd="5px" valign="middle" rowSpan="3">
                                                 <af:inputFile id="if1"
                                                               readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }"
