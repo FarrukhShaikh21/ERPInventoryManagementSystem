@@ -5,6 +5,10 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="InvItemCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl" id="InvItemCRUDIterator"/>
+    <iterator Binds="SysGeneralValueStoreOnRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="SysGeneralValueStoreOnROIterator"/>
+    <iterator Binds="SysGeneralValueStorePathRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="SysGeneralValueStorePathROIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InvItemCRUDIterator" id="Description">
@@ -103,5 +107,25 @@
     </attributeValues>
     <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtParentItemName"
                   id="txtParentItemName"/>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="ItemPictureName">
+      <AttrNames>
+        <Item Value="ItemPictureName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvItemCRUDIterator" id="ItemId">
+      <AttrNames>
+        <Item Value="ItemId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SysGeneralValueStoreOnROIterator" id="ValueDescription">
+      <AttrNames>
+        <Item Value="ValueDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SysGeneralValueStorePathROIterator" id="ValueDescription1">
+      <AttrNames>
+        <Item Value="ValueDescription"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

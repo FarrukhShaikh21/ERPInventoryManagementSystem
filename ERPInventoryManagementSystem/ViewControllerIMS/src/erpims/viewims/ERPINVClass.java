@@ -1,5 +1,7 @@
 package erpims.viewims;
 
+import com.tangosol.util.filter.ValueChangeEventFilter;
+
 import erpglobals.modelglobals.ERPUserAttribute;
 
 import erpglobals.viewglobals.ERPGlobalsClass;
@@ -7,9 +9,13 @@ import erpglobals.viewglobals.ERPGlobalsClass;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
+import javax.faces.event.ValueChangeEvent;
+
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichPopup;
+import oracle.adf.view.rich.component.rich.input.RichInputFile;
+import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.context.AdfFacesContext;
 import oracle.adf.view.rich.event.DialogEvent;
@@ -20,6 +26,7 @@ import oracle.binding.OperationBinding;
 
 import oracle.jbo.Row;
 
+import org.apache.myfaces.trinidad.model.UploadedFile;
 import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
 import org.apache.myfaces.trinidad.util.Service;
 
@@ -36,10 +43,46 @@ public class ERPINVClass {
     private RichPopup lerpUnSupervisePopupConfirm;
     private RichPanelTabbed lErpPanelTabbed;
     private RichPanelTabbed lErpPanelDefaultTabbed;
-            
+    private RichInputFile ERPUploadFile;
+    private RichInputText ErpFileStoreOn;
+    private RichInputText ErpFileStorePath;    
+    private RichInputText ERPPrimaryKey;
     
     public ERPINVClass() {
         super();
+    }
+
+
+    public void setERPPrimaryKey(RichInputText ERPPrimaryKey) {
+        this.ERPPrimaryKey = ERPPrimaryKey;
+    }
+
+    public RichInputText getERPPrimaryKey() {
+        return ERPPrimaryKey;
+    }
+
+    public void setErpFileStoreOn(RichInputText ErpFileStoreOn) {
+        this.ErpFileStoreOn = ErpFileStoreOn;
+    }
+
+    public RichInputText getErpFileStoreOn() {
+        return ErpFileStoreOn;
+    }
+
+    public void setErpFileStorePath(RichInputText ErpFileStorePath) {
+        this.ErpFileStorePath = ErpFileStorePath;
+    }
+
+    public RichInputText getErpFileStorePath() {
+        return ErpFileStorePath;
+    }
+
+    public void setERPUploadFile(RichInputFile ERPUploadFile) {
+        this.ERPUploadFile = ERPUploadFile;
+    }
+
+    public RichInputFile getERPUploadFile() {
+        return ERPUploadFile;
     }
 
     public void setLerpSupervisePopupConfirm(RichPopup lerpSupervisePopupConfirm) {
@@ -318,5 +361,14 @@ public class ERPINVClass {
     public RichPanelTabbed getLErpPanelDefaultTabbed() {
         return lErpPanelDefaultTabbed;
     }
+
+    public void doUploadItemPic(ValueChangeEvent vce) {
+    //    public static void ErpuploadImage(UploadedFile file, String pUploadPath,String pColumnName, String pStoreOn, String pIteratorName) {
+        ERPGlobalsClass.ErpuploadImage((UploadedFile)vce.getNewValue(), getErpFileStorePath().getValue().toString(), "ItemPictureName", getErpFileStoreOn().getValue().toString(), "InvItemCRUDIterator",getERPPrimaryKey().getValue().toString(),"2");
+        OperationBinding ob = ERPGlobalsClass.doGetERPOperation("Commit");
+        ob.execute();
+        getERPUploadFile().resetValue();
+        
+    }    
 }
 

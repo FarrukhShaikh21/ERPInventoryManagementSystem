@@ -38,6 +38,27 @@
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="87%" id="gc4" halign="stretch"
                                                          columnSpan="5" rowSpan="1" marginEnd="5px">
+                                                <af:inputText value="#{bindings.ItemId.inputValue}"
+                                                              label="#{bindings.ItemId.hints.label}"
+                                                              required="#{bindings.ItemId.hints.mandatory}"
+                                                              columns="#{bindings.ItemId.hints.displayWidth}"
+                                                              maximumLength="#{bindings.ItemId.hints.precision}"
+                                                              shortDesc="#{bindings.ItemId.hints.tooltip}" id="it10"
+                                                              rendered="false"
+                                                              binding="#{pageFlowScope.OracleERPBean.ERPPrimaryKey}">
+                                                    <f:validator binding="#{bindings.ItemId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.ItemId.format}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.ItemPictureName.inputValue}"
+                                                              label="#{bindings.ItemPictureName.hints.label}"
+                                                              required="#{bindings.ItemPictureName.hints.mandatory}"
+                                                              columns="#{bindings.ItemPictureName.hints.displayWidth}"
+                                                              maximumLength="#{bindings.ItemPictureName.hints.precision}"
+                                                              shortDesc="#{bindings.ItemPictureName.hints.tooltip}"
+                                                              id="it9" rendered="false">
+                                                    <f:validator binding="#{bindings.ItemPictureName.validator}"/>
+                                                </af:inputText>
                                                 <af:inputText value="#{bindings.IsUnsupervised.inputValue}"
                                                               label="#{bindings.IsUnsupervised.hints.label}"
                                                               required="#{bindings.IsUnsupervised.hints.mandatory}"
@@ -55,6 +76,26 @@
                                                               shortDesc="#{bindings.IsSupervised.hints.tooltip}"
                                                               id="it7" rendered="false">
                                                     <f:validator binding="#{bindings.IsSupervised.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.ValueDescription1.inputValue}"
+                                                              label="#{bindings.ValueDescription1.hints.label}"
+                                                              required="#{bindings.ValueDescription1.hints.mandatory}"
+                                                              columns="#{bindings.ValueDescription1.hints.displayWidth}"
+                                                              maximumLength="#{bindings.ValueDescription1.hints.precision}"
+                                                              shortDesc="File Store Path"
+                                                              id="it12"
+                                                              binding="#{pageFlowScope.OracleERPBean.erpFileStorePath}">
+                                                    <f:validator binding="#{bindings.ValueDescription1.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.ValueDescription.inputValue}"
+                                                              label="#{bindings.ValueDescription.hints.label}"
+                                                              required="#{bindings.ValueDescription.hints.mandatory}"
+                                                              columns="#{bindings.ValueDescription.hints.displayWidth}"
+                                                              maximumLength="#{bindings.ValueDescription.hints.precision}"
+                                                              shortDesc="Store On Database Or File System"
+                                                              id="it11"
+                                                              binding="#{pageFlowScope.OracleERPBean.erpFileStoreOn}">
+                                                    <f:validator binding="#{bindings.ValueDescription.validator}"/>
                                                 </af:inputText>
                                                 <af:inputText value="#{bindings.Description.inputValue}"
                                                               label="#{bindings.Description.hints.label}"
@@ -108,11 +149,16 @@
                                             <af:gridCell id="gc65" width="13%" halign="stretch" marginStart="5px"
                                                          marginEnd="5px" valign="middle" rowSpan="3">
                                                 <af:inputFile id="if1"
-                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }"/>
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }"
+                                                              valueChangeListener="#{pageFlowScope.OracleERPBean.doUploadItemPic}"
+                                                              binding="#{pageFlowScope.OracleERPBean.ERPUploadFile}"
+                                                              autoSubmit="true"/>
                                             </af:gridCell>
                                             <af:gridCell id="gc66" width="20%" halign="stretch" marginStart="5px"
                                                          marginEnd="5px" valign="middle" rowSpan="3">
-                                                <af:image id="i1"/>
+                                                <af:image id="i1"
+                                                          source="/erpglobalsservlet?erpfilename=#{bindings.ItemPictureName.inputValue}&amp;erpsourceid=#{bindings.ItemId.inputValue}&amp;erpsourcetype=2"
+                                                          partialTriggers="if1"/>
                                             </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow id="gr5" marginTop="5px" marginBottom="5px">

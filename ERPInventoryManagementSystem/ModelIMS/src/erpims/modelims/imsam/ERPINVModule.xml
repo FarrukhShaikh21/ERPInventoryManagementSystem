@@ -59,4 +59,36 @@
       Name="InvItemVOByItemIDVC"
       FullName="erpims.modelims.imsvo.InvItemVO.InvItemVOByItemIDVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="SysGeneralValueStoreOnRO"
+    ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO">
+    <ViewCriteriaUsage
+      Name="SysGeneralValueActiveVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueActiveVC"/>
+    <ViewCriteriaUsage
+      Name="SysGeneralValueByValueSetIDVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueByValueSetIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_VALUE_SET_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[6]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewUsage>
+  <ViewUsage
+    Name="SysGeneralValueStorePathRO"
+    ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO">
+    <ViewCriteriaUsage
+      Name="SysGeneralValueActiveVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueActiveVC"/>
+    <ViewCriteriaUsage
+      Name="SysGeneralValueByValueSetIDVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueByValueSetIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_VALUE_SET_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[7]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewUsage>
 </AppModule>
