@@ -101,5 +101,7 @@
         <Item Value="IsUnsupervised"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovtxtParentItemName"
+                  id="txtParentItemName"/>
   </bindings>
 </pageDefinition>

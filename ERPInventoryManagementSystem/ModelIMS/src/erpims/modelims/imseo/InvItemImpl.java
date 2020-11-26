@@ -1098,15 +1098,15 @@ public class InvItemImpl extends ERPEntityImpl {
      * Gets the attribute value for ParentItemId, using the alias name ParentItemId.
      * @return the value of ParentItemId
      */
-    public BigDecimal getParentItemId() {
-        return (BigDecimal) getAttributeInternal(PARENTITEMID);
+    public Integer getParentItemId() {
+        return (Integer) getAttributeInternal(PARENTITEMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ParentItemId.
      * @param value value to set the ParentItemId
      */
-    public void setParentItemId(BigDecimal value) {
+    public void setParentItemId(Integer value) {
         setAttributeInternal(PARENTITEMID, value);
     }
 
@@ -1547,6 +1547,7 @@ public class InvItemImpl extends ERPEntityImpl {
                 ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_SHORT_CODE",
                                                               this.getEntityDef().getSource(), "COMPANY_ID",
                                                               getCompanyId().toString());
+            populateAttributeAsChanged(ITEMHIERARCHYPATH,( getParentItemId()==null?getItemId():(getParentItemId()+"-"+getItemId()) ) );
             populateAttributeAsChanged(ITEMSHORTCODE, result);
 
         }
