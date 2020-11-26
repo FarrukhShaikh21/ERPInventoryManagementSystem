@@ -62,7 +62,8 @@
                                                               columns="#{bindings.Description.hints.displayWidth}"
                                                               maximumLength="#{bindings.Description.hints.precision}"
                                                               shortDesc="#{bindings.Description.hints.tooltip}"
-                                                              id="it1" simple="true" contentStyle="width:100%">
+                                                              id="it1" simple="true" contentStyle="width:100%"
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.Description.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
@@ -99,13 +100,15 @@
                                                               columns="#{bindings.ItemShortName.hints.displayWidth}"
                                                               maximumLength="#{bindings.ItemShortName.hints.precision}"
                                                               shortDesc="#{bindings.ItemShortName.hints.tooltip}"
-                                                              id="it3" simple="true" contentStyle="width:100%">
+                                                              id="it3" simple="true" contentStyle="width:100%"
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.ItemShortName.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
                                             <af:gridCell id="gc65" width="13%" halign="stretch" marginStart="5px"
                                                          marginEnd="5px" valign="middle" rowSpan="3">
-                                                <af:inputFile id="if1"/>
+                                                <af:inputFile id="if1"
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }"/>
                                             </af:gridCell>
                                             <af:gridCell id="gc66" width="20%" halign="stretch" marginStart="5px"
                                                          marginEnd="5px" valign="middle" rowSpan="3">
@@ -124,7 +127,8 @@
                                                               required="#{bindings.StartDate.hints.mandatory}"
                                                               columns="#{bindings.StartDate.hints.displayWidth}"
                                                               shortDesc="#{bindings.StartDate.hints.tooltip}" id="id1"
-                                                              simple="true" contentStyle="width:80%">
+                                                              simple="true" contentStyle="width:80%"
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.StartDate.validator}"/>
                                                     <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
                                                 </af:inputDate>
@@ -140,7 +144,8 @@
                                                               required="#{bindings.EndDate.hints.mandatory}"
                                                               columns="#{bindings.EndDate.hints.displayWidth}"
                                                               shortDesc="#{bindings.EndDate.hints.tooltip}" id="id2"
-                                                              simple="true" contentStyle="width:80%">
+                                                              simple="true" contentStyle="width:80%"
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.EndDate.validator}"/>
                                                     <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
                                                 </af:inputDate>
@@ -157,7 +162,8 @@
                                                                     label="#{bindings.IsActive.label}"
                                                                     required="#{bindings.IsActive.hints.mandatory}"
                                                                     shortDesc="#{bindings.IsActive.hints.tooltip}"
-                                                                    id="soc1" simple="true" contentStyle="width:100%">
+                                                                    id="soc1" simple="true" contentStyle="width:100%"
+                                                                    readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:selectItems value="#{bindings.IsActive.items}" id="si1"/>
                                                     <f:validator binding="#{bindings.IsActive.validator}"/>
                                                 </af:selectOneChoice>
@@ -188,7 +194,8 @@
                                                                               required="#{bindings.txtPurchaseUnitTypeName.hints.mandatory}"
                                                                               columns="#{bindings.txtPurchaseUnitTypeName.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtPurchaseUnitTypeName.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtPurchaseUnitTypeName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -207,7 +214,8 @@
                                                                               required="#{bindings.txtSaleUnitTypeName.hints.mandatory}"
                                                                               columns="#{bindings.txtSaleUnitTypeName.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtSaleUnitTypeName.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtSaleUnitTypeName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -226,7 +234,8 @@
                                                                               required="#{bindings.txtStockUnitTypeName.hints.mandatory}"
                                                                               columns="#{bindings.txtStockUnitTypeName.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtStockUnitTypeName.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtStockUnitTypeName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -243,7 +252,8 @@
                                                                               required="#{bindings.txtUnitTypeName.hints.mandatory}"
                                                                               columns="#{bindings.txtUnitTypeName.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtUnitTypeName.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtUnitTypeName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -261,7 +271,8 @@
                                                               columns="#{bindings.ReorderQty.hints.displayWidth}"
                                                               maximumLength="#{bindings.ReorderQty.hints.precision}"
                                                               shortDesc="#{bindings.ReorderQty.hints.tooltip}" id="it4"
-                                                              simple="true" contentStyle="width:100%">
+                                                              simple="true" contentStyle="width:100%"
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.ReorderQty.validator}"/>
                                                     <af:convertNumber groupingUsed="false"
                                                                       pattern="#{bindings.ReorderQty.format}"/>
@@ -279,7 +290,8 @@
                                                               columns="#{bindings.MinLevel.hints.displayWidth}"
                                                               maximumLength="#{bindings.MinLevel.hints.precision}"
                                                               shortDesc="#{bindings.MinLevel.hints.tooltip}" id="it5"
-                                                              simple="true" contentStyle="width:100%">
+                                                              simple="true" contentStyle="width:100%"
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.MinLevel.validator}"/>
                                                     <af:convertNumber groupingUsed="false"
                                                                       pattern="#{bindings.MinLevel.format}"/>
@@ -297,7 +309,8 @@
                                                               columns="#{bindings.MaxLevel.hints.displayWidth}"
                                                               maximumLength="#{bindings.MaxLevel.hints.precision}"
                                                               shortDesc="#{bindings.MaxLevel.hints.tooltip}" id="it6"
-                                                              simple="true" contentStyle="width:100%">
+                                                              simple="true" contentStyle="width:100%"
+                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.MaxLevel.validator}"/>
                                                     <af:convertNumber groupingUsed="false"
                                                                       pattern="#{bindings.MaxLevel.format}"/>
@@ -321,7 +334,8 @@
                                                                               model="#{bindings.txtCOACOGSDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCOACOGSDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCOACOGSDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCOACOGSDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -336,7 +350,8 @@
                                                                               model="#{bindings.txtCOAIncomeDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCOAIncomeDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCOAIncomeDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCOAIncomeDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -352,7 +367,8 @@
                                                                               model="#{bindings.txtGainLossDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtGainLossDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtGainLossDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtGainLossDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -369,7 +385,8 @@
                                                                               model="#{bindings.txtCoaAssetDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCoaAssetDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaAssetDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCoaAssetDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -384,7 +401,8 @@
                                                                               model="#{bindings.txtQuantityAdjustDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtQuantityAdjustDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtQuantityAdjustDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtQuantityAdjustDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -400,7 +418,8 @@
                                                                               model="#{bindings.txtCoaInventoryDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCoaInventoryDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaInventoryDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCoaInventoryDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -417,7 +436,8 @@
                                                                               model="#{bindings.txtCoaPurchPriceVariance.listOfValuesModel}"
                                                                               columns="#{bindings.txtCoaPurchPriceVariance.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaPurchPriceVariance.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCoaPurchPriceVariance.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -432,7 +452,8 @@
                                                                               model="#{bindings.txtCoaSaleRetVarDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCoaSaleRetVarDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaSaleRetVarDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCoaSaleRetVarDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -448,7 +469,8 @@
                                                                               model="#{bindings.txtPurchaseRetDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtPurchaseRetDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtPurchaseRetDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtPurchaseRetDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -465,7 +487,8 @@
                                                                               model="#{bindings.txtCoaExRateVarDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCoaExRateVarDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaExRateVarDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCoaExRateVarDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -480,7 +503,8 @@
                                                                               model="#{bindings.txtCoaBillPriceVarDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCoaBillPriceVarDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaBillPriceVarDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCoaBillPriceVarDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -496,7 +520,8 @@
                                                                               model="#{bindings.txtCoaShipmentDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCoaShipmentDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaShipmentDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCoaShipmentDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -513,7 +538,8 @@
                                                                               model="#{bindings.txtCoaWipDescription.listOfValuesModel}"
                                                                               columns="#{bindings.txtCoaWipDescription.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCoaWipDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%">
+                                                                              simple="true" contentStyle="width:80%"
+                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue==null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtCoaWipDescription.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -552,17 +578,17 @@
                                                      iconPosition="top"
                                                      action="#{pageFlowScope.OracleERPBean.doERPPopUnSuperviseRecord}"
                                                      partialSubmit="true"
-                                                     disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.CustomerShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
-                                                <af:setActionListener from="#{'ScmCustomerCRUDIterator'}"
+                                                     disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.ItemShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
+                                                <af:setActionListener from="#{'InvItemCRUDIterator'}"
                                                                       to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
                                             </af:link>
                                             <af:link text="Supervise" id="l18"
                                                      icon="#{resource['images:imgSuperviseRecord.png']}"
                                                      iconPosition="top" partialSubmit="true"
                                                      action="#{pageFlowScope.OracleERPBean.doERPPopSupervisedRecord}"
-                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.CustomerShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}">
+                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.ItemShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}">
                                                 <af:setActionListener to="#{pageFlowScope.OracleERPBean.LIteratorName}"
-                                                                      from="#{'ScmCustomerCRUDIterator'}"/>
+                                                                      from="#{'InvItemCRUDIterator'}"/>
                                             </af:link>
                                             <af:link text="Add" disabled="#{!bindings.CreateWithParams.enabled}" id="l1"
                                                      partialSubmit="true" icon="#{resource['images:imgAddRecord.png']}"
