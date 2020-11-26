@@ -570,7 +570,7 @@
                                                                       to="#{pageFlowScope.OracleERPBean.LErpPanelTabbed}"/>
                                             </af:link>
                                             <af:link actionListener="#{bindings.Delete.execute}" text="Delete"
-                                                     disabled="#{(pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' &amp;&amp; bindings.CustomerShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' || bindings.ScmCustomerSitesDetROIterator.estimatedRowCount>0}"
+                                                     disabled="#{(pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' || bindings.InvItemCRUDIterator.estimatedRowCount>0}"
                                                      id="l3" icon="#{resource['images:imgDeleteRecord.png']}"
                                                      iconPosition="top" partialSubmit="true"/>
                                             <af:link text="UnSupervise" id="l19"
@@ -590,7 +590,8 @@
                                                 <af:setActionListener to="#{pageFlowScope.OracleERPBean.LIteratorName}"
                                                                       from="#{'InvItemCRUDIterator'}"/>
                                             </af:link>
-                                            <af:link text="Add" disabled="#{!bindings.CreateWithParams.enabled}" id="l1"
+                                            <af:link text="Add"
+                                                     disabled="#{pageFlowScope.ERPMainTempBean.LERPAllowAdd=='N'}" id="l1"
                                                      partialSubmit="true" icon="#{resource['images:imgAddRecord.png']}"
                                                      iconPosition="top"
                                                      action="#{pageFlowScope.OracleERPBean.doERPAddRecordWithPara}"/>

@@ -4,7 +4,7 @@
   <af:document title="INV_0003_EDIT.jsf" id="d1">
     <af:messages id="m1"/>
     <af:form id="f1">
-      <af:panelSplitter id="ps1" orientation="vertical" disabled="true" splitterPosition="201">
+      <af:panelSplitter id="ps1" orientation="vertical" disabled="true" splitterPosition="150">
         <f:facet name="first">
           <af:panelBox text="PanelBox3" id="pb1" showHeader="never">
             <f:facet name="toolbar"/>
@@ -13,15 +13,27 @@
                 <af:decorativeBox id="db1">
                   <f:facet name="center">
                     <af:panelGridLayout id="pgl2">
-                      <af:gridRow marginTop="5px" height="auto" id="gr2">
-                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="center">
+                      <af:gridRow marginTop="5px" height="auto" id="gr2" marginBottom="5px">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="center"
+                                     valign="stretch">
                           <af:panelFormLayout id="pfl1" rows="1" maxColumns="4" labelWidth="100">
+                            <af:inputText value="#{bindings.CompanyShortCode.inputValue}"
+                                          label="#{bindings.CompanyShortCode.hints.label}"
+                                          required="#{bindings.CompanyShortCode.hints.mandatory}"
+                                          columns="#{bindings.CompanyShortCode.hints.displayWidth}"
+                                          maximumLength="#{bindings.CompanyShortCode.hints.precision}"
+                                          shortDesc="#{bindings.CompanyShortCode.hints.tooltip}" id="it5"
+                                          readOnly="true">
+                              <f:validator binding="#{bindings.CompanyShortCode.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.CompanyShortCode.format}"/>
+                            </af:inputText>
                             <af:inputText value="#{bindings.CompCode.inputValue}"
                                           label="#{bindings.CompCode.hints.label}"
                                           required="#{bindings.CompCode.hints.mandatory}"
                                           columns="#{bindings.CompCode.hints.displayWidth}"
                                           maximumLength="#{bindings.CompCode.hints.precision}"
-                                          shortDesc="#{bindings.CompCode.hints.tooltip}" id="it2" readOnly="true">
+                                          shortDesc="#{bindings.CompCode.hints.tooltip}" id="it2" readOnly="true"
+                                          rendered="false">
                               <f:validator binding="#{bindings.CompCode.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.CompCode.format}"/>
                             </af:inputText>
@@ -42,21 +54,12 @@
                                           readOnly="true">
                               <f:validator binding="#{bindings.CompanyShortName.validator}"/>
                             </af:inputText>
-                            <af:inputText value="#{bindings.CompanyShortCode.inputValue}"
-                                          label="#{bindings.CompanyShortCode.hints.label}"
-                                          required="#{bindings.CompanyShortCode.hints.mandatory}"
-                                          columns="#{bindings.CompanyShortCode.hints.displayWidth}"
-                                          maximumLength="#{bindings.CompanyShortCode.hints.precision}"
-                                          shortDesc="#{bindings.CompanyShortCode.hints.tooltip}" id="it5"
-                                          readOnly="true">
-                              <f:validator binding="#{bindings.CompanyShortCode.validator}"/>
-                              <af:convertNumber groupingUsed="false" pattern="#{bindings.CompanyShortCode.format}"/>
-                            </af:inputText>
                           </af:panelFormLayout>
                         </af:gridCell>
                       </af:gridRow>
-                      <af:gridRow marginTop="5px" height="auto" id="gr3">
-                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center">
+                      <af:gridRow marginTop="5px" id="gr3" marginBottom="5px">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center"
+                                     valign="stretch">
                           <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
                                          value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
                                          model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
@@ -67,12 +70,8 @@
                           </af:quickQuery>
                         </af:gridCell>
                       </af:gridRow>
-                      <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
-                        <af:gridCell marginStart="5px" width="0%" marginEnd="5px" id="gc5" valign="stretch"/>
-                      </af:gridRow>
                     </af:panelGridLayout>
                   </f:facet>
-                  <f:facet name="top"/>
                 </af:decorativeBox>
               </f:facet>
               <f:facet name="top">
@@ -130,6 +129,7 @@
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" halign="stretch">
                               <af:panelGroupLayout id="pgl7" layout="horizontal">
                                 <af:image id="i1" source="#{resource['images:imgDocumentNumber.png']}"/>
+                                <af:spacer width="10" height="10" id="s3"/>
                                 <af:outputFormatted value="#{item.bindings.ItemShortCode.inputValue}" id="of7"
                                                     styleClass="ERPHeroDetailColor">
                                   <af:convertNumber groupingUsed="false"
@@ -142,6 +142,7 @@
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8" halign="stretch">
                               <af:panelGroupLayout id="pgl8" layout="horizontal">
                                 <af:image source="#{resource['images:imgShortName.png']}" id="i2"/>
+                                <af:spacer width="10" height="10" id="s4"/>
                                 <af:outputFormatted value="#{item.bindings.Description.inputValue}" id="of8"
                                                     styleClass="ERPHeroDetailColor"/>
                               </af:panelGroupLayout>
@@ -165,7 +166,8 @@
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10" halign="stretch">
                               <af:panelGroupLayout id="pgl12" layout="horizontal">
                                 <af:image source="#{resource['images:imgActive.png']}" id="i4"/>
-                                <af:outputFormatted value="#{item.bindings.IsActive.inputValue}" id="of10"
+                                <af:spacer width="10" height="10" id="s2"/>
+                                <af:outputFormatted value="#{item.bindings.IsActive.inputValue=='0'?'YES':'NO'}" id="of10"
                                                     styleClass="ERPHeroDetailColor"/>
                               </af:panelGroupLayout>
                             </af:gridCell>
