@@ -84,7 +84,8 @@
                                                               maximumLength="#{bindings.ValueDescription1.hints.precision}"
                                                               shortDesc="File Store Path"
                                                               id="it12"
-                                                              binding="#{pageFlowScope.OracleERPBean.erpFileStorePath}">
+                                                              binding="#{pageFlowScope.OracleERPBean.erpFileStorePath}"
+                                                              rendered="false">
                                                     <f:validator binding="#{bindings.ValueDescription1.validator}"/>
                                                 </af:inputText>
                                                 <af:inputText value="#{bindings.ValueDescription.inputValue}"
@@ -94,7 +95,8 @@
                                                               maximumLength="#{bindings.ValueDescription.hints.precision}"
                                                               shortDesc="Store On Database Or File System"
                                                               id="it11"
-                                                              binding="#{pageFlowScope.OracleERPBean.erpFileStoreOn}">
+                                                              binding="#{pageFlowScope.OracleERPBean.erpFileStoreOn}"
+                                                              rendered="false">
                                                     <f:validator binding="#{bindings.ValueDescription.validator}"/>
                                                 </af:inputText>
                                                 <af:inputText value="#{bindings.Description.inputValue}"
