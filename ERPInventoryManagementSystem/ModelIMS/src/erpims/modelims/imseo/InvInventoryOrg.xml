@@ -38,7 +38,6 @@
   <Attribute
     Name="InventoryOrgCode"
     IsUnique="true"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="INVENTORY_ORG_CODE"
@@ -105,6 +104,8 @@
     Type="java.sql.Date"
     ColumnType="DATE"
     TableName="INV_INVENTORY_ORG">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

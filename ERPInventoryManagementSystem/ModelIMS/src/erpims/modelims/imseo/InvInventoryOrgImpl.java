@@ -792,16 +792,16 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         if (operation == DML_INSERT) {
             
             String result =
-                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_ID",
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "INVENTORY_ORG_SNO",
                                                               this.getEntityDef().getSource(), null, null);
 
             populateAttributeAsChanged(INVENTORYORGSNO, Integer.parseInt(result));
             result =
-                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_SHORT_CODE",
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ORG_SHORT_NAME",
                                                               this.getEntityDef().getSource(), "COMPANY_ID",
                                                               getCompanyId().toString());
-            //populateAttributeAsChanged(ITEMHIERARCHYPATH,( getParentItemId()==null?getItemId():(getParentItemId()+"-"+getItemId()) ) );
-            //populateAttributeAsChanged(ITEMSHORTCODE, result);
+            //populateAttributeAsChanged(ORGHIERARCHYPATH,( getParentItemId()==null?getItemId():(getParentItemId()+"-"+getItemId()) ) );
+            populateAttributeAsChanged(INVENTORYORGCODE, result);
 
         }        
         super.doDML(operation, e);

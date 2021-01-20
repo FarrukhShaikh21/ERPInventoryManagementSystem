@@ -6,12 +6,11 @@
     <variableIterator id="variables"/>
     <iterator Binds="AdminCompanyVOByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="AdminCompanyVOByCompanyROIterator"/>
-    <iterator Binds="InvItemByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvItemByCompanyROIterator"/>
     <iterator Binds="InvInventoryOrgByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="InvInventoryOrgByCompanyROIterator"/>
-    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="InvInventoryOrgByCompanyROIterator" id="ImplicitViewCriteriaQuery"/>
+    <searchRegion Criteria="InvInventoryOrgVOFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvInventoryOrgByCompanyROIterator" id="ImplicitViewCriteriaQuery"
+                  InitialQueryOverridden="true"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="AdminCompanyVOByCompanyROIterator" id="CompCode">
@@ -34,17 +33,6 @@
         <Item Value="CompanyShortCode"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="InvItemByCompanyROIterator" id="InvItemByCompanyRO">
-      <nodeDefinition DefName="erpims.modelims.imsvo.InvItemVO" Name="InvItemByCompanyRO0">
-        <AttrNames>
-          <Item Value="ItemShortName"/>
-          <Item Value="ItemShortCode"/>
-          <Item Value="Description"/>
-          <Item Value="StartDate"/>
-          <Item Value="IsActive"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="InvInventoryOrgByCompanyROIterator" id="InvInventoryOrgByCompanyRO">
       <nodeDefinition DefName="erpims.modelims.imsvo.InvInventoryOrgVO" Name="InvInventoryOrgByCompanyRO0">
         <AttrNames>
