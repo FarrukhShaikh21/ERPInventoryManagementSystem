@@ -4,84 +4,48 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="InvInventoryOrgCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvInventoryOrgCRUDIterator"/>
+    <iterator Binds="AdminCompanyVOByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="AdminCompanyVOByCompanyROIterator"/>
+    <iterator Binds="InvItemByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvItemByCompanyROIterator"/>
+    <searchRegion Criteria="InvItemFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvItemByCompanyROIterator" id="ImplicitViewCriteriaQuery" InitialQueryOverridden="true"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OrgDescription">
+    <attributeValues IterBinding="AdminCompanyVOByCompanyROIterator" id="CompCode">
       <AttrNames>
-        <Item Value="OrgDescription"/>
+        <Item Value="CompCode"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="InventoryOrgCode">
+    <attributeValues IterBinding="AdminCompanyVOByCompanyROIterator" id="CompanyName">
       <AttrNames>
-        <Item Value="InventoryOrgCode"/>
+        <Item Value="CompanyName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OrgShortName">
+    <attributeValues IterBinding="AdminCompanyVOByCompanyROIterator" id="CompanyShortName">
       <AttrNames>
-        <Item Value="OrgShortName"/>
+        <Item Value="CompanyShortName"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovIsActive" id="IsActive"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OpenDate">
+    <attributeValues IterBinding="AdminCompanyVOByCompanyROIterator" id="CompanyShortCode">
       <AttrNames>
-        <Item Value="OpenDate"/>
+        <Item Value="CompanyShortCode"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="InventoryOrgSno">
+    <tree IterBinding="InvItemByCompanyROIterator" id="InvItemByCompanyRO">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvItemVO" Name="InvItemByCompanyRO0">
+        <AttrNames>
+          <Item Value="ItemShortName"/>
+          <Item Value="ItemShortCode"/>
+          <Item Value="Description"/>
+          <Item Value="StartDate"/>
+          <Item Value="IsActive"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvItemByCompanyROIterator" id="ItemId">
       <AttrNames>
-        <Item Value="InventoryOrgSno"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="IsSupervised">
-      <AttrNames>
-        <Item Value="IsSupervised"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="IsUnsupervised">
-      <AttrNames>
-        <Item Value="IsUnsupervised"/>
-      </AttrNames>
-    </attributeValues>
-    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
-                  id="txtLocationName"/>
-    <action IterBinding="InvInventoryOrgCRUDIterator" id="Delete" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <action IterBinding="InvInventoryOrgCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
-            Action="createWithParams"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
-            DataControl="ERPINVModuleDataControl"/>
-    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtParentOrgName"
-                  id="txtParentOrgName"/>
-    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtCountryName"
-                  id="txtCountryName"/>
-    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtCityName" id="txtCityName"/>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="ContactPerson">
-      <AttrNames>
-        <Item Value="ContactPerson"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="PhoneNo">
-      <AttrNames>
-        <Item Value="PhoneNo"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="MobileNo">
-      <AttrNames>
-        <Item Value="MobileNo"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="FaxNo">
-      <AttrNames>
-        <Item Value="FaxNo"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="Address">
-      <AttrNames>
-        <Item Value="Address"/>
+        <Item Value="ItemId"/>
       </AttrNames>
     </attributeValues>
   </bindings>
