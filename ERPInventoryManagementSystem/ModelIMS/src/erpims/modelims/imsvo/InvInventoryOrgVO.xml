@@ -373,7 +373,9 @@
     EntityAttrName="txtParentOrgName"
     EntityUsage="InvInventoryOrg"
     AliasName="txt_Parent_Org_Name"
-    LOVName="LovtxtParentOrgName">
+    LOVName="LovtxtParentOrgName"
+    IsQueriable="false"
+    IsPersistent="false">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -509,4 +511,8 @@
     ViewLink="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
 </ViewObject>
