@@ -557,6 +557,12 @@
     ViewLink="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SmCityVO"
+    ViewLink="erpims.modelims.imsvo.SmCityInvInventoryOrgCitySnoVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpims.modelims.ModelIMSBundle"/>
