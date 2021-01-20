@@ -133,9 +133,23 @@
                                         </af:gridRow>
                                         <af:gridRow id="gr5" marginTop="5px" marginBottom="5px">
                                             <af:gridCell id="gc35" width="13%" rowSpan="1" halign="center"
-                                                         marginStart="5px" marginEnd="5px" valign="middle"/>
+                                                         marginStart="5px" marginEnd="5px" valign="middle">
+                                                <af:outputLabel value="#{bindings.txtLocationName.hints.label}" id="ol5"/>
+                                            </af:gridCell>
                                             <af:gridCell id="gc33" width="20%" halign="stretch" marginStart="5px"
-                                                         marginEnd="5px" valign="middle"/>
+                                                         marginEnd="5px" valign="middle">
+                                                <af:inputComboboxListOfValues id="txtLocationNameId"
+                                                                              popupTitle="Search and Select: #{bindings.txtLocationName.hints.label}"
+                                                                              value="#{bindings.txtLocationName.inputValue}"
+                                                                              label="#{bindings.txtLocationName.hints.label}"
+                                                                              model="#{bindings.txtLocationName.listOfValuesModel}"
+                                                                              required="#{bindings.txtLocationName.hints.mandatory}"
+                                                                              columns="#{bindings.txtLocationName.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtLocationName.hints.tooltip}"
+                                                                              simple="true" contentStyle="width:100%">
+                                                    <f:validator binding="#{bindings.txtLocationName.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
                                             <af:gridCell id="gc5" width="13%" marginStart="5px" marginEnd="5px"
                                                          rowSpan="1" halign="center" valign="middle"/>
                                             <af:gridCell id="gc6" width="20%" marginStart="5px" marginEnd="5px"
@@ -207,226 +221,44 @@
                                     <f:facet name="toolbar"/>
                                     <af:panelGridLayout id="pgl1">
                                         <af:gridRow marginTop="5px" height="auto" id="gr1">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc1" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCOACOGSDescription.hints.label}" id="ol11"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc2" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCOACOGSDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCOACOGSDescription.hints.label}"
-                                                                              value="#{bindings.txtCOACOGSDescription.inputValue}"
-                                                                              label="#{bindings.txtCOACOGSDescription.hints.label}"
-                                                                              model="#{bindings.txtCOACOGSDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCOACOGSDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCOACOGSDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCOACOGSDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc19" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCOAIncomeDescription.hints.label}" id="ol12"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc20" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCOAIncomeDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCOAIncomeDescription.hints.label}"
-                                                                              value="#{bindings.txtCOAIncomeDescription.inputValue}"
-                                                                              label="#{bindings.txtCOAIncomeDescription.hints.label}"
-                                                                              model="#{bindings.txtCOAIncomeDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCOAIncomeDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCOAIncomeDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCOAIncomeDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc21" halign="center">
-                                                <af:outputLabel value="#{bindings.txtGainLossDescription.hints.label}" id="ol13"/>
-                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc1" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc2" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc19" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc20" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc21" halign="center"/>
                                             <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc22"
-                                                         halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtGainLossDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtGainLossDescription.hints.label}"
-                                                                              value="#{bindings.txtGainLossDescription.inputValue}"
-                                                                              label="#{bindings.txtGainLossDescription.hints.label}"
-                                                                              model="#{bindings.txtGainLossDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtGainLossDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtGainLossDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtGainLossDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
+                                                         halign="stretch"/>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr10">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc25" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCoaAssetDescription.hints.label}" id="ol14"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc26" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCoaAssetDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCoaAssetDescription.hints.label}"
-                                                                              value="#{bindings.txtCoaAssetDescription.inputValue}"
-                                                                              label="#{bindings.txtCoaAssetDescription.hints.label}"
-                                                                              model="#{bindings.txtCoaAssetDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCoaAssetDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCoaAssetDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCoaAssetDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc27" halign="center">
-                                                <af:outputLabel value="#{bindings.txtQuantityAdjustDescription.hints.label}" id="ol15"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc28" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtQuantityAdjustDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtQuantityAdjustDescription.hints.label}"
-                                                                              value="#{bindings.txtQuantityAdjustDescription.inputValue}"
-                                                                              label="#{bindings.txtQuantityAdjustDescription.hints.label}"
-                                                                              model="#{bindings.txtQuantityAdjustDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtQuantityAdjustDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtQuantityAdjustDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtQuantityAdjustDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc29" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCoaInventoryDescription.hints.label}" id="ol16"/>
-                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc25" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc26" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc27" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc28" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc29" halign="center"/>
                                             <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc30"
-                                                         halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCoaInventoryDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCoaInventoryDescription.hints.label}"
-                                                                              value="#{bindings.txtCoaInventoryDescription.inputValue}"
-                                                                              label="#{bindings.txtCoaInventoryDescription.hints.label}"
-                                                                              model="#{bindings.txtCoaInventoryDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCoaInventoryDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCoaInventoryDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCoaInventoryDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
+                                                         halign="stretch"/>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr11">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc31" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCoaPurchPriceVariance.hints.label}" id="ol17"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc32" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCoaPurchPriceVarianceId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCoaPurchPriceVariance.hints.label}"
-                                                                              value="#{bindings.txtCoaPurchPriceVariance.inputValue}"
-                                                                              label="#{bindings.txtCoaPurchPriceVariance.hints.label}"
-                                                                              model="#{bindings.txtCoaPurchPriceVariance.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCoaPurchPriceVariance.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCoaPurchPriceVariance.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCoaPurchPriceVariance.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc34" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCoaSaleRetVarDescription.hints.label}" id="ol18"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc36" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCoaSaleRetVarDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCoaSaleRetVarDescription.hints.label}"
-                                                                              value="#{bindings.txtCoaSaleRetVarDescription.inputValue}"
-                                                                              label="#{bindings.txtCoaSaleRetVarDescription.hints.label}"
-                                                                              model="#{bindings.txtCoaSaleRetVarDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCoaSaleRetVarDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCoaSaleRetVarDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCoaSaleRetVarDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc51" halign="center">
-                                                <af:outputLabel value="#{bindings.txtPurchaseRetDescription.hints.label}" id="ol25"/>
-                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc31" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc32" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc34" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc36" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc51" halign="center"/>
                                             <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc52"
-                                                         halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtPurchaseRetDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtPurchaseRetDescription.hints.label}"
-                                                                              value="#{bindings.txtPurchaseRetDescription.inputValue}"
-                                                                              label="#{bindings.txtPurchaseRetDescription.hints.label}"
-                                                                              model="#{bindings.txtPurchaseRetDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtPurchaseRetDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtPurchaseRetDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtPurchaseRetDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
+                                                         halign="stretch"/>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr12">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc53" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCoaExRateVarDescription.hints.label}" id="ol26"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc54" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCoaExRateVarDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCoaExRateVarDescription.hints.label}"
-                                                                              value="#{bindings.txtCoaExRateVarDescription.inputValue}"
-                                                                              label="#{bindings.txtCoaExRateVarDescription.hints.label}"
-                                                                              model="#{bindings.txtCoaExRateVarDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCoaExRateVarDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCoaExRateVarDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCoaExRateVarDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc55" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCoaBillPriceVarDescription.hints.label}" id="ol27"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc56" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCoaBillPriceVarDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCoaBillPriceVarDescription.hints.label}"
-                                                                              value="#{bindings.txtCoaBillPriceVarDescription.inputValue}"
-                                                                              label="#{bindings.txtCoaBillPriceVarDescription.hints.label}"
-                                                                              model="#{bindings.txtCoaBillPriceVarDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCoaBillPriceVarDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCoaBillPriceVarDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCoaBillPriceVarDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc57" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCoaShipmentDescription.hints.label}" id="ol8"/>
-                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc53" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc54" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc55" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc56" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc57" halign="center"/>
                                             <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc58"
-                                                         halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCoaShipmentDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCoaShipmentDescription.hints.label}"
-                                                                              value="#{bindings.txtCoaShipmentDescription.inputValue}"
-                                                                              label="#{bindings.txtCoaShipmentDescription.hints.label}"
-                                                                              model="#{bindings.txtCoaShipmentDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCoaShipmentDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCoaShipmentDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCoaShipmentDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
+                                                         halign="stretch"/>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc59" halign="center">
-                                                <af:outputLabel value="#{bindings.txtCoaWipDescription.hints.label}" id="ol29"/>
-                                            </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc60" halign="stretch">
-                                                <af:inputComboboxListOfValues id="txtCoaWipDescriptionId"
-                                                                              popupTitle="Search and Select: #{bindings.txtCoaWipDescription.hints.label}"
-                                                                              value="#{bindings.txtCoaWipDescription.inputValue}"
-                                                                              label="#{bindings.txtCoaWipDescription.hints.label}"
-                                                                              model="#{bindings.txtCoaWipDescription.listOfValuesModel}"
-                                                                              columns="#{bindings.txtCoaWipDescription.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.txtCoaWipDescription.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
-                                                                              readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
-                                                    <f:validator binding="#{bindings.txtCoaWipDescription.validator}"/>
-                                                </af:inputComboboxListOfValues>
-                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc59" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc60" halign="stretch"/>
                                             <af:gridCell marginStart="5px" width="13%" id="gc61"/>
                                             <af:gridCell marginStart="5px" width="20%" id="gc62"/>
                                             <af:gridCell marginStart="5px" width="13%" id="gc63"/>

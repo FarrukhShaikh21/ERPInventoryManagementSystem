@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL"
+  Version="12.1.3.2.1"
+  InheritPersonalization="merge"
+  EntityAssociation="erpims.modelims.imseo.InvInventoryOrgInvInventoryOrgInvOrgIdAsso">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="ParentInventoryOrgSnoInvInventoryOrgVO"
+    Cardinality="1"
+    Source="true"
+    Owner="erpims.modelims.imsvo.InvInventoryOrgVO">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="ParentInventoryOrgSnoInvInventoryOrgVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsvo.InvInventoryOrgVO.InventoryOrgSno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="InvInventoryOrgVO"
+    Cardinality="-1"
+    Owner="erpims.modelims.imsvo.InvInventoryOrgVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="InvInventoryOrgVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsvo.InvInventoryOrgVO.ParentInventoryOrgSno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
+</ViewLink>

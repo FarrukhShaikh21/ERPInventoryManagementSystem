@@ -338,4 +338,15 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ParentInventoryOrgSnoInvInventoryOrgVO"
+    ViewLink="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvInventoryOrgVO"
+    ViewLink="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

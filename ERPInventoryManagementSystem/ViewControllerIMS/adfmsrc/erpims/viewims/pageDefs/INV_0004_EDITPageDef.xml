@@ -45,5 +45,14 @@
         <Item Value="IsUnsupervised"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <action IterBinding="InvInventoryOrgCRUDIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="InvInventoryOrgCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPINVModuleDataControl"/>
   </bindings>
 </pageDefinition>
