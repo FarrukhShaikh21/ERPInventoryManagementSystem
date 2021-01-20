@@ -229,6 +229,12 @@
         <fixed-outcome>QRY-ACT-INV_0004_EDIT</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="CRWP_INV_0004_EDIT_EDIT">
+      <method>#{bindings.CreateWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ACT-ADD-INV_0004_EDIT_EDIT</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -484,6 +490,14 @@
         <from-outcome>QRY-ACT-INV_0004_EDIT</from-outcome>
         <to-activity-id>ExeInvOrgByIdINV_0004_EDIT_EDIT</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__87">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>INV_0004</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__88">
+        <from-outcome>ACT-ADD-INV_0004_EDIT_EDIT</from-outcome>
+        <to-activity-id>CRWP_INV_0004_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__81">
       <from-activity-id>ExeAdmCompINV_0004</from-activity-id>
@@ -503,6 +517,20 @@
       <from-activity-id>ExeInvOrgByCompIdINV_0004_EDIT</from-activity-id>
       <control-flow-case id="__86">
         <from-outcome>QRY-ACT-INV_0004_EDIT</from-outcome>
+        <to-activity-id>INV_0004_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__89">
+      <from-activity-id>CRWP_INV_0004_EDIT_EDIT</from-activity-id>
+      <control-flow-case id="__90">
+        <from-outcome>ACT-ADD-INV_0004_EDIT_EDIT</from-outcome>
+        <to-activity-id>INV_0004_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__91">
+      <from-activity-id>INV_0004_EDIT_EDIT</from-activity-id>
+      <control-flow-case id="__92">
+        <from-outcome>ERPBACKCRUD</from-outcome>
         <to-activity-id>INV_0004_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

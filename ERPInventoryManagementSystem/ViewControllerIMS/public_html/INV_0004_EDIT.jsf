@@ -59,7 +59,16 @@
                       </af:gridRow>
                       <af:gridRow marginTop="5px" id="gr3" marginBottom="5px">
                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center"
-                                     valign="stretch"/>
+                                     valign="stretch">
+                          <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                         value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                         model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                         queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+                            <f:facet name="end">
+                              <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+                            </f:facet>
+                          </af:quickQuery>
+                        </af:gridCell>
                       </af:gridRow>
                     </af:panelGridLayout>
                   </f:facet>
@@ -73,7 +82,7 @@
                       <af:link id="l1" icon="#{resource['images:imgCloseDialog.png']}" action="ERPBACKCRUD"
                                partialSubmit="true"/>
                       <af:link id="l2" partialSubmit="true" icon="#{resource['images:imgNewDocument.png']}"
-                               action="ERP-ADD-ACT_INV_0003"/>
+                               action="ACT-ADD-INV_0004_EDIT_EDIT"/>
                     </af:gridCell>
                   </af:gridRow>
                 </af:panelGridLayout>

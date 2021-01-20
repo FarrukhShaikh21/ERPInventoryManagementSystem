@@ -149,8 +149,9 @@
     ListVOName="AccInvInventoryOrgVO"
     ListRangeSize="-1"
     ComboRowCountHint="10"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="txtParentOrgName"/>
     </AttrArray>
@@ -491,6 +492,24 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="InvInventoryOrg"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="OrgHierarchyPath"
+    PrecisionRule="true"
+    EntityAttrName="OrgHierarchyPath"
+    EntityUsage="InvInventoryOrg"
+    AliasName="ORG_HIERARCHY_PATH"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="InvInventoryOrg"
+    AliasName="START_DATE"/>
   <ViewCriteria
     Name="InvInventoryOrgByCompanyIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"

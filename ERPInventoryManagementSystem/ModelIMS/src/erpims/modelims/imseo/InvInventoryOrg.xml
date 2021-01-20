@@ -9,10 +9,15 @@
   DBObjectType="table"
   DBObjectName="INV_INVENTORY_ORG"
   AliasName="InvInventoryOrg"
-  BindingStyle="JDBC">
+  BindingStyle="JDBC"
+  RowClass="erpims.modelims.imseo.InvInventoryOrgImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_superClass" Value="erpglobals.modelglobals.ERPEntityImpl"/>
+  </DesignTime>
   <Attribute
     Name="InventoryOrgSno"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="INVENTORY_ORG_SNO"
@@ -195,7 +200,7 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     TableName="INV_INVENTORY_ORG"
-    DefaultValue="N">
+    DefaultValue="Y">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -266,7 +271,6 @@
   </Attribute>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="CREATED_BY"
@@ -285,7 +289,6 @@
   </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
     Type="java.sql.Date"
@@ -333,7 +336,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="INV_INVENTORY_ORG">
+    TableName="INV_INVENTORY_ORG"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -370,7 +374,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="INV_INVENTORY_ORG">
+    TableName="INV_INVENTORY_ORG"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -569,7 +574,9 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[SmCountry?.CountryName]]></TransientExpression>
+      trustMode="untrusted"><![CDATA[SmCountry?.Countryname]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -603,6 +610,32 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="EndDate"
+    ColumnName="END_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="INV_INVENTORY_ORG"/>
+  <Attribute
+    Name="OrgHierarchyPath"
+    Precision="100"
+    ColumnName="ORG_HIERARCHY_PATH"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY_ORG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    ColumnName="START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="INV_INVENTORY_ORG"/>
   <AccessorAttribute
     Name="AdminCompany"
     Association="erpims.modelims.imseo.AdminCompanyInvInventoryOrgLocationIdAsso"

@@ -50,7 +50,10 @@
     <action IterBinding="InvInventoryOrgCRUDIterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
     <action IterBinding="InvInventoryOrgCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
-            Action="createWithParams"/>
+            Action="createWithParams">
+      <NamedData NDName="CompanyId" NDValue="#{data.erpims_viewims_INV_0004_EDITPageDef.CompCode.inputValue}"
+                 NDType="java.lang.String"/>
+    </action>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="ERPINVModuleDataControl"/>
