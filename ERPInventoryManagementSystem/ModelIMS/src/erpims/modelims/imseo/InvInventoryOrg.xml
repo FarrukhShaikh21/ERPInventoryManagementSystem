@@ -522,7 +522,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_INVENTORY_ORG"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
@@ -591,11 +590,18 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_INVENTORY_ORG"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
       trustMode="untrusted"><![CDATA[SmCity?.Cityname]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvInventoryOrg.txtCityName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="AdminCompany"

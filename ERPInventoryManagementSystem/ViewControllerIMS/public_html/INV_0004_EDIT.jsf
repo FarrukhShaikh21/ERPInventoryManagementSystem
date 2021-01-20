@@ -206,20 +206,82 @@
                                                     <f:validator binding="#{bindings.txtCountryName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc19" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc20" halign="stretch"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc21" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc19" halign="center">
+                                                <af:outputLabel value="#{bindings.txtCityName.hints.label}" id="ol8"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc20" halign="stretch">
+                                                <af:inputComboboxListOfValues id="txtCityNameId"
+                                                                              popupTitle="Search and Select: #{bindings.txtCityName.hints.label}"
+                                                                              value="#{bindings.txtCityName.inputValue}"
+                                                                              label="#{bindings.txtCityName.hints.label}"
+                                                                              model="#{bindings.txtCityName.listOfValuesModel}"
+                                                                              required="#{bindings.txtCityName.hints.mandatory}"
+                                                                              columns="#{bindings.txtCityName.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtCityName.hints.tooltip}"
+                                                                              simple="true" contentStyle="width:100%">
+                                                    <f:validator binding="#{bindings.txtCityName.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc21" halign="center">
+                                                <af:outputLabel value="#{bindings.ContactPerson.hints.label}" id="ol10"/>
+                                            </af:gridCell>
                                             <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc22"
-                                                         halign="stretch"/>
+                                                         halign="stretch">
+                                                <af:inputText value="#{bindings.ContactPerson.inputValue}"
+                                                              label="#{bindings.ContactPerson.hints.label}"
+                                                              required="#{bindings.ContactPerson.hints.mandatory}"
+                                                              columns="#{bindings.ContactPerson.hints.displayWidth}"
+                                                              maximumLength="#{bindings.ContactPerson.hints.precision}"
+                                                              shortDesc="#{bindings.ContactPerson.hints.tooltip}"
+                                                              id="it6" simple="true" contentStyle="width:100%">
+                                                    <f:validator binding="#{bindings.ContactPerson.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr10">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc25" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc26" halign="stretch"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc27" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc28" halign="stretch"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc29" halign="center"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc25" halign="center">
+                                                <af:outputLabel value="#{bindings.PhoneNo.hints.label}" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc26" halign="stretch">
+                                                <af:inputText value="#{bindings.PhoneNo.inputValue}"
+                                                              label="#{bindings.PhoneNo.hints.label}"
+                                                              required="#{bindings.PhoneNo.hints.mandatory}"
+                                                              columns="#{bindings.PhoneNo.hints.displayWidth}"
+                                                              maximumLength="#{bindings.PhoneNo.hints.precision}"
+                                                              shortDesc="#{bindings.PhoneNo.hints.tooltip}" id="it8"
+                                                              simple="true" contentStyle="width:100%">
+                                                    <f:validator binding="#{bindings.PhoneNo.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc27" halign="center">
+                                                <af:outputLabel value="#{bindings.MobileNo.hints.label}" id="ol12"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc28" halign="stretch">
+                                                <af:inputText value="#{bindings.MobileNo.inputValue}"
+                                                              label="#{bindings.MobileNo.hints.label}"
+                                                              required="#{bindings.MobileNo.hints.mandatory}"
+                                                              columns="#{bindings.MobileNo.hints.displayWidth}"
+                                                              maximumLength="#{bindings.MobileNo.hints.precision}"
+                                                              shortDesc="#{bindings.MobileNo.hints.tooltip}" id="it9"
+                                                              contentStyle="width:100%" simple="true">
+                                                    <f:validator binding="#{bindings.MobileNo.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc29" halign="center">
+                                                <af:outputLabel value="#{bindings.FaxNo.hints.label}" id="ol13"/>
+                                            </af:gridCell>
                                             <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc30"
-                                                         halign="stretch"/>
+                                                         halign="stretch">
+                                                <af:inputText value="#{bindings.FaxNo.inputValue}"
+                                                              label="#{bindings.FaxNo.hints.label}"
+                                                              required="#{bindings.FaxNo.hints.mandatory}"
+                                                              columns="#{bindings.FaxNo.hints.displayWidth}"
+                                                              maximumLength="#{bindings.FaxNo.hints.precision}"
+                                                              shortDesc="#{bindings.FaxNo.hints.tooltip}" id="it10"
+                                                              simple="true" contentStyle="width:100%">
+                                                    <f:validator binding="#{bindings.FaxNo.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr11">
                                             <af:gridCell marginStart="5px" width="13%" id="gc31" halign="center"/>

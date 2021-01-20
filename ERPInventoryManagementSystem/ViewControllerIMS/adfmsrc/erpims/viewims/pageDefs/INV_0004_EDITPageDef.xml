@@ -58,5 +58,26 @@
                   id="txtParentOrgName"/>
     <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtCountryName"
                   id="txtCountryName"/>
+    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtCityName" id="txtCityName"/>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="ContactPerson">
+      <AttrNames>
+        <Item Value="ContactPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="PhoneNo">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="MobileNo">
+      <AttrNames>
+        <Item Value="MobileNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="FaxNo">
+      <AttrNames>
+        <Item Value="FaxNo"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
