@@ -49,7 +49,17 @@
   <ViewAccessor
     Name="AccSmCityVO"
     ViewObjectName="erpadm.modeladm.admvo.SmCityVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SmCityCountryWiseVC"
+      FullName="erpadm.modeladm.admvo.SmCityVO.SmCityCountryWiseVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_COUNTRY_SNO">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[CountrySno==null?-1:CountrySno]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovIsActive"
     ListVOName="AccSysGeneralValueVO"
