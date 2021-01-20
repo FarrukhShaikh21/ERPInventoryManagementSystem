@@ -288,4 +288,10 @@
     EntityAttrName="ContactPerson"
     EntityUsage="InvInventoryOrg"
     AliasName="CONTACT_PERSON"/>
+  <ViewLinkAccessor
+    Name="AdminCompanyVO"
+    ViewLink="erpims.modelims.imsvo.AdminCompanyInvInventoryOrgLocationIdVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>
