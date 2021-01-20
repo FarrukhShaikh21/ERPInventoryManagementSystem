@@ -515,6 +515,25 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtLocationName"
+    Precision="80"
+    ColumnName="txt_Location_Name"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_INVENTORY_ORG">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AdminCompany?.CompanyName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvInventoryOrg.txtLocationName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="AdminCompany"
     Association="erpims.modelims.imseo.AdminCompanyInvInventoryOrgLocationIdAsso"
