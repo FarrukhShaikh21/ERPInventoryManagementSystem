@@ -235,7 +235,7 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0001</property>
       <property
-         name="sdm:polyPoints">B44,289.5,74.45171,207.5,155.19531,R46</property>
+         name="sdm:polyPoints">L54,252.0,19.643555,166.5,104.69531,T50</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule23">
@@ -360,7 +360,7 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0002</property>
       <property
-         name="sdm:polyPoints">B56,296.5,72.06112,413.5,390.39648,T50</property>
+         name="sdm:polyPoints">B44,289.5,71.82177,413.5,390.39648,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall34">
@@ -875,7 +875,7 @@
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">L50,-111.5,83.44824,-95.30957,193.44824,L50</property>
+         name="sdm:polyPoints">B50,-70.5,137.44824,-54.30957,139.44824,T50</property>
    </ControlFlowCase>
    <View
       id="View80">
