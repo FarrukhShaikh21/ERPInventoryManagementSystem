@@ -863,19 +863,19 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">193.79883</property>
+         name="y">227.39648</property>
       <property
-         name="x">-54.30957</property>
+         name="x">-52.30957</property>
    </View>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase79"
       from="View76"
-      to="View78">
+      to="MethodCall86">
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">B50,-70.5,137.44824,-54.30957,139.44824,T50</property>
+         name="sdm:polyPoints">L50,-111.5,83.44824,-171.64844,161.24707,R46</property>
    </ControlFlowCase>
    <View
       id="View80">
@@ -900,7 +900,7 @@
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">L50,-95.30957,193.44824,-220.64844,273.09766,T50</property>
+         name="sdm:polyPoints">L50,-93.30957,227.0459,-179.64844,323.59766,R46</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall82">
@@ -946,6 +946,29 @@
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">R50,-179.64844,327.09766,-60.305664,387.34473,L50</property>
+         name="sdm:polyPoints">R54,-179.64844,330.59766,-60.305664,387.34473,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall86">
+      <property
+         name="activityId">ExeInvOrgByCompIdINV_0004_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeInvOrgByCompIdINV_0004_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">165.09766</property>
+      <property
+         name="x">-212.64844</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase87"
+      from="MethodCall86"
+      to="View78">
+      <property
+         name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
+      <property
+         name="sdm:polyPoints">R54,-171.64844,168.24707,-93.30957,223.5459,L46</property>
    </ControlFlowCase>
 </SDM>

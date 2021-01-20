@@ -93,7 +93,11 @@
   </ViewUsage>
   <ViewUsage
     Name="InvInventoryOrgByCompanyRO"
-    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"/>
+    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO">
+    <ViewCriteriaUsage
+      Name="InvInventoryOrgByCompanyIDVC"
+      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByCompanyIDVC"/>
+  </ViewUsage>
   <ViewUsage
     Name="InvInventoryOrgCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO">
