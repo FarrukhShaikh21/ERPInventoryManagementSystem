@@ -283,31 +283,23 @@
                                                 </af:inputText>
                                             </af:gridCell>
                                         </af:gridRow>
-                                        <af:gridRow marginTop="5px" height="auto" id="gr11">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc31" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc32" halign="stretch"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc34" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc36" halign="stretch"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc51" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc52"
-                                                         halign="stretch"/>
-                                        </af:gridRow>
-                                        <af:gridRow marginTop="5px" height="auto" id="gr12">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc53" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc54" halign="stretch"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc55" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc56" halign="stretch"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc57" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc58"
-                                                         halign="stretch"/>
-                                        </af:gridRow>
-                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc59" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc60" halign="stretch"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc61"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc62"/>
-                                            <af:gridCell marginStart="5px" width="13%" id="gc63"/>
-                                            <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc64"/>
+                                        <af:gridRow marginTop="5px" height="100px" id="gr11">
+                                            <af:gridCell marginStart="5px" width="13%" id="gc31" halign="center"
+                                                         valign="middle">
+                                                <af:outputLabel value="#{bindings.Address.hints.label}" id="ol14"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="87%" id="gc32" halign="stretch"
+                                                         columnSpan="5" rowSpan="1">
+                                                <af:inputText value="#{bindings.Address.inputValue}"
+                                                              label="#{bindings.Address.hints.label}"
+                                                              required="#{bindings.Address.hints.mandatory}"
+                                                              columns="#{bindings.Address.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Address.hints.precision}"
+                                                              shortDesc="#{bindings.Address.hints.tooltip}" id="it11"
+                                                              contentStyle="width:100%" simple="true" rows="6">
+                                                    <f:validator binding="#{bindings.Address.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
                                         </af:gridRow>
                                     </af:panelGridLayout>
                                 </af:panelBox>

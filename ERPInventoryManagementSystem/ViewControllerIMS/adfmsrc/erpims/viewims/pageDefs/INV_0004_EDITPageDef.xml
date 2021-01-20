@@ -79,5 +79,10 @@
         <Item Value="FaxNo"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
