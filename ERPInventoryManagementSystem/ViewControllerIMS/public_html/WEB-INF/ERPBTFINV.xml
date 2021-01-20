@@ -208,6 +208,9 @@
     <view id="INV_0004_EDIT">
       <page>/INV_0004_EDIT.jsf</page>
     </view>
+    <view id="INV_0004_EDIT_EDIT">
+      <page>/INV_0004_EDIT_EDIT.jsf</page>
+    </view>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -453,8 +456,15 @@
     <control-flow-rule id="__77">
       <from-activity-id>INV_0004</from-activity-id>
       <control-flow-case id="__78">
-        <from-outcome>ERP-ACT-INV_0004_EDIT</from-outcome>
+        <from-outcome>QRY-ACT-INV_0004_EDIT</from-outcome>
         <to-activity-id>INV_0004_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__79">
+      <from-activity-id>INV_0004_EDIT</from-activity-id>
+      <control-flow-case id="__80">
+        <from-outcome>QRY-ACT-INV_0004_EDIT</from-outcome>
+        <to-activity-id>INV_0004_EDIT_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

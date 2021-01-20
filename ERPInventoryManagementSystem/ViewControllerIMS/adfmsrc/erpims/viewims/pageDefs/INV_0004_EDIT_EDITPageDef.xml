@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="INV_0004_EDIT_EDITPageDef"
+                Package="erpims.viewims.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvInventoryOrgCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvInventoryOrgCRUDIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OrgDescription">
+      <AttrNames>
+        <Item Value="OrgDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="InventoryOrgCode">
+      <AttrNames>
+        <Item Value="InventoryOrgCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OrgShortName">
+      <AttrNames>
+        <Item Value="OrgShortName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovIsActive" id="IsActive"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OpenDate">
+      <AttrNames>
+        <Item Value="OpenDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="InventoryOrgSno">
+      <AttrNames>
+        <Item Value="InventoryOrgSno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="IsSupervised">
+      <AttrNames>
+        <Item Value="IsSupervised"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="IsUnsupervised">
+      <AttrNames>
+        <Item Value="IsUnsupervised"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <action IterBinding="InvInventoryOrgCRUDIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="InvInventoryOrgCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPINVModuleDataControl"/>
+    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtParentOrgName"
+                  id="txtParentOrgName"/>
+    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtCountryName"
+                  id="txtCountryName"/>
+    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtCityName" id="txtCityName"/>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="ContactPerson">
+      <AttrNames>
+        <Item Value="ContactPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="PhoneNo">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="MobileNo">
+      <AttrNames>
+        <Item Value="MobileNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="FaxNo">
+      <AttrNames>
+        <Item Value="FaxNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

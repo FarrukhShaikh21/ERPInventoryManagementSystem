@@ -850,7 +850,7 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0004</property>
       <property
-         name="sdm:polyPoints">L46,250.12222,12.643555,-29.5,83.44824,R50</property>
+         name="sdm:polyPoints">L46,250.14304,12.643555,-29.5,79.94824,R46</property>
    </ControlFlowCase>
    <View
       id="View78">
@@ -873,8 +873,33 @@
       from="View76"
       to="View78">
       <property
-         name="fromOutcome">ERP-ACT-INV_0004_EDIT</property>
+         name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
          name="sdm:polyPoints">R54,-29.5,86.94824,-13.30957,193.44824,R50</property>
+   </ControlFlowCase>
+   <View
+      id="View80">
+      <property
+         name="activityId">INV_0004_EDIT_EDIT</property>
+      <property
+         name="page">/INV_0004_EDIT_EDIT.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INV_0004_EDIT_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">334.44824</property>
+      <property
+         name="x">-54.305664</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase81"
+      from="View78"
+      to="View80">
+      <property
+         name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
+      <property
+         name="sdm:polyPoints">B50,-54.30957,247.44824,-54.305664,280.44824,T50</property>
    </ControlFlowCase>
 </SDM>
