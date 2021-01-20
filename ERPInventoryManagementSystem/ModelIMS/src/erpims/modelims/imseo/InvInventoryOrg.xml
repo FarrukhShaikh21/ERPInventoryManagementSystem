@@ -533,6 +533,10 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="LocationId"/>
+    </Dependencies>
   </Attribute>
   <AccessorAttribute
     Name="AdminCompany"

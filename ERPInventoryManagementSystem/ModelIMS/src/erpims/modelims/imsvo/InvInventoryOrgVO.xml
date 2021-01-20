@@ -30,6 +30,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccAdminCompanyVO"
+    ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovIsActive"
     ListVOName="AccSysGeneralValueVO"
@@ -83,6 +87,32 @@
       <Item Value="ValueDescription"/>
     </AttrArray>
     <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtLocationName"
+    ListVOName="AccAdminCompanyVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtLocationName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CompanyName"/>
+      <Item Value="CompCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CompanyName"/>
+      <Item Value="CompanyShortCode"/>
+      <Item Value="CompanyShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AdminCompanyFindVC"/>
   </ListBinding>
   <EntityUsage
     Name="InvInventoryOrg"
@@ -293,7 +323,15 @@
     PrecisionRule="true"
     EntityAttrName="txtLocationName"
     EntityUsage="InvInventoryOrg"
-    AliasName="txt_Location_Name"/>
+    AliasName="txt_Location_Name"
+    LOVName="LovtxtLocationName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="AdminCompanyVO"
     ViewLink="erpims.modelims.imsvo.AdminCompanyInvInventoryOrgLocationIdVL"
