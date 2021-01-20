@@ -332,6 +332,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtParentOrgName"
+    PrecisionRule="true"
+    EntityAttrName="txtParentOrgName"
+    EntityUsage="InvInventoryOrg"
+    AliasName="txt_Parent_Org_Name"/>
   <ViewLinkAccessor
     Name="AdminCompanyVO"
     ViewLink="erpims.modelims.imsvo.AdminCompanyInvInventoryOrgLocationIdVL"

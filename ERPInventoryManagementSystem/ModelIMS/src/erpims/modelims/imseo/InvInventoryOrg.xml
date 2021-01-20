@@ -538,6 +538,17 @@
         Value="LocationId"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtParentOrgName"
+    Precision="80"
+    ColumnName="txt_Parent_Org_Name"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_INVENTORY_ORG">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ParentInventoryOrgSnoInvInventoryOrg?.OrgDescription]]></TransientExpression>
+  </Attribute>
   <AccessorAttribute
     Name="AdminCompany"
     Association="erpims.modelims.imseo.AdminCompanyInvInventoryOrgLocationIdAsso"
