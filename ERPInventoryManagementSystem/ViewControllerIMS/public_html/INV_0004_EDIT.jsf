@@ -190,8 +190,22 @@
                                     <f:facet name="toolbar"/>
                                     <af:panelGridLayout id="pgl1">
                                         <af:gridRow marginTop="5px" height="auto" id="gr1">
-                                            <af:gridCell marginStart="5px" width="13%" id="gc1" halign="center"/>
-                                            <af:gridCell marginStart="5px" width="20%" id="gc2" halign="stretch"/>
+                                            <af:gridCell marginStart="5px" width="13%" id="gc1" halign="center">
+                                                <af:outputLabel value="#{bindings.txtCountryName.hints.label}" id="ol7"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="20%" id="gc2" halign="stretch">
+                                                <af:inputComboboxListOfValues id="txtCountryNameId"
+                                                                              popupTitle="Search and Select: #{bindings.txtCountryName.hints.label}"
+                                                                              value="#{bindings.txtCountryName.inputValue}"
+                                                                              label="#{bindings.txtCountryName.hints.label}"
+                                                                              model="#{bindings.txtCountryName.listOfValuesModel}"
+                                                                              required="#{bindings.txtCountryName.hints.mandatory}"
+                                                                              columns="#{bindings.txtCountryName.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.txtCountryName.hints.tooltip}"
+                                                                              simple="true" contentStyle="width:100%">
+                                                    <f:validator binding="#{bindings.txtCountryName.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
                                             <af:gridCell marginStart="5px" width="13%" id="gc19" halign="center"/>
                                             <af:gridCell marginStart="5px" width="20%" id="gc20" halign="stretch"/>
                                             <af:gridCell marginStart="5px" width="13%" id="gc21" halign="center"/>
