@@ -288,6 +288,12 @@
     EntityAttrName="ContactPerson"
     EntityUsage="InvInventoryOrg"
     AliasName="CONTACT_PERSON"/>
+  <ViewAttribute
+    Name="txtLocationName"
+    PrecisionRule="true"
+    EntityAttrName="txtLocationName"
+    EntityUsage="InvInventoryOrg"
+    AliasName="txt_Location_Name"/>
   <ViewLinkAccessor
     Name="AdminCompanyVO"
     ViewLink="erpims.modelims.imsvo.AdminCompanyInvInventoryOrgLocationIdVL"
