@@ -202,6 +202,12 @@
         <fixed-outcome>ERPBACKCRUD</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="INV_0004">
+      <page>/INV_0004.jsf</page>
+    </view>
+    <view id="INV_0004_EDIT">
+      <page>/INV_0004_EDIT.jsf</page>
+    </view>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -261,6 +267,10 @@
       <control-flow-case id="__57">
         <from-outcome>ERP-ACT-INV_0003</from-outcome>
         <to-activity-id>ExeCompINV_0002</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__76">
+        <from-outcome>ERP-ACT-INV_0004</from-outcome>
+        <to-activity-id>INV_0004</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__24">
@@ -438,6 +448,13 @@
       <control-flow-case id="__75">
         <from-outcome>ERPBACKCRUD</from-outcome>
         <to-activity-id>INV_0003_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__77">
+      <from-activity-id>INV_0004</from-activity-id>
+      <control-flow-case id="__78">
+        <from-outcome>ERP-ACT-INV_0004_EDIT</from-outcome>
+        <to-activity-id>INV_0004_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

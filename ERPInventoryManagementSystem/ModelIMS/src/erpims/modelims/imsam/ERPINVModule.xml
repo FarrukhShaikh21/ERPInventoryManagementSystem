@@ -91,4 +91,10 @@
       </PIMap>
     </ParameterMap>
   </ViewUsage>
+  <ViewUsage
+    Name="InvInventoryOrgByCompanyRO"
+    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"/>
+  <ViewUsage
+    Name="InvInventoryOrgCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"/>
 </AppModule>
