@@ -522,7 +522,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_INVENTORY_ORG">
+    TableName="INV_INVENTORY_ORG"
+    IsPersistent="false"
+    IsQueriable="false">
     <TransientExpression
       trustMode="untrusted"><![CDATA[AdminCompany?.CompanyName]]></TransientExpression>
     <Properties>
@@ -581,6 +583,19 @@
       <Item
         Value="CountrySno"/>
     </Dependencies>
+  </Attribute>
+  <Attribute
+    Name="txtCityName"
+    Precision="80"
+    ColumnName="txt_City_Name"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_INVENTORY_ORG"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[SmCity?.Cityname]]></TransientExpression>
   </Attribute>
   <AccessorAttribute
     Name="AdminCompany"
