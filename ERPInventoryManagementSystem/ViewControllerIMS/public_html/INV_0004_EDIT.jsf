@@ -59,16 +59,7 @@
                       </af:gridRow>
                       <af:gridRow marginTop="5px" id="gr3" marginBottom="5px">
                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center"
-                                     valign="stretch">
-                          <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
-                                         value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
-                                         model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
-                                         queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
-                            <f:facet name="end">
-                              <af:commandLink text="Advanced" rendered="false" id="cl1"/>
-                            </f:facet>
-                          </af:quickQuery>
-                        </af:gridCell>
+                                     valign="stretch"/>
                       </af:gridRow>
                     </af:panelGridLayout>
                   </f:facet>
@@ -107,16 +98,17 @@
                         <af:panelGridLayout id="pgl4">
                           <af:gridRow marginTop="5px" height="auto" id="gr4">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                              <af:inputText value="#{bindings.InventoryOrgSno.inputValue}"
+                                            label="#{bindings.InventoryOrgSno.hints.label}"
+                                            required="#{bindings.InventoryOrgSno.hints.mandatory}"
+                                            columns="#{bindings.InventoryOrgSno.hints.displayWidth}"
+                                            maximumLength="#{bindings.InventoryOrgSno.hints.precision}"
+                                            shortDesc="#{bindings.InventoryOrgSno.hints.tooltip}" id="it1"
+                                            rendered="false">
+                                <f:validator binding="#{bindings.InventoryOrgSno.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.InventoryOrgSno.format}"/>
+                              </af:inputText>
                               <af:panelGroupLayout id="pgl6" layout="horizontal">
-                                <af:inputText value="#{bindings.ItemId.inputValue}"
-                                              label="#{bindings.ItemId.hints.label}"
-                                              required="#{bindings.ItemId.hints.mandatory}"
-                                              columns="#{bindings.ItemId.hints.displayWidth}"
-                                              maximumLength="#{bindings.ItemId.hints.precision}"
-                                              shortDesc="#{bindings.ItemId.hints.tooltip}" id="it1" rendered="false">
-                                  <f:validator binding="#{bindings.ItemId.validator}"/>
-                                  <af:convertNumber groupingUsed="false" pattern="#{bindings.ItemId.format}"/>
-                                </af:inputText>
                                 <af:link id="l8" partialSubmit="true" icon="#{resource['images:imgView.png']}"
                                          action="ERP-EDIT-ACT_INV_0003"/>
                                 <af:outputFormatted value="#{item.bindings.InventoryOrgCode.inputValue}" id="of6"

@@ -96,5 +96,9 @@
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"/>
   <ViewUsage
     Name="InvInventoryOrgCRUD"
-    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"/>
+    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO">
+    <ViewCriteriaUsage
+      Name="InvInventoryOrgByOrganizationIDVC"
+      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByOrganizationIDVC"/>
+  </ViewUsage>
 </AppModule>

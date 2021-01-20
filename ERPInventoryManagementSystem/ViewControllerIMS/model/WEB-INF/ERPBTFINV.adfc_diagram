@@ -888,19 +888,19 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">333.39648</property>
+         name="y">387.6953</property>
       <property
-         name="x">-54.305664</property>
+         name="x">-19.305664</property>
    </View>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase81"
       from="View78"
-      to="View80">
+      to="MethodCall84">
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">B50,-54.30957,247.44824,-54.305664,279.0459,T50</property>
+         name="sdm:polyPoints">L50,-95.30957,193.44824,-220.64844,273.09766,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall82">
@@ -924,5 +924,28 @@
          name="fromOutcome">ERP-ACT-INV_0004</property>
       <property
          name="sdm:polyPoints">L50,-19.5,22.097656,-29.5,83.44824,R50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall84">
+      <property
+         name="activityId">ExeInvOrgByIdINV_0004_EDIT_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeInvOrgByIdINV_0004_EDIT_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">327.44824</property>
+      <property
+         name="x">-220.64844</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase85"
+      from="MethodCall84"
+      to="View80">
+      <property
+         name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
+      <property
+         name="sdm:polyPoints">R50,-179.64844,327.09766,-60.305664,387.34473,L50</property>
    </ControlFlowCase>
 </SDM>

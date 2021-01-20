@@ -217,6 +217,12 @@
         <fixed-outcome>ERP-ACT-INV_0004</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="ExeInvOrgByIdINV_0004_EDIT_EDIT">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>QRY-ACT-INV_0004_EDIT</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -470,7 +476,7 @@
       <from-activity-id>INV_0004_EDIT</from-activity-id>
       <control-flow-case id="__80">
         <from-outcome>QRY-ACT-INV_0004_EDIT</from-outcome>
-        <to-activity-id>INV_0004_EDIT_EDIT</to-activity-id>
+        <to-activity-id>ExeInvOrgByIdINV_0004_EDIT_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__81">
@@ -478,6 +484,13 @@
       <control-flow-case id="__82">
         <from-outcome>ERP-ACT-INV_0004</from-outcome>
         <to-activity-id>INV_0004</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__83">
+      <from-activity-id>ExeInvOrgByIdINV_0004_EDIT_EDIT</from-activity-id>
+      <control-flow-case id="__84">
+        <from-outcome>QRY-ACT-INV_0004_EDIT</from-outcome>
+        <to-activity-id>INV_0004_EDIT_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
