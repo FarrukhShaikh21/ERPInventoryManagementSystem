@@ -168,16 +168,12 @@
                                                     <f:validator binding="#{bindings.txtParentOrgName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
-                                            <af:gridCell id="gc13" width="13%" marginStart="5px" marginEnd="5px"/>
-                                            <af:gridCell id="gc14" width="21%" marginStart="5px" marginEnd="5px"/>
-                                        </af:gridRow>
-                                        <af:gridRow id="gr3" marginTop="5px" marginBottom="5px">
-                                            <af:gridCell id="gc23" width="13%" halign="center" rowSpan="1"
-                                                         marginStart="5px" marginEnd="5px" valign="middle">
+                                            <af:gridCell id="gc13" width="13%" marginStart="5px" marginEnd="5px"
+                                                         halign="center">
                                                 <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
                                             </af:gridCell>
-                                            <af:gridCell id="gc24" width="20%" halign="stretch" marginStart="5px"
-                                                         marginEnd="5px" columnSpan="1" valign="middle">
+                                            <af:gridCell id="gc14" width="21%" marginStart="5px" marginEnd="5px"
+                                                         halign="stretch">
                                                 <af:selectOneChoice value="#{bindings.IsActive.inputValue}"
                                                                     label="#{bindings.IsActive.label}"
                                                                     required="#{bindings.IsActive.hints.mandatory}"
@@ -187,51 +183,10 @@
                                                     <f:validator binding="#{bindings.IsActive.validator}"/>
                                                 </af:selectOneChoice>
                                             </af:gridCell>
-                                            <af:gridCell id="gc37" width="13%" halign="center" marginStart="5px"
-                                                         marginEnd="5px"/>
-                                            <af:gridCell id="gc38" width="20%" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch"/>
-                                            <af:gridCell id="gc47" width="13%" marginStart="5px" marginEnd="5px"/>
-                                            <af:gridCell id="gc48" width="21%" marginStart="5px" marginEnd="5px"/>
                                         </af:gridRow>
                                     </af:panelGridLayout>
                                 </af:panelBox>
-                                <af:panelBox text="Transactional Information" id="pb3" showDisclosure="false">
-                                    <f:facet name="toolbar"/>
-                                    <af:panelGridLayout id="pgl3">
-                                        <af:gridRow marginTop="5px" height="auto" id="gr7" marginBottom="5px">
-                                            <af:gridCell id="gc43" width="10%" halign="center" marginStart="5px"
-                                                         marginEnd="5px" valign="middle"/>
-                                            <af:gridCell id="gc44" width="15%" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch" valign="middle"/>
-                                            <af:gridCell id="gc45" width="10%" halign="stretch" marginStart="5px"
-                                                         marginEnd="5px" valign="middle"/>
-                                            <af:gridCell id="gc46" width="15%" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch" valign="middle"/>
-                                            <af:gridCell marginStart="5px" width="10%" id="gc15" halign="center"
-                                                         marginEnd="5px" valign="middle"/>
-                                            <af:gridCell marginStart="5px" width="15%" marginEnd="5px" id="gc16"
-                                                         halign="stretch" valign="middle" columnSpan="1" rowSpan="1"/>
-                                            <af:gridCell id="gc17" width="10%" halign="center"/>
-                                            <af:gridCell id="gc18" width="15%" halign="stretch" valign="middle"/>
-                                        </af:gridRow>
-                                        <af:gridRow marginTop="5px" height="auto" id="gr6">
-                                            <af:gridCell marginStart="5px" width="auto" id="gc9" halign="center"
-                                                         marginEnd="5px" valign="middle"/>
-                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10"
-                                                         halign="stretch" valign="middle"/>
-                                            <af:gridCell id="gc39" width="auto" halign="center" marginStart="5px"
-                                                         marginEnd="5px" valign="middle"/>
-                                            <af:gridCell id="gc40" width="auto" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch" valign="middle"/>
-                                            <af:gridCell id="gc41" width="auto" halign="center" marginStart="5px"
-                                                         marginEnd="5px" valign="middle"/>
-                                            <af:gridCell id="gc42" width="auto" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch" valign="middle"/>
-                                        </af:gridRow>
-                                    </af:panelGridLayout>
-                                </af:panelBox>
-                                <af:panelBox text="Accounting Information" id="pb4" showDisclosure="false">
+                                <af:panelBox text="Contact Information" id="pb4" showDisclosure="false">
                                     <f:facet name="toolbar"/>
                                     <af:panelGridLayout id="pgl1">
                                         <af:gridRow marginTop="5px" height="auto" id="gr1">
