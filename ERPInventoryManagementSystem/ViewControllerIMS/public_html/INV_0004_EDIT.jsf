@@ -107,46 +107,13 @@
                         <f:facet name="toolbar"/>
                         <af:panelGridLayout id="pgl9">
                           <af:gridRow marginTop="5px" height="auto" id="gr6">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="stretch">
-                              <af:panelGroupLayout id="pgl6" layout="horizontal">
-                                <af:inputText value="#{bindings.ItemId.inputValue}"
-                                              label="#{bindings.ItemId.hints.label}"
-                                              required="#{bindings.ItemId.hints.mandatory}"
-                                              columns="#{bindings.ItemId.hints.displayWidth}"
-                                              maximumLength="#{bindings.ItemId.hints.precision}"
-                                              shortDesc="#{bindings.ItemId.hints.tooltip}" id="it1" rendered="false">
-                                  <f:validator binding="#{bindings.ItemId.validator}"/>
-                                  <af:convertNumber groupingUsed="false" pattern="#{bindings.ItemId.format}"/>
-                                </af:inputText>
-                                <af:link id="l8" partialSubmit="true" icon="#{resource['images:imgView.png']}"
-                                         action="ERP-EDIT-ACT_INV_0003"/>
-                                <af:outputFormatted value="#{item.bindings.ItemShortName.inputValue}" id="of6"
-                                                    styleClass="ERPHeroBannerFont"/>
-                              </af:panelGroupLayout>
-                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="stretch"/>
                           </af:gridRow>
                           <af:gridRow marginTop="5px" height="auto" id="gr7">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" halign="stretch">
-                              <af:panelGroupLayout id="pgl7" layout="horizontal">
-                                <af:image id="i1" source="#{resource['images:imgDocumentNumber.png']}"/>
-                                <af:spacer width="10" height="10" id="s3"/>
-                                <af:outputFormatted value="#{item.bindings.ItemShortCode.inputValue}" id="of7"
-                                                    styleClass="ERPHeroDetailColor">
-                                  <af:convertNumber groupingUsed="false"
-                                                    pattern="#{bindings.InvItemByCompanyRO.hints.ItemShortCode.format}"/>
-                                </af:outputFormatted>
-                              </af:panelGroupLayout>
-                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" halign="stretch"/>
                           </af:gridRow>
                           <af:gridRow marginTop="5px" height="auto" id="gr8">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8" halign="stretch">
-                              <af:panelGroupLayout id="pgl8" layout="horizontal">
-                                <af:image source="#{resource['images:imgShortName.png']}" id="i2"/>
-                                <af:spacer width="10" height="10" id="s4"/>
-                                <af:outputFormatted value="#{item.bindings.Description.inputValue}" id="of8"
-                                                    styleClass="ERPHeroDetailColor"/>
-                              </af:panelGroupLayout>
-                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8" halign="stretch"/>
                           </af:gridRow>
                           <af:gridRow marginTop="5px" height="auto" id="gr9">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9" halign="stretch">
@@ -170,6 +137,74 @@
                                 <af:outputFormatted value="#{item.bindings.IsActive.inputValue=='0'?'YES':'NO'}" id="of10"
                                                     styleClass="ERPHeroDetailColor"/>
                               </af:panelGroupLayout>
+                            </af:gridCell>
+                          </af:gridRow>
+                        </af:panelGridLayout>
+                      </af:panelBox>
+                    </af:panelGroupLayout>
+                  </af:listItem>
+                </af:listView>
+                <af:listView value="#{bindings.InvInventoryOrgByCompanyRO.collectionModel}" var="item"
+                             emptyText="#{bindings.InvInventoryOrgByCompanyRO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                             fetchSize="#{bindings.InvInventoryOrgByCompanyRO.rangeSize}" id="lv1"
+                             styleClass="WBDisplayBlockCenter">
+                  <af:listItem id="li1" styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo">
+                    <af:panelGroupLayout id="pgl10" layout="vertical" styleClass="WBCardSize">
+                      <af:panelBox text="PanelBox5" id="pb2" showHeader="never">
+                        <f:facet name="toolbar"/>
+                        <af:panelGridLayout id="pgl4">
+                          <af:gridRow marginTop="5px" height="auto" id="gr4">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                              <af:panelGroupLayout id="pgl6" layout="horizontal">
+                                <af:inputText value="#{bindings.ItemId.inputValue}"
+                                              label="#{bindings.ItemId.hints.label}"
+                                              required="#{bindings.ItemId.hints.mandatory}"
+                                              columns="#{bindings.ItemId.hints.displayWidth}"
+                                              maximumLength="#{bindings.ItemId.hints.precision}"
+                                              shortDesc="#{bindings.ItemId.hints.tooltip}" id="it1" rendered="false">
+                                  <f:validator binding="#{bindings.ItemId.validator}"/>
+                                  <af:convertNumber groupingUsed="false" pattern="#{bindings.ItemId.format}"/>
+                                </af:inputText>
+                                <af:link id="l8" partialSubmit="true" icon="#{resource['images:imgView.png']}"
+                                         action="ERP-EDIT-ACT_INV_0003"/>
+                                <af:outputFormatted value="#{item.bindings.InventoryOrgCode.inputValue}" id="of6"
+                                                    styleClass="ERPHeroBannerFont"/>
+                              </af:panelGroupLayout>
+                            </af:gridCell>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="auto" id="gr5">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
+                              <af:panelGroupLayout id="pgl7" layout="horizontal">
+                                <af:image id="i1" source="#{resource['images:imgDocumentNumber.png']}"/>
+                                <af:spacer width="10" height="10" id="s3"/>
+                                <af:outputFormatted value="#{item.bindings.OrgShortName.inputValue}" id="of7"
+                                                    styleClass="ERPHeroDetailColor">
+                                  <af:convertNumber groupingUsed="false"
+                                                    pattern="#{bindings.InvItemByCompanyRO.hints.ItemShortCode.format}"/>
+                                </af:outputFormatted>
+                              </af:panelGroupLayout>
+                            </af:gridCell>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="auto" id="gr11">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12">
+                              <af:panelGroupLayout id="pgl8" layout="horizontal">
+                                <af:image source="#{resource['images:imgShortName.png']}" id="i2"/>
+                                <af:spacer width="10" height="10" id="s4"/>
+                                <af:outputFormatted value="#{item.bindings.OrgDescription.inputValue}" id="of8"
+                                                    styleClass="ERPHeroDetailColor"/>
+                              </af:panelGroupLayout>
+                            </af:gridCell>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="auto" id="gr12">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
+                              <af:outputFormatted value="#{item.bindings.OpenDate.inputValue}" id="of4">
+                                <af:convertDateTime pattern="#{bindings.InvInventoryOrgByCompanyRO.hints.OpenDate.format}"/>
+                              </af:outputFormatted>
+                            </af:gridCell>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
+                              <af:outputFormatted value="#{item.bindings.txtLocationName.inputValue}" id="of5"/>
                             </af:gridCell>
                           </af:gridRow>
                         </af:panelGridLayout>

@@ -10,6 +10,8 @@
               id="InvItemByCompanyROIterator"/>
     <searchRegion Criteria="InvItemFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="InvItemByCompanyROIterator" id="ImplicitViewCriteriaQuery" InitialQueryOverridden="true"/>
+    <iterator Binds="InvInventoryOrgByCompanyRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvInventoryOrgByCompanyROIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="AdminCompanyVOByCompanyROIterator" id="CompCode">
@@ -48,5 +50,17 @@
         <Item Value="ItemId"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="InvInventoryOrgByCompanyROIterator" id="InvInventoryOrgByCompanyRO">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvInventoryOrgVO" Name="InvInventoryOrgByCompanyRO0">
+        <AttrNames>
+          <Item Value="InventoryOrgCode"/>
+          <Item Value="OrgShortName"/>
+          <Item Value="OrgDescription"/>
+          <Item Value="OpenDate"/>
+          <Item Value="txtLocationName"/>
+          <Item Value="IsActive"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
