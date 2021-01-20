@@ -42,6 +42,10 @@
     Name="AccInvInventoryOrgVO"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSmCountryVO"
+    ViewObjectName="erpadm.modeladm.admvo.SmCountryVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovIsActive"
     ListVOName="AccSysGeneralValueVO"
@@ -148,6 +152,32 @@
     </AttrArray>
     <DisplayCriteria
       Name="InvInventoryOrgVOFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtCountryName"
+    ListVOName="AccSmCountryVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCountryName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CountrySno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Countryname"/>
+      <Item Value="Countrycode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Countryname"/>
+      <Item Value="CountryShortCode"/>
+      <Item Value="CountryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="SmCountryVOFindVC"/>
   </ListBinding>
   <EntityUsage
     Name="InvInventoryOrg"
@@ -376,6 +406,22 @@
     LOVName="LovtxtParentOrgName"
     IsQueriable="false"
     IsPersistent="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtCountryName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCountryName"
+    EntityUsage="InvInventoryOrg"
+    AliasName="txt_Country_Name"
+    LOVName="LovtxtCountryName">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
