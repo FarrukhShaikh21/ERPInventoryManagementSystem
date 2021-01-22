@@ -120,7 +120,7 @@
                               </af:inputText>
                               <af:panelGroupLayout id="pgl6" layout="horizontal">
                                 <af:link id="l8" partialSubmit="true" icon="#{resource['images:imgView.png']}"
-                                         action="QRY-ACT-INV_0004_EDIT"/>
+                                         action="QRY-ACT-INV_0004_EDIT" styleClass="ERPHeroBannerFont ERPLink"/>
                                 <af:outputFormatted value="#{item.bindings.OrgShortName.inputValue}" id="of6"
                                                     styleClass="ERPHeroBannerFont"/>
                               </af:panelGroupLayout>

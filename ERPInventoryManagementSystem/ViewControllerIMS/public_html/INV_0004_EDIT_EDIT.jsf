@@ -26,7 +26,7 @@
                     <af:decorativeBox id="db2" partialTriggers="l3 l1">
                         <f:facet name="center">
                             <af:panelBox text="PanelBox1" id="pb2" showDisclosure="false" showHeader="never"
-                                         partialTriggers="l11 l17 l14 l12 l13 l1 l3">
+                                         partialTriggers="l11 l3 l1 l14 l13 l12 l17 d4 d3">
                                 <f:facet name="toolbar"/>
                                 <af:panelBox text="Basic Information" id="pb1" showDisclosure="false">
                                     <f:facet name="toolbar"/>
@@ -360,16 +360,17 @@
                                                      action="#{pageFlowScope.OracleERPBean.doERPPopUnSuperviseRecord}"
                                                      partialSubmit="true"
                                                      disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
-                                                <af:setActionListener from="#{'InvItemCRUDIterator'}"
+                                                <af:setActionListener from="#{'InvInventoryOrgCRUDIterator'}"
                                                                       to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
                                             </af:link>
                                             <af:link text="Supervise" id="l18"
                                                      icon="#{resource['images:imgSuperviseRecord.png']}"
                                                      iconPosition="top" partialSubmit="true"
                                                      action="#{pageFlowScope.OracleERPBean.doERPPopSupervisedRecord}"
-                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}">
+                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}"
+                                                     partialTriggers="l17">
                                                 <af:setActionListener to="#{pageFlowScope.OracleERPBean.LIteratorName}"
-                                                                      from="#{'InvItemCRUDIterator'}"/>
+                                                                      from="#{'InvInventoryOrgCRUDIterator'}"/>
                                             </af:link>
                                             <af:link text="Add"
                                                      disabled="#{pageFlowScope.ERPMainTempBean.LERPAllowAdd=='N'}" id="l1"

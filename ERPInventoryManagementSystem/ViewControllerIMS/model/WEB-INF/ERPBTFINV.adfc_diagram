@@ -871,11 +871,11 @@
       islink="true"
       id="ControlFlowCase79"
       from="View76"
-      to="MethodCall86">
+      to="MethodCall98">
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">L50,-111.5,83.44824,-171.64844,161.24707,R46</property>
+         name="sdm:polyPoints">L50,-111.5,83.44824,-303.64844,16.396484,R50</property>
    </ControlFlowCase>
    <View
       id="View80">
@@ -900,7 +900,7 @@
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">L54,-93.30957,230.5459,-313.64844,277.6953,R50</property>
+         name="sdm:polyPoints">L54,-93.30957,230.5459,-323.64844,323.99414,R50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall82">
@@ -934,9 +934,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">278.0459</property>
+         name="y">324.34473</property>
       <property
-         name="x">-354.64844</property>
+         name="x">-364.64844</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
@@ -946,7 +946,7 @@
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">B50,-354.64844,331.6953,-47.305664,601.83887,L50</property>
+         name="sdm:polyPoints">B50,-364.64844,378.6953,-47.305664,601.83887,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall86">
@@ -957,9 +957,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">165.09766</property>
+         name="y">194.69531</property>
       <property
-         name="x">-212.64844</property>
+         name="x">-316.64844</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
@@ -969,7 +969,7 @@
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">R54,-171.64844,168.24707,-93.30957,223.5459,L46</property>
+         name="sdm:polyPoints">R50,-275.64844,194.34473,-93.30957,223.5459,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -981,38 +981,15 @@
       <property
          name="sdm:polyPoints">T50,-52.30957,173.0459,-70.5,137.44824,B50</property>
    </ControlFlowCase>
-   <MethodCall
-      id="MethodCall89">
-      <property
-         name="activityId">CRWP_INV_0004_EDIT_EDIT</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>CRWP_INV_0004_EDIT_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="y">344.39648</property>
-      <property
-         name="x">170.01953</property>
-   </MethodCall>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase90"
       from="View78"
-      to="MethodCall89">
+      to="MethodCall93">
       <property
          name="fromOutcome">ACT-ADD-INV_0004_EDIT_EDIT</property>
       <property
-         name="sdm:polyPoints">R50,-11.30957,227.0459,129.01953,344.0459,L50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase91"
-      from="MethodCall89"
-      to="View80">
-      <property
-         name="fromOutcome">ACT-ADD-INV_0004_EDIT_EDIT</property>
-      <property
-         name="sdm:polyPoints">B50,170.01953,398.0459,-2.805664,547.83887,T56</property>
+         name="sdm:polyPoints">B50,-52.30957,282.72925,-43.0,353.94235,T56</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -1045,6 +1022,62 @@
       <property
          name="fromOutcome">ERPBACKCRUD</property>
       <property
-         name="sdm:polyPoints">T50,-46.5,354.39648,-52.30957,281.0459,B50</property>
+         name="sdm:polyPoints">T44,-50.0,354.39648,-59.30957,283.1717,B39</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall95">
+      <property
+         name="activityId">CRWP_INV_0004_EDIT_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CRWP_INV_0004_EDIT_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">431.44824</property>
+      <property
+         name="x">144.01953</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase96"
+      from="View78"
+      to="MethodCall95">
+      <property
+         name="fromOutcome">ACT-ADD-INV_0004_EDIT_EDIT</property>
+      <property
+         name="sdm:polyPoints">B61,-45.30957,281.0459,103.01953,427.59766,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase97"
+      from="MethodCall95"
+      to="View80">
+      <property
+         name="fromOutcome">ACT-ADD-INV_0004_EDIT_EDIT</property>
+      <property
+         name="sdm:polyPoints">L54,103.01953,434.59766,-2.805664,547.83887,T56</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall98">
+      <property
+         name="activityId">ExeCompByCompIdINV_0004_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeCompByCompIdINV_0004_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">16.74707</property>
+      <property
+         name="x">-344.64844</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase99"
+      from="MethodCall98"
+      to="MethodCall86">
+      <property
+         name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
+      <property
+         name="sdm:polyPoints">B50,-344.64844,70.396484,-316.64844,140.34473,T50</property>
    </ControlFlowCase>
 </SDM>
