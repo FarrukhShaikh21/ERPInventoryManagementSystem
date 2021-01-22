@@ -16,7 +16,7 @@
                       <af:gridRow marginTop="5px" height="auto" id="gr2" marginBottom="5px">
                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="center"
                                      valign="stretch">
-                          <af:panelFormLayout id="pfl1" rows="1" maxColumns="4" labelWidth="100">
+                          <af:panelFormLayout id="pfl1" rows="1" maxColumns="4" labelWidth="200" fieldWidth="200">
                             <af:inputText value="#{bindings.CompanyShortCode.inputValue}"
                                           label="#{bindings.CompanyShortCode.hints.label}"
                                           required="#{bindings.CompanyShortCode.hints.mandatory}"
@@ -42,7 +42,8 @@
                                           required="#{bindings.CompanyName.hints.mandatory}"
                                           columns="#{bindings.CompanyName.hints.displayWidth}"
                                           maximumLength="#{bindings.CompanyName.hints.precision}"
-                                          shortDesc="#{bindings.CompanyName.hints.tooltip}" id="it3" readOnly="true">
+                                          shortDesc="#{bindings.CompanyName.hints.tooltip}" id="it3" readOnly="true"
+                                          contentStyle="width:100%">
                               <f:validator binding="#{bindings.CompanyName.validator}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.CompanyShortName.inputValue}"
@@ -119,8 +120,8 @@
                               </af:inputText>
                               <af:panelGroupLayout id="pgl6" layout="horizontal">
                                 <af:link id="l8" partialSubmit="true" icon="#{resource['images:imgView.png']}"
-                                         action="ERP-EDIT-ACT_INV_0003"/>
-                                <af:outputFormatted value="#{item.bindings.InventoryOrgCode.inputValue}" id="of6"
+                                         action="QRY-ACT-INV_0004_EDIT"/>
+                                <af:outputFormatted value="#{item.bindings.OrgShortName.inputValue}" id="of6"
                                                     styleClass="ERPHeroBannerFont"/>
                               </af:panelGroupLayout>
                             </af:gridCell>
@@ -130,7 +131,7 @@
                               <af:panelGroupLayout id="pgl7" layout="horizontal">
                                 <af:image id="i1" source="#{resource['images:imgDocumentNumber.png']}"/>
                                 <af:spacer width="10" height="10" id="s3"/>
-                                <af:outputFormatted value="#{item.bindings.OrgShortName.inputValue}" id="of7"
+                                <af:outputFormatted value="#{item.bindings.InventoryOrgCode.inputValue}" id="of7"
                                                     styleClass="ERPHeroDetailColor">
                                   <af:convertNumber groupingUsed="false"
                                                     pattern="#{bindings.InvItemByCompanyRO.hints.ItemShortCode.format}"/>

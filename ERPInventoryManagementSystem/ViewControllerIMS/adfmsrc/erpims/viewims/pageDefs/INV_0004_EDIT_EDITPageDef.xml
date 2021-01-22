@@ -87,5 +87,15 @@
         <Item Value="Address"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

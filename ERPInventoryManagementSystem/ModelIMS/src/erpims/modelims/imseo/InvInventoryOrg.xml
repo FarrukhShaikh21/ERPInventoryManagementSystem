@@ -104,8 +104,7 @@
     Type="java.sql.Date"
     ColumnType="DATE"
     TableName="INV_INVENTORY_ORG">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -292,9 +291,10 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_INVENTORY_ORG">
+    TableName="INV_INVENTORY_ORG"
+    RetrievedOnInsert="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -317,9 +317,10 @@
     Name="LastUpdatedDate"
     ColumnName="LAST_UPDATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_INVENTORY_ORG">
+    TableName="INV_INVENTORY_ORG"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -355,9 +356,10 @@
     Name="SupervisedDate"
     ColumnName="SUPERVISED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_INVENTORY_ORG">
+    TableName="INV_INVENTORY_ORG"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -393,9 +395,10 @@
     Name="UnSupervisedDate"
     ColumnName="UN_SUPERVISED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_INVENTORY_ORG">
+    TableName="INV_INVENTORY_ORG"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -530,8 +533,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[AdminCompany?.CompanyName]]></TransientExpression>
+    <TransientExpression><![CDATA[AdminCompany?.CompanyName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -554,8 +556,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[ParentInventoryOrgSnoInvInventoryOrg?.OrgDescription]]></TransientExpression>
+    <TransientExpression><![CDATA[ParentInventoryOrgSnoInvInventoryOrg?.OrgDescription]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -574,8 +575,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[SmCountry?.Countryname]]></TransientExpression>
+    <TransientExpression><![CDATA[SmCountry?.Countryname]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
@@ -600,8 +600,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[SmCity?.Cityname]]></TransientExpression>
+    <TransientExpression><![CDATA[SmCity?.Cityname]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -636,7 +635,17 @@
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="INV_INVENTORY_ORG"/>
+    TableName="INV_INVENTORY_ORG">
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvInventoryOrg.StartDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="AdminCompany"
     Association="erpims.modelims.imseo.AdminCompanyInvInventoryOrgLocationIdAsso"

@@ -45,7 +45,17 @@
   <ViewAccessor
     Name="AccInvInventoryOrgVO"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="InvInventoryOrgByCompanyIDVC"
+      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByCompanyIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_COMPANY_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[CompanyId==null?-1:CompanyId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccSmCountryVO"
     ViewObjectName="erpadm.modeladm.admvo.SmCountryVO"
@@ -177,8 +187,9 @@
     ListVOName="AccSmCountryVO"
     ListRangeSize="-1"
     ComboRowCountHint="10"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="txtCountryName"/>
     </AttrArray>
@@ -203,8 +214,9 @@
     ListVOName="AccSmCityVO"
     ListRangeSize="-1"
     ComboRowCountHint="10"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="txtCityName"/>
     </AttrArray>
@@ -616,7 +628,7 @@
       <ViewCriteriaItem
         Name="OpenDate"
         ViewAttribute="OpenDate"
-        Operator="BETWEEN"
+        Operator="="
         Conjunction="AND"
         Required="Optional"/>
     </ViewCriteriaRow>
