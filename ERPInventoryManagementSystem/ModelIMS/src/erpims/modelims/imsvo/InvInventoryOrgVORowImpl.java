@@ -16,6 +16,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class InvInventoryOrgVORowImpl extends ViewRowImpl {
+
     public static final int ENTITY_INVINVENTORYORG = 0;
 
     /**
@@ -56,6 +57,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         EndDate,
         OrgHierarchyPath,
         StartDate,
+        LevelNo,
         AdminCompanyVO,
         ParentInventoryOrgSnoInvInventoryOrgVO,
         InvInventoryOrgVO,
@@ -65,7 +67,8 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         AccInvInventoryOrgVO,
         AccSmCountryVO,
         AccSmCityVO;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -87,6 +90,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int INVENTORYORGSNO = AttributesEnum.InventoryOrgSno.index();
     public static final int INVENTORYORGCODE = AttributesEnum.InventoryOrgCode.index();
     public static final int ORGSHORTNAME = AttributesEnum.OrgShortName.index();
@@ -121,6 +125,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     public static final int ENDDATE = AttributesEnum.EndDate.index();
     public static final int ORGHIERARCHYPATH = AttributesEnum.OrgHierarchyPath.index();
     public static final int STARTDATE = AttributesEnum.StartDate.index();
+    public static final int LEVELNO = AttributesEnum.LevelNo.index();
     public static final int ADMINCOMPANYVO = AttributesEnum.AdminCompanyVO.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORGVO =
         AttributesEnum.ParentInventoryOrgSnoInvInventoryOrgVO.index();
@@ -688,6 +693,22 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
      */
     public void setStartDate(Date value) {
         setAttributeInternal(STARTDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for LEVEL_NO using the alias name LevelNo.
+     * @return the LEVEL_NO
+     */
+    public Integer getLevelNo() {
+        return (Integer) getAttributeInternal(LEVELNO);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for LEVEL_NO using the alias name LevelNo.
+     * @param value value to set the LEVEL_NO
+     */
+    public void setLevelNo(Integer value) {
+        setAttributeInternal(LEVELNO, value);
     }
 
     /**

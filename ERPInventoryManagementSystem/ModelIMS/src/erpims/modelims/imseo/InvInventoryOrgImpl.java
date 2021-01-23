@@ -62,6 +62,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         EndDate,
         OrgHierarchyPath,
         StartDate,
+        LevelNo,
         AdminCompany,
         InvInventoryOrg,
         ParentInventoryOrgSnoInvInventoryOrg,
@@ -125,6 +126,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     public static final int ENDDATE = AttributesEnum.EndDate.index();
     public static final int ORGHIERARCHYPATH = AttributesEnum.OrgHierarchyPath.index();
     public static final int STARTDATE = AttributesEnum.StartDate.index();
+    public static final int LEVELNO = AttributesEnum.LevelNo.index();
     public static final int ADMINCOMPANY = AttributesEnum.AdminCompany.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORG =
@@ -691,6 +693,22 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for LevelNo, using the alias name LevelNo.
+     * @return the value of LevelNo
+     */
+    public Integer getLevelNo() {
+        return (Integer) getAttributeInternal(LEVELNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LevelNo.
+     * @param value value to set the LevelNo
+     */
+    public void setLevelNo(Integer value) {
+        setAttributeInternal(LEVELNO, value);
+    }
+
+    /**
      * @return the associated entity erpadm.modeladm.admeo.AdminCompanyImpl.
      */
     public AdminCompanyImpl getAdminCompany() {
@@ -802,9 +820,10 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
                 ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "INVENTORY_ORG_CODE",
                                                               this.getEntityDef().getSource(), "COMPANY_ID",
                                                               getCompanyId().toString());
-            populateAttributeAsChanged(ORGHIERARCHYPATH,( getInventoryOrgSno()==null?getInventoryOrgSno():(getParentInventoryOrgSno()+"-"+getInventoryOrgSno()) ) );
+            populateAttributeAsChanged(ORGHIERARCHYPATH,( getParentInventoryOrgSno()==null?getInventoryOrgSno()+"-":(getOrgHierarchyPath()+getInventoryOrgSno()+"-") ) );
             populateAttributeAsChanged(INVENTORYORGCODE, Integer.parseInt(result));
-
+                populateAttributeAsChanged(LEVELNO, getParentInventoryOrgSno()==null?1:getLevelNo()+1);
+           
         }        
         super.doDML(operation, e);
     }

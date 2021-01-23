@@ -165,7 +165,8 @@
                                                                               required="#{bindings.txtParentOrgName.hints.mandatory}"
                                                                               columns="#{bindings.txtParentOrgName.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtParentOrgName.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:100%">
+                                                                              simple="true" contentStyle="width:100%"
+                                                                              readOnly="#{bindings.InventoryOrgCode.inputValue!=null}">
                                                     <f:validator binding="#{bindings.txtParentOrgName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
@@ -174,7 +175,7 @@
                                                 <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
                                             </af:gridCell>
                                             <af:gridCell id="gc14" width="21%" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch">
+                                                         halign="stretch" valign="middle">
                                                 <af:selectOneChoice value="#{bindings.IsActive.inputValue}"
                                                                     label="#{bindings.IsActive.label}"
                                                                     required="#{bindings.IsActive.hints.mandatory}"

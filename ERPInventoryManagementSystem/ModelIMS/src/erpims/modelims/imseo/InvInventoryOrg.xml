@@ -646,6 +646,24 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="LevelNo"
+    Precision="6"
+    Scale="0"
+    ColumnName="LEVEL_NO"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY_ORG">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvInventoryOrg.LevelNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="AdminCompany"
     Association="erpims.modelims.imseo.AdminCompanyInvInventoryOrgLocationIdAsso"

@@ -54,6 +54,9 @@
     <ViewCriteriaUsage
       Name="InvInventoryOrgByCompanyIDVC"
       FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByCompanyIDVC"/>
+    <ViewCriteriaUsage
+      Name="InvInventoryOrgVOSupervisedVC"
+      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgVOSupervisedVC"/>
     <ParameterMap>
       <PIMap Variable="P_ADF_COMPANY_ID">
         <TransientExpression
@@ -173,10 +176,14 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="ParentInventoryOrgSno"/>
+      <Item Value="OrgHierarchyPath"/>
+      <Item Value="LevelNo"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="OrgDescription"/>
       <Item Value="InventoryOrgSno"/>
+      <Item Value="OrgHierarchyPath"/>
+      <Item Value="LevelNo"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="OrgDescription"/>
@@ -527,6 +534,12 @@
     EntityAttrName="StartDate"
     EntityUsage="InvInventoryOrg"
     AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="LevelNo"
+    PrecisionRule="true"
+    EntityAttrName="LevelNo"
+    EntityUsage="InvInventoryOrg"
+    AliasName="LEVEL_NO"/>
   <ViewCriteria
     Name="InvInventoryOrgByCompanyIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
@@ -671,6 +684,42 @@
         Conjunction="AND"
         Value=":P_ADF_INVENTORY_ORG_ID"
         IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="InvInventoryOrgVOSupervisedVC"
+    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InvInventoryOrgVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="IsSupervised"
+        ViewAttribute="IsSupervised"
+        Operator="="
+        Conjunction="AND"
+        Value="Y"
+        UpperColumns="0"
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
