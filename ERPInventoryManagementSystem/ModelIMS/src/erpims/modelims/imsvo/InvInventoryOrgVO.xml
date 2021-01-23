@@ -46,7 +46,11 @@
   <ViewAccessor
     Name="AccAdminCompanyVO"
     ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AdminCompanyCompanyAccessWiseVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyCompanyAccessWiseVC"/>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccInvInventoryOrgVO"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
