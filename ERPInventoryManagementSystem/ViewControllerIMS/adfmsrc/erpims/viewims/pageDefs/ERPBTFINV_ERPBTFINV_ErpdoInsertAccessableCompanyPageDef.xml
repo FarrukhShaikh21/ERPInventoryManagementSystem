@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1"
+                id="ERPBTFINV_ERPBTFINV_ErpdoInsertAccessableCompanyPageDef" Package="erpims.viewims.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="ErpdoInsertAccessableCompany" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="ErpdoInsertAccessableCompany" IsViewObjectMethod="true"
+                  DataControl="ERPINVModuleDataControl"
+                  InstanceName="data.ERPINVModuleDataControl.ErpUserCompanyAccessINVRO"
+                  ReturnName="data.ERPINVModuleDataControl.methodResults.ErpdoInsertAccessableCompany_ERPINVModuleDataControl_ErpUserCompanyAccessINVRO_ErpdoInsertAccessableCompany_result"/>
+  </bindings>
+</pageDefinition>

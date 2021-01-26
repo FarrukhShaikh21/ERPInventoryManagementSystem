@@ -247,6 +247,12 @@
         <fixed-outcome>QRY-ACT-INV_0004_EDIT</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="ErpdoInsertAccessableCompanyINV">
+      <method>#{bindings.ErpdoInsertAccessableCompany.execute}</method>
+      <outcome>
+        <fixed-outcome>doStartERPTaskFlow</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -316,7 +322,7 @@
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__25">
         <from-outcome>doStartERPTaskFlow</from-outcome>
-        <to-activity-id>doINVGotoErpActivity</to-activity-id>
+        <to-activity-id>ErpdoInsertAccessableCompanyINV</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__28">
@@ -562,6 +568,13 @@
       <control-flow-case id="__99">
         <from-outcome>QRY-ACT-INV_0004_EDIT</from-outcome>
         <to-activity-id>ExeInvOrgByCompIdINV_0004_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__89">
+      <from-activity-id>ErpdoInsertAccessableCompanyINV</from-activity-id>
+      <control-flow-case id="__90">
+        <from-outcome>doStartERPTaskFlow</from-outcome>
+        <to-activity-id>doINVGotoErpActivity</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
