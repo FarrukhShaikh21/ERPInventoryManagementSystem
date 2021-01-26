@@ -105,4 +105,7 @@
       Name="InvInventoryOrgByOrganizationIDVC"
       FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByOrganizationIDVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="ErpUserCompanyAccessINVRO"
+    ViewObjectName="erpglobals.modelglobals.globalsqvo.ErpUserCompanyAccessQVO"/>
 </AppModule>
