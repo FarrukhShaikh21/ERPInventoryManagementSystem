@@ -671,7 +671,12 @@
     Type="java.lang.String"
     ColumnType="CHAR"
     IsPersistent="false"
-    IsQueriable="false"/>
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AdminCompanyVO1?.CompanyName]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+  </Attribute>
   <AccessorAttribute
     Name="AdminCompany"
     Association="erpims.modelims.imseo.AdminCompanyInvInventoryOrgLocationIdAsso"

@@ -59,6 +59,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         OrgHierarchyPath,
         StartDate,
         LevelNo,
+        txtCompanyHierarchyPath,
         AdminCompanyVO,
         ParentInventoryOrgSnoInvInventoryOrgVO,
         InvInventoryOrgVO,
@@ -129,6 +130,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     public static final int ORGHIERARCHYPATH = AttributesEnum.OrgHierarchyPath.index();
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int LEVELNO = AttributesEnum.LevelNo.index();
+    public static final int TXTCOMPANYHIERARCHYPATH = AttributesEnum.txtCompanyHierarchyPath.index();
     public static final int ADMINCOMPANYVO = AttributesEnum.AdminCompanyVO.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORGVO =
         AttributesEnum.ParentInventoryOrgSnoInvInventoryOrgVO.index();
@@ -713,6 +715,22 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
      */
     public void setLevelNo(Integer value) {
         setAttributeInternal(LEVELNO, value);
+    }
+
+    /**
+     * Gets the attribute value for txt_Company_Hierarchy_Path using the alias name txtCompanyHierarchyPath.
+     * @return the txt_Company_Hierarchy_Path
+     */
+    public String gettxtCompanyHierarchyPath() {
+        return (String) getAttributeInternal(TXTCOMPANYHIERARCHYPATH);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for txt_Company_Hierarchy_Path using the alias name txtCompanyHierarchyPath.
+     * @param value value to set the txt_Company_Hierarchy_Path
+     */
+    public void settxtCompanyHierarchyPath(String value) {
+        setAttributeInternal(TXTCOMPANYHIERARCHYPATH, value);
     }
 
     /**

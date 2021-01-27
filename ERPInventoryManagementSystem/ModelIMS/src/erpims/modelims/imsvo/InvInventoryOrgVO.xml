@@ -548,6 +548,14 @@
     EntityAttrName="LevelNo"
     EntityUsage="InvInventoryOrg"
     AliasName="LEVEL_NO"/>
+  <ViewAttribute
+    Name="txtCompanyHierarchyPath"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCompanyHierarchyPath"
+    EntityUsage="InvInventoryOrg"
+    AliasName="txt_Company_Hierarchy_Path"/>
   <ViewCriteria
     Name="InvInventoryOrgByCompanyIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
