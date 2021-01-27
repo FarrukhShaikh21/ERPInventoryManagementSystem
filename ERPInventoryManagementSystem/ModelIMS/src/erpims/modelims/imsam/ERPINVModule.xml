@@ -97,6 +97,9 @@
     <ViewCriteriaUsage
       Name="InvInventoryOrgByCompanyIDVC"
       FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByCompanyIDVC"/>
+    <ViewCriteriaUsage
+      Name="InvInventoryOrgLocationAccessWiseVC"
+      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgLocationAccessWiseVC"/>
   </ViewUsage>
   <ViewUsage
     Name="InvInventoryOrgCRUD"

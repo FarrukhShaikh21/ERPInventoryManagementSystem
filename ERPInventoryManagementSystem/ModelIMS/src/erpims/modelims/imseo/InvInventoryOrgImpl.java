@@ -63,11 +63,13 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         OrgHierarchyPath,
         StartDate,
         LevelNo,
+        txtCompanyHierarchyPath,
         AdminCompany,
         InvInventoryOrg,
         ParentInventoryOrgSnoInvInventoryOrg,
         SmCountry,
-        SmCity;
+        SmCity,
+        AdminCompany1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -127,12 +129,14 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     public static final int ORGHIERARCHYPATH = AttributesEnum.OrgHierarchyPath.index();
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int LEVELNO = AttributesEnum.LevelNo.index();
+    public static final int TXTCOMPANYHIERARCHYPATH = AttributesEnum.txtCompanyHierarchyPath.index();
     public static final int ADMINCOMPANY = AttributesEnum.AdminCompany.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORG =
         AttributesEnum.ParentInventoryOrgSnoInvInventoryOrg.index();
     public static final int SMCOUNTRY = AttributesEnum.SmCountry.index();
     public static final int SMCITY = AttributesEnum.SmCity.index();
+    public static final int ADMINCOMPANY1 = AttributesEnum.AdminCompany1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -709,6 +713,22 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtCompanyHierarchyPath, using the alias name txtCompanyHierarchyPath.
+     * @return the value of txtCompanyHierarchyPath
+     */
+    public String gettxtCompanyHierarchyPath() {
+        return (String) getAttributeInternal(TXTCOMPANYHIERARCHYPATH);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtCompanyHierarchyPath.
+     * @param value value to set the txtCompanyHierarchyPath
+     */
+    public void settxtCompanyHierarchyPath(String value) {
+        setAttributeInternal(TXTCOMPANYHIERARCHYPATH, value);
+    }
+
+    /**
      * @return the associated entity erpadm.modeladm.admeo.AdminCompanyImpl.
      */
     public AdminCompanyImpl getAdminCompany() {
@@ -769,6 +789,21 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
      */
     public void setSmCity(SmCityImpl value) {
         setAttributeInternal(SMCITY, value);
+    }
+
+
+    /**
+     * @return the associated entity erpadm.modeladm.admeo.AdminCompanyImpl.
+     */
+    public AdminCompanyImpl getAdminCompany1() {
+        return (AdminCompanyImpl) getAttributeInternal(ADMINCOMPANY1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity erpadm.modeladm.admeo.AdminCompanyImpl.
+     */
+    public void setAdminCompany1(AdminCompanyImpl value) {
+        setAttributeInternal(ADMINCOMPANY1, value);
     }
 
 

@@ -153,7 +153,6 @@
   </Attribute>
   <Attribute
     Name="CompanyId"
-    IsUnique="true"
     IsNotNull="true"
     Precision="5"
     Scale="0"
@@ -664,6 +663,15 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtCompanyHierarchyPath"
+    Precision="80"
+    ColumnName="txt_Company_Hierarchy_Path"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false"/>
   <AccessorAttribute
     Name="AdminCompany"
     Association="erpims.modelims.imseo.AdminCompanyInvInventoryOrgLocationIdAsso"
@@ -698,6 +706,13 @@
     AssociationEnd="erpims.modelims.imseo.SmCityInvInventoryOrgCitySnoAsso.SmCity"
     AssociationOtherEnd="erpims.modelims.imseo.SmCityInvInventoryOrgCitySnoAsso.InvInventoryOrg"
     Type="erpadm.modeladm.admeo.SmCityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AdminCompany1"
+    Association="erpims.modelims.imseo.AdminCompanyInvInventoryOrgCompanyIdAsso"
+    AssociationEnd="erpims.modelims.imseo.AdminCompanyInvInventoryOrgCompanyIdAsso.AdminCompany1"
+    AssociationOtherEnd="erpims.modelims.imseo.AdminCompanyInvInventoryOrgCompanyIdAsso.InvInventoryOrg"
+    Type="erpadm.modeladm.admeo.AdminCompanyImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkInvInventoryOrg"
@@ -762,6 +777,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvInventoryOrg.CitySno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvInventoryOrg4">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADMIN_COMPANY_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Inv_Inventory_Org4"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvInventoryOrg.CompanyId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

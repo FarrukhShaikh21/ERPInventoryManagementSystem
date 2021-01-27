@@ -26,6 +26,10 @@
     Name="P_ADF_INVENTORY_ORG_ID"
     Kind="viewcriteria"
     Type="java.lang.Integer"/>
+  <Variable
+    Name="P_ADF_COMPANY_HIERARCHY_PATH"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <ViewAccessor
     Name="AccSysGeneralValueVO"
     ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
@@ -49,7 +53,7 @@
     RowLevelBinds="true">
     <ViewCriteriaUsage
       Name="AdminCompanyCompanyAccessWiseVC"
-      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyCompanyAccessWiseVC"/>
+      FullName="AdminCompanyCompanyAccessWiseVC"/>
   </ViewAccessor>
   <ViewAccessor
     Name="AccInvInventoryOrgVO"
@@ -78,7 +82,7 @@
     RowLevelBinds="true">
     <ViewCriteriaUsage
       Name="SmCityCountryWiseVC"
-      FullName="erpadm.modeladm.admvo.SmCityVO.SmCityCountryWiseVC"/>
+      FullName="SmCityCountryWiseVC"/>
     <ParameterMap>
       <PIMap Variable="P_ADF_COUNTRY_SNO">
         <TransientExpression
@@ -727,6 +731,76 @@
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewCriteria
+    Name="InvInventoryOrgLocationAccessWiseVC"
+    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InvInventoryOrgVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="AdminCompanyVO"
+        ViewAttribute="AdminCompanyVO"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AdminCompanyVONestedCriteria"
+          ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AdminCompanyVONestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="TempAdminCompanyAccessVO"
+              ViewAttribute="TempAdminCompanyAccessVO"
+              Operator="EXISTS"
+              Conjunction="AND"
+              IsNestedCriteria="true"
+              Required="Optional">
+              <ViewCriteria
+                Name="TempAdminCompanyAccessVONestedCriteria"
+                ViewObjectName="erpglobals.modelglobals.globalsvo.TempAdminCompanyAccessVO"
+                Conjunction="AND">
+                <ViewCriteriaRow
+                  Name="TempAdminCompanyAccessVONestedCriteria_row_0"
+                  UpperColumns="1">
+                  <ViewCriteriaItem
+                    Name="CompanyHierarchyPath"
+                    ViewAttribute="CompanyHierarchyPath"
+                    Operator="STARTSWITH"
+                    Conjunction="AND"
+                    Value=":P_ADF_COMPANY_HIERARCHY_PATH"
+                    IsBindVarValue="true"
+                    Required="Optional"/>
+                </ViewCriteriaRow>
+              </ViewCriteria>
+            </ViewCriteriaItem>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="AdminCompanyVO"
     ViewLink="erpims.modelims.imsvo.AdminCompanyInvInventoryOrgLocationIdVL"
@@ -747,6 +821,12 @@
   <ViewLinkAccessor
     Name="SmCityVO"
     ViewLink="erpims.modelims.imsvo.SmCityInvInventoryOrgCitySnoVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AdminCompanyVO1"
+    ViewLink="erpims.modelims.imsvo.AdminCompanyInvInventoryOrgCompanyIdVL"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

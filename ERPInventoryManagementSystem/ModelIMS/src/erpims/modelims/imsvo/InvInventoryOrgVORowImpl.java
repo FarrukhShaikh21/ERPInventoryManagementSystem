@@ -17,6 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
 public class InvInventoryOrgVORowImpl extends ViewRowImpl {
 
+
     public static final int ENTITY_INVINVENTORYORG = 0;
 
     /**
@@ -62,6 +63,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         ParentInventoryOrgSnoInvInventoryOrgVO,
         InvInventoryOrgVO,
         SmCityVO,
+        AdminCompanyVO1,
         AccSysGeneralValueVO,
         AccAdminCompanyVO,
         AccInvInventoryOrgVO,
@@ -90,6 +92,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
 
     public static final int INVENTORYORGSNO = AttributesEnum.InventoryOrgSno.index();
     public static final int INVENTORYORGCODE = AttributesEnum.InventoryOrgCode.index();
@@ -131,6 +134,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         AttributesEnum.ParentInventoryOrgSnoInvInventoryOrgVO.index();
     public static final int INVINVENTORYORGVO = AttributesEnum.InvInventoryOrgVO.index();
     public static final int SMCITYVO = AttributesEnum.SmCityVO.index();
+    public static final int ADMINCOMPANYVO1 = AttributesEnum.AdminCompanyVO1.index();
     public static final int ACCSYSGENERALVALUEVO = AttributesEnum.AccSysGeneralValueVO.index();
     public static final int ACCADMINCOMPANYVO = AttributesEnum.AccAdminCompanyVO.index();
     public static final int ACCINVINVENTORYORGVO = AttributesEnum.AccInvInventoryOrgVO.index();
@@ -758,6 +762,20 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
      */
     public void setSmCityVO(Row value) {
         setAttributeInternal(SMCITYVO, value);
+    }
+
+    /**
+     * Gets the associated <code>Row</code> using master-detail link AdminCompanyVO1.
+     */
+    public Row getAdminCompanyVO1() {
+        return (Row) getAttributeInternal(ADMINCOMPANYVO1);
+    }
+
+    /**
+     * Sets the master-detail link AdminCompanyVO1 between this object and <code>value</code>.
+     */
+    public void setAdminCompanyVO1(Row value) {
+        setAttributeInternal(ADMINCOMPANYVO1, value);
     }
 
     /**
