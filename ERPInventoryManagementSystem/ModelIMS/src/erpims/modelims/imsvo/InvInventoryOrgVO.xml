@@ -26,10 +26,6 @@
     Name="P_ADF_INVENTORY_ORG_ID"
     Kind="viewcriteria"
     Type="java.lang.Integer"/>
-  <Variable
-    Name="P_ADF_COMPANY_HIERARCHY_PATH"
-    Kind="viewcriteria"
-    Type="java.lang.String"/>
   <ViewAccessor
     Name="AccSysGeneralValueVO"
     ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
@@ -794,12 +790,10 @@
                   Name="TempAdminCompanyAccessVONestedCriteria_row_0"
                   UpperColumns="1">
                   <ViewCriteriaItem
-                    Name="CompanyHierarchyPath"
-                    ViewAttribute="CompanyHierarchyPath"
-                    Operator="STARTSWITH"
+                    Name="CompanyId"
+                    ViewAttribute="CompanyId"
+                    Operator="ISNOTBLANK"
                     Conjunction="AND"
-                    Value=":P_ADF_COMPANY_HIERARCHY_PATH"
-                    IsBindVarValue="true"
                     Required="Optional"/>
                 </ViewCriteriaRow>
               </ViewCriteria>

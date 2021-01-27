@@ -673,7 +673,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[AdminCompanyVO1?.CompanyName]]></TransientExpression>
+      trustMode="untrusted"><![CDATA[AdminCompanyVO1?.CompanyHierarchyPath]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
   </Attribute>
