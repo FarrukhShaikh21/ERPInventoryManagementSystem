@@ -50,6 +50,15 @@
     <ViewCriteriaUsage
       Name="AdminCompanyCompanyAccessWiseVC"
       FullName="AdminCompanyCompanyAccessWiseVC"/>
+    <ViewCriteriaUsage
+      Name="AdminCompanyHierarchyWiseVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyHierarchyWiseVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_COMPANY_HIERARCHY_PATH">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[txtCompanyHierarchyPath==null?-1:txtCompanyHierarchyPath]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
   </ViewAccessor>
   <ViewAccessor
     Name="AccInvInventoryOrgVO"
@@ -58,6 +67,9 @@
     <ViewCriteriaUsage
       Name="InvInventoryOrgByCompanyIDVC"
       FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByCompanyIDVC"/>
+    <ViewCriteriaUsage
+      Name="InvInventoryOrgLocationAccessWiseVC"
+      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgLocationAccessWiseVC"/>
     <ViewCriteriaUsage
       Name="InvInventoryOrgVOSupervisedVC"
       FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgVOSupervisedVC"/>
