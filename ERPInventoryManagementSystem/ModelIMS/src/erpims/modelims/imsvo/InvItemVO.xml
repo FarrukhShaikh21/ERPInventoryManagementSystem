@@ -24,7 +24,17 @@
   <ViewAccessor
     Name="AccGlChartOfAccountsVO"
     ViewObjectName="erpfms.modelfms.fmsvo.GlChartOfAccountsVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="GlChartOfAccountsByComnanyVC"
+      FullName="erpfms.modelfms.fmsvo.GlChartOfAccountsVO.GlChartOfAccountsByComnanyVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_COMPANY_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[CompanyId==null?0:CompanyId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccSysGeneralValueVO"
     ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
@@ -49,11 +59,27 @@
     <ViewCriteriaUsage
       Name="InvUnitTypeByCompanyIDVC"
       FullName="erpims.modelims.imsvo.InvUnitTypeVO.InvUnitTypeByCompanyIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_COMPANY_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[CompanyId==null?0:CompanyId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
   </ViewAccessor>
   <ViewAccessor
     Name="AccInvItemVO"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="InvItemByCompanyByIDVC"
+      FullName="erpims.modelims.imsvo.InvItemVO.InvItemByCompanyByIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_COMPANY_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[CompanyId==null?0:CompanyId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtCOACOGSDescription"
     ListVOName="AccGlChartOfAccountsVO"

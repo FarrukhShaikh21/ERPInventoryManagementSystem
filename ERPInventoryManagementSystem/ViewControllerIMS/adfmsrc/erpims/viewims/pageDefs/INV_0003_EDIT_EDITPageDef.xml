@@ -39,11 +39,6 @@
     <list IterBinding="InvItemCRUDIterator" StaticList="false" Uses="LovIsActive" id="IsActive" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
     <action IterBinding="InvItemCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action IterBinding="InvItemCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
-            Action="createWithParams">
-      <NamedData NDName="ItemId" NDValue="#{data.erpims_viewims_INV_0003_EDITPageDef.CompCode.inputValue}"
-                 NDType="java.lang.String"/>
-    </action>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="ERPINVModuleDataControl"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
@@ -127,5 +122,10 @@
         <Item Value="ValueDescription"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="InvItemCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="CompanyId" NDValue="#{data.erpims_viewims_INV_0003_EDITPageDef.CompCode.inputValue}"
+                 NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>

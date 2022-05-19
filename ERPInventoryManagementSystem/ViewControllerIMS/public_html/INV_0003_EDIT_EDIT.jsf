@@ -261,7 +261,7 @@
                                                     <f:validator binding="#{bindings.txtPurchaseUnitTypeName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
-                                            <af:gridCell id="gc45" width="10%" halign="stretch" marginStart="5px"
+                                            <af:gridCell id="gc45" width="10%" halign="center" marginStart="5px"
                                                          marginEnd="5px" valign="middle">
                                                 <af:outputLabel id="ol22"
                                                                 value="#{bindings.txtSaleUnitTypeName.hints.label}"/>
@@ -276,7 +276,7 @@
                                                                               required="#{bindings.txtSaleUnitTypeName.hints.mandatory}"
                                                                               columns="#{bindings.txtSaleUnitTypeName.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtSaleUnitTypeName.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:80%"
+                                                                              simple="true" contentStyle="width:100%"
                                                                               readOnly="#{(pageFlowScope.ERPMainTempBean.LERPAllowEdit=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y' }">
                                                     <f:validator binding="#{bindings.txtSaleUnitTypeName.validator}"/>
                                                 </af:inputComboboxListOfValues>
@@ -631,6 +631,10 @@
                                                 <af:setActionListener from="#{pageFlowScope.OracleERPBean.LErpPanelDefaultTabbed}"
                                                                       to="#{pageFlowScope.OracleERPBean.LErpPanelTabbed}"/>
                                             </af:link>
+                                            <af:link actionListener="#{bindings.CreateWithParams.execute}"
+                                                     text="CreateWithParams"
+                                                     disabled="#{!bindings.CreateWithParams.enabled}" id="l2"
+                                                     rendered="false"/>
                                             <af:link actionListener="#{bindings.Delete.execute}" text="Delete"
                                                      disabled="#{(pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' &amp;&amp; bindings.ItemShortCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y'}"
                                                      id="l3" icon="#{resource['images:imgDeleteRecord.png']}"
@@ -657,9 +661,6 @@
                                                      partialSubmit="true" icon="#{resource['images:imgAddRecord.png']}"
                                                      iconPosition="top"
                                                      action="#{pageFlowScope.OracleERPBean.doERPAddRecordWithPara}"/>
-                                            <af:link text="Create With Para" id="l6"
-                                                     actionListener="#{bindings.CreateWithParams.execute}"
-                                                     rendered="false"/>
                                             <af:link actionListener="#{bindings.Delete.execute}" text="Delete"
                                                      disabled="#{!bindings.Delete.enabled}" id="l4" rendered="false"/>
                                             <af:link text="Undo" immediate="true" id="l14"
