@@ -60,12 +60,14 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         StartDate,
         LevelNo,
         txtCompanyHierarchyPath,
+        OrganizationTypeSno,
         AdminCompanyVO,
         ParentInventoryOrgSnoInvInventoryOrgVO,
         InvInventoryOrgVO,
         SmCityVO,
         AdminCompanyVO1,
         AccSysGeneralValueVO,
+        AccSysGeneralValueOrgTypeVO,
         AccAdminCompanyVO,
         AccInvInventoryOrgVO,
         AccSmCountryVO,
@@ -131,6 +133,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int LEVELNO = AttributesEnum.LevelNo.index();
     public static final int TXTCOMPANYHIERARCHYPATH = AttributesEnum.txtCompanyHierarchyPath.index();
+    public static final int ORGANIZATIONTYPESNO = AttributesEnum.OrganizationTypeSno.index();
     public static final int ADMINCOMPANYVO = AttributesEnum.AdminCompanyVO.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORGVO =
         AttributesEnum.ParentInventoryOrgSnoInvInventoryOrgVO.index();
@@ -138,6 +141,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     public static final int SMCITYVO = AttributesEnum.SmCityVO.index();
     public static final int ADMINCOMPANYVO1 = AttributesEnum.AdminCompanyVO1.index();
     public static final int ACCSYSGENERALVALUEVO = AttributesEnum.AccSysGeneralValueVO.index();
+    public static final int ACCSYSGENERALVALUEORGTYPEVO = AttributesEnum.AccSysGeneralValueOrgTypeVO.index();
     public static final int ACCADMINCOMPANYVO = AttributesEnum.AccAdminCompanyVO.index();
     public static final int ACCINVINVENTORYORGVO = AttributesEnum.AccInvInventoryOrgVO.index();
     public static final int ACCSMCOUNTRYVO = AttributesEnum.AccSmCountryVO.index();
@@ -734,6 +738,22 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for ORGANIZATION_TYPE_SNO using the alias name OrganizationTypeSno.
+     * @return the ORGANIZATION_TYPE_SNO
+     */
+    public String getOrganizationTypeSno() {
+        return (String) getAttributeInternal(ORGANIZATIONTYPESNO);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for ORGANIZATION_TYPE_SNO using the alias name OrganizationTypeSno.
+     * @param value value to set the ORGANIZATION_TYPE_SNO
+     */
+    public void setOrganizationTypeSno(String value) {
+        setAttributeInternal(ORGANIZATIONTYPESNO, value);
+    }
+
+    /**
      * Gets the associated <code>Row</code> using master-detail link AdminCompanyVO.
      */
     public Row getAdminCompanyVO() {
@@ -801,6 +821,13 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
      */
     public RowSet getAccSysGeneralValueVO() {
         return (RowSet) getAttributeInternal(ACCSYSGENERALVALUEVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccSysGeneralValueOrgTypeVO.
+     */
+    public RowSet getAccSysGeneralValueOrgTypeVO() {
+        return (RowSet) getAttributeInternal(ACCSYSGENERALVALUEORGTYPEVO);
     }
 
     /**

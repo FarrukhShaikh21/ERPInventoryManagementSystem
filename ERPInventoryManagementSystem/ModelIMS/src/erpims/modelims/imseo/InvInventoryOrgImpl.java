@@ -64,6 +64,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         StartDate,
         LevelNo,
         txtCompanyHierarchyPath,
+        OrganizationTypeSno,
         AdminCompany,
         InvInventoryOrg,
         ParentInventoryOrgSnoInvInventoryOrg,
@@ -130,6 +131,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int LEVELNO = AttributesEnum.LevelNo.index();
     public static final int TXTCOMPANYHIERARCHYPATH = AttributesEnum.txtCompanyHierarchyPath.index();
+    public static final int ORGANIZATIONTYPESNO = AttributesEnum.OrganizationTypeSno.index();
     public static final int ADMINCOMPANY = AttributesEnum.AdminCompany.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORG =
@@ -726,6 +728,22 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
      */
     public void settxtCompanyHierarchyPath(String value) {
         setAttributeInternal(TXTCOMPANYHIERARCHYPATH, value);
+    }
+
+    /**
+     * Gets the attribute value for OrganizationTypeSno, using the alias name OrganizationTypeSno.
+     * @return the value of OrganizationTypeSno
+     */
+    public String getOrganizationTypeSno() {
+        return (String) getAttributeInternal(ORGANIZATIONTYPESNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for OrganizationTypeSno.
+     * @param value value to set the OrganizationTypeSno
+     */
+    public void setOrganizationTypeSno(String value) {
+        setAttributeInternal(ORGANIZATIONTYPESNO, value);
     }
 
     /**

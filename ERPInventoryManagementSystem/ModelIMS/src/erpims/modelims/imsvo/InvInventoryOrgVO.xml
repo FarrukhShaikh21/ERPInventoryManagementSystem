@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="InvInventoryOrgVO"
-  Version="12.1.3.2.1"
+  Version="12.1.3.10.47"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -43,6 +43,25 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+
+  <ViewAccessor
+    Name="AccSysGeneralValueOrgTypeVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SysGeneralValueActiveVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueActiveVC"/>
+    <ViewCriteriaUsage
+      Name="SysGeneralValueByValueSetIDVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueByValueSetIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_VALUE_SET_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[32]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  
   <ViewAccessor
     Name="AccAdminCompanyVO"
     ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
@@ -263,6 +282,25 @@
     </AttrArray>
     <DisplayCriteria
       Name="SmCityFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovOrganizationTypeSno"
+    ListVOName="AccSysGeneralValueOrgTypeVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrganizationTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ValueCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ValueDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="InvInventoryOrg"
@@ -564,6 +602,20 @@
     EntityAttrName="txtCompanyHierarchyPath"
     EntityUsage="InvInventoryOrg"
     AliasName="txt_Company_Hierarchy_Path"/>
+  <ViewAttribute
+    Name="OrganizationTypeSno"
+    PrecisionRule="true"
+    EntityAttrName="OrganizationTypeSno"
+    EntityUsage="InvInventoryOrg"
+    AliasName="ORGANIZATION_TYPE_SNO"
+    LOVName="LovOrganizationTypeSno">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="InvInventoryOrgByCompanyIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
