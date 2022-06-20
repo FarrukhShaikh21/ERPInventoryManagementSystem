@@ -97,5 +97,7 @@
         <Item Value="EndDate"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovOrganizationTypeSno"
+          id="OrganizationTypeSno" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

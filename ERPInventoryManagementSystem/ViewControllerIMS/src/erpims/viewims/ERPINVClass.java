@@ -1,16 +1,14 @@
 package erpims.viewims;
 
-import com.tangosol.util.filter.ValueChangeEventFilter;
-
 import erpglobals.modelglobals.ERPUserAttribute;
 
 import erpglobals.viewglobals.ERPGlobalsClass;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-
 import javax.faces.event.ValueChangeEvent;
 
+import oracle.adf.controller.ControllerContext;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichPopup;
@@ -157,7 +155,7 @@ public class ERPINVClass {
     }
 
     public void doSetINVErpApplicationGlobals() {
-
+        
         ADFContext.getCurrent().getPageFlowScope().put("G_USER_SNO",1);
         ADFContext.getCurrent().getPageFlowScope().put("G_USER_CODE","FARRUKH");
         ADFContext.getCurrent().getPageFlowScope().put("G_GLOBAL_DEF_COMPANY",1);
@@ -369,6 +367,23 @@ public class ERPINVClass {
         ob.execute();
         getERPUploadFile().resetValue();
         
+    }    
+
+
+    public void ERPINVhandleExceptionShowMessageInPopupDialog(){
+      ControllerContext cc = ControllerContext.getInstance();
+
+      Exception ex = cc.getCurrentViewPort().getExceptionData();
+      String message = ex.getMessage();
+      
+      
+      FacesContext fc = FacesContext.getCurrentInstance();        
+      FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, "BTF: " +message, null);
+      fc.addMessage(null, facesMessage);
+
+      cc.getCurrentRootViewPort().clearException();
+      fc.renderResponse();
+      
     }    
 }
 

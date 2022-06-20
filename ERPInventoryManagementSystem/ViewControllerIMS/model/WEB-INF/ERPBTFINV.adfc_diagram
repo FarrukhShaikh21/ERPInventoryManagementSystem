@@ -254,7 +254,7 @@
       <property
          name="fromOutcome">doStartERPTaskFlow</property>
       <property
-         name="sdm:polyPoints">B50,173.0,-185.75293,174.37793,-170.65527,T50</property>
+         name="sdm:polyPoints">B50,173.0,-185.60352,174.37793,-170.65527,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall25">
@@ -1103,4 +1103,17 @@
       <property
          name="sdm:polyPoints">B50,174.37793,-62.655273,252.0,9.143555,L42</property>
    </ControlFlowCase>
+   <MethodCall
+      id="MethodCall102">
+      <property
+         name="activityId">INVExceptionMethod</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INVExceptionMethod&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">true</property>
+      <property
+         name="y">-265.05176</property>
+      <property
+         name="x">521.0</property>
+   </MethodCall>
 </SDM>

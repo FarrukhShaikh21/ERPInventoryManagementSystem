@@ -165,24 +165,25 @@
                                                                               required="#{bindings.txtParentOrgName.hints.mandatory}"
                                                                               columns="#{bindings.txtParentOrgName.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtParentOrgName.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:100%"
-                                                                              readOnly="#{bindings.InventoryOrgCode.inputValue!=null}">
+                                                                              simple="true" contentStyle="width:90%"
+                                                                              readOnly="#{bindings.InventoryOrgCode.inputValue!=null}"
+                                                                              partialTriggers="txtLocationNameId">
                                                     <f:validator binding="#{bindings.txtParentOrgName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>
-                                            <af:gridCell id="gc13" width="13%" marginStart="5px" marginEnd="5px"
-                                                         halign="center">
-                                                <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
+                                            <af:gridCell id="gc17" width="13%" halign="center">
+                                                <af:outputLabel value="#{bindings.OrganizationTypeSno.label}"
+                                                                id="ol17"/>
                                             </af:gridCell>
-                                            <af:gridCell id="gc14" width="21%" marginStart="5px" marginEnd="5px"
-                                                         halign="stretch" valign="middle">
-                                                <af:selectOneChoice value="#{bindings.IsActive.inputValue}"
-                                                                    label="#{bindings.IsActive.label}"
-                                                                    required="#{bindings.IsActive.hints.mandatory}"
-                                                                    shortDesc="#{bindings.IsActive.hints.tooltip}"
-                                                                    id="soc1" simple="true" contentStyle="width:100%">
-                                                    <f:selectItems value="#{bindings.IsActive.items}" id="si1"/>
-                                                    <f:validator binding="#{bindings.IsActive.validator}"/>
+                                            <af:gridCell id="gc18" width="21%" halign="stretch">
+                                                <af:selectOneChoice value="#{bindings.OrganizationTypeSno.inputValue}"
+                                                                    label="#{bindings.OrganizationTypeSno.label}"
+                                                                    required="#{bindings.OrganizationTypeSno.hints.mandatory}"
+                                                                    shortDesc="#{bindings.OrganizationTypeSno.hints.tooltip}"
+                                                                    id="soc2" simple="true" contentStyle="width:100%">
+                                                    <f:selectItems value="#{bindings.OrganizationTypeSno.items}"
+                                                                   id="si2"/>
+                                                    <f:validator binding="#{bindings.OrganizationTypeSno.validator}"/>
                                                 </af:selectOneChoice>
                                             </af:gridCell>
                                         </af:gridRow>
@@ -214,6 +215,21 @@
                                                     <f:validator binding="#{bindings.EndDate.validator}"/>
                                                     <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
                                                 </af:inputDate>
+                                            </af:gridCell>
+                                            <af:gridCell id="gc13" width="13%" marginStart="5px" marginEnd="5px"
+                                                         halign="center">
+                                                <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
+                                            </af:gridCell>
+                                            <af:gridCell id="gc14" width="21%" marginStart="5px" marginEnd="5px"
+                                                         halign="stretch" valign="middle">
+                                                <af:selectOneChoice value="#{bindings.IsActive.inputValue}"
+                                                                    label="#{bindings.IsActive.label}"
+                                                                    required="#{bindings.IsActive.hints.mandatory}"
+                                                                    shortDesc="#{bindings.IsActive.hints.tooltip}"
+                                                                    id="soc1" simple="true" contentStyle="width:100%">
+                                                    <f:selectItems value="#{bindings.IsActive.items}" id="si1"/>
+                                                    <f:validator binding="#{bindings.IsActive.validator}"/>
+                                                </af:selectOneChoice>
                                             </af:gridCell>
                                         </af:gridRow>
                                     </af:panelGridLayout>
@@ -250,7 +266,7 @@
                                                                               required="#{bindings.txtCityName.hints.mandatory}"
                                                                               columns="#{bindings.txtCityName.hints.displayWidth}"
                                                                               shortDesc="#{bindings.txtCityName.hints.tooltip}"
-                                                                              simple="true" contentStyle="width:100%">
+                                                                              simple="true" contentStyle="width:90%">
                                                     <f:validator binding="#{bindings.txtCityName.validator}"/>
                                                 </af:inputComboboxListOfValues>
                                             </af:gridCell>

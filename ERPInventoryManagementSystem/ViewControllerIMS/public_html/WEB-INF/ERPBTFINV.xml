@@ -33,6 +33,7 @@
       <managed-bean-class>erptemplate.viewtemp.ERPTEMPClass</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <exception-handler>INVExceptionMethod</exception-handler>
     <view id="INV_MAIN">
       <page>/INV_MAIN.jsf</page>
     </view>
@@ -251,6 +252,12 @@
       <method>#{bindings.ErpdoInsertAccessableCompany.execute}</method>
       <outcome>
         <fixed-outcome>doStartERPTaskFlow</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="INVExceptionMethod">
+      <method>#{pageFlowScope.OracleERPBean.ERPINVhandleExceptionShowMessageInPopupDialog}</method>
+      <outcome>
+        <fixed-outcome>erpdone</fixed-outcome>
       </outcome>
     </method-call>
     <control-flow-rule id="__6">
