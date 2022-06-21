@@ -21,12 +21,12 @@
                   <f:facet name="buttonBar"/>
                         </af:dialog>
             </af:popup>
-            <af:decorativeBox id="db1" dimensionsFrom="parent">
+            <af:decorativeBox id="db1" dimensionsFrom="parent" inlineStyle="border:none">
                 <f:facet name="center">
                     <af:decorativeBox id="db2" partialTriggers="l3 l1">
                         <f:facet name="center">
                             <af:panelBox text="PanelBox1" id="pb2" showDisclosure="false" showHeader="never"
-                                         partialTriggers="l11 l3 l1 l14 l13 l12 l17 d4 d3">
+                                         partialTriggers="l11 l3 l1 l14 l13 l12 l17 d4 d3" inlineStyle="border:none">
                                 <f:facet name="toolbar"/>
                                 <af:panelBox text="Basic Information" id="pb1" showDisclosure="false">
                                     <f:facet name="toolbar"/>

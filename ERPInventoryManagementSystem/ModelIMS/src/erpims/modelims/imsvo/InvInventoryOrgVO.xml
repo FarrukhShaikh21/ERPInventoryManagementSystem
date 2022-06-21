@@ -688,35 +688,12 @@
         Operator="="
         Conjunction="AND"
         Required="Optional"/>
-      <ViewCriteriaItemCompound
+      <ViewCriteriaItem
         Name="OrgShortName"
-        ViewAttribute="OrgShortName">
-        <ViewCriteria
-          Name="InvInventoryOrgVOCriteria_InvInventoryOrgVOCriteria_row_0_OrgShortName_itemHolder"
-          ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
-          Conjunction="OR">
-          <ViewCriteriaRow
-            Name="InvInventoryOrgVOCriteria_InvInventoryOrgVOCriteria_row_0_OrgShortName_itemHolder_row_0"
-            Conjunction="AND">
-            <ViewCriteriaItem
-              Name="OrgShortName"
-              ViewAttribute="OrgShortName"
-              Operator="CONTAINS"
-              Conjunction="AND"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-          <ViewCriteriaRow
-            Name="InvInventoryOrgVOCriteria_InvInventoryOrgVOCriteria_row_0_OrgShortName_itemHolder_row_1"
-            Conjunction="AND">
-            <ViewCriteriaItem
-              Name="InvInventoryOrgVOCriteria_InvInventoryOrgVOCriteria_row_0_OrgShortName_InvInventoryOrgVOCriteria_InvInventoryOrgVOCriteria_row_0_OrgShortName_itemHolder_InvInventoryOrgVOCriteria_InvInventoryOrgVOCriteria_row_0_OrgShortName_itemHolder_row_1_OrgShortName"
-              ViewAttribute="OrgShortName"
-              Operator="CONTAINS"
-              Conjunction="AND"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-        </ViewCriteria>
-      </ViewCriteriaItemCompound>
+        ViewAttribute="OrgShortName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
       <ViewCriteriaItem
         Name="OrgDescription"
         ViewAttribute="OrgDescription"
@@ -729,6 +706,29 @@
         Operator="="
         Conjunction="AND"
         Required="Optional"/>
+      <ViewCriteriaItem
+        Name="InvInventoryOrgVO"
+        ViewAttribute="InvInventoryOrgVO"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="InvInventoryOrgVONestedCriteria"
+          ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="InvInventoryOrgVONestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="OrgShortName"
+              ViewAttribute="OrgShortName"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewCriteria
