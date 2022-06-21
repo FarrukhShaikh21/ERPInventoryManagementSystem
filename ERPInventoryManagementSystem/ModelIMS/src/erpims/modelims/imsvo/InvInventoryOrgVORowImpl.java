@@ -255,6 +255,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
      */
     public void setParentInventoryOrgSno(Integer value) {
         setAttributeInternal(PARENTINVENTORYORGSNO, value);
+        setOrganizationTypeSno(value == null ? "1" : "2");
     }
 
     /**

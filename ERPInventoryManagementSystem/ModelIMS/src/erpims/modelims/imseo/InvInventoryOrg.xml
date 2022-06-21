@@ -685,7 +685,9 @@
     SQLType="NUMERIC"
     Type="java.lang.String"
     ColumnType="NUMBER"
-    TableName="INV_INVENTORY_ORG">
+    TableName="INV_INVENTORY_ORG"
+    DefaultValue="1"
+    IsNotNull="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -737,6 +739,18 @@
     AssociationOtherEnd="erpims.modelims.imseo.AdminCompanyInvInventoryOrgCompanyIdAsso.InvInventoryOrg"
     Type="erpadm.modeladm.admeo.AdminCompanyImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="InvInventoryOrgOrganizationTypeSnoCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_ORG_ORGANIZATION"/>
+      <Attr Name="_checkCondition" Value='"ORGANIZATION_TYPE_SNO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvInventoryOrg.OrganizationTypeSno"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="PkInvInventoryOrg"
     PrimaryKey="true">

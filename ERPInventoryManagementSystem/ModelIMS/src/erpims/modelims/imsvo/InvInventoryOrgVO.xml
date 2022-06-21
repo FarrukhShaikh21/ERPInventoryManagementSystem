@@ -291,8 +291,7 @@
     Name="LovOrganizationTypeSno"
     ListVOName="AccSysGeneralValueOrgTypeVO"
     ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="OrganizationTypeSno"/>
@@ -707,28 +706,11 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="InvInventoryOrgVO"
-        ViewAttribute="InvInventoryOrgVO"
-        Operator="EXISTS"
+        Name="OrganizationTypeSno"
+        ViewAttribute="OrganizationTypeSno"
+        Operator="="
         Conjunction="AND"
-        IsNestedCriteria="true"
-        Required="Optional">
-        <ViewCriteria
-          Name="InvInventoryOrgVONestedCriteria"
-          ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
-          Conjunction="AND">
-          <ViewCriteriaRow
-            Name="InvInventoryOrgVONestedCriteria_row_0"
-            UpperColumns="1">
-            <ViewCriteriaItem
-              Name="OrgShortName"
-              ViewAttribute="OrgShortName"
-              Operator="CONTAINS"
-              Conjunction="AND"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-        </ViewCriteria>
-      </ViewCriteriaItem>
+        Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewCriteria
