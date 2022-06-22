@@ -57,8 +57,6 @@
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="ERPINVModuleDataControl"/>
-    <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtParentOrgName"
-                  id="txtParentOrgName"/>
     <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtCountryName"
                   id="txtCountryName"/>
     <listOfValues IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovtxtCityName" id="txtCityName"/>
@@ -97,7 +95,5 @@
         <Item Value="EndDate"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="InvInventoryOrgCRUDIterator" StaticList="false" Uses="LovOrganizationTypeSno"
-          id="OrganizationTypeSno" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
