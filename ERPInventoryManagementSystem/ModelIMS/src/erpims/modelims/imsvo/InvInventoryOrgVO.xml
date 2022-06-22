@@ -694,12 +694,6 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="OrgDescription"
-        ViewAttribute="OrgDescription"
-        Operator="CONTAINS"
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
         Name="OpenDate"
         ViewAttribute="OpenDate"
         Operator="="
@@ -711,6 +705,29 @@
         Operator="="
         Conjunction="AND"
         Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ParentInventoryOrgSnoInvInventoryOrgVO"
+        ViewAttribute="ParentInventoryOrgSnoInvInventoryOrgVO"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="InvInventoryOrgVONestedCriteria"
+          ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="InvInventoryOrgVONestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="OrgDescription"
+              ViewAttribute="OrgDescription"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewCriteria
