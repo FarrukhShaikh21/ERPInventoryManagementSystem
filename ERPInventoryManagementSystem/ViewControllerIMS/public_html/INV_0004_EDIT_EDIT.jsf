@@ -607,7 +607,20 @@
                                                 </af:listView>
                                             </af:panelGroupLayout>
                                         </f:facet>
-                                        <f:facet name="top"/>
+                                        <f:facet name="top">
+                                            <af:panelGridLayout id="pgl16">
+                                                <af:gridRow height="auto" id="gr8">
+                                                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px"
+                                                                 id="gc36"/>
+                                                </af:gridRow>
+                                                <af:gridRow height="auto" id="gr9">
+                                                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px"
+                                                                 id="gc37">
+                                                        <af:button text="button 1" id="b1"/>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                            </af:panelGridLayout>
+                                        </f:facet>
                                     </af:decorativeBox>
                                 </af:showDetailItem>
                             </af:panelTabbed>
