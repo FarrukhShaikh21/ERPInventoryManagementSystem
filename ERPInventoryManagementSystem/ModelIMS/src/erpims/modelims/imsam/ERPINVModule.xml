@@ -4,7 +4,7 @@
 <AppModule
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="ERPINVModule"
-  Version="12.1.3.2.1"
+  Version="12.1.3.10.47"
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
@@ -114,4 +114,13 @@
   <ViewUsage
     Name="ErpUserCompanyAccessINVRO"
     ViewObjectName="erpglobals.modelglobals.globalsqvo.ErpUserCompanyAccessQVO"/>
+  <ViewUsage
+    Name="InvInventoryOrgSubInvDetCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"/>
+  <ViewLinkUsage
+    Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
+    ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
+    SrcViewUsageName="erpims.modelims.imsam.ERPINVModule.InvInventoryOrgCRUD"
+    DstViewUsageName="erpims.modelims.imsam.ERPINVModule.InvInventoryOrgSubInvDetCRUD"
+    Reversed="true"/>
 </AppModule>

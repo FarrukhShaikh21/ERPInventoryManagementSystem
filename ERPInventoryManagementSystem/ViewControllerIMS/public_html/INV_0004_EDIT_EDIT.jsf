@@ -26,7 +26,7 @@
                     <af:decorativeBox id="db1" inlineStyle="border:none">
                         <f:facet name="center">
                             <af:panelTabbed position="above" id="pt1">
-                                <af:showDetailItem id="tab1" text="Tab Label 1" disclosed="true">
+                                <af:showDetailItem id="tab1" text="Inventory Org" disclosed="true" flex="0">
                                     <af:decorativeBox id="db2" partialTriggers="l3 l1" topHeight="45px">
                                         <f:facet name="center">
                                             <af:panelBox text="PanelBox1" id="pb2" showDisclosure="false"
@@ -35,7 +35,70 @@
                                                          inlineStyle="border:none">
                                                 <f:facet name="toolbar"/>
                                                 <af:panelBox text="Basic Information" id="pb1" showDisclosure="false">
-                                                    <f:facet name="toolbar"/>
+                                                    <f:facet name="toolbar">
+                                                        <af:panelGroupLayout id="pgl4" layout="horizontal" halign="end">
+                                                            <f:facet name="separator">
+                                                                <af:spacer width="10" height="10" id="s1"/>
+                                                            </f:facet>
+                                                            <af:link actionListener="#{bindings.Delete.execute}"
+                                                                     text="Delete"
+                                                                     disabled="#{(pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' &amp;&amp; bindings.InventoryOrgCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y'}"
+                                                                     id="l3"
+                                                                     icon="#{resource['images:imgDeleteRecord.png']}"
+                                                                     iconPosition="top" partialSubmit="true"/>
+                                                            <af:link text="UnSupervise" id="l19"
+                                                                     icon="#{resource['images:imgUnSuperviseRecord.png']}"
+                                                                     iconPosition="top"
+                                                                     action="#{pageFlowScope.OracleERPBean.doERPPopUnSuperviseRecord}"
+                                                                     partialSubmit="true"
+                                                                     disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
+                                                                <af:setActionListener from="#{'InvInventoryOrgCRUDIterator'}"
+                                                                                      to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
+                                                            </af:link>
+                                                            <af:link text="Supervise" id="l18"
+                                                                     icon="#{resource['images:imgSuperviseRecord.png']}"
+                                                                     iconPosition="top" partialSubmit="true"
+                                                                     action="#{pageFlowScope.OracleERPBean.doERPPopSupervisedRecord}"
+                                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}"
+                                                                     partialTriggers="l17">
+                                                                <af:setActionListener to="#{pageFlowScope.OracleERPBean.LIteratorName}"
+                                                                                      from="#{'InvInventoryOrgCRUDIterator'}"/>
+                                                            </af:link>
+                                                            <af:link text="Add"
+                                                                     disabled="#{pageFlowScope.ERPMainTempBean.LERPAllowAdd=='N'}"
+                                                                     id="l1" partialSubmit="true"
+                                                                     icon="#{resource['images:imgAddRecord.png']}"
+                                                                     iconPosition="top"
+                                                                     action="#{pageFlowScope.OracleERPBean.doERPAddRecordWithPara}"/>
+                                                            <af:link text="Create With Para" id="l6"
+                                                                     actionListener="#{bindings.CreateWithParams.execute}"
+                                                                     rendered="false"/>
+                                                            <af:link actionListener="#{bindings.Delete.execute}"
+                                                                     text="Delete"
+                                                                     disabled="#{!bindings.Delete.enabled}" id="l4"
+                                                                     rendered="false"/>
+                                                            <af:link text="Undo" immediate="true" id="l14"
+                                                                     icon="#{resource['images:imgUndo.png']}"
+                                                                     iconPosition="top"
+                                                                     action="#{pageFlowScope.OracleERPBean.doErpUndoRecord}"
+                                                                     partialSubmit="true">
+                                                                <af:resetActionListener/>
+                                                            </af:link>
+                                                            <af:link actionListener="#{bindings.Rollback.execute}"
+                                                                     text="Rollback" immediate="true" id="l13"
+                                                                     rendered="false">
+                                                                <af:resetActionListener/>
+                                                            </af:link>
+                                                            <af:link actionListener="#{bindings.Commit.execute}"
+                                                                     text="Commit"
+                                                                     disabled="#{!bindings.Commit.enabled}" id="l12"
+                                                                     rendered="false"/>
+                                                            <af:link text="Save" id="l17" partialSubmit="true"
+                                                                     icon="#{resource['images:imgSave.png']}"
+                                                                     iconPosition="top"
+                                                                     action="#{pageFlowScope.OracleERPBean.doERPCommitRecord}"/>
+                                                        </af:panelGroupLayout>
+                                                    </f:facet>
                                                     <af:panelGridLayout id="pgl2">
                                                         <af:gridRow marginTop="5px" height="auto" id="gr2"
                                                                     marginBottom="5px">
@@ -389,76 +452,148 @@
                                                 <af:gridRow height="auto" id="gr16">
                                                     <af:gridCell marginStart="5px" width="50%" id="gc71"/>
                                                     <af:gridCell marginStart="5px" width="50%" marginEnd="20px" id="gc72"
-                                                                 halign="end">
-                                                        <af:panelGroupLayout id="pgl4" layout="horizontal" halign="end">
-                                                            <f:facet name="separator">
-                                                                <af:spacer width="10" height="10" id="s1"/>
-                                                            </f:facet>
-                                                            <af:link actionListener="#{bindings.Delete.execute}"
-                                                                     text="Delete"
-                                                                     disabled="#{(pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' &amp;&amp; bindings.InventoryOrgCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y'}"
-                                                                     id="l3"
-                                                                     icon="#{resource['images:imgDeleteRecord.png']}"
-                                                                     iconPosition="top" partialSubmit="true"/>
-                                                            <af:link text="UnSupervise" id="l19"
-                                                                     icon="#{resource['images:imgUnSuperviseRecord.png']}"
-                                                                     iconPosition="top"
-                                                                     action="#{pageFlowScope.OracleERPBean.doERPPopUnSuperviseRecord}"
-                                                                     partialSubmit="true"
-                                                                     disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
-                                                                <af:setActionListener from="#{'InvInventoryOrgCRUDIterator'}"
-                                                                                      to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
-                                                            </af:link>
-                                                            <af:link text="Supervise" id="l18"
-                                                                     icon="#{resource['images:imgSuperviseRecord.png']}"
-                                                                     iconPosition="top" partialSubmit="true"
-                                                                     action="#{pageFlowScope.OracleERPBean.doERPPopSupervisedRecord}"
-                                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}"
-                                                                     partialTriggers="l17">
-                                                                <af:setActionListener to="#{pageFlowScope.OracleERPBean.LIteratorName}"
-                                                                                      from="#{'InvInventoryOrgCRUDIterator'}"/>
-                                                            </af:link>
-                                                            <af:link text="Add"
-                                                                     disabled="#{pageFlowScope.ERPMainTempBean.LERPAllowAdd=='N'}"
-                                                                     id="l1" partialSubmit="true"
-                                                                     icon="#{resource['images:imgAddRecord.png']}"
-                                                                     iconPosition="top"
-                                                                     action="#{pageFlowScope.OracleERPBean.doERPAddRecordWithPara}"/>
-                                                            <af:link text="Create With Para" id="l6"
-                                                                     actionListener="#{bindings.CreateWithParams.execute}"
-                                                                     rendered="false"/>
-                                                            <af:link actionListener="#{bindings.Delete.execute}"
-                                                                     text="Delete"
-                                                                     disabled="#{!bindings.Delete.enabled}" id="l4"
-                                                                     rendered="false"/>
-                                                            <af:link text="Undo" immediate="true" id="l14"
-                                                                     icon="#{resource['images:imgUndo.png']}"
-                                                                     iconPosition="top"
-                                                                     action="#{pageFlowScope.OracleERPBean.doErpUndoRecord}"
-                                                                     partialSubmit="true">
-                                                                <af:resetActionListener/>
-                                                            </af:link>
-                                                            <af:link actionListener="#{bindings.Rollback.execute}"
-                                                                     text="Rollback" immediate="true" id="l13"
-                                                                     rendered="false">
-                                                                <af:resetActionListener/>
-                                                            </af:link>
-                                                            <af:link actionListener="#{bindings.Commit.execute}"
-                                                                     text="Commit"
-                                                                     disabled="#{!bindings.Commit.enabled}" id="l12"
-                                                                     rendered="false"/>
-                                                            <af:link text="Save" id="l17" partialSubmit="true"
-                                                                     icon="#{resource['images:imgSave.png']}"
-                                                                     iconPosition="top"
-                                                                     action="#{pageFlowScope.OracleERPBean.doERPCommitRecord}"/>
-                                                        </af:panelGroupLayout>
-                                                    </af:gridCell>
+                                                                 halign="end"/>
                                                 </af:gridRow>
                                             </af:panelGridLayout>
                                         </f:facet>
                                     </af:decorativeBox>
                                 </af:showDetailItem>
-                                <af:showDetailItem id="tab2" text="Tab Label 2"/>
+                                <af:showDetailItem id="tab2" text="Sub Inventory" flex="0"
+                                                   disabled="#{bindings.InventoryOrgCode.inputValue==null}">
+                                    <af:panelGroupLayout id="pgl6" layout="scroll" halign="center">
+                                        <af:listView value="#{bindings.InvInventoryOrgSubInvDetCRUD.collectionModel}"
+                                                     var="item"
+                                                     emptyText="#{bindings.InvInventoryOrgSubInvDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                     fetchSize="#{bindings.InvInventoryOrgSubInvDetCRUD.rangeSize}"
+                                                     id="lv2" styleClass="WBDisplayBlockCenter" selection="single"
+                                                     selectionListener="#{bindings.InvInventoryOrgSubInvDetCRUD.treeModel.makeCurrent}"
+                                                     selectedRowKeys="#{bindings.InvInventoryOrgSubInvDetCRUD.collectionModel.selectedRow}">
+                                            <af:listItem id="li2"
+                                                         styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo">
+                                                <af:panelGroupLayout id="pgl7" layout="vertical"
+                                                                     styleClass="WBCardSize">
+                                                    <af:panelBox text="PanelBox1" id="pb3" showHeader="never"
+                                                                 showDisclosure="false">
+                                                        <f:facet name="toolbar"/>
+                                                        <af:inputText value="#{bindings.InventoryOrgSno.inputValue}"
+                                                                      label="#{bindings.InventoryOrgSno.hints.label}"
+                                                                      required="#{bindings.InventoryOrgSno.hints.mandatory}"
+                                                                      columns="#{bindings.InventoryOrgSno.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.InventoryOrgSno.hints.precision}"
+                                                                      shortDesc="#{bindings.InventoryOrgSno.hints.tooltip}"
+                                                                      id="it12" rendered="false">
+                                                            <f:validator binding="#{bindings.InventoryOrgSno.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.InventoryOrgSno.format}"/>
+                                                        </af:inputText>
+                                                        <af:panelGridLayout id="pgl15">
+                                                            <af:gridRow marginTop="5px" height="auto" id="gr14">
+                                                                <af:gridCell marginStart="5px" width="100%"
+                                                                             marginEnd="5px" id="gc40">
+                                                                    <af:panelGroupLayout id="pgl9" layout="horizontal">
+                                                                        <af:link id="l5" partialSubmit="true"
+                                                                                 icon="#{resource['images:imgView.png']}"
+                                                                                 styleClass="ERPHeroBannerFont ERPLink"
+                                                                                 action="ERP-QRY-ACT-INV_0003"/>
+                                                                        <af:outputFormatted value="#{item.bindings.OrgShortName.inputValue}"
+                                                                                            id="of1"
+                                                                                            styleClass="ERPHeroBannerFont"
+                                                                                            shortDesc="Short Name"/>
+                                                                        <af:link id="l7" partialSubmit="true"
+                                                                                 text="#{item.bindings.OrgShortName.inputValue}"
+                                                                                 styleClass="ERPHeroBannerFont"
+                                                                                 rendered="false"/>
+                                                                    </af:panelGroupLayout>
+                                                                </af:gridCell>
+                                                            </af:gridRow>
+                                                            <af:gridRow marginTop="5px" height="auto" id="gr15">
+                                                                <af:gridCell marginStart="5px" width="100%"
+                                                                             marginEnd="5px" id="gc41">
+                                                                    <af:panelGroupLayout id="pgl10" layout="horizontal">
+                                                                        <af:image source="#{resource['images:imgShortName.png']}"
+                                                                                  id="i1"/>
+                                                                        <af:outputFormatted value="#{item.bindings.OrgDescription.inputValue}"
+                                                                                            id="of2"
+                                                                                            styleClass="ERPHeroDetailColor"/>
+                                                                        <f:facet name="separator">
+                                                                            <af:spacer width="10" height="10" id="s4"/>
+                                                                        </f:facet>
+                                                                    </af:panelGroupLayout>
+                                                                </af:gridCell>
+                                                            </af:gridRow>
+                                                            <af:gridRow marginTop="5px" height="auto" id="gr17">
+                                                                <af:gridCell marginStart="5px" width="100%"
+                                                                             marginEnd="5px" id="gc42">
+                                                                    <af:panelGroupLayout id="pgl11" layout="horizontal">
+                                                                        <af:image source="#{resource['images:imgDocumentNumber.png']}"
+                                                                                  id="i2"/>
+                                                                        <af:outputFormatted value="#{item.bindings.InventoryOrgCode.inputValue}"
+                                                                                            id="of3"
+                                                                                            styleClass="ERPHeroDetailColor">
+                                                                            <af:convertNumber groupingUsed="false"
+                                                                                              pattern="#{bindings.AdminCompanyVORO.hints.CompanyShortCode.format}"/>
+                                                                        </af:outputFormatted>
+                                                                        <f:facet name="separator">
+                                                                            <af:spacer width="10" height="10" id="s3"/>
+                                                                        </f:facet>
+                                                                    </af:panelGroupLayout>
+                                                                </af:gridCell>
+                                                            </af:gridRow>
+                                                            <af:gridRow marginTop="5px" height="auto" id="gr18">
+                                                                <af:gridCell marginStart="5px" width="100%"
+                                                                             marginEnd="5px" id="gc43">
+                                                                    <af:panelGroupLayout id="pgl12" layout="horizontal">
+                                                                        <af:image source="#{resource['images:imgStartDate.png']}"
+                                                                                  id="i3"/>
+                                                                        <af:outputFormatted value="#{item.bindings.OpenDate.inputValue}"
+                                                                                            id="of4"
+                                                                                            styleClass="ERPHeroDetailColor"/>
+                                                                        <f:facet name="separator">
+                                                                            <af:spacer width="10" height="10" id="s6"/>
+                                                                        </f:facet>
+                                                                    </af:panelGroupLayout>
+                                                                </af:gridCell>
+                                                            </af:gridRow>
+                                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px"
+                                                                        id="gr19">
+                                                                <af:gridCell marginStart="5px" width="100%"
+                                                                             marginEnd="5px" id="gc44">
+                                                                    <af:panelGroupLayout id="pgl14" layout="horizontal">
+                                                                        <af:image source="#{resource['images:imgLevel.png']}"
+                                                                                  id="i4"/>
+                                                                        <af:outputFormatted value="#{item.bindings.SubinventoryTypeSno.inputValue=='1'?'Storage':'Receiving'}"
+                                                                                            id="of5"
+                                                                                            styleClass="ERPHeroDetailColor"/>
+                                                                        <f:facet name="separator">
+                                                                            <af:spacer width="10" height="10" id="s5"/>
+                                                                        </f:facet>
+                                                                    </af:panelGroupLayout>
+                                                                </af:gridCell>
+                                                            </af:gridRow>
+                                                        </af:panelGridLayout>
+                                                        <af:panelGridLayout id="pgl8">
+                                                            <af:gridRow marginTop="5px" id="gr7" marginBottom="5px">
+                                                                <af:gridCell marginStart="5px" width="100%"
+                                                                             marginEnd="5px" id="gc34"
+                                                                             styleClass="AFStretchWidth ERPHeroBackground"
+                                                                             halign="stretch" valign="stretch"/>
+                                                            </af:gridRow>
+                                                            <af:gridRow marginTop="5px" height="auto" id="gr12">
+                                                                <af:gridCell marginStart="5px" width="100%"
+                                                                             marginEnd="5px" id="gc38"/>
+                                                            </af:gridRow>
+                                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px"
+                                                                        id="gr13">
+                                                                <af:gridCell marginStart="5px" width="100%"
+                                                                             marginEnd="5px" id="gc39"/>
+                                                            </af:gridRow>
+                                                        </af:panelGridLayout>
+                                                    </af:panelBox>
+                                                </af:panelGroupLayout>
+                                            </af:listItem>
+                                        </af:listView>
+                                    </af:panelGroupLayout>
+                                </af:showDetailItem>
                             </af:panelTabbed>
                         </f:facet>
                         <f:facet name="top">

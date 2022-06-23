@@ -64,7 +64,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         StartDate,
         LevelNo,
         txtCompanyHierarchyPath,
-        OrganizationTypeSno,
+        SubinventoryTypeSno,
         AdminCompany,
         InvInventoryOrg,
         ParentInventoryOrgSnoInvInventoryOrg,
@@ -131,7 +131,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int LEVELNO = AttributesEnum.LevelNo.index();
     public static final int TXTCOMPANYHIERARCHYPATH = AttributesEnum.txtCompanyHierarchyPath.index();
-    public static final int ORGANIZATIONTYPESNO = AttributesEnum.OrganizationTypeSno.index();
+    public static final int SUBINVENTORYTYPESNO = AttributesEnum.SubinventoryTypeSno.index();
     public static final int ADMINCOMPANY = AttributesEnum.AdminCompany.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORG =
@@ -730,20 +730,21 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         setAttributeInternal(TXTCOMPANYHIERARCHYPATH, value);
     }
 
+
     /**
-     * Gets the attribute value for OrganizationTypeSno, using the alias name OrganizationTypeSno.
-     * @return the value of OrganizationTypeSno
+     * Gets the attribute value for SubinventoryTypeSno, using the alias name SubinventoryTypeSno.
+     * @return the value of SubinventoryTypeSno
      */
-    public String getOrganizationTypeSno() {
-        return (String) getAttributeInternal(ORGANIZATIONTYPESNO);
+    public String getSubinventoryTypeSno() {
+        return (String) getAttributeInternal(SUBINVENTORYTYPESNO);
     }
 
     /**
-     * Sets <code>value</code> as the attribute value for OrganizationTypeSno.
-     * @param value value to set the OrganizationTypeSno
+     * Sets <code>value</code> as the attribute value for SubinventoryTypeSno.
+     * @param value value to set the SubinventoryTypeSno
      */
-    public void setOrganizationTypeSno(String value) {
-        setAttributeInternal(ORGANIZATIONTYPESNO, value);
+    public void setSubinventoryTypeSno(String value) {
+        setAttributeInternal(SUBINVENTORYTYPESNO, value);
     }
 
     /**

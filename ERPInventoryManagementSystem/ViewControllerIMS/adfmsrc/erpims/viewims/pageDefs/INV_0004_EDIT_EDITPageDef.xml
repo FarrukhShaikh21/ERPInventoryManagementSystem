@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="InvInventoryOrgCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="InvInventoryOrgCRUDIterator"/>
+    <iterator Binds="InvInventoryOrgSubInvDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvInventoryOrgSubInvDetCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OrgDescription">
@@ -95,5 +97,17 @@
         <Item Value="EndDate"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="InvInventoryOrgSubInvDetCRUD">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvInventoryOrgVO" Name="InvInventoryOrgSubInvDetCRUD0">
+        <AttrNames>
+          <Item Value="OrgShortName"/>
+          <Item Value="OrgDescription"/>
+          <Item Value="InventoryOrgCode"/>
+          <Item Value="OpenDate"/>
+          <Item Value="txtParentOrgName"/>
+          <Item Value="SubinventoryTypeSno"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

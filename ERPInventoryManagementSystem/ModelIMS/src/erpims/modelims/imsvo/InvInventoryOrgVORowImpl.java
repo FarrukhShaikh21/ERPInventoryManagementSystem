@@ -60,14 +60,14 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         StartDate,
         LevelNo,
         txtCompanyHierarchyPath,
-        OrganizationTypeSno,
+        SubinventoryTypeSno,
         AdminCompanyVO,
         ParentInventoryOrgSnoInvInventoryOrgVO,
         InvInventoryOrgVO,
         SmCityVO,
         AdminCompanyVO1,
         AccSysGeneralValueVO,
-        AccSysGeneralValueOrgTypeVO,
+        AccSysGeneralValueSubInvTypeVO,
         AccAdminCompanyVO,
         AccInvInventoryOrgVO,
         AccSmCountryVO,
@@ -133,7 +133,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int LEVELNO = AttributesEnum.LevelNo.index();
     public static final int TXTCOMPANYHIERARCHYPATH = AttributesEnum.txtCompanyHierarchyPath.index();
-    public static final int ORGANIZATIONTYPESNO = AttributesEnum.OrganizationTypeSno.index();
+    public static final int SUBINVENTORYTYPESNO = AttributesEnum.SubinventoryTypeSno.index();
     public static final int ADMINCOMPANYVO = AttributesEnum.AdminCompanyVO.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORGVO =
         AttributesEnum.ParentInventoryOrgSnoInvInventoryOrgVO.index();
@@ -141,7 +141,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     public static final int SMCITYVO = AttributesEnum.SmCityVO.index();
     public static final int ADMINCOMPANYVO1 = AttributesEnum.AdminCompanyVO1.index();
     public static final int ACCSYSGENERALVALUEVO = AttributesEnum.AccSysGeneralValueVO.index();
-    public static final int ACCSYSGENERALVALUEORGTYPEVO = AttributesEnum.AccSysGeneralValueOrgTypeVO.index();
+    public static final int ACCSYSGENERALVALUESUBINVTYPEVO = AttributesEnum.AccSysGeneralValueSubInvTypeVO.index();
     public static final int ACCADMINCOMPANYVO = AttributesEnum.AccAdminCompanyVO.index();
     public static final int ACCINVINVENTORYORGVO = AttributesEnum.AccInvInventoryOrgVO.index();
     public static final int ACCSMCOUNTRYVO = AttributesEnum.AccSmCountryVO.index();
@@ -255,7 +255,6 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
      */
     public void setParentInventoryOrgSno(Integer value) {
         setAttributeInternal(PARENTINVENTORYORGSNO, value);
-        setOrganizationTypeSno(value == null ? "1" : "2");
     }
 
     /**
@@ -738,20 +737,21 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         setAttributeInternal(TXTCOMPANYHIERARCHYPATH, value);
     }
 
+
     /**
-     * Gets the attribute value for ORGANIZATION_TYPE_SNO using the alias name OrganizationTypeSno.
-     * @return the ORGANIZATION_TYPE_SNO
+     * Gets the attribute value for SUBINVENTORY_TYPE_SNO using the alias name SubinventoryTypeSno.
+     * @return the SUBINVENTORY_TYPE_SNO
      */
-    public String getOrganizationTypeSno() {
-        return (String) getAttributeInternal(ORGANIZATIONTYPESNO);
+    public String getSubinventoryTypeSno() {
+        return (String) getAttributeInternal(SUBINVENTORYTYPESNO);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for ORGANIZATION_TYPE_SNO using the alias name OrganizationTypeSno.
-     * @param value value to set the ORGANIZATION_TYPE_SNO
+     * Sets <code>value</code> as attribute value for SUBINVENTORY_TYPE_SNO using the alias name SubinventoryTypeSno.
+     * @param value value to set the SUBINVENTORY_TYPE_SNO
      */
-    public void setOrganizationTypeSno(String value) {
-        setAttributeInternal(ORGANIZATIONTYPESNO, value);
+    public void setSubinventoryTypeSno(String value) {
+        setAttributeInternal(SUBINVENTORYTYPESNO, value);
     }
 
     /**
@@ -824,11 +824,12 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         return (RowSet) getAttributeInternal(ACCSYSGENERALVALUEVO);
     }
 
+
     /**
-     * Gets the view accessor <code>RowSet</code> AccSysGeneralValueOrgTypeVO.
+     * Gets the view accessor <code>RowSet</code> AccSysGeneralValueSubInvTypeVO.
      */
-    public RowSet getAccSysGeneralValueOrgTypeVO() {
-        return (RowSet) getAttributeInternal(ACCSYSGENERALVALUEORGTYPEVO);
+    public RowSet getAccSysGeneralValueSubInvTypeVO() {
+        return (RowSet) getAttributeInternal(ACCSYSGENERALVALUESUBINVTYPEVO);
     }
 
     /**

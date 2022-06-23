@@ -49,7 +49,7 @@
   </ViewAccessor>
 
   <ViewAccessor
-    Name="AccSysGeneralValueOrgTypeVO"
+    Name="AccSysGeneralValueSubInvTypeVO"
     ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
     RowLevelBinds="true">
     <ViewCriteriaUsage
@@ -288,13 +288,14 @@
       Name="SmCityFindVC"/>
   </ListBinding>
   <ListBinding
-    Name="LovOrganizationTypeSno"
-    ListVOName="AccSysGeneralValueOrgTypeVO"
+    Name="LovSubinventoryTypeSno"
+    ListVOName="AccSysGeneralValueSubInvTypeVO"
     ListRangeSize="-1"
-    NullValueFlag="none"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="OrganizationTypeSno"/>
+      <Item Value="SubinventoryTypeSno"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -606,12 +607,12 @@
     EntityUsage="InvInventoryOrg"
     AliasName="txt_Company_Hierarchy_Path"/>
   <ViewAttribute
-    Name="OrganizationTypeSno"
+    Name="SubinventoryTypeSno"
     PrecisionRule="true"
-    EntityAttrName="OrganizationTypeSno"
+    EntityAttrName="SubinventoryTypeSno"
     EntityUsage="InvInventoryOrg"
-    AliasName="ORGANIZATION_TYPE_SNO"
-    LOVName="LovOrganizationTypeSno">
+    AliasName="SUBINVENTORY_TYPE_SNO"
+    LOVName="LovSubinventoryTypeSno">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -696,12 +697,6 @@
       <ViewCriteriaItem
         Name="OpenDate"
         ViewAttribute="OpenDate"
-        Operator="="
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="OrganizationTypeSno"
-        ViewAttribute="OrganizationTypeSno"
         Operator="="
         Conjunction="AND"
         Required="Optional"/>
@@ -847,8 +842,8 @@
               ViewAttribute="TempAdminCompanyAccessVO"
               Operator="EXISTS"
               Conjunction="AND"
-              IsNestedCriteria="true"
-              Required="Optional">
+              Required="Optional"
+              IsNestedCriteria="true">
               <ViewCriteria
                 Name="TempAdminCompanyAccessVONestedCriteria"
                 ViewObjectName="erpglobals.modelglobals.globalsvo.TempAdminCompanyAccessVO"
