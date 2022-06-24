@@ -615,9 +615,7 @@
                                                 </af:gridRow>
                                                 <af:gridRow height="auto" id="gr9">
                                                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px"
-                                                                 id="gc37">
-                                                        <af:button text="button 1" id="b1"/>
-                                                    </af:gridCell>
+                                                                 id="gc37"/>
                                                 </af:gridRow>
                                             </af:panelGridLayout>
                                         </f:facet>

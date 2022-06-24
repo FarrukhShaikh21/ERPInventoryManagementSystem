@@ -158,7 +158,8 @@
                                                                                       columns="#{bindings.txtLocationName.hints.displayWidth}"
                                                                                       shortDesc="#{bindings.txtLocationName.hints.tooltip}"
                                                                                       simple="true"
-                                                                                      contentStyle="width:100%">
+                                                                                      contentStyle="width:100%"
+                                                                                      readOnly="true">
                                                             <f:validator binding="#{bindings.txtLocationName.validator}"/>
                                                         </af:inputComboboxListOfValues>
                                                     </af:gridCell>
@@ -338,7 +339,7 @@
                                                     <af:gridCell marginStart="5px" width="13%" id="gc31" halign="center"
                                                                  valign="middle">
                                                         <af:outputLabel value="#{bindings.Address.hints.label}"
-                                                                        id="ol14"/>
+                                                                        id="ol6"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="87%" id="gc32"
                                                                  halign="stretch" columnSpan="5" rowSpan="1">

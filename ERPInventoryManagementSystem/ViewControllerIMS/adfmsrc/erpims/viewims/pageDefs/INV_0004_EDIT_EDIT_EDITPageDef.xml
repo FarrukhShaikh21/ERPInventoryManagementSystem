@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="INV_0004_EDIT_EDIT_EDITPageDef"
+                Package="erpims.viewims.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvInventoryOrgSubInvDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvInventoryOrgSubInvDetCRUDIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="OrgDescription">
+      <AttrNames>
+        <Item Value="OrgDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="InventoryOrgCode">
+      <AttrNames>
+        <Item Value="InventoryOrgCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="OrgShortName">
+      <AttrNames>
+        <Item Value="OrgShortName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="OpenDate">
+      <AttrNames>
+        <Item Value="OpenDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" StaticList="false" Uses="LovIsActive"
+                  id="IsActive"/>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="ContactPerson">
+      <AttrNames>
+        <Item Value="ContactPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="PhoneNo">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="FaxNo">
+      <AttrNames>
+        <Item Value="FaxNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="MobileNo">
+      <AttrNames>
+        <Item Value="MobileNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="IsUnsupervised">
+      <AttrNames>
+        <Item Value="IsUnsupervised"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="IsSupervised">
+      <AttrNames>
+        <Item Value="IsSupervised"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="InventoryOrgSno">
+      <AttrNames>
+        <Item Value="InventoryOrgSno"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
