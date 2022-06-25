@@ -60,7 +60,6 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         StartDate,
         LevelNo,
         txtCompanyHierarchyPath,
-        SubinventoryTypeSno,
         AdminCompanyVO,
         ParentInventoryOrgSnoInvInventoryOrgVO,
         InvInventoryOrgVO,
@@ -133,7 +132,6 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int LEVELNO = AttributesEnum.LevelNo.index();
     public static final int TXTCOMPANYHIERARCHYPATH = AttributesEnum.txtCompanyHierarchyPath.index();
-    public static final int SUBINVENTORYTYPESNO = AttributesEnum.SubinventoryTypeSno.index();
     public static final int ADMINCOMPANYVO = AttributesEnum.AdminCompanyVO.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORGVO =
         AttributesEnum.ParentInventoryOrgSnoInvInventoryOrgVO.index();
@@ -737,22 +735,6 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         setAttributeInternal(TXTCOMPANYHIERARCHYPATH, value);
     }
 
-
-    /**
-     * Gets the attribute value for SUBINVENTORY_TYPE_SNO using the alias name SubinventoryTypeSno.
-     * @return the SUBINVENTORY_TYPE_SNO
-     */
-    public String getSubinventoryTypeSno() {
-        return (String) getAttributeInternal(SUBINVENTORYTYPESNO);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for SUBINVENTORY_TYPE_SNO using the alias name SubinventoryTypeSno.
-     * @param value value to set the SUBINVENTORY_TYPE_SNO
-     */
-    public void setSubinventoryTypeSno(String value) {
-        setAttributeInternal(SUBINVENTORYTYPESNO, value);
-    }
 
     /**
      * Gets the associated <code>Row</code> using master-detail link AdminCompanyVO.

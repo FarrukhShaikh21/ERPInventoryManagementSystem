@@ -105,7 +105,6 @@
           <Item Value="InventoryOrgCode"/>
           <Item Value="OpenDate"/>
           <Item Value="txtParentOrgName"/>
-          <Item Value="SubinventoryTypeSno"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

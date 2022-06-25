@@ -278,25 +278,6 @@
     <DisplayCriteria
       Name="SmCityFindVC"/>
   </ListBinding>
-  <ListBinding
-    Name="LovSubinventoryTypeSno"
-    ListVOName="AccSysGeneralValueSubInvTypeVO"
-    ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="SubinventoryTypeSno"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ValueCode"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ValueDescription"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
     Name="InvInventoryOrg"
     Entity="erpims.modelims.imseo.InvInventoryOrg"/>
@@ -597,20 +578,6 @@
     EntityAttrName="txtCompanyHierarchyPath"
     EntityUsage="InvInventoryOrg"
     AliasName="txt_Company_Hierarchy_Path"/>
-  <ViewAttribute
-    Name="SubinventoryTypeSno"
-    PrecisionRule="true"
-    EntityAttrName="SubinventoryTypeSno"
-    EntityUsage="InvInventoryOrg"
-    AliasName="SUBINVENTORY_TYPE_SNO"
-    LOVName="LovSubinventoryTypeSno">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
   <ViewCriteria
     Name="InvInventoryOrgByCompanyIDVC"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
@@ -833,8 +800,7 @@
               ViewAttribute="TempAdminCompanyAccessVO"
               Operator="EXISTS"
               Conjunction="AND"
-              Required="Optional"
-              IsNestedCriteria="true">
+              Required="Optional">
               <ViewCriteria
                 Name="TempAdminCompanyAccessVONestedCriteria"
                 ViewObjectName="erpglobals.modelglobals.globalsvo.TempAdminCompanyAccessVO"

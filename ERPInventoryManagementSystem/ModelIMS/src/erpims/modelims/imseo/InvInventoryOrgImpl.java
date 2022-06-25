@@ -62,14 +62,14 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         StartDate,
         LevelNo,
         txtCompanyHierarchyPath,
-        SubinventoryTypeSno,
         AdminCompany,
         InvInventoryOrg,
         ParentInventoryOrgSnoInvInventoryOrg,
         SmCountry,
         SmCity,
         AdminCompany1;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -129,7 +129,6 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int LEVELNO = AttributesEnum.LevelNo.index();
     public static final int TXTCOMPANYHIERARCHYPATH = AttributesEnum.txtCompanyHierarchyPath.index();
-    public static final int SUBINVENTORYTYPESNO = AttributesEnum.SubinventoryTypeSno.index();
     public static final int ADMINCOMPANY = AttributesEnum.AdminCompany.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
     public static final int PARENTINVENTORYORGSNOINVINVENTORYORG =
@@ -728,22 +727,6 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         setAttributeInternal(TXTCOMPANYHIERARCHYPATH, value);
     }
 
-
-    /**
-     * Gets the attribute value for SubinventoryTypeSno, using the alias name SubinventoryTypeSno.
-     * @return the value of SubinventoryTypeSno
-     */
-    public String getSubinventoryTypeSno() {
-        return (String) getAttributeInternal(SUBINVENTORYTYPESNO);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for SubinventoryTypeSno.
-     * @param value value to set the SubinventoryTypeSno
-     */
-    public void setSubinventoryTypeSno(String value) {
-        setAttributeInternal(SUBINVENTORYTYPESNO, value);
-    }
 
     /**
      * @return the associated entity erpadm.modeladm.admeo.AdminCompanyImpl.
