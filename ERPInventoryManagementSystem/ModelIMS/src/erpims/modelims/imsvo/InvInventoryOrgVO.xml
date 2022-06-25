@@ -72,16 +72,7 @@
     RowLevelBinds="true">
     <ViewCriteriaUsage
       Name="AdminCompanyCompanyAccessWiseVC"
-      FullName="AdminCompanyCompanyAccessWiseVC"/>
-    <ViewCriteriaUsage
-      Name="AdminCompanyHierarchyWiseVC"
-      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyHierarchyWiseVC"/>
-    <ParameterMap>
-      <PIMap Variable="P_ADF_COMPANY_HIERARCHY_PATH">
-        <TransientExpression
-          trustMode="untrusted"><![CDATA[txtCompanyHierarchyPath==null?-1:txtCompanyHierarchyPath]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyCompanyAccessWiseVC"/>
   </ViewAccessor>
   <ViewAccessor
     Name="AccInvInventoryOrgVO"

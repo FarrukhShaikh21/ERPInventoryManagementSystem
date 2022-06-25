@@ -868,7 +868,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
                                                               this.getEntityDef().getSource(), null, null);
 
             populateAttributeAsChanged(INVENTORYORGSNO, Integer.parseInt(result));*/
-            String pColumnName=getParentInventoryOrgSno()==null?"MAX(CASE WHEN PARENT_INVENTORY_ORG_SNO IS NULL THEN INVENTORY_ORG_CODE ELSE 0 END)":"MAX(CASE WHEN PARENT_INVENTORY_ORG_SNO IS NULL THEN 0 ELSE INVENTORY_ORG_CODE END)";
+            String pColumnName=getParentInventoryOrgSno()==null?"CASE WHEN PARENT_INVENTORY_ORG_SNO IS NULL THEN INVENTORY_ORG_CODE ELSE 0 END":"CASE WHEN PARENT_INVENTORY_ORG_SNO IS NULL THEN 0 ELSE INVENTORY_ORG_CODE END";
             String result =
                 ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), pColumnName,
                                                               this.getEntityDef().getSource(), "COMPANY_ID",
