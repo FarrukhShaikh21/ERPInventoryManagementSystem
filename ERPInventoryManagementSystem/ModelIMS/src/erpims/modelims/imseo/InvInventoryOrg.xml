@@ -719,6 +719,13 @@
     AssociationOtherEnd="erpims.modelims.imseo.AdminCompanyInvInventoryOrgCompanyIdAsso.InvInventoryOrg"
     Type="erpadm.modeladm.admeo.AdminCompanyImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvSubinventoryOrg"
+    Association="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc.InvSubinventoryOrg"
+    AssociationOtherEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc.InvInventoryOrg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="InvInventoryOrgOrganizationTypeSnoCheck">
     <DesignTime>
