@@ -65,6 +65,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
         InvInventoryOrgVO,
         SmCityVO,
         AdminCompanyVO1,
+        InvSubinventoryOrgVO,
         AccSysGeneralValueVO,
         AccSysGeneralValueSubInvTypeVO,
         AccAdminCompanyVO,
@@ -138,6 +139,7 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
     public static final int INVINVENTORYORGVO = AttributesEnum.InvInventoryOrgVO.index();
     public static final int SMCITYVO = AttributesEnum.SmCityVO.index();
     public static final int ADMINCOMPANYVO1 = AttributesEnum.AdminCompanyVO1.index();
+    public static final int INVSUBINVENTORYORGVO = AttributesEnum.InvSubinventoryOrgVO.index();
     public static final int ACCSYSGENERALVALUEVO = AttributesEnum.AccSysGeneralValueVO.index();
     public static final int ACCSYSGENERALVALUESUBINVTYPEVO = AttributesEnum.AccSysGeneralValueSubInvTypeVO.index();
     public static final int ACCADMINCOMPANYVO = AttributesEnum.AccAdminCompanyVO.index();
@@ -797,6 +799,13 @@ public class InvInventoryOrgVORowImpl extends ViewRowImpl {
      */
     public void setAdminCompanyVO1(Row value) {
         setAttributeInternal(ADMINCOMPANYVO1, value);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link InvSubinventoryOrgVO.
+     */
+    public RowIterator getInvSubinventoryOrgVO() {
+        return (RowIterator) getAttributeInternal(INVSUBINVENTORYORGVO);
     }
 
     /**

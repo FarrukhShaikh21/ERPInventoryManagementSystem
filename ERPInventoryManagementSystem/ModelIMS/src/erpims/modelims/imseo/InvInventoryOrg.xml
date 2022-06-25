@@ -721,9 +721,9 @@
     IsUpdateable="true"/>
   <AccessorAttribute
     Name="InvSubinventoryOrg"
-    Association="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc"
-    AssociationEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc.InvSubinventoryOrg"
-    AssociationOtherEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc.InvInventoryOrg"
+    Association="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso"
+    AssociationEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso.InvSubinventoryOrg"
+    AssociationOtherEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso.InvInventoryOrg"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

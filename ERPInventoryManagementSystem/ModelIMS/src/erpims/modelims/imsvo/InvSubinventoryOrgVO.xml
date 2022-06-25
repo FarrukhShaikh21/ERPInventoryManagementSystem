@@ -163,4 +163,10 @@
     EntityAttrName="UnSupervisedBy"
     EntityUsage="InvSubinventoryOrg"
     AliasName="un_supervised_by"/>
+  <ViewLinkAccessor
+    Name="InvInventoryOrgVO"
+    ViewLink="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

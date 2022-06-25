@@ -446,9 +446,9 @@
   </Attribute>
   <AccessorAttribute
     Name="InvInventoryOrg"
-    Association="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc"
-    AssociationEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc.InvInventoryOrg"
-    AssociationOtherEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAssoc.InvSubinventoryOrg"
+    Association="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso"
+    AssociationEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso.InvInventoryOrg"
+    AssociationOtherEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso.InvSubinventoryOrg"
     Type="erpims.modelims.imseo.InvInventoryOrgImpl"
     IsUpdateable="true"/>
   <Key
@@ -467,6 +467,17 @@
       <Attr Name="_referencedKey" Value="PK_INV_INVENTORY_ORG"/>
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="fk_Inv_Subinventory_Org"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvSubinventoryOrg.InventoryOrgSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvSubinventoryOrg1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_INV_INVENTORY_ORG"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Inv_Subinventory_Org1"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvSubinventoryOrg.InventoryOrgSno"/>

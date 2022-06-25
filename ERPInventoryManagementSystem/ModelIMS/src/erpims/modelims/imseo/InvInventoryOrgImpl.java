@@ -815,6 +815,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         return (RowIterator) getAttributeInternal(INVSUBINVENTORYORG);
     }
 
+
     /**
      * @param inventoryOrgSno key constituent
 

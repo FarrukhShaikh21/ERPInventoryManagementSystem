@@ -800,7 +800,8 @@
               ViewAttribute="TempAdminCompanyAccessVO"
               Operator="EXISTS"
               Conjunction="AND"
-              Required="Optional">
+              Required="Optional"
+              IsNestedCriteria="true">
               <ViewCriteria
                 Name="TempAdminCompanyAccessVONestedCriteria"
                 ViewObjectName="erpglobals.modelglobals.globalsvo.TempAdminCompanyAccessVO"
@@ -920,6 +921,11 @@
     ViewLink="erpims.modelims.imsvo.AdminCompanyInvInventoryOrgCompanyIdVL"
     Type="oracle.jbo.Row"
     Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvSubinventoryOrgVO"
+    ViewLink="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
