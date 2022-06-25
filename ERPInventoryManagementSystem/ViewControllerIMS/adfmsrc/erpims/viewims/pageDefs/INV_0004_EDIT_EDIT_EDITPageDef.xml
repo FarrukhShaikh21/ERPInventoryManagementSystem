@@ -82,5 +82,7 @@
         <Item Value="InventoryOrgSno"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="InvInventoryOrgSubInvDetCRUDIterator" StaticList="false" Uses="LovSubinventoryTypeSno"
+          id="SubinventoryTypeSno" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

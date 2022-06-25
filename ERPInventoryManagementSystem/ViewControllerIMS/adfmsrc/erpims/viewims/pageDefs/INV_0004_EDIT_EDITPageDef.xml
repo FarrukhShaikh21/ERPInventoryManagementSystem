@@ -109,5 +109,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="LocationId">
+      <AttrNames>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="CompanyId">
+      <AttrNames>
+        <Item Value="CompanyId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -226,6 +226,28 @@
                                                             <af:gridCell id="gc33" width="20%" halign="stretch"
                                                                          marginStart="5px" marginEnd="5px"
                                                                          valign="middle">
+                                                                <af:inputText value="#{bindings.CompanyId.inputValue}"
+                                                                              label="#{bindings.CompanyId.hints.label}"
+                                                                              required="#{bindings.CompanyId.hints.mandatory}"
+                                                                              columns="#{bindings.CompanyId.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.CompanyId.hints.precision}"
+                                                                              shortDesc="#{bindings.CompanyId.hints.tooltip}"
+                                                                              id="it14" rendered="false">
+                                                                    <f:validator binding="#{bindings.CompanyId.validator}"/>
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.CompanyId.format}"/>
+                                                                </af:inputText>
+                                                                <af:inputText value="#{bindings.LocationId.inputValue}"
+                                                                              label="#{bindings.LocationId.hints.label}"
+                                                                              required="#{bindings.LocationId.hints.mandatory}"
+                                                                              columns="#{bindings.LocationId.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.LocationId.hints.precision}"
+                                                                              shortDesc="#{bindings.LocationId.hints.tooltip}"
+                                                                              id="it13" rendered="false">
+                                                                    <f:validator binding="#{bindings.LocationId.validator}"/>
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.LocationId.format}"/>
+                                                                </af:inputText>
                                                                 <af:inputComboboxListOfValues id="txtLocationNameId"
                                                                                               popupTitle="Search and Select: #{bindings.txtLocationName.hints.label}"
                                                                                               value="#{bindings.txtLocationName.inputValue}"
@@ -615,7 +637,12 @@
                                                 </af:gridRow>
                                                 <af:gridRow height="auto" id="gr9">
                                                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px"
-                                                                 id="gc37"/>
+                                                                 id="gc37" halign="end">
+                                                        <af:link id="l8"
+                                                                 icon="#{resource['images:imgNewDocument.png']}"
+                                                                 partialSubmit="true"
+                                                                 action="ACT-ADD-INV_0004_EDIT_EDIT_EDIT"/>
+                                                    </af:gridCell>
                                                 </af:gridRow>
                                             </af:panelGridLayout>
                                         </f:facet>

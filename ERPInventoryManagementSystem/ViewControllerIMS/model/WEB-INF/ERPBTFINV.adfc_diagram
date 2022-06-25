@@ -946,7 +946,7 @@
       <property
          name="fromOutcome">QRY-ACT-INV_0004_EDIT</property>
       <property
-         name="sdm:polyPoints">B50,-364.64844,378.6953,-47.305664,601.83887,L50</property>
+         name="sdm:polyPoints">B50,-364.64844,377.99414,-47.305664,594.83887,L42</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall86">
@@ -1116,4 +1116,62 @@
       <property
          name="x">521.0</property>
    </MethodCall>
+   <View
+      id="View103">
+      <property
+         name="activityId">INV_0004_EDIT_EDIT_EDIT</property>
+      <property
+         name="page">/INV_0004_EDIT_EDIT_EDIT.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INV_0004_EDIT_EDIT_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">722.3965</property>
+      <property
+         name="x">-331.30176</property>
+   </View>
+   <MethodCall
+      id="MethodCall104">
+      <property
+         name="activityId">CRWP_INV_0004_EDIT_EDIT_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CRWP_INV_0004_EDIT_EDIT_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">669.44824</property>
+      <property
+         name="x">-182.98047</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase105"
+      from="View80"
+      to="MethodCall104">
+      <property
+         name="fromOutcome">ACT-ADD-INV_0004_EDIT_EDIT_EDIT</property>
+      <property
+         name="sdm:polyPoints">L58,-47.305664,608.83887,-141.98047,669.09766,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase106"
+      from="MethodCall104"
+      to="View103">
+      <property
+         name="fromOutcome">ACT-ADD-INV_0004_EDIT_EDIT_EDIT</property>
+      <property
+         name="sdm:polyPoints">L50,-223.98047,669.09766,-290.30176,718.5459,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase107"
+      from="View103"
+      to="View80">
+      <property
+         name="fromOutcome">ERPBACKCRUD</property>
+      <property
+         name="sdm:polyPoints">R54,-288.2952,725.5459,-49.16466,601.83887,L50</property>
+   </ControlFlowCase>
 </SDM>

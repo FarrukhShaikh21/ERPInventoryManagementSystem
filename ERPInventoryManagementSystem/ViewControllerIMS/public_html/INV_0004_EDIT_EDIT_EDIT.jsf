@@ -198,22 +198,36 @@
                                                 </af:gridRow>
                                                 <af:gridRow id="gr3">
                                                     <af:gridCell id="gc9" width="13%" halign="center">
-                                                        <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
+                                                        <af:outputLabel value="#{bindings.SubinventoryTypeSno.label}"
+                                                                        id="ol14"/>
                                                     </af:gridCell>
                                                     <af:gridCell id="gc10" width="20%" halign="stretch">
+                                                        <af:selectOneChoice value="#{bindings.SubinventoryTypeSno.inputValue}"
+                                                                            label="#{bindings.SubinventoryTypeSno.label}"
+                                                                            required="#{bindings.SubinventoryTypeSno.hints.mandatory}"
+                                                                            shortDesc="#{bindings.SubinventoryTypeSno.hints.tooltip}"
+                                                                            id="soc2" simple="true"
+                                                                            contentStyle="width:100%">
+                                                            <f:selectItems value="#{bindings.SubinventoryTypeSno.items}"
+                                                                           id="si2"/>
+                                                            <f:validator binding="#{bindings.SubinventoryTypeSno.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:gridCell>
+                                                    <af:gridCell id="gc15" width="13%" halign="center">
+                                                        <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell id="gc16" width="20%" marginStart="5px"
+                                                                 marginEnd="5px">
                                                         <af:selectOneChoice value="#{bindings.IsActive.inputValue}"
                                                                             label="#{bindings.IsActive.label}"
                                                                             required="#{bindings.IsActive.hints.mandatory}"
                                                                             shortDesc="#{bindings.IsActive.hints.tooltip}"
                                                                             id="soc1" simple="true"
-                                                                            contentStyle="width:70%">
+                                                                            contentStyle="width:100%">
                                                             <f:selectItems value="#{bindings.IsActive.items}" id="si1"/>
                                                             <f:validator binding="#{bindings.IsActive.validator}"/>
                                                         </af:selectOneChoice>
                                                     </af:gridCell>
-                                                    <af:gridCell id="gc15" width="13%" halign="center"/>
-                                                    <af:gridCell id="gc16" width="20%" marginStart="5px"
-                                                                 marginEnd="5px"/>
                                                     <af:gridCell id="gc13" width="13%" marginStart="5px" marginEnd="5px"
                                                                  halign="center"/>
                                                     <af:gridCell id="gc14" width="21%" marginStart="5px" marginEnd="5px"

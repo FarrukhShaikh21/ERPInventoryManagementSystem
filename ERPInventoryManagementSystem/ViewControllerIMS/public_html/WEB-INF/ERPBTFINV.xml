@@ -260,6 +260,15 @@
         <fixed-outcome>erpdone</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="INV_0004_EDIT_EDIT_EDIT">
+      <page>/INV_0004_EDIT_EDIT_EDIT.jsf</page>
+    </view>
+    <method-call id="CRWP_INV_0004_EDIT_EDIT_EDIT">
+      <method>#{bindings.CreateWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ACT-ADD-INV_0004_EDIT_EDIT_EDIT</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -555,6 +564,10 @@
         <from-outcome>ERPBACKCRUD</from-outcome>
         <to-activity-id>ExeINVOrgByCompanyINV_0004</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__100">
+        <from-outcome>ACT-ADD-INV_0004_EDIT_EDIT_EDIT</from-outcome>
+        <to-activity-id>CRWP_INV_0004_EDIT_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__93">
       <from-activity-id>ExeINVOrgByCompanyINV_0004</from-activity-id>
@@ -582,6 +595,20 @@
       <control-flow-case id="__90">
         <from-outcome>doStartERPTaskFlow</from-outcome>
         <to-activity-id>doINVGotoErpActivity</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__101">
+      <from-activity-id>CRWP_INV_0004_EDIT_EDIT_EDIT</from-activity-id>
+      <control-flow-case id="__102">
+        <from-outcome>ACT-ADD-INV_0004_EDIT_EDIT_EDIT</from-outcome>
+        <to-activity-id>INV_0004_EDIT_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__103">
+      <from-activity-id>INV_0004_EDIT_EDIT_EDIT</from-activity-id>
+      <control-flow-case id="__104">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>INV_0004_EDIT_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

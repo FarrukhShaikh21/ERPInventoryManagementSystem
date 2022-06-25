@@ -5,11 +5,9 @@ import erpadm.modeladm.admeo.SmCityImpl;
 import erpadm.modeladm.admeo.SmCountryImpl;
 
 import erpglobals.modelglobals.ERPEntityImpl;
-
 import erpglobals.modelglobals.ERPGlobalPLSQLClass;
 
 import java.sql.Date;
-
 import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
@@ -865,13 +863,14 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         if (operation == DML_INSERT) {
             
-            String result =
+          /*  String result =
                 ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "INVENTORY_ORG_SNO",
                                                               this.getEntityDef().getSource(), null, null);
 
-            populateAttributeAsChanged(INVENTORYORGSNO, Integer.parseInt(result));
-            result =
-                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "INVENTORY_ORG_CODE",
+            populateAttributeAsChanged(INVENTORYORGSNO, Integer.parseInt(result));*/
+            String pColumnName=getParentInventoryOrgSno()==null?"MAX(CASE WHEN PARENT_INVENTORY_ORG_SNO IS NULL THEN INVENTORY_ORG_CODE ELSE 0 END)":"MAX(CASE WHEN PARENT_INVENTORY_ORG_SNO IS NULL THEN 0 ELSE INVENTORY_ORG_CODE END)";
+            String result =
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), pColumnName,
                                                               this.getEntityDef().getSource(), "COMPANY_ID",
                                                               getCompanyId().toString());
             populateAttributeAsChanged(ORGHIERARCHYPATH,( getParentInventoryOrgSno()==null?getInventoryOrgSno()+"-":(getOrgHierarchyPath()+getInventoryOrgSno()+"-") ) );
