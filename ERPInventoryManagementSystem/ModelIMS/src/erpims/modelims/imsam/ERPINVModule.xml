@@ -107,12 +107,6 @@
     <ViewCriteriaUsage
       Name="InvInventoryOrgByOrganizationIDVC"
       FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByOrganizationIDVC"/>
-    <ViewCriteriaUsage
-      Name="InvInventoryOrgLocationAccessWiseVC"
-      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgLocationAccessWiseVC"/>
-    <ViewCriteriaUsage
-      Name="InvInventoryOrgParentOnlyVC"
-      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgParentOnlyVC"/>
   </ViewUsage>
   <ViewUsage
     Name="ErpUserCompanyAccessINVRO"
@@ -120,10 +114,22 @@
   <ViewUsage
     Name="InvInventoryOrgSubInvDetCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"/>
+  <ViewUsage
+    Name="GlBatchSetupQVO1"
+    ViewObjectName="erpfms.modelfms.fmsqvo.GlBatchSetupQVO"/>
+  <ViewUsage
+    Name="InvSubinventoryOrgDetCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"/>
   <ViewLinkUsage
     Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
     ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
     SrcViewUsageName="erpims.modelims.imsam.ERPINVModule.InvInventoryOrgCRUD"
     DstViewUsageName="erpims.modelims.imsam.ERPINVModule.InvInventoryOrgSubInvDetCRUD"
     Reversed="true"/>
+  <ViewLinkUsage
+    Name="InvInvOrgInvSubinvOrgInventoryOrgSnoVL1"
+    ViewLinkObjectName="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"
+    SrcViewUsageName="erpims.modelims.imsam.ERPINVModule.InvInventoryOrgCRUD"
+    DstViewUsageName="erpims.modelims.imsam.ERPINVModule.InvSubinventoryOrgDetCRUD"
+    Reversed="false"/>
 </AppModule>
