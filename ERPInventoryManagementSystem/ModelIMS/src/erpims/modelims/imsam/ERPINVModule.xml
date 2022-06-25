@@ -120,6 +120,9 @@
   <ViewUsage
     Name="InvSubinventoryOrgDetCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"/>
+  <ViewUsage
+    Name="InvSubinventoryOrgVO1"
+    ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"/>
   <ViewLinkUsage
     Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
     ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"

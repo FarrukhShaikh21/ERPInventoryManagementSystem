@@ -444,6 +444,23 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="SubinventoryDescription"
+    Precision="100"
+    ColumnName="subinventory_description"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="inv_subinventory_org">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvSubinventoryOrg.SubinventoryDescription_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvInventoryOrg"
     Association="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso"

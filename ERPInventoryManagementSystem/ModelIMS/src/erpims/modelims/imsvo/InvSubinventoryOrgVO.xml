@@ -163,6 +163,12 @@
     EntityAttrName="UnSupervisedBy"
     EntityUsage="InvSubinventoryOrg"
     AliasName="un_supervised_by"/>
+  <ViewAttribute
+    Name="SubinventoryDescription"
+    PrecisionRule="true"
+    EntityAttrName="SubinventoryDescription"
+    EntityUsage="InvSubinventoryOrg"
+    AliasName="subinventory_description"/>
   <ViewLinkAccessor
     Name="InvInventoryOrgVO"
     ViewLink="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"
