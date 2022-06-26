@@ -30,6 +30,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccSysGeneralValueActiveVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovSubinventoryTypeSno"
     ListVOName="AccSysGeneralValueVO"
@@ -39,6 +43,25 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="SubinventoryTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ValueCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ValueDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovIsActive"
+    ListVOName="AccSysGeneralValueActiveVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IsActive"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -213,6 +236,20 @@
     EntityAttrName="SubinventoryDescription"
     EntityUsage="InvSubinventoryOrg"
     AliasName="subinventory_description"/>
+  <ViewAttribute
+    Name="IsActive"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="InvSubinventoryOrg"
+    AliasName="is_active"
+    LOVName="LovIsActive">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="InvInventoryOrgVO"
     ViewLink="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"

@@ -4,85 +4,70 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="InvInventoryOrgSubInvDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvInventoryOrgSubInvDetCRUDIterator"/>
+    <iterator Binds="InvSubinventoryOrgDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvSubinventoryOrgDetCRUDIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="OrgDescription">
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="SubinventoryDescription">
       <AttrNames>
-        <Item Value="OrgDescription"/>
+        <Item Value="SubinventoryDescription"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="InventoryOrgCode">
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="SubinventoryOrgCode">
       <AttrNames>
-        <Item Value="InventoryOrgCode"/>
+        <Item Value="SubinventoryOrgCode"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="OrgShortName">
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="SubinventoryOrgShortName">
       <AttrNames>
-        <Item Value="OrgShortName"/>
+        <Item Value="SubinventoryOrgShortName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="OpenDate">
-      <AttrNames>
-        <Item Value="OpenDate"/>
-      </AttrNames>
-    </attributeValues>
-    <listOfValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
-                  id="txtLocationName"/>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="StartDate">
-      <AttrNames>
-        <Item Value="StartDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="EndDate">
+    <list IterBinding="InvSubinventoryOrgDetCRUDIterator" StaticList="false" Uses="LovSubinventoryTypeSno"
+          id="SubinventoryTypeSno" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="EndDate">
       <AttrNames>
         <Item Value="EndDate"/>
       </AttrNames>
     </attributeValues>
-    <listOfValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" StaticList="false" Uses="LovIsActive"
-                  id="IsActive"/>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="ContactPerson">
-      <AttrNames>
-        <Item Value="ContactPerson"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="PhoneNo">
+    <list IterBinding="InvSubinventoryOrgDetCRUDIterator" StaticList="false" Uses="LovIsActive" id="IsActive"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="PhoneNo">
       <AttrNames>
         <Item Value="PhoneNo"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="FaxNo">
-      <AttrNames>
-        <Item Value="FaxNo"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="Address">
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="Address">
       <AttrNames>
         <Item Value="Address"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="MobileNo">
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="MobileNo">
       <AttrNames>
         <Item Value="MobileNo"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="IsUnsupervised">
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="FaxNo">
       <AttrNames>
-        <Item Value="IsUnsupervised"/>
+        <Item Value="FaxNo"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="IsSupervised">
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="ContactPerson">
       <AttrNames>
-        <Item Value="IsSupervised"/>
+        <Item Value="ContactPerson"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="InventoryOrgSno">
+    <action IterBinding="InvSubinventoryOrgDetCRUDIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="InvSubinventoryOrgDetCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPINVModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="StartDate">
       <AttrNames>
-        <Item Value="InventoryOrgSno"/>
+        <Item Value="StartDate"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="InvInventoryOrgSubInvDetCRUDIterator" StaticList="false" Uses="LovSubinventoryTypeSno"
-          id="SubinventoryTypeSno" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

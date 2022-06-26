@@ -461,6 +461,23 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="IsActive"
+    Precision="100"
+    ColumnName="is_active"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="inv_subinventory_org">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvSubinventoryOrg.IsActive_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvInventoryOrg"
     Association="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso"
