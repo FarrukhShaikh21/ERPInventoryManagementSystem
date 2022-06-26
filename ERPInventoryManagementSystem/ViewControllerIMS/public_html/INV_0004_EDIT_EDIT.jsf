@@ -485,61 +485,58 @@
                                     <af:decorativeBox id="db4">
                                         <f:facet name="center">
                                             <af:panelGroupLayout id="pgl6" layout="scroll" halign="center">
-                                                <af:listView value="#{bindings.InvInventoryOrgSubInvDetCRUD.collectionModel}"
+                                                <af:listView value="#{bindings.InvSubinventoryOrgDetCRUD.collectionModel}"
                                                              var="item"
-                                                             emptyText="#{bindings.InvInventoryOrgSubInvDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                                             fetchSize="#{bindings.InvInventoryOrgSubInvDetCRUD.rangeSize}"
-                                                             id="lv2" styleClass="WBDisplayBlockCenter"
-                                                             selection="single"
-                                                             selectionListener="#{bindings.InvInventoryOrgSubInvDetCRUD.treeModel.makeCurrent}"
-                                                             selectedRowKeys="#{bindings.InvInventoryOrgSubInvDetCRUD.collectionModel.selectedRow}">
-                                                    <af:listItem id="li2"
+                                                             emptyText="#{bindings.InvSubinventoryOrgDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                             fetchSize="#{bindings.InvSubinventoryOrgDetCRUD.rangeSize}"
+                                                             id="lv1" styleClass="WBDisplayBlockCenter">
+                                                    <af:listItem id="li1"
                                                                  styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo">
                                                         <af:panelGroupLayout id="pgl7" layout="vertical"
                                                                              styleClass="WBCardSize">
                                                             <af:panelBox text="PanelBox1" id="pb3" showHeader="never"
                                                                          showDisclosure="false">
                                                                 <f:facet name="toolbar"/>
-                                                                <af:inputText value="#{bindings.InventoryOrgSno.inputValue}"
-                                                                              label="#{bindings.InventoryOrgSno.hints.label}"
-                                                                              required="#{bindings.InventoryOrgSno.hints.mandatory}"
-                                                                              columns="#{bindings.InventoryOrgSno.hints.displayWidth}"
-                                                                              maximumLength="#{bindings.InventoryOrgSno.hints.precision}"
-                                                                              shortDesc="#{bindings.InventoryOrgSno.hints.tooltip}"
-                                                                              id="it12" rendered="false">
-                                                                    <f:validator binding="#{bindings.InventoryOrgSno.validator}"/>
+                                                                <af:inputText value="#{bindings.SubinventoryOrgSno.inputValue}"
+                                                                              label="#{bindings.SubinventoryOrgSno.hints.label}"
+                                                                              required="#{bindings.SubinventoryOrgSno.hints.mandatory}"
+                                                                              columns="#{bindings.SubinventoryOrgSno.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.SubinventoryOrgSno.hints.precision}"
+                                                                              shortDesc="#{bindings.SubinventoryOrgSno.hints.tooltip}"
+                                                                              id="it15" rendered="false">
+                                                                    <f:validator binding="#{bindings.SubinventoryOrgSno.validator}"/>
                                                                     <af:convertNumber groupingUsed="false"
-                                                                                      pattern="#{bindings.InventoryOrgSno.format}"/>
+                                                                                      pattern="#{bindings.SubinventoryOrgSno.format}"/>
                                                                 </af:inputText>
-                                                                <af:panelGridLayout id="pgl15">
-                                                                    <af:gridRow marginTop="5px" height="auto" id="gr14">
+                                                                <af:panelGridLayout id="pgl17">
+                                                                    <af:gridRow marginTop="5px" height="auto" id="gr20">
                                                                         <af:gridCell marginStart="5px" width="100%"
-                                                                                     marginEnd="5px" id="gc40">
+                                                                                     marginEnd="5px" id="gc45">
                                                                             <af:panelGroupLayout id="pgl9"
                                                                                                  layout="horizontal">
                                                                                 <af:link id="l5" partialSubmit="true"
                                                                                          icon="#{resource['images:imgView.png']}"
                                                                                          styleClass="ERPHeroBannerFont ERPLink"
                                                                                          action="ERP-QRY-ACT-INV_0003"/>
-                                                                                <af:outputFormatted value="#{item.bindings.OrgShortName.inputValue}"
+                                                                                <af:outputFormatted value="#{item.bindings.SubinventoryOrgShortName.inputValue}"
                                                                                                     id="of1"
                                                                                                     styleClass="ERPHeroBannerFont"
                                                                                                     shortDesc="Short Name"/>
                                                                                 <af:link id="l7" partialSubmit="true"
-                                                                                         text="#{item.bindings.OrgShortName.inputValue}"
+                                                                                         text="#{item.bindings.SubinventoryOrgShortName.inputValue}"
                                                                                          styleClass="ERPHeroBannerFont"
                                                                                          rendered="false"/>
                                                                             </af:panelGroupLayout>
                                                                         </af:gridCell>
                                                                     </af:gridRow>
-                                                                    <af:gridRow marginTop="5px" height="auto" id="gr15">
+                                                                    <af:gridRow marginTop="5px" height="auto" id="gr21">
                                                                         <af:gridCell marginStart="5px" width="100%"
-                                                                                     marginEnd="5px" id="gc41">
+                                                                                     marginEnd="5px" id="gc46">
                                                                             <af:panelGroupLayout id="pgl10"
                                                                                                  layout="horizontal">
                                                                                 <af:image source="#{resource['images:imgShortName.png']}"
                                                                                           id="i1"/>
-                                                                                <af:outputFormatted value="#{item.bindings.OrgDescription.inputValue}"
+                                                                                <af:outputFormatted value="#{item.bindings.SubinventoryDescription.inputValue}"
                                                                                                     id="of2"
                                                                                                     styleClass="ERPHeroDetailColor"/>
                                                                                 <f:facet name="separator">
@@ -549,14 +546,14 @@
                                                                             </af:panelGroupLayout>
                                                                         </af:gridCell>
                                                                     </af:gridRow>
-                                                                    <af:gridRow marginTop="5px" height="auto" id="gr17">
+                                                                    <af:gridRow marginTop="5px" height="auto" id="gr22">
                                                                         <af:gridCell marginStart="5px" width="100%"
-                                                                                     marginEnd="5px" id="gc42">
+                                                                                     marginEnd="5px" id="gc47">
                                                                             <af:panelGroupLayout id="pgl11"
                                                                                                  layout="horizontal">
                                                                                 <af:image source="#{resource['images:imgDocumentNumber.png']}"
                                                                                           id="i2"/>
-                                                                                <af:outputFormatted value="#{item.bindings.InventoryOrgCode.inputValue}"
+                                                                                <af:outputFormatted value="#{item.bindings.SubinventoryOrgCode.inputValue}"
                                                                                                     id="of3"
                                                                                                     styleClass="ERPHeroDetailColor">
                                                                                     <af:convertNumber groupingUsed="false"
@@ -569,9 +566,9 @@
                                                                             </af:panelGroupLayout>
                                                                         </af:gridCell>
                                                                     </af:gridRow>
-                                                                    <af:gridRow marginTop="5px" height="auto" id="gr18">
+                                                                    <af:gridRow marginTop="5px" height="auto" id="gr23">
                                                                         <af:gridCell marginStart="5px" width="100%"
-                                                                                     marginEnd="5px" id="gc43">
+                                                                                     marginEnd="5px" id="gc48">
                                                                             <af:panelGroupLayout id="pgl12"
                                                                                                  layout="horizontal">
                                                                                 <af:image source="#{resource['images:imgStartDate.png']}"
@@ -587,14 +584,14 @@
                                                                         </af:gridCell>
                                                                     </af:gridRow>
                                                                     <af:gridRow marginTop="5px" height="auto"
-                                                                                marginBottom="5px" id="gr19">
+                                                                                marginBottom="5px" id="gr24">
                                                                         <af:gridCell marginStart="5px" width="100%"
-                                                                                     marginEnd="5px" id="gc44">
+                                                                                     marginEnd="5px" id="gc49">
                                                                             <af:panelGroupLayout id="pgl14"
                                                                                                  layout="horizontal">
                                                                                 <af:image source="#{resource['images:imgLevel.png']}"
                                                                                           id="i4"/>
-                                                                                <af:outputFormatted value="#{item.bindings.SubinventoryTypeSno.inputValue=='1'?'Storage':'Receiving'}"
+                                                                                <af:outputFormatted value="#{item.bindings.SubinventoryTypeSno.inputValue}"
                                                                                                     id="of5"
                                                                                                     styleClass="ERPHeroDetailColor"/>
                                                                                 <f:facet name="separator">
@@ -605,27 +602,20 @@
                                                                         </af:gridCell>
                                                                     </af:gridRow>
                                                                 </af:panelGridLayout>
-                                                                <af:panelGridLayout id="pgl8">
-                                                                    <af:gridRow marginTop="5px" id="gr7"
-                                                                                marginBottom="5px">
-                                                                        <af:gridCell marginStart="5px" width="100%"
-                                                                                     marginEnd="5px" id="gc34"
-                                                                                     styleClass="AFStretchWidth ERPHeroBackground"
-                                                                                     halign="stretch" valign="stretch"/>
-                                                                    </af:gridRow>
-                                                                    <af:gridRow marginTop="5px" height="auto" id="gr12">
-                                                                        <af:gridCell marginStart="5px" width="100%"
-                                                                                     marginEnd="5px" id="gc38"/>
-                                                                    </af:gridRow>
-                                                                    <af:gridRow marginTop="5px" height="auto"
-                                                                                marginBottom="5px" id="gr13">
-                                                                        <af:gridCell marginStart="5px" width="100%"
-                                                                                     marginEnd="5px" id="gc39"/>
-                                                                    </af:gridRow>
-                                                                </af:panelGridLayout>
                                                             </af:panelBox>
                                                         </af:panelGroupLayout>
                                                     </af:listItem>
+                                                </af:listView>
+                                                <af:listView value="#{bindings.InvInventoryOrgSubInvDetCRUD.collectionModel}"
+                                                             var="item"
+                                                             emptyText="#{bindings.InvInventoryOrgSubInvDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                             fetchSize="#{bindings.InvInventoryOrgSubInvDetCRUD.rangeSize}"
+                                                             id="lv2" styleClass="WBDisplayBlockCenter"
+                                                             selection="single"
+                                                             selectionListener="#{bindings.InvInventoryOrgSubInvDetCRUD.treeModel.makeCurrent}"
+                                                             selectedRowKeys="#{bindings.InvInventoryOrgSubInvDetCRUD.collectionModel.selectedRow}">
+                                                    <af:listItem id="li2"
+                                                                 styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo"/>
                                                 </af:listView>
                                             </af:panelGroupLayout>
                                         </f:facet>

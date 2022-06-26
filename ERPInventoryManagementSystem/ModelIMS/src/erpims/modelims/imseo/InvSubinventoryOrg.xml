@@ -76,7 +76,7 @@
     Name="SubinventoryTypeSno"
     ColumnName="subinventory_type_sno"
     SQLType="INTEGER"
-    Type="java.lang.Integer"
+    Type="java.lang.String"
     ColumnType="INT"
     TableName="inv_subinventory_org">
     <DesignTime>

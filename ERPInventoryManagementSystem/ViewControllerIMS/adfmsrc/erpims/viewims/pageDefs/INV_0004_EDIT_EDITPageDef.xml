@@ -8,6 +8,8 @@
               id="InvInventoryOrgCRUDIterator"/>
     <iterator Binds="InvInventoryOrgSubInvDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="InvInventoryOrgSubInvDetCRUDIterator"/>
+    <iterator Binds="InvSubinventoryOrgDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvSubinventoryOrgDetCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OrgDescription">
@@ -116,6 +118,22 @@
     <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="CompanyId">
       <AttrNames>
         <Item Value="CompanyId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="InvSubinventoryOrgDetCRUDIterator" id="InvSubinventoryOrgDetCRUD">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvSubinventoryOrgVO" Name="InvSubinventoryOrgDetCRUD0">
+        <AttrNames>
+          <Item Value="SubinventoryOrgShortName"/>
+          <Item Value="SubinventoryDescription"/>
+          <Item Value="SubinventoryOrgCode"/>
+          <Item Value="OpenDate"/>
+          <Item Value="SubinventoryTypeSno"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="SubinventoryOrgSno">
+      <AttrNames>
+        <Item Value="SubinventoryOrgSno"/>
       </AttrNames>
     </attributeValues>
   </bindings>
