@@ -4,12 +4,13 @@
                 SkipValidation="true">
   <parameters/>
   <executables>
-    <iterator Binds="InvInventoryOrgSubInvDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvInventoryOrgSubInvDetCRUDIterator"/>
+    <iterator Binds="InvSubinventoryOrgDetCRUD" RangeSize="10" DataControl="ERPINVModuleDataControl"
+              id="InvSubinventoryOrgDetCRUDIterator"/>
   </executables>
   <bindings>
-    <action IterBinding="InvInventoryOrgSubInvDetCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
-            Action="createWithParams">
+    <action IterBinding="InvSubinventoryOrgDetCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createInsertRow" InstanceName="ERPINVModuleDataControl.InvSubinventoryOrgDetCRUD"
+            DataControl="ERPINVModuleDataControl">
       <NamedData NDName="LocationId" NDValue="#{data.erpims_viewims_INV_0004_EDIT_EDITPageDef.LocationId.inputValue}"
                  NDType="java.lang.String"/>
       <NamedData NDName="CompanyId" NDValue="#{data.erpims_viewims_INV_0004_EDIT_EDITPageDef.CompanyId.inputValue}"
