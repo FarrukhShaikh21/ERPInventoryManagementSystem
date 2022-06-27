@@ -481,7 +481,8 @@
                                     </af:decorativeBox>
                                 </af:showDetailItem>
                                 <af:showDetailItem id="tab2" text="Sub Inventory" flex="0"
-                                                   disabled="#{bindings.InventoryOrgCode.inputValue==null}">
+                                                   disabled="#{bindings.InventoryOrgCode.inputValue==null}"
+                                                   partialTriggers="l17">
                                     <af:decorativeBox id="db4">
                                         <f:facet name="center">
                                             <af:panelGroupLayout id="pgl6" layout="scroll" halign="center">
