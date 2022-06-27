@@ -194,9 +194,24 @@
                                                 </af:gridRow>
                                                 <af:gridRow id="gr3">
                                                     <af:gridCell id="gc9" width="13%" halign="center">
-                                                        <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
+                                                        <af:outputLabel value="#{bindings.txtInventoryOrgName.hints.label}" id="ol7"/>
                                                     </af:gridCell>
                                                     <af:gridCell id="gc10" width="20%" halign="stretch">
+                                                        <af:inputText value="#{bindings.txtInventoryOrgName.inputValue}"
+                                                                      label="#{bindings.txtInventoryOrgName.hints.label}"
+                                                                      required="#{bindings.txtInventoryOrgName.hints.mandatory}"
+                                                                      columns="#{bindings.txtInventoryOrgName.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.txtInventoryOrgName.hints.precision}"
+                                                                      shortDesc="#{bindings.txtInventoryOrgName.hints.tooltip}"
+                                                                      id="it3" simple="true" readOnly="true">
+                                                            <f:validator binding="#{bindings.txtInventoryOrgName.validator}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                                    <af:gridCell id="gc15" width="13%" halign="center">
+                                                        <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell id="gc16" width="20%" marginStart="5px"
+                                                                 marginEnd="5px">
                                                         <af:selectOneChoice value="#{bindings.IsActive.inputValue}"
                                                                             label="#{bindings.IsActive.label}"
                                                                             required="#{bindings.IsActive.hints.mandatory}"
@@ -207,9 +222,6 @@
                                                             <f:validator binding="#{bindings.IsActive.validator}"/>
                                                         </af:selectOneChoice>
                                                     </af:gridCell>
-                                                    <af:gridCell id="gc15" width="13%" halign="center"/>
-                                                    <af:gridCell id="gc16" width="20%" marginStart="5px"
-                                                                 marginEnd="5px"/>
                                                     <af:gridCell id="gc13" width="13%" marginStart="5px" marginEnd="5px"
                                                                  halign="center"/>
                                                     <af:gridCell id="gc14" width="21%" marginStart="5px" marginEnd="5px"

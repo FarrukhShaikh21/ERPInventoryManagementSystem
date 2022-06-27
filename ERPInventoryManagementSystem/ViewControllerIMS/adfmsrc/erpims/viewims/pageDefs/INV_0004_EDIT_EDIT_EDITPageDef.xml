@@ -74,5 +74,10 @@
         <Item Value="OpenDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="InvSubinventoryOrgDetCRUDIterator" id="txtInventoryOrgName">
+      <AttrNames>
+        <Item Value="txtInventoryOrgName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
