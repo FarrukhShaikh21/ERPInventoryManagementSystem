@@ -39,7 +39,6 @@
   </Attribute>
   <Attribute
     Name="SubinventoryOrgCode"
-    IsNotNull="true"
     ColumnName="subinventory_org_code"
     SQLType="INTEGER"
     Type="java.lang.Integer"
@@ -59,7 +58,6 @@
   </Attribute>
   <Attribute
     Name="SubinventoryOrgShortName"
-    IsNotNull="true"
     Precision="30"
     ColumnName="subinventory_org_short_name"
     SQLType="VARCHAR"
@@ -105,6 +103,8 @@
     Type="java.sql.Date"
     ColumnType="DATE"
     TableName="inv_subinventory_org">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -483,6 +483,19 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtInventoryOrgName"
+    Precision="80"
+    ColumnName="txt_Inventory_Org_Name"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="inv_subinventory_org"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InvInventoryOrg?.OrgDescription]]></TransientExpression>
   </Attribute>
   <AccessorAttribute
     Name="InvInventoryOrg"

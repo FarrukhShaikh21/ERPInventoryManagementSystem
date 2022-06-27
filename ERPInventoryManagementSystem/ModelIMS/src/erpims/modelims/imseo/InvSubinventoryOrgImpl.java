@@ -46,6 +46,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
         UnSupervisedBy,
         SubinventoryDescription,
         IsActive,
+        txtInventoryOrgName,
         InvInventoryOrg;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -69,6 +70,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
             return vals;
         }
     }
+
     public static final int SUBINVENTORYORGSNO = AttributesEnum.SubinventoryOrgSno.index();
     public static final int SUBINVENTORYORGCODE = AttributesEnum.SubinventoryOrgCode.index();
     public static final int SUBINVENTORYORGSHORTNAME = AttributesEnum.SubinventoryOrgShortName.index();
@@ -94,12 +96,20 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
     public static final int UNSUPERVISEDBY = AttributesEnum.UnSupervisedBy.index();
     public static final int SUBINVENTORYDESCRIPTION = AttributesEnum.SubinventoryDescription.index();
     public static final int ISACTIVE = AttributesEnum.IsActive.index();
+    public static final int TXTINVENTORYORGNAME = AttributesEnum.txtInventoryOrgName.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public InvSubinventoryOrgImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvSubinventoryOrg");
     }
 
     /**
@@ -503,6 +513,22 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtInventoryOrgName, using the alias name txtInventoryOrgName.
+     * @return the value of txtInventoryOrgName
+     */
+    public String gettxtInventoryOrgName() {
+        return (String) getAttributeInternal(TXTINVENTORYORGNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtInventoryOrgName.
+     * @param value value to set the txtInventoryOrgName
+     */
+    public void settxtInventoryOrgName(String value) {
+        setAttributeInternal(TXTINVENTORYORGNAME, value);
+    }
+
+    /**
      * @return the associated entity InvInventoryOrgImpl.
      */
     public InvInventoryOrgImpl getInvInventoryOrg() {
@@ -516,6 +542,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
         setAttributeInternal(INVINVENTORYORG, value);
     }
 
+
     /**
      * @param subinventoryOrgSno key constituent
 
@@ -523,13 +550,6 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
      */
     public static Key createPrimaryKey(Integer subinventoryOrgSno) {
         return new Key(new Object[] { subinventoryOrgSno });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvSubinventoryOrg");
     }
 
     /**
