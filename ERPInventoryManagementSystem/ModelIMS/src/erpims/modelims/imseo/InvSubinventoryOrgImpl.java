@@ -1,6 +1,7 @@
 package erpims.modelims.imseo;
 
 import erpglobals.modelglobals.ERPEntityImpl;
+import erpglobals.modelglobals.ERPGlobalPLSQLClass;
 
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -559,6 +560,20 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation == DML_INSERT) {
+            
+          /*  String result =
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "INVENTORY_ORG_SNO",
+                                                              this.getEntityDef().getSource(), null, null);
+
+            populateAttributeAsChanged(INVENTORYORGSNO, Integer.parseInt(result));*/
+            String result =
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "SUBINVENTORY_ORG_CODE",
+                                                              this.getEntityDef().getSource(), "INVENTORY_ORG_SNO",
+                                                              getInventoryOrgSno().toString());
+            populateAttributeAsChanged(SUBINVENTORYORGCODE, Integer.parseInt(result));
+           
+        }        
         super.doDML(operation, e);
     }
 }
