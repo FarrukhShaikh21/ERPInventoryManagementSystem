@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="InvSubinventoryOrgDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+    <iterator Binds="InvSubinventoryOrgCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="InvSubinventoryOrgDetCRUDIterator"/>
   </executables>
   <bindings>

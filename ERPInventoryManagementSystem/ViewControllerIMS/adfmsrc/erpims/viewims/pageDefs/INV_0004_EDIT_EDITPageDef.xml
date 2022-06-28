@@ -136,5 +136,9 @@
         <Item Value="SubinventoryOrgSno"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="InvSubinventoryOrgDetCRUDIterator" id="CreateWithParams1" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="InventoryOrgSno" NDValue="#{bindings.InventoryOrgSno.inputValue}" NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>

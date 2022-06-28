@@ -123,6 +123,13 @@
   <ViewUsage
     Name="InvSubinventoryOrgVO1"
     ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"/>
+  <ViewUsage
+    Name="InvSubinventoryOrgCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO">
+    <ViewCriteriaUsage
+      Name="InvSubinventoryOrgBySubInvOrgSnoVC"
+      FullName="erpims.modelims.imsvo.InvSubinventoryOrgVO.InvSubinventoryOrgBySubInvOrgSnoVC"/>
+  </ViewUsage>
   <ViewLinkUsage
     Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
     ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"

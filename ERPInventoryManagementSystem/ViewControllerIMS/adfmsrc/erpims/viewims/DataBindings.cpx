@@ -63,8 +63,10 @@
     <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ErpdoInsertAccessableCompanyINV"
           usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ErpdoInsertAccessableCompanyPageDef"/>
     <page path="/INV_0004_EDIT_EDIT_EDIT.jsf" usageId="erpims_viewims_INV_0004_EDIT_EDIT_EDITPageDef"/>
-    <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@CRWP_INV_0004_EDIT_EDIT_EDIT"
-          usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_CreateWithParametersPageDef111"/>
+    <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@EXEWPARA_INV_0004_EDIT_EDIT_EDIT"
+          usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1111111111111"/>
+    <page path="/WEB-INF/ERPBTFINV.xml#ERPBTFINV@ExeInvSubInv"
+          usageId="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecutePageDef1111111"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpims_viewims_INV_0001PageDef" path="erpims.viewims.pageDefs.INV_0001PageDef"/>
@@ -129,8 +131,10 @@
           path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ErpdoInsertAccessableCompanyPageDef"/>
     <page id="erpims_viewims_INV_0004_EDIT_EDIT_EDITPageDef"
           path="erpims.viewims.pageDefs.INV_0004_EDIT_EDIT_EDITPageDef"/>
-    <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_CreateWithParametersPageDef111"
-          path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_CreateWithParametersPageDef111"/>
+    <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1111111111111"
+          path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef1111111111111"/>
+    <page id="erpims_viewims_ERPBTFINV_ERPBTFINV_ExecutePageDef1111111"
+          path="erpims.viewims.pageDefs.ERPBTFINV_ERPBTFINV_ExecutePageDef1111111"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPINVModuleDataControl" Package="erpims.modelims.imsam"

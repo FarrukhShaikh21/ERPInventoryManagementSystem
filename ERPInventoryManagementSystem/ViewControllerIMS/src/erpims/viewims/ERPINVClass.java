@@ -45,6 +45,7 @@ public class ERPINVClass {
     private RichInputText ErpFileStoreOn;
     private RichInputText ErpFileStorePath;    
     private RichInputText ERPPrimaryKey;
+    private String ERPAddOperation="CreateWithParams";
     
     public ERPINVClass() {
         super();
@@ -190,7 +191,16 @@ public class ERPINVClass {
        ////////
 
     }
-  
+
+
+    public void setERPAddOperation(String ERPAddOperation) {
+        this.ERPAddOperation = ERPAddOperation;
+    }
+
+    public String getERPAddOperation() {
+        return ERPAddOperation;
+    }
+
     public String doERPAddRecordWithPara() {
     
         if (ERPGlobalsClass.doCheckERPTransactionDirty() ) {
@@ -199,10 +209,13 @@ public class ERPINVClass {
            FacesContext.getCurrentInstance().addMessage(null,fm);
            return null;
         }        
-        OperationBinding ob=ERPGlobalsClass.doGetERPOperation("CreateWithParams");
+        OperationBinding ob=ERPGlobalsClass.doGetERPOperation(getERPAddOperation());
         ob.execute();
-                
-        return null;
+        setERPAddOperation("CreateWithParams");
+        //MAINLY THIS WILL WORK FOR SUBINVENTORY 
+        //WHEN WE PRESS THE ADD RECORD BUTTON TO CREATE SUBINVENTORY
+        //FOR REST IT WONT WORK
+        return "ERP-ACT-GOTO-ADD-RECORD";
     }
     
     public void doERPConfirmDelete(DialogEvent erpde) {
@@ -384,6 +397,7 @@ public class ERPINVClass {
       cc.getCurrentRootViewPort().clearException();
       fc.renderResponse();
       
-    }    
+    }   
+    
 }
 

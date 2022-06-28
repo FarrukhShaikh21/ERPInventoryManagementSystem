@@ -4,17 +4,14 @@
                 SkipValidation="true">
   <parameters/>
   <executables>
-    <iterator Binds="InvInventoryOrgSubInvByInvOrgCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvInventoryOrgSubInvByInvOrgCRUDIterator" Refresh="never"/>
+    <iterator Binds="InvSubinventoryOrgCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvSubinventoryOrgCRUDIterator" Refresh="never"/>
   </executables>
   <bindings>
-    <action IterBinding="InvInventoryOrgSubInvByInvOrgCRUDIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+    <action IterBinding="InvSubinventoryOrgCRUDIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
             Action="executeWithParams">
-      <NamedData NDName="P_ADF_COMPANY_ID" NDType="java.lang.Integer"/>
-      <NamedData NDName="P_ADF_INVENTORY_ORG_ID" NDType="java.lang.Integer"/>
-      <NamedData NDName="P_ADF_LOCATION_ID" NDType="java.lang.Integer"/>
-      <NamedData NDName="P_PARENT_INVENTORY_ORG_SNO"
-                 NDValue="#{data.erpims_viewims_INV_0004_EDITPageDef.InventoryOrgSno.inputValue}"
+      <NamedData NDName="P_ADF_SUBINVENTORY_ORG_SNO"
+                 NDValue="#{data.erpims_viewims_INV_0004_EDIT_EDITPageDef.SubinventoryOrgSno.inputValue}"
                  NDType="java.lang.Integer"/>
     </action>
   </bindings>

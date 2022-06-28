@@ -521,7 +521,7 @@
                                                                                 <af:link id="l5" partialSubmit="true"
                                                                                          icon="#{resource['images:imgView.png']}"
                                                                                          styleClass="ERPHeroBannerFont ERPLink"
-                                                                                         action="ERP-QRY-ACT-INV_0003"/>
+                                                                                         action="ERP-QRY-ACT-INV_0004_EDIT_EDIT_EDIT"/>
                                                                                 <af:outputFormatted value="#{item.bindings.SubinventoryOrgShortName.inputValue}"
                                                                                                     id="of1"
                                                                                                     styleClass="ERPHeroBannerFont"
@@ -595,7 +595,7 @@
                                                                                                  layout="horizontal">
                                                                                 <af:image source="#{resource['images:imgLevel.png']}"
                                                                                           id="i4"/>
-                                                                                <af:outputFormatted value="#{item.bindings.SubinventoryTypeSno.inputValue}"
+                                                                                <af:outputFormatted value="#{item.bindings.SubinventoryTypeSno.inputValue=='1'?'Storage':'Receiving'}"
                                                                                                     id="of5"
                                                                                                     styleClass="ERPHeroDetailColor"/>
                                                                                 <f:facet name="separator">
@@ -632,10 +632,17 @@
                                                 <af:gridRow height="auto" id="gr9">
                                                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px"
                                                                  id="gc37" halign="end">
+                                                        <af:button actionListener="#{bindings.CreateWithParams1.execute}"
+                                                                   text="CreateWithParams1"
+                                                                   disabled="#{!bindings.CreateWithParams1.enabled}"
+                                                                   id="b1" rendered="false"/>
                                                         <af:link id="l8"
                                                                  icon="#{resource['images:imgNewDocument.png']}"
                                                                  partialSubmit="true"
-                                                                 action="ACT-ADD-INV_0004_EDIT_EDIT_EDIT"/>
+                                                                 action="#{pageFlowScope.OracleERPBean.doERPAddRecordWithPara}">
+                                                            <af:setActionListener from="#{'CreateWithParams1'}"
+                                                                                  to="#{pageFlowScope.OracleERPBean.ERPAddOperation}"/>
+                                                        </af:link>
                                                     </af:gridCell>
                                                 </af:gridRow>
                                             </af:panelGridLayout>

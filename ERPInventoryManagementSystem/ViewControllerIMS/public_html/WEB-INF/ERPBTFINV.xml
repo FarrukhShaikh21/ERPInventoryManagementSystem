@@ -263,10 +263,16 @@
     <view id="INV_0004_EDIT_EDIT_EDIT">
       <page>/INV_0004_EDIT_EDIT_EDIT.jsf</page>
     </view>
-    <method-call id="CRWP_INV_0004_EDIT_EDIT_EDIT">
-      <method>#{bindings.CreateWithParams.execute}</method>
+    <method-call id="EXEWPARA_INV_0004_EDIT_EDIT_EDIT">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
       <outcome>
-        <fixed-outcome>ACT-ADD-INV_0004_EDIT_EDIT_EDIT</fixed-outcome>
+        <fixed-outcome>ERP-QRY-ACT-INV_0004_EDIT_EDIT_EDIT</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeInvSubInv">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>ERPBACKCRUD</fixed-outcome>
       </outcome>
     </method-call>
     <control-flow-rule id="__6">
@@ -565,8 +571,12 @@
         <to-activity-id>ExeINVOrgByCompanyINV_0004</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__100">
-        <from-outcome>ACT-ADD-INV_0004_EDIT_EDIT_EDIT</from-outcome>
-        <to-activity-id>CRWP_INV_0004_EDIT_EDIT_EDIT</to-activity-id>
+        <from-outcome>ERP-ACT-GOTO-ADD-RECORD</from-outcome>
+        <to-activity-id>INV_0004_EDIT_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__105">
+        <from-outcome>ERP-QRY-ACT-INV_0004_EDIT_EDIT_EDIT</from-outcome>
+        <to-activity-id>EXEWPARA_INV_0004_EDIT_EDIT_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__93">
@@ -597,16 +607,23 @@
         <to-activity-id>doINVGotoErpActivity</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
-    <control-flow-rule id="__101">
-      <from-activity-id>CRWP_INV_0004_EDIT_EDIT_EDIT</from-activity-id>
-      <control-flow-case id="__102">
-        <from-outcome>ACT-ADD-INV_0004_EDIT_EDIT_EDIT</from-outcome>
-        <to-activity-id>INV_0004_EDIT_EDIT_EDIT</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
     <control-flow-rule id="__103">
       <from-activity-id>INV_0004_EDIT_EDIT_EDIT</from-activity-id>
       <control-flow-case id="__104">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>ExeInvSubInv</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__106">
+      <from-activity-id>EXEWPARA_INV_0004_EDIT_EDIT_EDIT</from-activity-id>
+      <control-flow-case id="__107">
+        <from-outcome>ERP-QRY-ACT-INV_0004_EDIT_EDIT_EDIT</from-outcome>
+        <to-activity-id>INV_0004_EDIT_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__108">
+      <from-activity-id>ExeInvSubInv</from-activity-id>
+      <control-flow-case id="__109">
         <from-outcome>ERPBACKCRUD</from-outcome>
         <to-activity-id>INV_0004_EDIT_EDIT</to-activity-id>
       </control-flow-case>

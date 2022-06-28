@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_SUBINVENTORY_ORG_SNO"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
   <ViewAccessor
     Name="AccSysGeneralValueVO"
     ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
@@ -258,6 +262,42 @@
     EntityAttrName="txtInventoryOrgName"
     EntityUsage="InvSubinventoryOrg"
     AliasName="txt_Inventory_Org_Name"/>
+  <ViewCriteria
+    Name="InvSubinventoryOrgBySubInvOrgSnoVC"
+    ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InvSubinventoryOrgVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="SubinventoryOrgSno"
+        ViewAttribute="SubinventoryOrgSno"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_SUBINVENTORY_ORG_SNO"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="InvInventoryOrgVO"
     ViewLink="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"
