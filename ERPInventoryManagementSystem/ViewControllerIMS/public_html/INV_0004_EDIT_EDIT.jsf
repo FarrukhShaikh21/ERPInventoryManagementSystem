@@ -25,7 +25,8 @@
                 <f:facet name="center">
                     <af:decorativeBox id="db1" inlineStyle="border:none">
                         <f:facet name="center">
-                            <af:panelTabbed position="above" id="pt1">
+                            <af:panelTabbed position="above" id="pt1"
+                                            binding="#{pageFlowScope.OracleERPBean.LErpPanelTabbed}">
                                 <af:showDetailItem id="tab1" text="Inventory Org" disclosed="true" flex="0">
                                     <af:decorativeBox id="db2" partialTriggers="l3 l1" topHeight="45px">
                                         <f:facet name="center">
@@ -110,6 +111,17 @@
                                                             <af:gridCell marginStart="5px" width="87%" id="gc4"
                                                                          halign="stretch" columnSpan="5" rowSpan="1"
                                                                          marginEnd="5px">
+                                                                <af:inputText value="#{bindings.CompanyId.inputValue}"
+                                                                              label="#{bindings.CompanyId.hints.label}"
+                                                                              required="#{bindings.CompanyId.hints.mandatory}"
+                                                                              columns="#{bindings.CompanyId.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.CompanyId.hints.precision}"
+                                                                              shortDesc="#{bindings.CompanyId.hints.tooltip}"
+                                                                              id="it12" rendered="false">
+                                                                    <f:validator binding="#{bindings.CompanyId.validator}"/>
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.CompanyId.format}"/>
+                                                                </af:inputText>
                                                                 <af:inputText value="#{bindings.IsUnsupervised.inputValue}"
                                                                               label="#{bindings.IsUnsupervised.hints.label}"
                                                                               required="#{bindings.IsUnsupervised.hints.mandatory}"
@@ -209,7 +221,7 @@
                                                                               required="#{bindings.OpenDate.hints.mandatory}"
                                                                               columns="#{bindings.OpenDate.hints.displayWidth}"
                                                                               shortDesc="#{bindings.OpenDate.hints.tooltip}"
-                                                                              id="id1" contentStyle="width:80%"
+                                                                              id="id1" contentStyle="width:85%"
                                                                               simple="true">
                                                                     <f:validator binding="#{bindings.OpenDate.validator}"/>
                                                                     <af:convertDateTime pattern="#{bindings.OpenDate.format}"/>
@@ -292,7 +304,7 @@
                                                                               columns="#{bindings.EndDate.hints.displayWidth}"
                                                                               shortDesc="#{bindings.EndDate.hints.tooltip}"
                                                                               id="id3" simple="true"
-                                                                              contentStyle="width:90%">
+                                                                              contentStyle="width:85%">
                                                                     <f:validator binding="#{bindings.EndDate.validator}"/>
                                                                     <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
                                                                 </af:inputDate>
@@ -655,7 +667,7 @@
                             <af:panelGridLayout id="pgl3">
                                 <af:gridRow height="auto" id="gr6">
                                     <af:gridCell marginStart="5px" width="50%" id="gc23"/>
-                                    <af:gridCell marginStart="5px" width="50%" marginEnd="100px" id="gc24">
+                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc24">
                                         <af:panelGroupLayout id="pgl5" layout="horizontal" halign="end">
                                             <f:facet name="separator">
                                                 <af:spacer width="10" height="10" id="s2"/>
@@ -663,7 +675,10 @@
                                             <af:link text="Close" id="l2"
                                                      icon="#{resource['images:imgCloseDialog.png']}" iconPosition="top"
                                                      action="#{pageFlowScope.OracleERPBean.doBackFromEdit}"
-                                                     partialSubmit="true"/>
+                                                     partialSubmit="true">
+                                                <af:setActionListener from="#{pageFlowScope.OracleERPBean.LErpPanelDefaultTabbed}"
+                                                                      to="#{pageFlowScope.OracleERPBean.LErpPanelTabbed}"/>
+                                            </af:link>
                                         </af:panelGroupLayout>
                                     </af:gridCell>
                                 </af:gridRow>

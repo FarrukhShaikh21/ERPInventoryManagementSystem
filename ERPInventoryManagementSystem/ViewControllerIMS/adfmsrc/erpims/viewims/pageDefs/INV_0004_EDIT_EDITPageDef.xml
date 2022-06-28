@@ -10,6 +10,8 @@
               id="InvInventoryOrgSubInvDetCRUDIterator"/>
     <iterator Binds="InvSubinventoryOrgDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="InvSubinventoryOrgDetCRUDIterator"/>
+    <iterator Binds="InvSubinventoryOrgCRUD" RangeSize="10" DataControl="ERPINVModuleDataControl"
+              id="InvSubinventoryOrgCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InvInventoryOrgCRUDIterator" id="OrgDescription">
@@ -136,9 +138,11 @@
         <Item Value="SubinventoryOrgSno"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="InvSubinventoryOrgDetCRUDIterator" id="CreateWithParams1" RequiresUpdateModel="true"
-            Action="createWithParams">
+    <action IterBinding="InvSubinventoryOrgCRUDIterator" id="CreateWithParams1" RequiresUpdateModel="true"
+            Action="createWithParams" InstanceName="ERPINVModuleDataControl.InvSubinventoryOrgCRUD"
+            DataControl="ERPINVModuleDataControl">
       <NamedData NDName="InventoryOrgSno" NDValue="#{bindings.InventoryOrgSno.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="CompanyId" NDValue="#{bindings.CompanyId.inputValue}" NDType="java.lang.String"/>
     </action>
   </bindings>
 </pageDefinition>

@@ -262,6 +262,13 @@
     EntityAttrName="txtInventoryOrgName"
     EntityUsage="InvSubinventoryOrg"
     AliasName="txt_Inventory_Org_Name"/>
+  <ViewAttribute
+    Name="CompanyId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="InvSubinventoryOrg"
+    AliasName="COMPANY_ID"/>
   <ViewCriteria
     Name="InvSubinventoryOrgBySubInvOrgSnoVC"
     ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"

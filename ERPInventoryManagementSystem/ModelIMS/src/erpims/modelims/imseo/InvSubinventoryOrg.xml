@@ -473,7 +473,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    TableName="inv_subinventory_org">
+    TableName="inv_subinventory_org"
+    DefaultValue="Y"
+    IsNotNull="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -503,6 +505,16 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="CompanyId"
+    IsNotNull="true"
+    Precision="5"
+    Scale="0"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="inv_subinventory_org"/>
   <AccessorAttribute
     Name="InvInventoryOrg"
     Association="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso"
@@ -510,6 +522,18 @@
     AssociationOtherEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso.InvSubinventoryOrg"
     Type="erpims.modelims.imseo.InvInventoryOrgImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="InvSubinventoryOrgIsActiveCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Inv_Subinventory_Org_Is_Active"/>
+      <Attr Name="_checkCondition" Value='"is_active" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvSubinventoryOrg.IsActive"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="Primary1"
     PrimaryKey="true">

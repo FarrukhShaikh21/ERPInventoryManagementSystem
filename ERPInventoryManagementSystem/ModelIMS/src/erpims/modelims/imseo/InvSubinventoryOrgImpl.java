@@ -47,6 +47,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
         SubinventoryDescription,
         IsActive,
         txtInventoryOrgName,
+        CompanyId,
         InvInventoryOrg;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -70,6 +71,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
             return vals;
         }
     }
+
 
     public static final int SUBINVENTORYORGSNO = AttributesEnum.SubinventoryOrgSno.index();
     public static final int SUBINVENTORYORGCODE = AttributesEnum.SubinventoryOrgCode.index();
@@ -97,6 +99,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
     public static final int SUBINVENTORYDESCRIPTION = AttributesEnum.SubinventoryDescription.index();
     public static final int ISACTIVE = AttributesEnum.IsActive.index();
     public static final int TXTINVENTORYORGNAME = AttributesEnum.txtInventoryOrgName.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
 
     /**
@@ -111,6 +114,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvSubinventoryOrg");
     }
+
 
     /**
      * Gets the attribute value for SubinventoryOrgSno, using the alias name SubinventoryOrgSno.
@@ -529,6 +533,22 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public Integer getCompanyId() {
+        return (Integer) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(Integer value) {
+        setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
      * @return the associated entity InvInventoryOrgImpl.
      */
     public InvInventoryOrgImpl getInvInventoryOrg() {
@@ -589,8 +609,8 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
             populateAttributeAsChanged(INVENTORYORGSNO, Integer.parseInt(result));*/
             String result =
                 ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "SUBINVENTORY_ORG_CODE",
-                                                              this.getEntityDef().getSource(), "INVENTORY_ORG_SNO",
-                                                              getInventoryOrgSno().toString());
+                                                              this.getEntityDef().getSource(), "COMPANY_ID",
+                                                              getCompanyId().toString());
             populateAttributeAsChanged(SUBINVENTORYORGCODE, Integer.parseInt(result));
            
         }        
