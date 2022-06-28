@@ -21,7 +21,7 @@
                   <f:facet name="buttonBar"/>
                         </af:dialog>
             </af:popup>
-            <af:decorativeBox id="db3" dimensionsFrom="parent">
+            <af:decorativeBox id="db3">
                 <f:facet name="center">
                     <af:decorativeBox id="db1" inlineStyle="border:none">
                         <f:facet name="center">
@@ -495,7 +495,7 @@
                                 <af:showDetailItem id="tab2" text="Sub Inventory" flex="0"
                                                    disabled="#{bindings.InventoryOrgCode.inputValue==null}"
                                                    partialTriggers="l17">
-                                    <af:decorativeBox id="db4">
+                                    <af:decorativeBox id="db4" topHeight="30px">
                                         <f:facet name="center">
                                             <af:panelGroupLayout id="pgl6" layout="scroll" halign="center">
                                                 <af:listView value="#{bindings.InvSubinventoryOrgDetCRUD.collectionModel}"

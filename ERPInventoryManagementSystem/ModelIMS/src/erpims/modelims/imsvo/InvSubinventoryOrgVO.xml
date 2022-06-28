@@ -12,7 +12,14 @@
   BindingStyle="JDBC"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpims.modelims.imsvo.InvSubinventoryOrgVORowImpl"
+  ComponentClass="erpims.modelims.imsvo.InvSubinventoryOrgVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_objectSuperClassName" Value="erpglobals.modelglobals.ERPViewObjectImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Variable
     Name="P_ADF_SUBINVENTORY_ORG_SNO"
     Kind="viewcriteria"
@@ -37,7 +44,20 @@
   <ViewAccessor
     Name="AccSysGeneralValueActiveVO"
     ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SysGeneralValueActiveVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueActiveVC"/>
+    <ViewCriteriaUsage
+      Name="SysGeneralValueByValueSetIDVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueByValueSetIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_VALUE_SET_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[4]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovSubinventoryTypeSno"
     ListVOName="AccSysGeneralValueVO"

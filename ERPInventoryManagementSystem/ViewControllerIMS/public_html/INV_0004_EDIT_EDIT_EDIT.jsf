@@ -38,7 +38,8 @@
                                                     <af:gridCell marginStart="5px" width="13%" id="gc3" marginEnd="5px"
                                                                  halign="center" rowSpan="1">
                                                         <af:outputLabel value="#{bindings.SubinventoryDescription.hints.label}"
-                                                                        id="ol1"/>
+                                                                        id="ol1"
+                                                                        showRequired="#{bindings.SubinventoryDescription.hints.mandatory}"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="87%" id="gc4" halign="stretch"
                                                                  columnSpan="5" rowSpan="1" marginEnd="5px">
@@ -77,7 +78,8 @@
                                                                       columns="#{bindings.SubinventoryDescription.hints.displayWidth}"
                                                                       maximumLength="#{bindings.SubinventoryDescription.hints.precision}"
                                                                       shortDesc="#{bindings.SubinventoryDescription.hints.tooltip}"
-                                                                      id="it12" simple="true" contentStyle="width:100%">
+                                                                      id="it12" contentStyle="width:100%"
+                                                                      showRequired="true" simple="true">
                                                             <f:validator binding="#{bindings.SubinventoryDescription.validator}"/>
                                                         </af:inputText>
                                                     </af:gridCell>
@@ -106,7 +108,8 @@
                                                     <af:gridCell marginStart="5px" width="13%" id="gc11" halign="center"
                                                                  rowSpan="1" marginEnd="5px" valign="middle">
                                                         <af:outputLabel value="#{bindings.SubinventoryOrgShortName.hints.label}"
-                                                                        id="ol3"/>
+                                                                        id="ol3"
+                                                                        showRequired="#{bindings.SubinventoryOrgShortName.hints.mandatory}"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="20%" id="gc12" marginEnd="5px"
                                                                  columnSpan="1" rowSpan="1" halign="stretch"
@@ -177,7 +180,8 @@
                                                     </af:gridCell>
                                                     <af:gridCell id="gc17" width="13%" halign="center">
                                                         <af:outputLabel value="#{bindings.SubinventoryTypeSno.label}"
-                                                                        id="ol14"/>
+                                                                        id="ol14"
+                                                                        showRequired="#{bindings.SubinventoryTypeSno.hints.mandatory}"/>
                                                     </af:gridCell>
                                                     <af:gridCell id="gc18" width="21%" halign="stretch">
                                                         <af:selectOneChoice value="#{bindings.SubinventoryTypeSno.inputValue}"
