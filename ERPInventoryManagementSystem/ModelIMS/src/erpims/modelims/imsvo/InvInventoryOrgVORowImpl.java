@@ -1,5 +1,7 @@
 package erpims.modelims.imsvo;
 
+import erpglobals.modelglobals.ERPViewRowImpl;
+
 import erpims.modelims.imseo.InvInventoryOrgImpl;
 
 import java.sql.Date;
@@ -15,7 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class InvInventoryOrgVORowImpl extends ViewRowImpl {
+public class InvInventoryOrgVORowImpl extends ERPViewRowImpl {
 
 
     public static final int ENTITY_INVINVENTORYORG = 0;

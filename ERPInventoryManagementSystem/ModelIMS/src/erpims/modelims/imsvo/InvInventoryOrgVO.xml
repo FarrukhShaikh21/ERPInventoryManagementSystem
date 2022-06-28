@@ -13,10 +13,13 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full"
-  RowClass="erpims.modelims.imsvo.InvInventoryOrgVORowImpl">
+  RowClass="erpims.modelims.imsvo.InvInventoryOrgVORowImpl"
+  ComponentClass="erpims.modelims.imsvo.InvInventoryOrgVOImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_objectSuperClassName" Value="erpglobals.modelglobals.ERPViewObjectImpl"/>
+    <Attr Name="_rowSuperClassName" Value="erpglobals.modelglobals.ERPViewRowImpl"/>
   </DesignTime>
   <Variable
     Name="P_ADF_COMPANY_ID"
