@@ -321,7 +321,7 @@
                                                                                     required="#{bindings.IsActive.hints.mandatory}"
                                                                                     shortDesc="#{bindings.IsActive.hints.tooltip}"
                                                                                     id="soc1" simple="true"
-                                                                                    contentStyle="width:70%">
+                                                                                    contentStyle="width:100%">
                                                                     <f:selectItems value="#{bindings.IsActive.items}"
                                                                                    id="si1"/>
                                                                     <f:validator binding="#{bindings.IsActive.validator}"/>

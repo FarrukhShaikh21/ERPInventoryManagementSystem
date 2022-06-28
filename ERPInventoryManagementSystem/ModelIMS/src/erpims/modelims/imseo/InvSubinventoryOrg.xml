@@ -327,7 +327,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="DATETIME"
-    TableName="inv_subinventory_org">
+    TableName="inv_subinventory_org"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -364,7 +365,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="DATETIME"
-    TableName="inv_subinventory_org">
+    TableName="inv_subinventory_org"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -401,7 +403,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="DATETIME"
-    TableName="inv_subinventory_org">
+    TableName="inv_subinventory_org"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
