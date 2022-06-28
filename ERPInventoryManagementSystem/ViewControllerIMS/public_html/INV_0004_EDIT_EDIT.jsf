@@ -482,7 +482,7 @@
                                             </af:panelBox>
                                         </f:facet>
                                         <f:facet name="top">
-                                            <af:panelGridLayout id="pgl13">
+                                            <af:panelGridLayout id="pgl13" rendered="false">
                                                 <af:gridRow height="auto" id="gr16">
                                                     <af:gridCell marginStart="5px" width="50%" id="gc71"/>
                                                     <af:gridCell marginStart="5px" width="50%" marginEnd="20px" id="gc72"
