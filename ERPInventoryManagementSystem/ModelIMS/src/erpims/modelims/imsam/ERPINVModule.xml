@@ -121,9 +121,6 @@
     Name="InvSubinventoryOrgDetCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"/>
   <ViewUsage
-    Name="InvSubinventoryOrgVO1"
-    ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"/>
-  <ViewUsage
     Name="InvSubinventoryOrgCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO">
     <ViewCriteriaUsage

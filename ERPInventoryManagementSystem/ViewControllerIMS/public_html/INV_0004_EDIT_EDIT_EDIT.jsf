@@ -170,7 +170,7 @@
                                                                       required="#{bindings.EndDate.hints.mandatory}"
                                                                       columns="#{bindings.EndDate.hints.displayWidth}"
                                                                       shortDesc="#{bindings.EndDate.hints.tooltip}"
-                                                                      id="id3" simple="true" contentStyle="width:90%">
+                                                                      id="id3" simple="true" contentStyle="width:85%">
                                                             <f:validator binding="#{bindings.EndDate.validator}"/>
                                                             <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
                                                         </af:inputDate>
@@ -211,7 +211,7 @@
                                                         <af:outputLabel value="#{bindings.IsActive.label}" id="ol4"/>
                                                     </af:gridCell>
                                                     <af:gridCell id="gc16" width="20%" marginStart="5px"
-                                                                 marginEnd="5px">
+                                                                 marginEnd="5px" halign="stretch">
                                                         <af:selectOneChoice value="#{bindings.IsActive.inputValue}"
                                                                             label="#{bindings.IsActive.label}"
                                                                             required="#{bindings.IsActive.hints.mandatory}"
@@ -336,7 +336,7 @@
                                     </af:panelBox>
                                 </f:facet>
                                 <f:facet name="top">
-                                    <af:panelGridLayout id="pgl13">
+                                    <af:panelGridLayout id="pgl13" rendered="false">
                                         <af:gridRow height="auto" id="gr16">
                                             <af:gridCell marginStart="5px" width="50%" id="gc71"/>
                                             <af:gridCell marginStart="5px" width="50%" marginEnd="20px" id="gc72"
@@ -360,26 +360,26 @@
                                                      action="#{pageFlowScope.OracleERPBean.doBackFromEdit}"
                                                      partialSubmit="true"/>
                                             <af:link actionListener="#{bindings.Delete.execute}" text="Delete"
-                                                     disabled="#{(pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' &amp;&amp; bindings.InventoryOrgCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y'}"
                                                      id="l3" icon="#{resource['images:imgDeleteRecord.png']}"
-                                                     iconPosition="top" partialSubmit="true"/>
+                                                     iconPosition="top" partialSubmit="true"
+                                                     disabled="#{(pageFlowScope.ERPMainTempBean.LERPAllowDelete=='N' &amp;&amp; bindings.SubinventoryOrgCode.inputValue!=null) || bindings.IsSupervised.inputValue=='Y'}"/>
                                             <af:link text="UnSupervise" id="l19"
                                                      icon="#{resource['images:imgUnSuperviseRecord.png']}"
                                                      iconPosition="top"
                                                      action="#{pageFlowScope.OracleERPBean.doERPPopUnSuperviseRecord}"
                                                      partialSubmit="true"
-                                                     disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
-                                                <af:setActionListener from="#{'InvInventoryOrgCRUDIterator'}"
+                                                     disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.SubinventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
+                                                <af:setActionListener from="#{'InvSubinventoryOrgDetCRUDIterator'}"
                                                                       to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
                                             </af:link>
                                             <af:link text="Supervise" id="l18"
                                                      icon="#{resource['images:imgSuperviseRecord.png']}"
                                                      iconPosition="top" partialSubmit="true"
                                                      action="#{pageFlowScope.OracleERPBean.doERPPopSupervisedRecord}"
-                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.InventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}"
-                                                     partialTriggers="l17">
+                                                     partialTriggers="l17"
+                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.SubinventoryOrgCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}">
                                                 <af:setActionListener to="#{pageFlowScope.OracleERPBean.LIteratorName}"
-                                                                      from="#{'InvInventoryOrgCRUDIterator'}"/>
+                                                                      from="#{'InvSubinventoryOrgDetCRUDIterator'}"/>
                                             </af:link>
                                             <af:link text="Add"
                                                      disabled="#{pageFlowScope.ERPMainTempBean.LERPAllowAdd=='N'}"

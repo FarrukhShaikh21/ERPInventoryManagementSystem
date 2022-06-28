@@ -313,6 +313,7 @@ public class ERPINVClass {
           return null;
      }
     public void doERPConfirmSuperviseDialog(DialogEvent de) {
+        System.out.println("one");
         ///user wants to save the record
         if (de.getOutcome() == DialogEvent.Outcome.yes) {
             OperationBinding ob = ERPGlobalsClass.doGetERPOperation("Commit");
