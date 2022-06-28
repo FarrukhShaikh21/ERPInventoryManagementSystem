@@ -490,7 +490,10 @@
                                                              var="item"
                                                              emptyText="#{bindings.InvSubinventoryOrgDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
                                                              fetchSize="#{bindings.InvSubinventoryOrgDetCRUD.rangeSize}"
-                                                             id="lv1" styleClass="WBDisplayBlockCenter">
+                                                             id="lv1" styleClass="WBDisplayBlockCenter"
+                                                             selection="single"
+                                                             selectionListener="#{bindings.InvSubinventoryOrgDetCRUD.treeModel.makeCurrent}"
+                                                             selectedRowKeys="#{bindings.InvSubinventoryOrgDetCRUD.collectionModel.selectedRow}">
                                                     <af:listItem id="li1"
                                                                  styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo">
                                                         <af:panelGroupLayout id="pgl7" layout="vertical"
