@@ -654,6 +654,8 @@
                                                                  action="#{pageFlowScope.OracleERPBean.doERPAddRecordWithPara}">
                                                             <af:setActionListener from="#{'CreateWithParams1'}"
                                                                                   to="#{pageFlowScope.OracleERPBean.ERPAddOperation}"/>
+                                                            <af:setActionListener from="#{'ERP-ACT-GOTO-ADD-RECORD'}"
+                                                                                  to="#{pageFlowScope.OracleERPBean.ERPNextAction}"/>
                                                         </af:link>
                                                     </af:gridCell>
                                                 </af:gridRow>

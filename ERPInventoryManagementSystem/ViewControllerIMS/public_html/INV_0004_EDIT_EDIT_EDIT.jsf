@@ -362,7 +362,10 @@
                                             <af:link text="Close" id="l2"
                                                      icon="#{resource['images:imgCloseDialog.png']}" iconPosition="top"
                                                      action="#{pageFlowScope.OracleERPBean.doBackFromEdit}"
-                                                     partialSubmit="true"/>
+                                                     partialSubmit="true">
+                                                <af:setActionListener from="#{''}"
+                                                                      to="#{pageFlowScope.OracleERPBean.ERPNextAction}"/>
+                                            </af:link>
                                             <af:link actionListener="#{bindings.Delete.execute}" text="Delete"
                                                      id="l3" icon="#{resource['images:imgDeleteRecord.png']}"
                                                      iconPosition="top" partialSubmit="true"

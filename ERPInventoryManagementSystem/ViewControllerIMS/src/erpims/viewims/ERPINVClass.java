@@ -46,6 +46,7 @@ public class ERPINVClass {
     private RichInputText ErpFileStorePath;    
     private RichInputText ERPPrimaryKey;
     private String ERPAddOperation="CreateWithParams";
+    private String ERPNextAction=null;
     
     public ERPINVClass() {
         super();
@@ -156,7 +157,7 @@ public class ERPINVClass {
     }
 
     public void doSetINVErpApplicationGlobals() {
-        
+        /*
         ADFContext.getCurrent().getPageFlowScope().put("G_USER_SNO",1);
         ADFContext.getCurrent().getPageFlowScope().put("G_USER_CODE","FARRUKH");
         ADFContext.getCurrent().getPageFlowScope().put("G_GLOBAL_DEF_COMPANY",1);
@@ -169,7 +170,7 @@ public class ERPINVClass {
        
          if (1==1) {
             return;
-         }
+         }*/
 
         //System.out.println("one erp");
         ADFContext.getCurrent().getPageFlowScope().put("G_USER_SNO",getERPUserAttributes().getUserId());
@@ -215,7 +216,7 @@ public class ERPINVClass {
         //MAINLY THIS WILL WORK FOR SUBINVENTORY 
         //WHEN WE PRESS THE ADD RECORD BUTTON TO CREATE SUBINVENTORY
         //FOR REST IT WONT WORK
-        return "ERP-ACT-GOTO-ADD-RECORD";
+        return getERPNextAction();
     }
     
     public void doERPConfirmDelete(DialogEvent erpde) {
@@ -381,8 +382,16 @@ public class ERPINVClass {
         ob.execute();
         getERPUploadFile().resetValue();
         
-    }    
+    }
 
+
+    public void setERPNextAction(String ERPNextAction) {
+        this.ERPNextAction = ERPNextAction;
+    }
+
+    public String getERPNextAction() {
+        return ERPNextAction;
+    }
 
     public void ERPINVhandleExceptionShowMessageInPopupDialog(){
       ControllerContext cc = ControllerContext.getInstance();
@@ -399,6 +408,8 @@ public class ERPINVClass {
       fc.renderResponse();
       
     }   
+   
+    
     
 }
 
