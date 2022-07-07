@@ -472,7 +472,7 @@
                                                 <af:outputLabel value="#{bindings.txtCoaInventoryDescription.hints.label}" id="ol16"/>
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="21%" marginEnd="5px" id="gc30"
-                                                         halign="stretch">
+                                                         halign="stretch" valign="middle">
                                                 <af:inputComboboxListOfValues id="txtCoaInventoryDescriptionId"
                                                                               popupTitle="Search and Select: #{bindings.txtCoaInventoryDescription.hints.label}"
                                                                               value="#{bindings.txtCoaInventoryDescription.inputValue}"

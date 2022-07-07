@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="InvItem"
-  Version="12.1.3.2.1"
+  Version="12.1.3.10.47"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="INV_ITEM"
@@ -271,7 +271,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="INV_ITEM"
     RetrievedOnInsert="true">
@@ -640,7 +640,7 @@
     Name="SupervisedDate"
     ColumnName="SUPERVISED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="INV_ITEM"
     RetrievedOnUpdate="true">
@@ -679,7 +679,7 @@
     Name="UnSupervisedDate"
     ColumnName="UN_SUPERVISED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="INV_ITEM"
     RetrievedOnUpdate="true">
@@ -1085,7 +1085,7 @@
     Name="LastUpdatedDate"
     ColumnName="LAST_UPDATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="INV_ITEM"
     RetrievedOnUpdate="true">

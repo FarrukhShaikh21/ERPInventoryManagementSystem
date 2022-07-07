@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 
 import java.sql.Date;
 
+import java.sql.Timestamp;
+
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
@@ -439,15 +441,15 @@ public class InvItemImpl extends ERPEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Date getCreatedDate() {
-        return (Date) getAttributeInternal(CREATEDDATE);
+    public Timestamp getCreatedDate() {
+        return (Timestamp) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Date value) {
+    public void setCreatedDate(Timestamp value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -761,15 +763,15 @@ public class InvItemImpl extends ERPEntityImpl {
      * Gets the attribute value for SupervisedDate, using the alias name SupervisedDate.
      * @return the value of SupervisedDate
      */
-    public Date getSupervisedDate() {
-        return (Date) getAttributeInternal(SUPERVISEDDATE);
+    public Timestamp getSupervisedDate() {
+        return (Timestamp) getAttributeInternal(SUPERVISEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SupervisedDate.
      * @param value value to set the SupervisedDate
      */
-    public void setSupervisedDate(Date value) {
+    public void setSupervisedDate(Timestamp value) {
         setAttributeInternal(SUPERVISEDDATE, value);
     }
 
@@ -793,15 +795,15 @@ public class InvItemImpl extends ERPEntityImpl {
      * Gets the attribute value for UnSupervisedDate, using the alias name UnSupervisedDate.
      * @return the value of UnSupervisedDate
      */
-    public Date getUnSupervisedDate() {
-        return (Date) getAttributeInternal(UNSUPERVISEDDATE);
+    public Timestamp getUnSupervisedDate() {
+        return (Timestamp) getAttributeInternal(UNSUPERVISEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UnSupervisedDate.
      * @param value value to set the UnSupervisedDate
      */
-    public void setUnSupervisedDate(Date value) {
+    public void setUnSupervisedDate(Timestamp value) {
         setAttributeInternal(UNSUPERVISEDDATE, value);
     }
 
@@ -1130,15 +1132,15 @@ public class InvItemImpl extends ERPEntityImpl {
      * Gets the attribute value for LastUpdatedDate, using the alias name LastUpdatedDate.
      * @return the value of LastUpdatedDate
      */
-    public Date getLastUpdatedDate() {
-        return (Date) getAttributeInternal(LASTUPDATEDDATE);
+    public Timestamp getLastUpdatedDate() {
+        return (Timestamp) getAttributeInternal(LASTUPDATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LastUpdatedDate.
      * @param value value to set the LastUpdatedDate
      */
-    public void setLastUpdatedDate(Date value) {
+    public void setLastUpdatedDate(Timestamp value) {
         setAttributeInternal(LASTUPDATEDDATE, value);
     }
 
