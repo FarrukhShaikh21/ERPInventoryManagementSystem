@@ -805,6 +805,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="erpims.modelims.imseo.InvItem.txtCoaBillPriceVarDescription_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
