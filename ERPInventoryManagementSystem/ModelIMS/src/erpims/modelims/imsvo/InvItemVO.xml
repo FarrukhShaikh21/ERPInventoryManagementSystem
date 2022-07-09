@@ -28,6 +28,9 @@
     <ViewCriteriaUsage
       Name="GlChartOfAccountsByComnanyVC"
       FullName="erpfms.modelfms.fmsvo.GlChartOfAccountsVO.GlChartOfAccountsByComnanyVC"/>
+    <ViewCriteriaUsage
+      Name="GlChartOfAccountsLastLevelVC"
+      FullName="erpfms.modelfms.fmsvo.GlChartOfAccountsVO.GlChartOfAccountsLastLevelVC"/>
     <ParameterMap>
       <PIMap Variable="P_ADF_COMPANY_ID">
         <TransientExpression

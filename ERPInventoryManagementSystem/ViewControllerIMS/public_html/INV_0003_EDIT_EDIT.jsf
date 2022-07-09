@@ -644,7 +644,8 @@
                                                      iconPosition="top"
                                                      action="#{pageFlowScope.OracleERPBean.doERPPopUnSuperviseRecord}"
                                                      partialSubmit="true"
-                                                     disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.ItemShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}">
+                                                     disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.ItemShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}"
+                                                     partialTriggers="l17">
                                                 <af:setActionListener from="#{'InvItemCRUDIterator'}"
                                                                       to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
                                             </af:link>
@@ -652,7 +653,8 @@
                                                      icon="#{resource['images:imgSuperviseRecord.png']}"
                                                      iconPosition="top" partialSubmit="true"
                                                      action="#{pageFlowScope.OracleERPBean.doERPPopSupervisedRecord}"
-                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.ItemShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}">
+                                                     disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.ItemShortCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}"
+                                                     partialTriggers="l17">
                                                 <af:setActionListener to="#{pageFlowScope.OracleERPBean.LIteratorName}"
                                                                       from="#{'InvItemCRUDIterator'}"/>
                                             </af:link>
