@@ -40,7 +40,22 @@ public class InvSubinventoryOrgVOImpl extends ERPViewObjectImpl {
         setErpViewObjectName("InvSubinventoryOrgCRUD");
         
         super.afterRollback(transactionEvent);
-    }     
-    
+    }
+
+    /**
+     * Returns the variable value for P_ADF_INVENTORY_ORG_SNO.
+     * @return variable value for P_ADF_INVENTORY_ORG_SNO
+     */
+    public Integer getP_ADF_INVENTORY_ORG_SNO() {
+        return (Integer) ensureVariableManager().getVariableValue("P_ADF_INVENTORY_ORG_SNO");
+    }
+
+    /**
+     * Sets <code>value</code> for variable P_ADF_INVENTORY_ORG_SNO.
+     * @param value value to bind as P_ADF_INVENTORY_ORG_SNO
+     */
+    public void setP_ADF_INVENTORY_ORG_SNO(Integer value) {
+        ensureVariableManager().setVariableValue("P_ADF_INVENTORY_ORG_SNO", value);
+    }
 }
 
