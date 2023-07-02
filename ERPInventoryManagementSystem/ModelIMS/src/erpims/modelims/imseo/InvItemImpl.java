@@ -1540,12 +1540,11 @@ public class InvItemImpl extends ERPEntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         if (operation == DML_INSERT) {
             
-            String result =
-                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_ID",
-                                                              this.getEntityDef().getSource(), null, null);
+//            String result =
+//                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_ID",this.getEntityDef().getSource(), null, null);
 
-            populateAttributeAsChanged(ITEMID, Integer.parseInt(result));
-            result =
+//            populateAttributeAsChanged(ITEMID, Integer.parseInt(result));
+            String result =
                 ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_SHORT_CODE",
                                                               this.getEntityDef().getSource(), "COMPANY_ID",
                                                               getCompanyId().toString());
