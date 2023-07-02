@@ -257,7 +257,8 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM">
+    TableName="INV_ITEM"
+    DefaultValue="1">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -275,6 +276,8 @@
     ColumnType="DATE"
     TableName="INV_ITEM"
     RetrievedOnInsert="true">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDateTime]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -1034,7 +1037,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="INV_ITEM">
+    TableName="INV_ITEM"
+    RetrievedOnInsert="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
