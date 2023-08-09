@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkInvPoRecLinesHeaderSnoLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc">
+  <ViewLinkDefEnd
+    Name="InvPoReceiveHeaderVO"
+    Cardinality="1"
+    Source="true"
+    Owner="erpims.modelims.imsvo.InvPoReceiveHeaderVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="InvPoReceiveHeaderVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsvo.InvPoReceiveHeaderVO.PoReceiveHeaderSno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="InvPoReceiveLinesVO"
+    Cardinality="-1"
+    Owner="erpims.modelims.imsvo.InvPoReceiveLinesVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="InvPoReceiveLinesVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsvo.InvPoReceiveLinesVO.PoReceiveHeaderSno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
