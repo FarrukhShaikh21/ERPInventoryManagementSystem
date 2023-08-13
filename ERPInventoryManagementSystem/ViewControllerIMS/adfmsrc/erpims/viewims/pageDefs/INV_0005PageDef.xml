@@ -5,6 +5,20 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erptemplate.viewtemp.pageDefs.ERPTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="InvPoReceiveHeaderRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvPoReceiveHeaderROIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="InvPoReceiveHeaderROIterator" id="InvPoReceiveHeaderRO">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvPoReceiveHeaderVO" Name="InvPoReceiveHeaderRO0">
+        <AttrNames>
+          <Item Value="PoReceiveHeaderCode"/>
+          <Item Value="ReceiveDate"/>
+          <Item Value="ApprovalStatusSno"/>
+          <Item Value="txtPoHeaderCode"/>
+          <Item Value="LocationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>
