@@ -17,6 +17,7 @@
           <Item Value="ApprovalStatusSno"/>
           <Item Value="txtPoHeaderCode"/>
           <Item Value="LocationId"/>
+          <Item Value="txtLocationName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -626,6 +626,23 @@
         Value="PoHeaderSno"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtLocationName"
+    Precision="80"
+    ColumnName="TXT_LOCATION_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="INV_PO_RECEIVE_HEADER"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AdminCompany?.CompanyName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="LocationId"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveLines"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"

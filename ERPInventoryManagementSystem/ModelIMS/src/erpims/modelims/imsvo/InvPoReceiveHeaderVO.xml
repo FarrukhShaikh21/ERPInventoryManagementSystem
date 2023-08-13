@@ -277,6 +277,14 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtLocationName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtLocationName"
+    EntityUsage="InvPoReceiveHeader"
+    AliasName="TXT_LOCATION_NAME"/>
   <ViewCriteria
     Name="InvPoReceiveHeaderByLocationIdVC"
     ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO"

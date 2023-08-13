@@ -29,61 +29,9 @@
                   <af:panelGroupLayout id="pgl3" layout="scroll" halign="center">
                     <af:listView value="#{bindings.InvPoReceiveHeaderRO.collectionModel}" var="item"
                                  emptyText="#{bindings.InvPoReceiveHeaderRO.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                 fetchSize="#{bindings.InvPoReceiveHeaderRO.rangeSize}" id="lv1">
+                                 fetchSize="#{bindings.InvPoReceiveHeaderRO.rangeSize}" id="lv1"
+                                 styleClass="WBDisplayBlockCenter">
                       <af:listItem id="li2">
-                        <af:panelGridLayout id="pgl7">
-                          <af:gridRow marginTop="5px" height="auto" id="gr1">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-                              <af:outputFormatted value="#{item.bindings.PoReceiveHeaderCode.inputValue}" id="of1">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.InvPoReceiveHeaderRO.hints.PoReceiveHeaderCode.format}"/>
-                              </af:outputFormatted>
-                            </af:gridCell>
-                          </af:gridRow>
-                          <af:gridRow marginTop="5px" height="auto" id="gr3">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-                              <af:outputFormatted value="#{item.bindings.ReceiveDate.inputValue}" id="of3">
-                                <af:convertDateTime pattern="#{bindings.InvPoReceiveHeaderRO.hints.ReceiveDate.format}"/>
-                              </af:outputFormatted>
-                            </af:gridCell>
-                          </af:gridRow>
-                          <af:gridRow marginTop="5px" height="auto" id="gr6">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-                              <af:outputFormatted value="#{item.bindings.ApprovalStatusSno.inputValue}" id="of5">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.InvPoReceiveHeaderRO.hints.ApprovalStatusSno.format}"/>
-                              </af:outputFormatted>
-                            </af:gridCell>
-                          </af:gridRow>
-                          <af:gridRow marginTop="5px" height="auto" id="gr7">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
-                              <af:outputFormatted value="#{item.bindings.txtPoHeaderCode.inputValue}" id="of6">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.InvPoReceiveHeaderRO.hints.txtPoHeaderCode.format}"/>
-                              </af:outputFormatted>
-                            </af:gridCell>
-                          </af:gridRow>
-                          <af:gridRow marginTop="5px" height="auto" id="gr8">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
-                              <af:outputFormatted value="#{item.bindings.LocationId.inputValue}" id="of9">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.InvPoReceiveHeaderRO.hints.LocationId.format}"/>
-                              </af:outputFormatted>
-                            </af:gridCell>
-                          </af:gridRow>
-                          <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
-                          </af:gridRow>
-                        </af:panelGridLayout>
-                      </af:listItem>
-                    </af:listView>
-                    <af:listView value="#{bindings.ScmPurchaseBidCompHeaderRO.collectionModel}" var="item"
-                                 emptyText="#{bindings.ScmPurchaseBidCompHeaderRO.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                 fetchSize="#{bindings.ScmPurchaseBidCompHeaderRO.rangeSize}" id="lv10"
-                                 styleClass="WBDisplayBlockCenter" selection="single"
-                                 selectionListener="#{bindings.ScmPurchaseBidCompHeaderRO.treeModel.makeCurrent}"
-                                 selectedRowKeys="#{bindings.ScmPurchaseBidCompHeaderRO.collectionModel.selectedRow}">
-                      <af:listItem id="li1" styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo">
                         <af:panelGroupLayout id="pgl11" styleClass="WBCardSize" layout="vertical">
                           <af:panelBox text="PanelBox2" id="pb2" showHeader="never" showDisclosure="false">
                             <f:facet name="toolbar"/>
@@ -91,25 +39,14 @@
                               <af:gridRow marginTop="5px" height="auto" id="gr2">
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                                   <af:panelGroupLayout id="pgl8" layout="horizontal">
-                                    <af:inputText value="#{bindings.CompareHeaderSno.inputValue}"
-                                                  label="#{bindings.CompareHeaderSno.hints.label}"
-                                                  required="#{bindings.CompareHeaderSno.hints.mandatory}"
-                                                  columns="#{bindings.CompareHeaderSno.hints.displayWidth}"
-                                                  maximumLength="#{bindings.CompareHeaderSno.hints.precision}"
-                                                  shortDesc="#{bindings.CompareHeaderSno.hints.tooltip}" id="it1"
-                                                  rendered="false">
-                                      <f:validator binding="#{bindings.CompareHeaderSno.validator}"/>
-                                      <af:convertNumber groupingUsed="false"
-                                                        pattern="#{bindings.CompareHeaderSno.format}"/>
-                                    </af:inputText>
                                     <af:link id="l3" partialSubmit="true" icon="#{resource['images:imgView.png']}"
                                              styleClass="ERPLink" action="ERP-QRY-SCM_0018_EDIT"
                                              shortDesc="BID Code, Click To View Record"/>
                                     <af:spacer width="10" height="10" id="s3"/>
-                                    <af:outputFormatted value="#{item.bindings.CompareHeaderCode.inputValue}" id="of2"
+                                    <af:outputFormatted value="#{item.bindings.PoReceiveHeaderCode.inputValue}" id="of1"
                                                         styleClass="ERPHeroDetailColor">
                                       <af:convertNumber groupingUsed="false"
-                                                        pattern="#{bindings.ScmPurchaseBidCompHeaderRO.hints.CompareHeaderCode.format}"/>
+                                                        pattern="#{bindings.InvPoReceiveHeaderRO.hints.PoReceiveHeaderCode.format}"/>
                                     </af:outputFormatted>
                                   </af:panelGroupLayout>
                                 </af:gridCell>
@@ -119,7 +56,7 @@
                                   <af:panelGroupLayout id="pgl5" layout="horizontal">
                                     <af:image source="#{resource['images:imgDocumentDate.png']}" id="i2"
                                               shortDesc="Compare Date"/>
-                                    <af:outputFormatted value="#{item.bindings.CompareDate.inputValue}" id="of7"
+                                    <af:outputFormatted value="#{item.bindings.ReceiveDate.inputValue}" id="of7"
                                                         styleClass="ERPHeroDetailColor">
                                       <af:convertDateTime pattern="#{bindings.ScmPurchaseBidCompHeaderRO.hints.CompareDate.format}"/>
                                     </af:outputFormatted>
@@ -147,10 +84,10 @@
                                               shortDesc="#{item.bindings.txtDemandHeaderCode.inputValue==null?'RFQ Code':'Demand Code'}"
                                               source="#{resource['images:imgDocument.png']}"/>
                                     <af:spacer width="10" height="10" id="s4"/>
-                                    <af:outputFormatted value="#{item.bindings.txtDemandHeaderCode.inputValue==null?item.bindings.txtRfqHeaderCode.inputValue:item.bindings.txtDemandHeaderCode.inputValue}" id="of10"
+                                    <af:outputFormatted value="#{item.bindings.txtPoHeaderCode.inputValue}" id="of6"
                                                         styleClass="ERPHeroDetailColor">
                                       <af:convertNumber groupingUsed="false"
-                                                        pattern="#{bindings.ScmPurchaseBidCompHeaderRO.hints.txtRfqHeaderCode.format}"/>
+                                                        pattern="#{bindings.InvPoReceiveHeaderRO.hints.txtPoHeaderCode.format}"/>
                                     </af:outputFormatted>
                                   </af:panelGroupLayout>
                                 </af:gridCell>
@@ -158,8 +95,7 @@
                               <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr10">
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
                                   <af:panelGroupLayout id="pgl9" layout="horizontal">
-                                    <af:image id="i4"
-                                              shortDesc="Approval Status #"
+                                    <af:image id="i4" shortDesc="Approval Status #"
                                               source="#{resource['images:imgStatus.png']}"/>
                                     <af:spacer width="10" height="10" id="s6"/>
                                     <af:outputFormatted value="#{item.bindings.ApprovalStatusSno.inputValue+1==1?'PREPARED':item.bindings.ApprovalStatusSno.inputValue+1==2?'FORWARD':item.bindings.ApprovalStatusSno.inputValue+1==3?'REVERT':item.bindings.ApprovalStatusSno.inputValue+1==4?'DECLINED':item.bindings.ApprovalStatusSno.inputValue+1==5?'HOLD':'APPROVED'}"
@@ -170,6 +106,25 @@
                             </af:panelGridLayout>
                           </af:panelBox>
                         </af:panelGroupLayout>
+                        <af:panelGridLayout id="pgl7">
+                          <af:gridRow marginTop="5px" height="auto" id="gr6">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"/>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="auto" id="gr7">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="auto" id="gr8">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                              <af:outputFormatted value="#{item.bindings.LocationId.inputValue}" id="of9">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.InvPoReceiveHeaderRO.hints.LocationId.format}"/>
+                              </af:outputFormatted>
+                            </af:gridCell>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
+                          </af:gridRow>
+                        </af:panelGridLayout>
                       </af:listItem>
                     </af:listView>
                   </af:panelGroupLayout>

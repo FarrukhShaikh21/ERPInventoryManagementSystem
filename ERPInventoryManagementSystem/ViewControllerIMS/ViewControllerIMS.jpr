@@ -157,6 +157,24 @@
       <value n="j2eeWebAppName" v="ERPInventoryManagementSystem-ViewControllerIMS-webapp"/>
       <value n="j2eeWebContextRoot" v="ERPInventoryManagementSystem-ViewControllerIMS-context-root"/>
    </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Default">
+            <value n="custom" v="false"/>
+            <value n="name" v="Default"/>
+            <hash n="oracle.adfdt.controller.adfc.source.runner.AdfcRunnerLaunchSettings">
+               <hash n="inputParameterValues">
+                  <value n="P_ADF_USER_ATTRIBUTE" v=""/>
+                  <value n="P_ADF_USER_CODE" v="FARRUKH"/>
+                  <value n="P_ADF_USER_SNO" v="1"/>
+               </hash>
+               <value n="taskFlowId" v="ERPBTFINV"/>
+               <value n="unboundedTaskFlow" v="false"/>
+            </hash>
+            <url n="targetURL" path="public_html/WEB-INF/ERPBTFINV.xml"/>
+         </hash>
+      </hash>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
          <hash>
