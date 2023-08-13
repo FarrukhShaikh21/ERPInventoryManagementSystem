@@ -281,6 +281,12 @@
     <view id="INV_0005_EDIT">
       <page>/INV_0005_EDIT.jsf</page>
     </view>
+    <method-call id="ExeQryINV_0005">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-INV_0005</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -347,7 +353,7 @@
       </control-flow-case>
       <control-flow-case id="__110">
         <from-outcome>ERP-ACT-INV_0005</from-outcome>
-        <to-activity-id>INV_0005</to-activity-id>
+        <to-activity-id>ExeQryINV_0005</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__24">
@@ -636,6 +642,13 @@
       <control-flow-case id="__109">
         <from-outcome>ERPBACKCRUD</from-outcome>
         <to-activity-id>INV_0004_EDIT_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__111">
+      <from-activity-id>ExeQryINV_0005</from-activity-id>
+      <control-flow-case id="__112">
+        <from-outcome>ERP-ACT-INV_0005</from-outcome>
+        <to-activity-id>INV_0005</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

@@ -324,4 +324,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AdminCompanyVO"
+    ViewLink="erpims.modelims.imsvo.AdminCompanyInvPurchaseOrderReceivingLocationIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

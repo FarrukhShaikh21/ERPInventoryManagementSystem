@@ -989,7 +989,7 @@
       <property
          name="fromOutcome">ACT-ADD-INV_0004_EDIT_EDIT</property>
       <property
-         name="sdm:polyPoints">B50,-52.30957,282.72925,-43.0,353.94235,T56</property>
+         name="sdm:polyPoints">B39,-59.30957,283.1717,-50.0,354.39648,T44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -1149,7 +1149,7 @@
       <property
          name="fromOutcome">ERPBACKCRUD</property>
       <property
-         name="sdm:polyPoints">T50,-418.30176,610.64355,-292.5,550.7471,L50</property>
+         name="sdm:polyPoints">R46,-377.30176,661.14355,-251.5,604.7471,B50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall108">
@@ -1241,7 +1241,7 @@
       islink="true"
       id="ControlFlowCase116"
       from="MethodCall21"
-      to="View113">
+      to="MethodCall117">
       <property
          name="fromOutcome">ERP-ACT-INV_0005</property>
       <property
@@ -1249,6 +1249,29 @@
       <property
          name="fromsrcid">__16</property>
       <property
-         name="sdm:polyPoints">B39,286.0,70.143555,-556.5,867.44824,T50</property>
+         name="sdm:polyPoints">L54,249.2547,19.643555,-542.5,767.3965,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall117">
+      <property
+         name="activityId">ExeQryINV_0005</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeQryINV_0005&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">821.7471</property>
+      <property
+         name="x">-542.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase118"
+      from="MethodCall117"
+      to="View113">
+      <property
+         name="fromOutcome">ERP-ACT-INV_0005</property>
+      <property
+         name="sdm:polyPoints">L50,-583.5,821.3965,-597.5,921.44824,L50</property>
    </ControlFlowCase>
 </SDM>
