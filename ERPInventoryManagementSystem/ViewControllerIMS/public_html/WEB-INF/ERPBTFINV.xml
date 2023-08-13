@@ -275,6 +275,12 @@
         <fixed-outcome>ERPBACKCRUD</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="INV_0005">
+      <page>/INV_0005.jsf</page>
+    </view>
+    <view id="INV_0005_EDIT">
+      <page>/INV_0005_EDIT.jsf</page>
+    </view>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -338,6 +344,10 @@
       <control-flow-case id="__76">
         <from-outcome>ERP-ACT-INV_0004</from-outcome>
         <to-activity-id>ExeAdmCompINV_0004</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__110">
+        <from-outcome>ERP-ACT-INV_0005</from-outcome>
+        <to-activity-id>INV_0005</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__24">

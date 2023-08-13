@@ -115,9 +115,6 @@
     Name="InvInventoryOrgSubInvDetCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"/>
   <ViewUsage
-    Name="GlBatchSetupQVO1"
-    ViewObjectName="erpfms.modelfms.fmsqvo.GlBatchSetupQVO"/>
-  <ViewUsage
     Name="InvSubinventoryOrgDetCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"/>
   <ViewUsage
@@ -127,6 +124,9 @@
       Name="InvSubinventoryOrgBySubInvOrgSnoVC"
       FullName="erpims.modelims.imsvo.InvSubinventoryOrgVO.InvSubinventoryOrgBySubInvOrgSnoVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="InvPoReceiveHeaderRO"
+    ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO"/>
   <ViewLinkUsage
     Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
     ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"

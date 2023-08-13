@@ -360,7 +360,7 @@
       <property
          name="fromOutcome">ERP-ACT-INV_0002</property>
       <property
-         name="sdm:polyPoints">B44,289.5,71.82177,413.5,390.39648,T50</property>
+         name="sdm:polyPoints">B50,293.0,72.09128,413.5,390.39648,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall34">
@@ -620,7 +620,7 @@
       <property
          name="fromsrcid">__16</property>
       <property
-         name="sdm:polyPoints">B56,296.5,70.143555,530.5,435.6953,L50</property>
+         name="sdm:polyPoints">B61,300.0,70.143555,571.5,381.6953,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -989,7 +989,7 @@
       <property
          name="fromOutcome">ACT-ADD-INV_0004_EDIT_EDIT</property>
       <property
-         name="sdm:polyPoints">B39,-59.30957,283.1717,-50.0,354.39648,T44</property>
+         name="sdm:polyPoints">B50,-52.30957,282.72925,-43.0,353.94235,T56</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -1022,7 +1022,7 @@
       <property
          name="fromOutcome">ERPBACKCRUD</property>
       <property
-         name="sdm:polyPoints">T56,-43.0,353.94235,-52.30957,282.72925,B50</property>
+         name="sdm:polyPoints">T44,-50.0,354.39648,-59.30957,283.1717,B39</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall95">
@@ -1206,5 +1206,49 @@
          name="fromOutcome">ERPBACKCRUD</property>
       <property
          name="sdm:polyPoints">R50,-210.5,550.7471,-48.87273,598.33887,L46</property>
+   </ControlFlowCase>
+   <View
+      id="View113">
+      <property
+         name="activityId">INV_0005</property>
+      <property
+         name="page">/INV_0005.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INV_0005&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">921.7988</property>
+      <property
+         name="x">-556.5</property>
+   </View>
+   <View
+      id="View114">
+      <property
+         name="activityId">INV_0005_EDIT</property>
+      <property
+         name="page">/INV_0005_EDIT.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>INV_0005_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">969.7988</property>
+      <property
+         name="x">-410.30957</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase116"
+      from="MethodCall21"
+      to="View113">
+      <property
+         name="fromOutcome">ERP-ACT-INV_0005</property>
+      <property
+         name="tosrcid">__110</property>
+      <property
+         name="fromsrcid">__16</property>
+      <property
+         name="sdm:polyPoints">B39,286.0,70.143555,-556.5,867.44824,T50</property>
    </ControlFlowCase>
 </SDM>
