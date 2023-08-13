@@ -13,6 +13,40 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_LOCATION_ID"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
+  <ViewAccessor
+    Name="AccScmPurchaseOrderHeaderVO"
+    ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtPoHeaderCode"
+    ListVOName="AccScmPurchaseOrderHeaderVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtPoHeaderCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="PoHeaderSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PoHeaderCode"/>
+      <Item Value="PoHeaderSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PoHeaderCode"/>
+      <Item Value="PoDate"/>
+      <Item Value="ReferenceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="ScmPurchaseOrderHeaderFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvPoReceiveHeader"
     Entity="erpims.modelims.imseo.InvPoReceiveHeader"/>
@@ -227,6 +261,58 @@
     EntityAttrName="DeliveryTermSno"
     EntityUsage="InvPoReceiveHeader"
     AliasName="DELIVERY_TERM_SNO"/>
+  <ViewAttribute
+    Name="txtPoHeaderCode"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtPoHeaderCode"
+    EntityUsage="InvPoReceiveHeader"
+    AliasName="TXT_PO_HEADER_CODE"
+    LOVName="LovtxtPoHeaderCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="InvPoReceiveHeaderByLocationIdVC"
+    ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InvPoReceiveHeaderVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="LocationId"
+        ViewAttribute="LocationId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_LOCATION_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="InvPoReceiveLinesVO"
     ViewLink="erpims.modelims.imsvo.FkInvPoRecLinesHeaderSnoLink"

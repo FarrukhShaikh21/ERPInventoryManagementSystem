@@ -9,7 +9,11 @@
   DBObjectType="table"
   DBObjectName="SCM_PURCHASE_ORDER_HEADER"
   AliasName="ScmPurchaseOrderHeader"
-  BindingStyle="JDBC">
+  BindingStyle="JDBC"
+  RowClass="erpglobals.modelglobals.ERPEntityImpl">
+  <DesignTime>
+    <Attr Name="_superClass" Value="erpglobals.modelglobals.ERPEntityImpl"/>
+  </DesignTime>
   <Attribute
     Name="PoHeaderSno"
     IsNotNull="true"

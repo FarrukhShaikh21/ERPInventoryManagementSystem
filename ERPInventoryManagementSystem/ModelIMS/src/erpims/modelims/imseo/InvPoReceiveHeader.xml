@@ -603,6 +603,30 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtPoHeaderCode"
+    ColumnName="TXT_PO_HEADER_CODE"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INTEGER"
+    TableName="INV_PO_RECEIVE_HEADER"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ScmPurchaseOrderHeader?.PoHeaderCode]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtPoHeaderCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="PoHeaderSno"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveLines"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
