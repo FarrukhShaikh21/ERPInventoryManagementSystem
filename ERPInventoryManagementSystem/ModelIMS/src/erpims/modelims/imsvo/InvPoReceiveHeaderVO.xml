@@ -232,4 +232,10 @@
     ViewLink="erpims.modelims.imsvo.FkInvPoRecLinesHeaderSnoLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ScmPurchaseOrderHeaderVO"
+    ViewLink="erpims.modelims.imsrefvo.ScmPurchOrderHeaderInvPoRecHeadPOHeaderSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

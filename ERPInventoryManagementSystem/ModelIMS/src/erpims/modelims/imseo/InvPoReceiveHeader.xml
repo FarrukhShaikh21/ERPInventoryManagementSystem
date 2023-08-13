@@ -610,6 +610,13 @@
     AssociationOtherEnd="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc.InvPoReceiveHeader"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ScmPurchaseOrderHeader"
+    Association="erpims.modelims.imsrefeo.ScmPurchOrderHeaderInvPoRecHeadPOHeaderSnoAssoc"
+    AssociationEnd="erpims.modelims.imsrefeo.ScmPurchOrderHeaderInvPoRecHeadPOHeaderSnoAssoc.ScmPurchaseOrderHeader"
+    AssociationOtherEnd="erpims.modelims.imsrefeo.ScmPurchOrderHeaderInvPoRecHeadPOHeaderSnoAssoc.InvPoReceiveHeader"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkInvPoReceiveHeader"
     PrimaryKey="true">
@@ -629,6 +636,17 @@
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.PoReceiveHeaderCode"/>
       <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.CompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvPoReceiveHeader">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_SCM_PURCHASE_ORDER_HEADER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_PO_RECEIVE_HEADER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.PoHeaderSno"/>
     </AttrArray>
   </Key>
   <ResourceBundle>
