@@ -674,8 +674,7 @@
     ColumnName="TXT_TEMP_PROJECT_NAME"
     SQLType="VARCHAR"
     Type="java.lang.String"
-    ColumnType="VARCHAR"
-    TableName="INV_PO_RECEIVE_HEADER">
+    ColumnType="VARCHAR">
     <TransientExpression
       trustMode="untrusted"><![CDATA[GlProjects?.ProjectName]]></TransientExpression>
     <Dependencies>
@@ -683,6 +682,14 @@
         Value="TempProjectId"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtTempDepartmentName"
+    Precision="80"
+    ColumnName="TXT_TEMP_DEPARTMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_PO_RECEIVE_HEADER"/>
   <AccessorAttribute
     Name="InvPoReceiveLines"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
@@ -717,6 +724,13 @@
     AssociationEnd="erpims.modelims.imseo.GlProjectsInvPoReceiveHeaderProjectSnoAssoc.GlProjects"
     AssociationOtherEnd="erpims.modelims.imseo.GlProjectsInvPoReceiveHeaderProjectSnoAssoc.InvPoReceiveHeader"
     Type="erpfms.modelfms.fmseo.GlProjectsImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AdminCompany1"
+    Association="erpims.modelims.imseo.AdminCompanyInvPoReceiveTempDepartmentIdAssoc"
+    AssociationEnd="erpims.modelims.imseo.AdminCompanyInvPoReceiveTempDepartmentIdAssoc.AdminCompany1"
+    AssociationOtherEnd="erpims.modelims.imseo.AdminCompanyInvPoReceiveTempDepartmentIdAssoc.InvPoReceiveHeader"
+    Type="erpadm.modeladm.admeo.AdminCompanyImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkInvPoReceiveHeader"
@@ -781,6 +795,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.TempProjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvPoReceiveHeader4">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADMIN_COMPANY_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_PO_RECEIVE_HEADER4"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.TempDepartmentId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>
