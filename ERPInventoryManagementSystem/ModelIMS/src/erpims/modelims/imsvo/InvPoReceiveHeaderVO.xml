@@ -372,6 +372,22 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtTempProjectName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtTempProjectName"
+    EntityUsage="InvPoReceiveHeader"
+    AliasName="TXT_TEMP_PROJECT_NAME"/>
+  <ViewAttribute
+    Name="txtTempDepartmentName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtTempDepartmentName"
+    EntityUsage="InvPoReceiveHeader"
+    AliasName="TXT_TEMP_DEPARTMENT_NAME"/>
   <ViewCriteria
     Name="InvPoReceiveHeaderByLocationIdVC"
     ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO"

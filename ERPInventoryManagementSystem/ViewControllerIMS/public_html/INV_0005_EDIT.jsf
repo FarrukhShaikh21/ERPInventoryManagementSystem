@@ -923,19 +923,15 @@
                                                             id="ol4"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc27" width="21%" valign="middle">
-                                            <af:inputComboboxListOfValues id="txtProjectNameId"
-                                                                          popupTitle="Search and Select: #{bindings.txtTempProjectName.hints.label}"
-                                                                          value="#{bindings.txtTempProjectName.inputValue}"
-                                                                          label="#{bindings.txtTempProjectName.hints.label}"
-                                                                          model="#{bindings.txtTempProjectName.listOfValuesModel}"
-                                                                          required="#{bindings.txtTempProjectName.hints.mandatory}"
-                                                                          columns="#{bindings.txtTempProjectName.hints.displayWidth}"
-                                                                          shortDesc="#{bindings.txtTempProjectName.hints.tooltip}"
-                                                                          simple="true" contentStyle="width:90%"
-                                                                          partialTriggers="txtLocationNameId txtRfqHeaderCodeId"
-                                                                          readOnly="true">
+                                            <af:inputText value="#{bindings.txtTempProjectName.inputValue}"
+                                                          label="#{bindings.txtTempProjectName.hints.label}"
+                                                          required="#{bindings.txtTempProjectName.hints.mandatory}"
+                                                          columns="#{bindings.txtTempProjectName.hints.displayWidth}"
+                                                          maximumLength="#{bindings.txtTempProjectName.hints.precision}"
+                                                          shortDesc="#{bindings.txtTempProjectName.hints.tooltip}"
+                                                          id="it4" simple="true" readOnly="true">
                                                 <f:validator binding="#{bindings.txtTempProjectName.validator}"/>
-                                            </af:inputComboboxListOfValues>
+                                            </af:inputText>
                                         </af:gridCell>
                                     </af:gridRow>
                                     <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
@@ -945,19 +941,15 @@
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="20%" id="gc11" halign="stretch"
                                                      valign="middle">
-                                            <af:inputComboboxListOfValues id="iclov1"
-                                                                          popupTitle="Search and Select: #{bindings.txtTempDepartmentName.hints.label}"
-                                                                          value="#{bindings.txtTempDepartmentName.inputValue}"
-                                                                          label="#{bindings.txtTempDepartmentName.hints.label}"
-                                                                          model="#{bindings.txtTempDepartmentName.listOfValuesModel}"
-                                                                          required="#{bindings.txtTempDepartmentName.hints.mandatory}"
-                                                                          columns="#{bindings.txtTempDepartmentName.hints.displayWidth}"
-                                                                          shortDesc="#{bindings.txtTempDepartmentName.hints.tooltip}"
-                                                                          simple="true" contentStyle="width:90%"
-                                                                          partialTriggers="txtLocationNameId txtRfqHeaderCodeId"
-                                                                          readOnly="true">
+                                            <af:inputText value="#{bindings.txtTempDepartmentName.inputValue}"
+                                                          label="#{bindings.txtTempDepartmentName.hints.label}"
+                                                          required="#{bindings.txtTempDepartmentName.hints.mandatory}"
+                                                          columns="#{bindings.txtTempDepartmentName.hints.displayWidth}"
+                                                          maximumLength="#{bindings.txtTempDepartmentName.hints.precision}"
+                                                          shortDesc="#{bindings.txtTempDepartmentName.hints.tooltip}"
+                                                          id="it5" simple="true" readOnly="true">
                                                 <f:validator binding="#{bindings.txtTempDepartmentName.validator}"/>
-                                            </af:inputComboboxListOfValues>
+                                            </af:inputText>
                                         </af:gridCell>
                                         <af:gridCell width="13%" id="gc13" halign="center" valign="middle"/>
                                         <af:gridCell marginStart="5px" width="20%" id="gc14" halign="stretch"

@@ -681,15 +681,39 @@
       <Item
         Value="TempProjectId"/>
     </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtTempProjectName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="txtTempDepartmentName"
-    Precision="80"
+    Precision="100"
     ColumnName="TXT_TEMP_DEPARTMENT_NAME"
     SQLType="VARCHAR"
+    IsPersistent="false"
+    IsQueriable="false"
     Type="java.lang.String"
-    ColumnType="CHAR"
-    TableName="INV_PO_RECEIVE_HEADER"/>
+    ColumnType="VARCHAR">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AdminCompany1?.CompanyName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="TempDepartmentId"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtTempDepartmentName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveLines"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
