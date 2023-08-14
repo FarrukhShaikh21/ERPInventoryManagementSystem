@@ -741,7 +741,11 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_PO_RECEIVE_HEADER">
+    TableName="INV_PO_RECEIVE_HEADER"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InvInventoryOrg?.OrgDescription]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -750,6 +754,10 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="InventoryOrgSno"/>
+    </Dependencies>
   </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveLines"

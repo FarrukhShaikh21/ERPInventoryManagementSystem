@@ -216,8 +216,22 @@
                                         </af:gridCell>
                                     </af:gridRow>
                                     <af:gridRow id="gr10" marginTop="5px" marginBottom="5px">
-                                        <af:gridCell id="gc22" width="13%" halign="center" valign="middle"/>
-                                        <af:gridCell id="gc23" width="21%" halign="stretch" valign="middle"/>
+                                        <af:gridCell id="gc22" width="13%" halign="center" valign="middle">
+                                            <af:outputLabel value="#{bindings.txtOrgDescription.hints.label}" id="ol13"/>
+                                        </af:gridCell>
+                                        <af:gridCell id="gc23" width="21%" halign="stretch" valign="middle">
+                                            <af:inputComboboxListOfValues id="txtOrgDescriptionId"
+                                                                          popupTitle="Search and Select: #{bindings.txtOrgDescription.hints.label}"
+                                                                          value="#{bindings.txtOrgDescription.inputValue}"
+                                                                          label="#{bindings.txtOrgDescription.hints.label}"
+                                                                          model="#{bindings.txtOrgDescription.listOfValuesModel}"
+                                                                          required="#{bindings.txtOrgDescription.hints.mandatory}"
+                                                                          columns="#{bindings.txtOrgDescription.hints.displayWidth}"
+                                                                          shortDesc="#{bindings.txtOrgDescription.hints.tooltip}"
+                                                                          simple="true">
+                                                <f:validator binding="#{bindings.txtOrgDescription.validator}"/>
+                                            </af:inputComboboxListOfValues>
+                                        </af:gridCell>
                                         <af:gridCell id="gc24" width="13%" halign="center" valign="middle">
                                             <af:outputLabel value="#{bindings.txtPoHeaderCode.hints.label}" id="ol11"/>
                                         </af:gridCell>

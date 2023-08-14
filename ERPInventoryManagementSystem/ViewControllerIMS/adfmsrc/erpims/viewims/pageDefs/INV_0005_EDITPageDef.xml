@@ -83,5 +83,7 @@
         <Item Value="ReferenceNo"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtOrgDescription"
+                  id="txtOrgDescription"/>
   </bindings>
 </pageDefinition>

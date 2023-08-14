@@ -458,12 +458,29 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtItemName"
+    Precision="100"
+    ColumnName="TXT_ITEM_NAME"
+    SQLType="VARCHAR"
+    IsPersistent="false"
+    IsQueriable="false"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="INV_PO_RECEIVE_LINES"/>
   <AccessorAttribute
     Name="InvPoReceiveHeader"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
     AssociationEnd="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc.InvPoReceiveHeader"
     AssociationOtherEnd="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc.InvPoReceiveLines"
     Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvItem"
+    Association="erpims.modelims.imseo.InvItemInvPoReceivingLinesItemIdAssoc"
+    AssociationEnd="erpims.modelims.imseo.InvItemInvPoReceivingLinesItemIdAssoc.InvItem"
+    AssociationOtherEnd="erpims.modelims.imseo.InvItemInvPoReceivingLinesItemIdAssoc.InvPoReceiveLines"
+    Type="erpims.modelims.imseo.InvItemImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkInvPoReceiveLines"
@@ -484,6 +501,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvPoReceiveLines.PoReceiveHeaderSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvPoReceiveLines">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_INV_ITEM"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_PO_RECEIVE_LINES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvPoReceiveLines.ItemId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>
