@@ -287,6 +287,12 @@
         <fixed-outcome>ERP-ACT-INV_0005</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="CWPINV_0005_EDIT">
+      <method>#{bindings.CreateWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ADD-INV_0005_EDIT</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -649,6 +655,20 @@
       <control-flow-case id="__112">
         <from-outcome>ERP-ACT-INV_0005</from-outcome>
         <to-activity-id>INV_0005</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__101">
+      <from-activity-id>INV_0005</from-activity-id>
+      <control-flow-case id="__102">
+        <from-outcome>ERP-ADD-INV_0005_EDIT</from-outcome>
+        <to-activity-id>CWPINV_0005_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__113">
+      <from-activity-id>CWPINV_0005_EDIT</from-activity-id>
+      <control-flow-case id="__114">
+        <from-outcome>ERP-ADD-INV_0005_EDIT</from-outcome>
+        <to-activity-id>INV_0005_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
