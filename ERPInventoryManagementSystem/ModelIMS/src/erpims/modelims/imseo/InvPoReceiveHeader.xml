@@ -641,6 +641,14 @@
       <Item
         Value="LocationId"/>
     </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtLocationName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="txtSupplierName"
@@ -741,7 +749,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_PO_RECEIVE_HEADER"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
