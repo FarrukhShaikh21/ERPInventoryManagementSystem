@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ScmSupplierInvPoReceiveHeaderSupplierSnoLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpims.modelims.imsrefvo.ScmSupplierInvPoReceiveHeaderSupplierSnoLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="ScmSupplierVO"
+    Cardinality="1"
+    Source="true"
+    Owner="erpims.modelims.imsrefvo.ScmSupplierVO">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="ScmSupplierVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsrefvo.ScmSupplierVO.SupplierSno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="InvPoReceiveHeaderVO"
+    Cardinality="-1"
+    Owner="erpims.modelims.imsvo.InvPoReceiveHeaderVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="InvPoReceiveHeaderVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsvo.InvPoReceiveHeaderVO.SupplierSno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
+</ViewLink>

@@ -25,6 +25,14 @@
     Name="AccScmPurchaseOrderHeaderVO"
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAdminCompanyVO"
+    ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccScmSupplierVO"
+    ViewObjectName="erpims.modelims.imsrefvo.ScmSupplierVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtPoHeaderCode"
     ListVOName="AccScmPurchaseOrderHeaderVO"
@@ -50,6 +58,57 @@
     </AttrArray>
     <DisplayCriteria
       Name="ScmPurchaseOrderHeaderFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtLocationName"
+    ListVOName="AccAdminCompanyVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtLocationName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CompanyName"/>
+      <Item Value="CompCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CompanyName"/>
+      <Item Value="CompanyShortCode"/>
+      <Item Value="CompanyShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AdminCompanyFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtSupplierName"
+    ListVOName="AccScmSupplierVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSupplierName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="SupplierSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SupplierName"/>
+      <Item Value="SupplierSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SupplierName"/>
+      <Item Value="SupplierShortCode"/>
+      <Item Value="SupplierShortName"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="InvPoReceiveHeader"
@@ -288,7 +347,31 @@
     PrecisionRule="true"
     EntityAttrName="txtLocationName"
     EntityUsage="InvPoReceiveHeader"
-    AliasName="TXT_LOCATION_NAME"/>
+    AliasName="TXT_LOCATION_NAME"
+    LOVName="LovtxtLocationName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtSupplierName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSupplierName"
+    EntityUsage="InvPoReceiveHeader"
+    AliasName="TXT_SUPPLIER_NAME"
+    LOVName="LovtxtSupplierName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="InvPoReceiveHeaderByLocationIdVC"
     ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO"
@@ -370,7 +453,8 @@
               ViewAttribute="TempAdminCompanyAccessVO"
               Operator="EXISTS"
               Conjunction="AND"
-              Required="Optional">
+              Required="Optional"
+              IsNestedCriteria="true">
               <ViewCriteria
                 Name="TempAdminCompanyAccessVONestedCriteria"
                 ViewObjectName="erpglobals.modelglobals.globalsvo.TempAdminCompanyAccessVO"
@@ -442,6 +526,18 @@
   <ViewLinkAccessor
     Name="AdminCompanyVO"
     ViewLink="erpims.modelims.imsvo.AdminCompanyInvPurchaseOrderReceivingLocationIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ScmSupplierVO"
+    ViewLink="erpims.modelims.imsrefvo.ScmSupplierInvPoReceiveHeaderSupplierSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlProjectsVO"
+    ViewLink="erpims.modelims.imsvo.GlProjectsInvPoReceiveHeaderProjectSnoLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

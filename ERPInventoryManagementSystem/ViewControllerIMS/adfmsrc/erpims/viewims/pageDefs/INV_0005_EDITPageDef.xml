@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="INV_0005_EDITPageDef"
+                Package="erpims.viewims.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvPoReceiveHeaderCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvPoReceiveHeaderCRUDIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="PoReceiveHeaderSno">
+      <AttrNames>
+        <Item Value="PoReceiveHeaderSno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="PoReceiveHeaderCode">
+      <AttrNames>
+        <Item Value="PoReceiveHeaderCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="ReceiveDate">
+      <AttrNames>
+        <Item Value="ReceiveDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtSupplierName"
+                  id="txtSupplierName"/>
+    <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtPoHeaderCode"
+                  id="txtPoHeaderCode"/>
+  </bindings>
+</pageDefinition>

@@ -794,7 +794,7 @@
                                     <af:gridRow marginTop="5px" height="auto" id="gr4" marginBottom="5px">
                                         <af:gridCell width="13%" id="gc4" marginEnd="5px" halign="center"
                                                      valign="middle">
-                                            <af:outputLabel value="#{bindings.CompareHeaderCode.hints.label}" id="ol3"/>
+                                            <af:outputLabel value="#{bindings.PoReceiveHeaderCode.hints.label}" id="ol3"/>
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="20%" id="gc5" halign="stretch"
                                                      valign="middle">
@@ -825,31 +825,42 @@
                                                           rendered="false">
                                                 <f:validator binding="#{bindings.IsSupervised.validator}"/>
                                             </af:inputText>
-                                            <af:inputText value="#{bindings.CompareHeaderCode.inputValue}"
-                                                          label="#{bindings.CompareHeaderCode.hints.label}"
-                                                          required="#{bindings.CompareHeaderCode.hints.mandatory}"
-                                                          columns="#{bindings.CompareHeaderCode.hints.displayWidth}"
-                                                          maximumLength="#{bindings.CompareHeaderCode.hints.precision}"
-                                                          shortDesc="#{bindings.CompareHeaderCode.hints.tooltip}"
-                                                          id="it16" simple="true" readOnly="true">
-                                                <f:validator binding="#{bindings.CompareHeaderCode.validator}"/>
+                                            <af:inputText value="#{bindings.PoReceiveHeaderCode.inputValue}"
+                                                          label="#{bindings.PoReceiveHeaderCode.hints.label}"
+                                                          required="#{bindings.PoReceiveHeaderCode.hints.mandatory}"
+                                                          columns="#{bindings.PoReceiveHeaderCode.hints.displayWidth}"
+                                                          maximumLength="#{bindings.PoReceiveHeaderCode.hints.precision}"
+                                                          shortDesc="#{bindings.PoReceiveHeaderCode.hints.tooltip}"
+                                                          id="it3" simple="true" readOnly="true">
+                                                <f:validator binding="#{bindings.PoReceiveHeaderCode.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.CompareHeaderCode.format}"/>
+                                                                  pattern="#{bindings.PoReceiveHeaderCode.format}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.PoReceiveHeaderSno.inputValue}"
+                                                          label="#{bindings.PoReceiveHeaderSno.hints.label}"
+                                                          required="#{bindings.PoReceiveHeaderSno.hints.mandatory}"
+                                                          columns="#{bindings.PoReceiveHeaderSno.hints.displayWidth}"
+                                                          maximumLength="#{bindings.PoReceiveHeaderSno.hints.precision}"
+                                                          shortDesc="#{bindings.PoReceiveHeaderSno.hints.tooltip}"
+                                                          id="it1" rendered="false">
+                                                <f:validator binding="#{bindings.PoReceiveHeaderSno.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.PoReceiveHeaderSno.format}"/>
                                             </af:inputText>
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="13%" id="gc6" halign="center"
                                                      valign="middle">
-                                            <af:outputLabel value="#{bindings.CompareDate.hints.label}" id="ol1"/>
+                                            <af:outputLabel value="#{bindings.ReceiveDate.hints.label}" id="ol1"/>
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="20%" id="gc7" valign="middle">
-                                            <af:inputDate value="#{bindings.CompareDate.inputValue}"
-                                                          label="#{bindings.CompareDate.hints.label}"
-                                                          required="#{bindings.CompareDate.hints.mandatory}"
-                                                          columns="#{bindings.CompareDate.hints.displayWidth}"
-                                                          shortDesc="#{bindings.CompareDate.hints.tooltip}" id="id1"
+                                            <af:inputDate value="#{bindings.ReceiveDate.inputValue}"
+                                                          label="#{bindings.ReceiveDate.hints.label}"
+                                                          required="#{bindings.ReceiveDate.hints.mandatory}"
+                                                          columns="#{bindings.ReceiveDate.hints.displayWidth}"
+                                                          shortDesc="#{bindings.ReceiveDate.hints.tooltip}" id="id5"
                                                           simple="true">
-                                                <f:validator binding="#{bindings.CompareDate.validator}"/>
-                                                <af:convertDateTime pattern="#{bindings.CompareDate.format}"/>
+                                                <f:validator binding="#{bindings.ReceiveDate.validator}"/>
+                                                <af:convertDateTime pattern="#{bindings.ReceiveDate.format}"/>
                                             </af:inputDate>
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="13%" id="gc8" halign="center"
@@ -866,51 +877,46 @@
                                                                           required="#{bindings.txtLocationName.hints.mandatory}"
                                                                           columns="#{bindings.txtLocationName.hints.displayWidth}"
                                                                           shortDesc="#{bindings.txtLocationName.hints.tooltip}"
-                                                                          simple="true" contentStyle="width:90%"
-                                                                          autoSubmit="true"
-                                                                          readOnly="#{bindings.ScmPurchaseBidCompareItemDetCRUDIterator.estimatedRowCount>0}"
-                                                                          partialTriggers="txtRfqHeaderCodeId">
+                                                                          simple="true">
                                                 <f:validator binding="#{bindings.txtLocationName.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:gridCell>
                                     </af:gridRow>
                                     <af:gridRow id="gr10" marginTop="5px" marginBottom="5px">
                                         <af:gridCell id="gc22" width="13%" halign="center" valign="middle">
-                                            <af:outputLabel value="#{bindings.txtRfqHeaderCode.hints.label}" id="ol10"/>
+                                            <af:outputLabel value="#{bindings.txtSupplierName.hints.label}" id="ol10"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc23" width="21%" halign="stretch" valign="middle">
-                                            <af:inputComboboxListOfValues id="txtRfqHeaderCodeId"
-                                                                          popupTitle="Search and Select: #{bindings.txtRfqHeaderCode.hints.label}"
-                                                                          value="#{bindings.txtRfqHeaderCode.inputValue}"
-                                                                          label="#{bindings.txtRfqHeaderCode.hints.label}"
-                                                                          model="#{bindings.txtRfqHeaderCode.listOfValuesModel}"
-                                                                          required="#{bindings.txtRfqHeaderCode.hints.mandatory}"
-                                                                          columns="#{bindings.txtRfqHeaderCode.hints.displayWidth}"
-                                                                          shortDesc="#{bindings.txtRfqHeaderCode.hints.tooltip}"
-                                                                          simple="true" autoSubmit="true"
-                                                                          contentStyle="width:90%">
-                                                <f:validator binding="#{bindings.txtRfqHeaderCode.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.txtRfqHeaderCode.format}"/>
+                                            <af:inputComboboxListOfValues id="iclov2"
+                                                                          popupTitle="Search and Select: #{bindings.txtSupplierName.hints.label}"
+                                                                          value="#{bindings.txtSupplierName.inputValue}"
+                                                                          label="#{bindings.txtSupplierName.hints.label}"
+                                                                          model="#{bindings.txtSupplierName.listOfValuesModel}"
+                                                                          required="#{bindings.txtSupplierName.hints.mandatory}"
+                                                                          columns="#{bindings.txtSupplierName.hints.displayWidth}"
+                                                                          shortDesc="#{bindings.txtSupplierName.hints.tooltip}"
+                                                                          simple="true">
+                                                <f:validator binding="#{bindings.txtSupplierName.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:gridCell>
                                         <af:gridCell id="gc24" width="13%" halign="center" valign="middle">
-                                            <af:outputLabel value="#{bindings.txtDemandHeaderCode.hints.label}"
+                                            <af:outputLabel value="#{bindings.txtPoHeaderCode.hints.label}"
                                                             id="ol11"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc25" width="20%" halign="stretch" valign="middle">
-                                            <af:inputText value="#{bindings.txtDemandHeaderCode.inputValue}"
-                                                          label="#{bindings.txtDemandHeaderCode.hints.label}"
-                                                          required="#{bindings.txtDemandHeaderCode.hints.mandatory}"
-                                                          columns="#{bindings.txtDemandHeaderCode.hints.displayWidth}"
-                                                          maximumLength="#{bindings.txtDemandHeaderCode.hints.precision}"
-                                                          shortDesc="#{bindings.txtDemandHeaderCode.hints.tooltip}"
-                                                          id="it14" simple="true" readOnly="true"
-                                                          partialTriggers="txtRfqHeaderCodeId">
-                                                <f:validator binding="#{bindings.txtDemandHeaderCode.validator}"/>
+                                            <af:inputComboboxListOfValues id="txtPoHeaderCodeId"
+                                                                          popupTitle="Search and Select: #{bindings.txtPoHeaderCode.hints.label}"
+                                                                          value="#{bindings.txtPoHeaderCode.inputValue}"
+                                                                          label="#{bindings.txtPoHeaderCode.hints.label}"
+                                                                          model="#{bindings.txtPoHeaderCode.listOfValuesModel}"
+                                                                          required="#{bindings.txtPoHeaderCode.hints.mandatory}"
+                                                                          columns="#{bindings.txtPoHeaderCode.hints.displayWidth}"
+                                                                          shortDesc="#{bindings.txtPoHeaderCode.hints.tooltip}"
+                                                                          simple="true">
+                                                <f:validator binding="#{bindings.txtPoHeaderCode.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.txtDemandHeaderCode.format}"/>
-                                            </af:inputText>
+                                                                  pattern="#{bindings.txtPoHeaderCode.format}"/>
+                                            </af:inputComboboxListOfValues>
                                         </af:gridCell>
                                         <af:gridCell id="gc26" width="13%" halign="center" valign="middle">
                                             <af:outputLabel value="#{bindings.txtTempProjectName.hints.label}"

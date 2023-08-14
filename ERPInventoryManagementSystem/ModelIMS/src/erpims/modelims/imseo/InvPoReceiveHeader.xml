@@ -633,7 +633,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    TableName="INV_PO_RECEIVE_HEADER"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
@@ -641,6 +640,47 @@
     <Dependencies>
       <Item
         Value="LocationId"/>
+    </Dependencies>
+  </Attribute>
+  <Attribute
+    Name="txtSupplierName"
+    Precision="80"
+    ColumnName="TXT_SUPPLIER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ScmSupplier?.SupplierName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="SupplierSno"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtSupplierName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtTempProjectName"
+    Precision="100"
+    IsPersistent="false"
+    IsQueriable="false"
+    ColumnName="TXT_TEMP_PROJECT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="INV_PO_RECEIVE_HEADER">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[GlProjects?.ProjectName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="TempProjectId"/>
     </Dependencies>
   </Attribute>
   <AccessorAttribute
@@ -663,6 +703,20 @@
     AssociationEnd="erpims.modelims.imseo.AdminCompanyInvPurchaseOrderReceivingLocationIdAssoc.AdminCompany"
     AssociationOtherEnd="erpims.modelims.imseo.AdminCompanyInvPurchaseOrderReceivingLocationIdAssoc.InvPoReceiveHeader"
     Type="erpadm.modeladm.admeo.AdminCompanyImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ScmSupplier"
+    Association="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc"
+    AssociationEnd="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc.ScmSupplier"
+    AssociationOtherEnd="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc.InvPoReceiveHeader"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="GlProjects"
+    Association="erpims.modelims.imseo.GlProjectsInvPoReceiveHeaderProjectSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.GlProjectsInvPoReceiveHeaderProjectSnoAssoc.GlProjects"
+    AssociationOtherEnd="erpims.modelims.imseo.GlProjectsInvPoReceiveHeaderProjectSnoAssoc.InvPoReceiveHeader"
+    Type="erpfms.modelfms.fmseo.GlProjectsImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkInvPoReceiveHeader"
@@ -705,6 +759,28 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.LocationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvPoReceiveHeader2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_SCM_SUPPLIER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_PO_RECEIVE_HEADER2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.SupplierSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvPoReceiveHeader3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_PROJECTS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_PO_RECEIVE_HEADER3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.TempProjectId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>
