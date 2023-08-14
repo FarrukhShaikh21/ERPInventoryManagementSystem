@@ -126,7 +126,21 @@
   </ViewUsage>
   <ViewUsage
     Name="InvPoReceiveHeaderRO"
-    ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO"/>
+    ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO">
+    <ViewCriteriaUsage
+      Name="InvPoReceivingLocationAccessWiseVC"
+      FullName="erpims.modelims.imsvo.InvPoReceiveHeaderVO.InvPoReceivingLocationAccessWiseVC"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="InvPoReceiveHeaderCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO">
+    <ViewCriteriaUsage
+      Name="InvPoReceiveHeaderByPoReceiveSnoVC"
+      FullName="erpims.modelims.imsvo.InvPoReceiveHeaderVO.InvPoReceiveHeaderByPoReceiveSnoVC"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="InvPoReceiveLinesDetCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvPoReceiveLinesVO"/>
   <ViewLinkUsage
     Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
     ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
@@ -138,5 +152,11 @@
     ViewLinkObjectName="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"
     SrcViewUsageName="erpims.modelims.imsam.ERPINVModule.InvInventoryOrgCRUD"
     DstViewUsageName="erpims.modelims.imsam.ERPINVModule.InvSubinventoryOrgDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkInvPoRecLinesHeaderSnoLink1"
+    ViewLinkObjectName="erpims.modelims.imsvo.FkInvPoRecLinesHeaderSnoLink"
+    SrcViewUsageName="erpims.modelims.imsam.ERPINVModule.InvPoReceiveHeaderCRUD"
+    DstViewUsageName="erpims.modelims.imsam.ERPINVModule.InvPoReceiveLinesDetCRUD"
     Reversed="false"/>
 </AppModule>
