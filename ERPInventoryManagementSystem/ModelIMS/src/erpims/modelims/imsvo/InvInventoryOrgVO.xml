@@ -930,6 +930,11 @@
     ViewLink="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvPoReceiveHeaderVO"
+    ViewLink="erpims.modelims.imsvo.InvInventoryOrgInvPoRecHeadInventoryOrgSnoLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpims.modelims.ModelIMSBundle"/>

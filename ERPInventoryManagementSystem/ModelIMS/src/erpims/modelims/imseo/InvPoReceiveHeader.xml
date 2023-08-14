@@ -714,6 +714,43 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="ReferenceNo"
+    Precision="50"
+    ColumnName="REFERENCE_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_PO_RECEIVE_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.ReferenceNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="2"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtOrgDescription"
+    Precision="80"
+    ColumnName="TXT_ORG_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_PO_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtOrgDescription_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveLines"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
@@ -755,6 +792,13 @@
     AssociationEnd="erpims.modelims.imseo.AdminCompanyInvPoReceiveTempDepartmentIdAssoc.AdminCompany1"
     AssociationOtherEnd="erpims.modelims.imseo.AdminCompanyInvPoReceiveTempDepartmentIdAssoc.InvPoReceiveHeader"
     Type="erpadm.modeladm.admeo.AdminCompanyImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvInventoryOrg"
+    Association="erpims.modelims.imseo.InvInventoryOrgInvPoRecHeadInventoryOrgSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.InvInventoryOrgInvPoRecHeadInventoryOrgSnoAssoc.InvInventoryOrg"
+    AssociationOtherEnd="erpims.modelims.imseo.InvInventoryOrgInvPoRecHeadInventoryOrgSnoAssoc.InvPoReceiveHeader"
+    Type="erpims.modelims.imseo.InvInventoryOrgImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkInvPoReceiveHeader"
@@ -830,6 +874,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.TempDepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvPoReceiveHeader5">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_INV_INVENTORY_ORG"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_PO_RECEIVE_HEADER5"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.InventoryOrgSno"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

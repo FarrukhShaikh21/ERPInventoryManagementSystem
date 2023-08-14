@@ -418,6 +418,12 @@
     EntityAttrName="txtTempDepartmentName"
     EntityUsage="InvPoReceiveHeader"
     AliasName="TXT_TEMP_DEPARTMENT_NAME"/>
+  <ViewAttribute
+    Name="ReferenceNo"
+    PrecisionRule="true"
+    EntityAttrName="ReferenceNo"
+    EntityUsage="InvPoReceiveHeader"
+    AliasName="REFERENCE_NO"/>
   <ViewCriteria
     Name="InvPoReceiveHeaderByLocationIdVC"
     ViewObjectName="erpims.modelims.imsvo.InvPoReceiveHeaderVO"
@@ -590,6 +596,12 @@
   <ViewLinkAccessor
     Name="AdminCompanyVO1"
     ViewLink="erpims.modelims.imsvo.AdminCompanyInvPoReceiveTempDepartmentIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvInventoryOrgVO"
+    ViewLink="erpims.modelims.imsvo.InvInventoryOrgInvPoRecHeadInventoryOrgSnoLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

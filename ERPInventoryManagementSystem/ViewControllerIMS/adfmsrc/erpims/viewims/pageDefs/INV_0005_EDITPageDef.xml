@@ -71,5 +71,17 @@
         <Item Value="ShippedDate"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="InvPoReceiveHeaderCRUDIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="InvPoReceiveHeaderCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPINVModuleDataControl"/>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="ReferenceNo">
+      <AttrNames>
+        <Item Value="ReferenceNo"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
