@@ -33,6 +33,10 @@
     Name="AccScmSupplierVO"
     ViewObjectName="erpims.modelims.imsrefvo.ScmSupplierVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSysApprovalStatusVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysApprovalStatusVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtPoHeaderCode"
     ListVOName="AccScmPurchaseOrderHeaderVO"
@@ -107,6 +111,24 @@
       <Item Value="SupplierName"/>
       <Item Value="SupplierShortCode"/>
       <Item Value="SupplierShortName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovApprovalStatusSno"
+    ListVOName="AccSysApprovalStatusVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ApprovalStatusSno"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ApprovalStatusSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ApprovalStatusSno"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -317,7 +339,15 @@
     PrecisionRule="true"
     EntityAttrName="ApprovalStatusSno"
     EntityUsage="InvPoReceiveHeader"
-    AliasName="APPROVAL_STATUS_SNO"/>
+    AliasName="APPROVAL_STATUS_SNO"
+    LOVName="LovApprovalStatusSno">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DeliveryTermSno"
     PrecisionRule="true"

@@ -39,5 +39,37 @@
         <Item Value="txtTempDepartmentName"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovApprovalStatusSno"
+          id="ApprovalStatusSno" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="IsUnsupervised">
+      <AttrNames>
+        <Item Value="IsUnsupervised"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="IsCancelled">
+      <AttrNames>
+        <Item Value="IsCancelled"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="IsSupervised">
+      <AttrNames>
+        <Item Value="IsSupervised"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="DeliveryNote">
+      <AttrNames>
+        <Item Value="DeliveryNote"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="ShippedDate">
+      <AttrNames>
+        <Item Value="ShippedDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

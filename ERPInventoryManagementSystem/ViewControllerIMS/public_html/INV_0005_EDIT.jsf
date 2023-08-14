@@ -951,9 +951,21 @@
                                                 <f:validator binding="#{bindings.txtTempDepartmentName.validator}"/>
                                             </af:inputText>
                                         </af:gridCell>
-                                        <af:gridCell width="13%" id="gc13" halign="center" valign="middle"/>
+                                        <af:gridCell width="13%" id="gc13" halign="center" valign="middle">
+                                            <af:outputLabel value="#{bindings.ShippedDate.hints.label}" id="ol9"/>
+                                        </af:gridCell>
                                         <af:gridCell marginStart="5px" width="20%" id="gc14" halign="stretch"
-                                                     valign="middle"/>
+                                                     valign="middle">
+                                            <af:inputDate value="#{bindings.ShippedDate.inputValue}"
+                                                          label="#{bindings.ShippedDate.hints.label}"
+                                                          required="#{bindings.ShippedDate.hints.mandatory}"
+                                                          columns="#{bindings.ShippedDate.hints.displayWidth}"
+                                                          shortDesc="#{bindings.ShippedDate.hints.tooltip}" id="id1"
+                                                          simple="true">
+                                                <f:validator binding="#{bindings.ShippedDate.validator}"/>
+                                                <af:convertDateTime pattern="#{bindings.ShippedDate.format}"/>
+                                            </af:inputDate>
+                                        </af:gridCell>
                                         <af:gridCell id="gc12" width="13%" marginStart="5px" marginEnd="5px"
                                                      halign="center" valign="middle">
                                             <af:outputLabel value="#{bindings.ApprovalStatusSno.label}" id="ol7"/>
@@ -985,33 +997,27 @@
                                             </af:panelGroupLayout>
                                         </af:gridCell>
                                     </af:gridRow>
+                                    <af:gridRow id="gr11">
+                                        <af:gridCell id="gc2" width="13%" halign="center">
+                                            <af:outputLabel value="#{bindings.DeliveryNote.hints.label}" id="ol8"/>
+                                        </af:gridCell>
+                                        <af:gridCell id="gc28" columnSpan="5" halign="stretch" valign="middle">
+                                            <af:inputText value="#{bindings.DeliveryNote.inputValue}"
+                                                          label="#{bindings.DeliveryNote.hints.label}"
+                                                          required="#{bindings.DeliveryNote.hints.mandatory}"
+                                                          columns="#{bindings.DeliveryNote.hints.displayWidth}"
+                                                          maximumLength="#{bindings.DeliveryNote.hints.precision}"
+                                                          shortDesc="#{bindings.DeliveryNote.hints.tooltip}" id="it6"
+                                                          simple="true" contentStyle="width:100%">
+                                                <f:validator binding="#{bindings.DeliveryNote.validator}"/>
+                                            </af:inputText>
+                                        </af:gridCell>
+                                    </af:gridRow>
                                     <af:gridRow id="gr6" marginTop="5px" marginBottom="5px">
                                         <af:gridCell id="gc16" width="13%" halign="center">
                                             <af:outputLabel value="#{bindings.Remarks.hints.label}" id="ol6"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc17" columnSpan="5" halign="stretch" valign="middle">
-                                            <af:inputText value="#{bindings.txtCountComparisonItem.inputValue}"
-                                                          label="#{bindings.txtCountComparisonItem.hints.label}"
-                                                          required="#{bindings.txtCountComparisonItem.hints.mandatory}"
-                                                          columns="#{bindings.txtCountComparisonItem.hints.displayWidth}"
-                                                          maximumLength="#{bindings.txtCountComparisonItem.hints.precision}"
-                                                          shortDesc="#{bindings.txtCountComparisonItem.hints.tooltip}"
-                                                          id="it55" rendered="false">
-                                                <f:validator binding="#{bindings.txtCountComparisonItem.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.txtCountComparisonItem.format}"/>
-                                            </af:inputText>
-                                            <af:inputText value="#{bindings.txtCountItemBid.inputValue}"
-                                                          label="#{bindings.txtCountItemBid.hints.label}"
-                                                          required="#{bindings.txtCountItemBid.hints.mandatory}"
-                                                          columns="#{bindings.txtCountItemBid.hints.displayWidth}"
-                                                          maximumLength="#{bindings.txtCountItemBid.hints.precision}"
-                                                          shortDesc="#{bindings.txtCountItemBid.hints.tooltip}"
-                                                          id="it54" rendered="false">
-                                                <f:validator binding="#{bindings.txtCountItemBid.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.txtCountItemBid.format}"/>
-                                            </af:inputText>
                                             <af:inputText value="#{bindings.Remarks.inputValue}"
                                                           label="#{bindings.Remarks.hints.label}"
                                                           required="#{bindings.Remarks.hints.mandatory}"
@@ -1020,15 +1026,6 @@
                                                           shortDesc="#{bindings.Remarks.hints.tooltip}" id="it2"
                                                           simple="true" contentStyle="width:100%">
                                                 <f:validator binding="#{bindings.Remarks.validator}"/>
-                                            </af:inputText>
-                                            <af:inputText value="#{bindings.txtMaxItemNameForMsg.inputValue}"
-                                                          label="#{bindings.txtMaxItemNameForMsg.hints.label}"
-                                                          required="#{bindings.txtMaxItemNameForMsg.hints.mandatory}"
-                                                          columns="#{bindings.txtMaxItemNameForMsg.hints.displayWidth}"
-                                                          maximumLength="#{bindings.txtMaxItemNameForMsg.hints.precision}"
-                                                          shortDesc="#{bindings.txtMaxItemNameForMsg.hints.tooltip}"
-                                                          id="it56" rendered="false">
-                                                <f:validator binding="#{bindings.txtMaxItemNameForMsg.validator}"/>
                                             </af:inputText>
                                         </af:gridCell>
                                     </af:gridRow>
