@@ -504,9 +504,9 @@
     TableName="SCM_SUPPLIER"/>
   <AccessorAttribute
     Name="InvPoReceiveHeader"
-    Association="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc"
-    AssociationEnd="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc.InvPoReceiveHeader"
-    AssociationOtherEnd="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc.ScmSupplier"
+    Association="erpims.modelims.imsvo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc"
+    AssociationEnd="erpims.modelims.imsvo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc.InvPoReceiveHeader"
+    AssociationOtherEnd="erpims.modelims.imsvo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc.ScmSupplier"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <AccessorAttribute

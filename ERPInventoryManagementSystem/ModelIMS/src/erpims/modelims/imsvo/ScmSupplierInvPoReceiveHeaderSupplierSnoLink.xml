@@ -6,7 +6,7 @@
   Name="ScmSupplierInvPoReceiveHeaderSupplierSnoLink"
   Version="12.1.3.10.47"
   InheritPersonalization="merge"
-  EntityAssociation="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc">
+  EntityAssociation="erpims.modelims.imsvo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
