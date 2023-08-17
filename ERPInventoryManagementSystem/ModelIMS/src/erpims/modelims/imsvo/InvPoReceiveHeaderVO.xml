@@ -96,10 +96,16 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="PoHeaderSno"/>
+      <Item Value="SupplierSno"/>
+      <Item Value="TempDepartmentId"/>
+      <Item Value="TempProjectId"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="PoHeaderCode"/>
       <Item Value="PoHeaderSno"/>
+      <Item Value="SupplierSno"/>
+      <Item Value="TempDepartmentId"/>
+      <Item Value="TempProjectId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PoHeaderCode"/>

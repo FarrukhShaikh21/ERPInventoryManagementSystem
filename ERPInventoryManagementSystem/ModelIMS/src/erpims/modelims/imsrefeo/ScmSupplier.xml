@@ -509,6 +509,13 @@
     AssociationOtherEnd="erpims.modelims.imsrefeo.ScmSupplierInvPoReceiveHeaderSupplierSnoAssoc.ScmSupplier"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ScmPurchaseOrderHeader"
+    Association="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmPurchaseOrderHeader"
+    AssociationOtherEnd="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmSupplier"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkScmSupplier"
     PrimaryKey="true">
