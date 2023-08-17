@@ -141,6 +141,9 @@
   <ViewUsage
     Name="InvPoReceiveLinesDetCRUD"
     ViewObjectName="erpims.modelims.imsvo.InvPoReceiveLinesVO"/>
+  <ViewUsage
+    Name="ScmPurchaseOrderHeaderVO1"
+    ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO"/>
   <ViewLinkUsage
     Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
     ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"

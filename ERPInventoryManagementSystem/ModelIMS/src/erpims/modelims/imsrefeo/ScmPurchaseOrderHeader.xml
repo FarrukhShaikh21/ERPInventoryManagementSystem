@@ -735,6 +735,31 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtSupplierName"
+    Precision="80"
+    ColumnName="TXT_SUPPLIER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="SCM_PURCHASE_ORDER_HEADER"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ScmSupplier?.SupplierName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imsrefeo.ScmPurchaseOrderHeader.txtSupplierName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="SupplierSno"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="ScmPurchaseOrderLines"
     Association="erpims.modelims.imsrefeo.FkScmPurOrdLinPoHeadSnoAssoc"

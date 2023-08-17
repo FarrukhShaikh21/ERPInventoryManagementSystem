@@ -282,6 +282,14 @@
     EntityAttrName="DeliveryTermSno"
     EntityUsage="ScmPurchaseOrderHeader"
     AliasName="DELIVERY_TERM_SNO"/>
+  <ViewAttribute
+    Name="txtSupplierName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSupplierName"
+    EntityUsage="ScmPurchaseOrderHeader"
+    AliasName="TXT_SUPPLIER_NAME"/>
   <ViewCriteria
     Name="ScmPurchaseOrderHeaderByLocationVC"
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO"
