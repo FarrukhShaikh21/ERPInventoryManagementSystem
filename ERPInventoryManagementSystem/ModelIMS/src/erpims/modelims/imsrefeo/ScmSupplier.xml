@@ -511,11 +511,12 @@
     IsUpdateable="false"/>
   <AccessorAttribute
     Name="ScmPurchaseOrderHeader"
-    Association="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc"
-    AssociationEnd="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmPurchaseOrderHeader"
-    AssociationOtherEnd="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmSupplier"
+    Association="erpims.modelims.imsrefeo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc"
+    AssociationEnd="erpims.modelims.imsrefeo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmPurchaseOrderHeader"
+    AssociationOtherEnd="erpims.modelims.imsrefeo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmSupplier"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+
   <Key
     Name="PkScmSupplier"
     PrimaryKey="true">

@@ -751,9 +751,9 @@
     IsUpdateable="false"/>
   <AccessorAttribute
     Name="ScmSupplier"
-    Association="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc"
-    AssociationEnd="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmSupplier"
-    AssociationOtherEnd="erpims.modelims.imseo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmPurchaseOrderHeader"
+    Association="erpims.modelims.imsrefeo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc"
+    AssociationEnd="erpims.modelims.imsrefeo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmSupplier"
+    AssociationOtherEnd="erpims.modelims.imsrefeo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoAssoc.ScmPurchaseOrderHeader"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
