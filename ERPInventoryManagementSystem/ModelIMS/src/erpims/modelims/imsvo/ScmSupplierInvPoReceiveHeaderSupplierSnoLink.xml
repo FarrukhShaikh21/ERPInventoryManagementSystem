@@ -10,7 +10,7 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="erpims.modelims.imsrefvo.ScmSupplierInvPoReceiveHeaderSupplierSnoLink_LABEL"/>
+        ResId="erpims.modelims.imsvo.ScmSupplierInvPoReceiveHeaderSupplierSnoLink_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd

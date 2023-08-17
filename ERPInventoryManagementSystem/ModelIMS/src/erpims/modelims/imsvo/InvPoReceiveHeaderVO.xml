@@ -677,7 +677,7 @@
     IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="ScmSupplierVO"
-    ViewLink="erpims.modelims.imsrefvo.ScmSupplierInvPoReceiveHeaderSupplierSnoLink"
+    ViewLink="erpims.modelims.imsvo.ScmSupplierInvPoReceiveHeaderSupplierSnoLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
