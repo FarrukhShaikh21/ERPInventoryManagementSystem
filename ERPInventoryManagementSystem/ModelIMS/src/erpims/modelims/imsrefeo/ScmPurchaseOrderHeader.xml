@@ -742,7 +742,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="SCM_PURCHASE_ORDER_HEADER"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
