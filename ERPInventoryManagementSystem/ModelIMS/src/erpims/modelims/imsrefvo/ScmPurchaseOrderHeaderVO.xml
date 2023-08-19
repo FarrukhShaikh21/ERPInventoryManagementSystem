@@ -407,6 +407,13 @@
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
+        Name="IsCancelled"
+        ViewAttribute="IsCancelled"
+        Operator="="
+        Conjunction="AND"
+        Value="N"
+        Required="Optional"/>
+      <ViewCriteriaItem
         Name="ScmPurchaseOrderLinesVO"
         ViewAttribute="ScmPurchaseOrderLinesVO"
         Operator="EXISTS"

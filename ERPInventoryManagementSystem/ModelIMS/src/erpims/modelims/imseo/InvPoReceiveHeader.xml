@@ -766,6 +766,51 @@
         Value="InventoryOrgSno"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtDeliveryTerm"
+    Precision="80"
+    ColumnName="TXT_DELIVERY_TERM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ScmDeliveryTerm?.DeliveryTermName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="DeliveryTermSno"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtDeliveryTerm_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtDeliveryTermName"
+    Precision="80"
+    ColumnName="TXT_DELIVERY_TERM_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_PO_RECEIVE_HEADER"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ScmDeliveryTerm?.DeliveryTermName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtDeliveryTermName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveLines"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
@@ -814,6 +859,13 @@
     AssociationEnd="erpims.modelims.imseo.InvInventoryOrgInvPoRecHeadInventoryOrgSnoAssoc.InvInventoryOrg"
     AssociationOtherEnd="erpims.modelims.imseo.InvInventoryOrgInvPoRecHeadInventoryOrgSnoAssoc.InvPoReceiveHeader"
     Type="erpims.modelims.imseo.InvInventoryOrgImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ScmDeliveryTerm"
+    Association="erpims.modelims.imsrefeo.ScmDeliveryTermsInvPoReceiveHeaderDeliveryTermSnoAssoc"
+    AssociationEnd="erpims.modelims.imsrefeo.ScmDeliveryTermsInvPoReceiveHeaderDeliveryTermSnoAssoc.ScmDeliveryTerm"
+    AssociationOtherEnd="erpims.modelims.imsrefeo.ScmDeliveryTermsInvPoReceiveHeaderDeliveryTermSnoAssoc.InvPoReceiveHeader"
+    Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkInvPoReceiveHeader"
@@ -900,6 +952,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.InventoryOrgSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvPoReceiveHeader6">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_SCM_DELIVERY_TERM"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_PO_RECEIVE_HEADER6"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvPoReceiveHeader.DeliveryTermSno"/>
     </AttrArray>
   </Key>
   <ResourceBundle>
