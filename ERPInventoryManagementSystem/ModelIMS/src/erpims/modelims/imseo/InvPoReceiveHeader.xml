@@ -767,37 +767,12 @@
     </Dependencies>
   </Attribute>
   <Attribute
-    Name="txtDeliveryTerm"
-    Precision="80"
-    ColumnName="TXT_DELIVERY_TERM"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="CHAR"
-    IsPersistent="false"
-    IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[ScmDeliveryTerm?.DeliveryTermName]]></TransientExpression>
-    <Dependencies>
-      <Item
-        Value="DeliveryTermSno"/>
-    </Dependencies>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvPoReceiveHeader.txtDeliveryTerm_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
     Name="txtDeliveryTermName"
     Precision="80"
     ColumnName="TXT_DELIVERY_TERM_NAME"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_PO_RECEIVE_HEADER"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
