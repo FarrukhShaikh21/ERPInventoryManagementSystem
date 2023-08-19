@@ -361,10 +361,26 @@
                                             </af:inputText>
                                         </af:gridCell>
                                         <af:gridCell id="gc2" width="13%" halign="center">
-                                            <af:outputLabel value="#{bindings.DeliveryNote.hints.label}" id="ol8"/>
+                                            <af:outputLabel value="#{bindings.txtDeliveryTermName.hints.label}" id="ol14"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc28" columnSpan="1" halign="stretch" valign="middle"
                                                      width="21%" rowSpan="1">
+                                            <af:inputText value="#{bindings.txtDeliveryTermName.inputValue}"
+                                                          label="#{bindings.txtDeliveryTermName.hints.label}"
+                                                          required="#{bindings.txtDeliveryTermName.hints.mandatory}"
+                                                          columns="#{bindings.txtDeliveryTermName.hints.displayWidth}"
+                                                          maximumLength="#{bindings.txtDeliveryTermName.hints.precision}"
+                                                          shortDesc="#{bindings.txtDeliveryTermName.hints.tooltip}"
+                                                          id="it11" simple="true" readOnly="true">
+                                                <f:validator binding="#{bindings.txtDeliveryTermName.validator}"/>
+                                            </af:inputText>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow id="gr12">
+                                        <af:gridCell id="gc34" width="13%">
+                                            <af:outputLabel value="#{bindings.DeliveryNote.hints.label}" id="ol8"/>
+                                        </af:gridCell>
+                                        <af:gridCell id="gc35" width="87%" columnSpan="5" halign="stretch">
                                             <af:inputText value="#{bindings.DeliveryNote.inputValue}"
                                                           label="#{bindings.DeliveryNote.hints.label}"
                                                           required="#{bindings.DeliveryNote.hints.mandatory}"

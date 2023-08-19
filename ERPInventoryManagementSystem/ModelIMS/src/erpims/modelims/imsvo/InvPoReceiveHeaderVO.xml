@@ -116,6 +116,7 @@
       <Item Value="SupplierSno"/>
       <Item Value="TempDepartmentId"/>
       <Item Value="TempProjectId"/>
+      <Item Value="DeliveryTermSno"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="PoHeaderCode"/>
@@ -123,6 +124,7 @@
       <Item Value="SupplierSno"/>
       <Item Value="TempDepartmentId"/>
       <Item Value="TempProjectId"/>
+      <Item Value="DeliveryTermSno"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PoHeaderCode"/>
