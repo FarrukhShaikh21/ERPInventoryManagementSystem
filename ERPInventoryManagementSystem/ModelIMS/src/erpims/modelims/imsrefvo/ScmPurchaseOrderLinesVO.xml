@@ -254,6 +254,18 @@
     EntityAttrName="SubinventoryOrgSno"
     EntityUsage="ScmPurchaseOrderLines"
     AliasName="SUBINVENTORY_ORG_SNO"/>
+  <ViewAttribute
+    Name="IsComplete"
+    PrecisionRule="true"
+    EntityAttrName="IsComplete"
+    EntityUsage="ScmPurchaseOrderLines"
+    AliasName="IS_COMPLETE"/>
+  <ViewAttribute
+    Name="RemainingBalance"
+    PrecisionRule="true"
+    EntityAttrName="RemainingBalance"
+    EntityUsage="ScmPurchaseOrderLines"
+    AliasName="REMAINING_BALANCE"/>
   <ViewCriteria
     Name="ScmPurchaseOrderLinesByPoHeaderSnoVC"
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO"

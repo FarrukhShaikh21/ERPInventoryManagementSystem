@@ -428,6 +428,14 @@
               Value=":P_ADF_INVENTORY_ORG_SNO"
               IsBindVarValue="true"
               Required="Optional"/>
+            <ViewCriteriaItem
+              Name="IsComplete"
+              ViewAttribute="IsComplete"
+              Operator="="
+              Conjunction="AND"
+              Value="N"
+              UpperColumns="0"
+              Required="Optional"/>
           </ViewCriteriaRow>
         </ViewCriteria>
       </ViewCriteriaItem>
