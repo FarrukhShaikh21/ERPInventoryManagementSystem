@@ -199,7 +199,7 @@
       <Item Value="ApprovalStatusSno"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ApprovalStatusSno"/>
+      <Item Value="StatusDescription"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
