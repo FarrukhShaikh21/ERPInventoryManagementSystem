@@ -109,8 +109,13 @@
           <Item Value="ItemRemarks"/>
           <Item Value="PoQuantity"/>
           <Item Value="txtNetReceived"/>
+          <Item Value="txtPoQuantity"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="InvPoReceiveLinesDetCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="InvPoReceiveLinesDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

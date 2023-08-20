@@ -9,7 +9,11 @@
   DBObjectType="table"
   DBObjectName="INV_PO_RECEIVE_HEADER"
   AliasName="InvPoReceiveHeader"
-  BindingStyle="JDBC">
+  BindingStyle="JDBC"
+  RowClass="erpglobals.modelglobals.ERPEntityImpl">
+  <DesignTime>
+    <Attr Name="_superClass" Value="erpglobals.modelglobals.ERPEntityImpl"/>
+  </DesignTime>
   <Attribute
     Name="PoReceiveHeaderSno"
     IsNotNull="true"
