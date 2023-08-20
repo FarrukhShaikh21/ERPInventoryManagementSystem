@@ -529,6 +529,13 @@
     AssociationOtherEnd="erpims.modelims.imseo.InvInvOrgInvSubinvOrgInventoryOrgSnoAsso.InvSubinventoryOrg"
     Type="erpims.modelims.imseo.InvInventoryOrgImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvPoReceiveLines"
+    Association="erpims.modelims.imseo.InvSubinvOrgInvPoRecLinesSubinventoryOrgSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.InvSubinvOrgInvPoRecLinesSubinventoryOrgSnoAssoc.InvPoReceiveLines"
+    AssociationOtherEnd="erpims.modelims.imseo.InvSubinvOrgInvPoRecLinesSubinventoryOrgSnoAssoc.InvSubinventoryOrg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="InvSubinventoryOrgIsActiveCheck">
     <DesignTime>

@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 import oracle.jbo.Row;
+import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
 import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
@@ -15,6 +16,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
+
     public static final int ENTITY_INVSUBINVENTORYORG = 0;
 
     /**
@@ -49,9 +51,11 @@ public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
         txtInventoryOrgName,
         CompanyId,
         InvInventoryOrgVO,
+        InvPoReceiveLinesVO,
         AccSysGeneralValueVO,
         AccSysGeneralValueActiveVO;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -73,6 +77,7 @@ public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int SUBINVENTORYORGSNO = AttributesEnum.SubinventoryOrgSno.index();
     public static final int SUBINVENTORYORGCODE = AttributesEnum.SubinventoryOrgCode.index();
     public static final int SUBINVENTORYORGSHORTNAME = AttributesEnum.SubinventoryOrgShortName.index();
@@ -101,6 +106,7 @@ public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
     public static final int TXTINVENTORYORGNAME = AttributesEnum.txtInventoryOrgName.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int INVINVENTORYORGVO = AttributesEnum.InvInventoryOrgVO.index();
+    public static final int INVPORECEIVELINESVO = AttributesEnum.InvPoReceiveLinesVO.index();
     public static final int ACCSYSGENERALVALUEVO = AttributesEnum.AccSysGeneralValueVO.index();
     public static final int ACCSYSGENERALVALUEACTIVEVO = AttributesEnum.AccSysGeneralValueActiveVO.index();
 
@@ -562,6 +568,13 @@ public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
      */
     public void setInvInventoryOrgVO(Row value) {
         setAttributeInternal(INVINVENTORYORGVO, value);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link InvPoReceiveLinesVO.
+     */
+    public RowIterator getInvPoReceiveLinesVO() {
+        return (RowIterator) getAttributeInternal(INVPORECEIVELINESVO);
     }
 
     /**

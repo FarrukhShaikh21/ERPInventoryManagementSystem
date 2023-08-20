@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
 // ---------------------------------------------------------------------
@@ -48,7 +49,8 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
         IsActive,
         txtInventoryOrgName,
         CompanyId,
-        InvInventoryOrg;
+        InvInventoryOrg,
+        InvPoReceiveLines;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -101,6 +103,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
     public static final int TXTINVENTORYORGNAME = AttributesEnum.txtInventoryOrgName.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
+    public static final int INVPORECEIVELINES = AttributesEnum.InvPoReceiveLines.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -560,6 +563,14 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
      */
     public void setInvInventoryOrg(InvInventoryOrgImpl value) {
         setAttributeInternal(INVINVENTORYORG, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInvPoReceiveLines() {
+        return (RowIterator) getAttributeInternal(INVPORECEIVELINES);
     }
 
 

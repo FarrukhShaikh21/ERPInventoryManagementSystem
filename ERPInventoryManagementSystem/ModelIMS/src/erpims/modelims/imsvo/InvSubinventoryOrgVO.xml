@@ -396,21 +396,18 @@
         ViewAttribute="SubinventoryOrgCode"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="SubinventoryOrgShortName"
         ViewAttribute="SubinventoryOrgShortName"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="SubinventoryDescription"
         ViewAttribute="SubinventoryDescription"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="InvInventoryOrgVO"
@@ -431,21 +428,18 @@
               ViewAttribute="InventoryOrgCode"
               Operator="="
               Conjunction="AND"
-              Value=""
               Required="Optional"/>
             <ViewCriteriaItem
               Name="OrgShortName"
               ViewAttribute="OrgShortName"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               Required="Optional"/>
             <ViewCriteriaItem
               Name="OrgDescription"
               ViewAttribute="OrgDescription"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               Required="Optional"/>
           </ViewCriteriaRow>
         </ViewCriteria>
@@ -457,5 +451,10 @@
     ViewLink="erpims.modelims.imsvo.InvInvOrgInvSubinvOrgInventoryOrgSnoVL"
     Type="oracle.jbo.Row"
     Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvPoReceiveLinesVO"
+    ViewLink="erpims.modelims.imsvo.InvSubinvOrgInvPoRecLinesSubinventoryOrgSnoLink"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
