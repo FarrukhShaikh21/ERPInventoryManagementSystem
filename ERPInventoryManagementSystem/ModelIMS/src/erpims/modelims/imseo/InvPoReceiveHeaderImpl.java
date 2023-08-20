@@ -98,6 +98,8 @@ public class InvPoReceiveHeaderImpl extends ERPEntityImpl {
             return vals;
         }
     }
+
+
     public static final int PORECEIVEHEADERSNO = AttributesEnum.PoReceiveHeaderSno.index();
     public static final int PORECEIVEHEADERCODE = AttributesEnum.PoReceiveHeaderCode.index();
     public static final int POHEADERSNO = AttributesEnum.PoHeaderSno.index();
@@ -152,6 +154,14 @@ public class InvPoReceiveHeaderImpl extends ERPEntityImpl {
      */
     public InvPoReceiveHeaderImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvPoReceiveHeader");
+    }
+
 
     /**
      * Gets the attribute value for PoReceiveHeaderSno, using the alias name PoReceiveHeaderSno.
@@ -898,6 +908,7 @@ public class InvPoReceiveHeaderImpl extends ERPEntityImpl {
         setAttributeInternal(SCMDELIVERYTERM, value);
     }
 
+
     /**
      * @param poReceiveHeaderSno key constituent
 
@@ -905,13 +916,6 @@ public class InvPoReceiveHeaderImpl extends ERPEntityImpl {
      */
     public static Key createPrimaryKey(Integer poReceiveHeaderSno) {
         return new Key(new Object[] { poReceiveHeaderSno });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpims.modelims.imseo.InvPoReceiveHeader");
     }
 
     /**

@@ -18,7 +18,6 @@
   </DesignTime>
   <Attribute
     Name="PoReceiveHeaderSno"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="PO_RECEIVE_HEADER_SNO"
@@ -163,7 +162,6 @@
   </Attribute>
   <Attribute
     Name="ReceiveDate"
-    IsNotNull="true"
     ColumnName="RECEIVE_DATE"
     SQLType="DATE"
     Type="java.sql.Date"
@@ -219,7 +217,6 @@
   </Attribute>
   <Attribute
     Name="LocationId"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="LOCATION_ID"
@@ -264,8 +261,7 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_PO_RECEIVE_HEADER">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[erpglobals.modelglobals.ERPGlobalPLSQLClass.doGetModelGlobalDefCompany()]]></TransientExpression>
+    <TransientExpression><![CDATA[erpglobals.modelglobals.ERPGlobalPLSQLClass.doGetModelGlobalDefCompany()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -357,7 +353,7 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="INV_PO_RECEIVE_HEADER"
-    RetrievedOnUpdate="true">
+    RetrievedOnInsert="true">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
