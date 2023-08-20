@@ -272,6 +272,12 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AdminCompanyVO"
+    ViewLink="erpims.modelims.imsvo.AdminCompanyInvPoReceiveLinesDepartmentIDLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpims.modelims.ModelIMSBundle"/>
