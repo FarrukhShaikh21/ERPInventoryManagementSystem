@@ -947,7 +947,7 @@ public class InvPoReceiveHeaderImpl extends ERPEntityImpl {
                 ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "PO_RECEIVE_HEADER_CODE",
                                                               this.getEntityDef().getSource(), "COMPANY_ID",
                                                               getCompanyId().toString());
-            populateAttributeAsChanged(PORECEIVEHEADERCODE, result);
+            populateAttributeAsChanged(PORECEIVEHEADERCODE, Integer.parseInt(result));
 
         }
         super.doDML(operation, e);

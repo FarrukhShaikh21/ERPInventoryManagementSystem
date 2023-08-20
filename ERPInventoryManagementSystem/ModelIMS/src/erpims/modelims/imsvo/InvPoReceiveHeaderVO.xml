@@ -12,7 +12,15 @@
   BindingStyle="JDBC"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  ComponentClass="erpglobals.modelglobals.ERPViewObjectImpl"
+  RowClass="erpims.modelims.imsvo.InvPoReceiveHeaderVORowImpl">
+  <DesignTime>
+    <Attr Name="_objectSuperClassName" Value="erpglobals.modelglobals.ERPViewObjectImpl"/>
+    <Attr Name="_rowSuperClassName" Value="erpglobals.modelglobals.ERPViewRowImpl"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Variable
     Name="P_ADF_LOCATION_ID"
     Kind="viewcriteria"
@@ -83,6 +91,25 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+<ViewAccessor
+    Name="AccSysSystemParameterVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysSystemParameterVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SysSystemParameterByGlobalCompanyVC"
+      FullName="erpadm.modeladm.admvo.SysSystemParameterVO.SysSystemParameterByGlobalCompanyVC"/>
+    <ViewCriteriaUsage
+      Name="SysSystemParameterByParameterVC"
+      FullName="erpadm.modeladm.admvo.SysSystemParameterVO.SysSystemParameterByParameterVC"/>
+  </ViewAccessor>  
+<ViewAccessor
+    Name="AccAdminCompanyForCompVO"
+    ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AdminCompanyByCompCodeVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyByCompCodeVC"/>
+  </ViewAccessor>    
   <ViewAccessor
     Name="AccSysGeneralValueVO"
     ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
