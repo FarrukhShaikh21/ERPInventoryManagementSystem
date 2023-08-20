@@ -563,6 +563,22 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtNetReceived"
+    ColumnName="TXT_NET_RECEIVED"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="INV_PO_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveLines.txtNetReceived_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveHeader"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"

@@ -422,7 +422,7 @@
                                           rowSelection="single"
                                           fetchSize="#{bindings.InvPoReceiveLinesDetCRUD.rangeSize}" id="t1">
                                     <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.label}"
-                                               id="c1">
+                                               id="c1" width="80">
                                         <af:inputText value="#{row.bindings.LineNo.inputValue}"
                                                       label="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.label}"
                                                       required="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.mandatory}"
@@ -460,7 +460,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
-                                               id="c4">
+                                               id="c4" width="80">
                                         <af:inputText value="#{row.bindings.ReceivedQuantity.inputValue}"
                                                       label="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
                                                       required="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.mandatory}"
@@ -474,7 +474,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.label}"
-                                               id="c5">
+                                               id="c5" width="80">
                                         <af:inputText value="#{row.bindings.ExceedQuantity.inputValue}"
                                                       label="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.label}"
                                                       required="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.mandatory}"
@@ -488,7 +488,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.PoQuantity.label}"
-                                               id="c13">
+                                               id="c13" width="80">
                                         <af:inputText value="#{row.bindings.PoQuantity.inputValue}"
                                                       label="#{bindings.InvPoReceiveLinesDetCRUD.hints.PoQuantity.label}"
                                                       required="#{bindings.InvPoReceiveLinesDetCRUD.hints.PoQuantity.mandatory}"
@@ -515,18 +515,18 @@
                                                               pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.NetReceived.label}"
+                                    <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.label}"
                                                id="c7">
-                                        <af:inputText value="#{row.bindings.NetReceived.inputValue}"
-                                                      label="#{bindings.InvPoReceiveLinesDetCRUD.hints.NetReceived.label}"
-                                                      required="#{bindings.InvPoReceiveLinesDetCRUD.hints.NetReceived.mandatory}"
-                                                      columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.NetReceived.displayWidth}"
-                                                      maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.NetReceived.precision}"
-                                                      shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.NetReceived.tooltip}"
+                                        <af:inputText value="#{row.bindings.txtNetReceived.inputValue}"
+                                                      label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.label}"
+                                                      required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.mandatory}"
+                                                      columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.displayWidth}"
+                                                      maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.precision}"
+                                                      shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.tooltip}"
                                                       id="it17">
-                                            <f:validator binding="#{row.bindings.NetReceived.validator}"/>
+                                            <f:validator binding="#{row.bindings.txtNetReceived.validator}"/>
                                             <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.NetReceived.format}"/>
+                                                              pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.format}"/>
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.label}"

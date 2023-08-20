@@ -108,6 +108,7 @@
           <Item Value="ReceiveMethodSno"/>
           <Item Value="ItemRemarks"/>
           <Item Value="PoQuantity"/>
+          <Item Value="txtNetReceived"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

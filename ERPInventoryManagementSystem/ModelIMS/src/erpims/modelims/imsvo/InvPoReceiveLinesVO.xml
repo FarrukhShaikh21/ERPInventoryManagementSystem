@@ -328,6 +328,12 @@
     EntityAttrName="PoQuantity"
     EntityUsage="InvPoReceiveLines"
     AliasName="PO_QUANTITY"/>
+  <ViewAttribute
+    Name="txtNetReceived"
+    PrecisionRule="true"
+    EntityAttrName="txtNetReceived"
+    EntityUsage="InvPoReceiveLines"
+    AliasName="TXT_NET_RECEIVED"/>
   <ViewLinkAccessor
     Name="InvItemVO"
     ViewLink="erpims.modelims.imsvo.InvItemInvPoReceivingLinesItemIdLink"
