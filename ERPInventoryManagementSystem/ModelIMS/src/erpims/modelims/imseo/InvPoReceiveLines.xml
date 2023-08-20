@@ -491,6 +491,56 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtProjectName"
+    Precision="80"
+    ColumnName="TXT_PROJECT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_PO_RECEIVE_LINES"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[GlProjects?.ProjectName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveLines.txtProjectName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="ProjectId"/>
+    </Dependencies>
+  </Attribute>
+  <Attribute
+    Name="txtDepartmentName"
+    Precision="80"
+    ColumnName="TXT_DEPARTMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_PO_RECEIVE_LINES"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AdminCompany?.CompanyName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveLines.txtDepartmentName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="DepartmentId"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveHeader"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
