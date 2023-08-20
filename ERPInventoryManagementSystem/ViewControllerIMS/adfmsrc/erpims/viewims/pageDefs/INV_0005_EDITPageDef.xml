@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="InvPoReceiveHeaderCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
               id="InvPoReceiveHeaderCRUDIterator"/>
+    <iterator Binds="InvPoReceiveLinesDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvPoReceiveLinesDetCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="PoReceiveHeaderSno">
@@ -90,5 +92,24 @@
         <Item Value="txtDeliveryTermName"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="InvPoReceiveLinesDetCRUDIterator" id="InvPoReceiveLinesDetCRUD">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvPoReceiveLinesVO" Name="InvPoReceiveLinesDetCRUD0">
+        <AttrNames>
+          <Item Value="LineNo"/>
+          <Item Value="txtItemName"/>
+          <Item Value="txtUnitTypeName"/>
+          <Item Value="ReceivedQuantity"/>
+          <Item Value="ExceedQuantity"/>
+          <Item Value="RejectedQuantity"/>
+          <Item Value="NetReceived"/>
+          <Item Value="txtDepartmentName"/>
+          <Item Value="txtProjectName"/>
+          <Item Value="txtSubinventoryDescription"/>
+          <Item Value="ReceiveMethodSno"/>
+          <Item Value="ItemRemarks"/>
+          <Item Value="PoQuantity"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

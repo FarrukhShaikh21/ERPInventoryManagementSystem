@@ -34,6 +34,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccInvSubinventoryOrgVO"
+    ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtItemName"
     ListVOName="AccInvItemVO"
@@ -78,6 +82,32 @@
       <Item Value="ValueDescription"/>
     </AttrArray>
     <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtSubinventoryDescription"
+    ListVOName="AccInvSubinventoryOrgVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSubinventoryDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="SubinventoryOrgSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SubinventoryDescription"/>
+      <Item Value="SubinventoryOrgSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SubinventoryDescription"/>
+      <Item Value="SubinventoryOrgShortName"/>
+      <Item Value="SubinventoryOrgCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InvSubinventoryOrgFindVC"/>
   </ListBinding>
   <EntityUsage
     Name="InvPoReceiveLines"
@@ -270,6 +300,34 @@
     EntityAttrName="txtProjectName"
     EntityUsage="InvPoReceiveLines"
     AliasName="TXT_PROJECT_NAME"/>
+  <ViewAttribute
+    Name="txtSubinventoryDescription"
+    PrecisionRule="true"
+    EntityAttrName="txtSubinventoryDescription"
+    EntityUsage="InvPoReceiveLines"
+    AliasName="TXT_SUBINVENTORY_DESCRIPTION"
+    IsQueriable="false"
+    IsPersistent="false"
+    LOVName="LovtxtSubinventoryDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ExceedQuantity"
+    PrecisionRule="true"
+    EntityAttrName="ExceedQuantity"
+    EntityUsage="InvPoReceiveLines"
+    AliasName="EXCEED_QUANTITY"/>
+  <ViewAttribute
+    Name="PoQuantity"
+    PrecisionRule="true"
+    EntityAttrName="PoQuantity"
+    EntityUsage="InvPoReceiveLines"
+    AliasName="PO_QUANTITY"/>
   <ViewLinkAccessor
     Name="InvItemVO"
     ViewLink="erpims.modelims.imsvo.InvItemInvPoReceivingLinesItemIdLink"

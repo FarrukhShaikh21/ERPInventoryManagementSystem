@@ -539,6 +539,30 @@
         Value="DepartmentId"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtSubinventoryDescription"
+    Precision="80"
+    ColumnName="TXT_SUBINVENTORY_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InvSubinventoryOrg?.SubinventoryDescription]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="SubinventoryOrgSno"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveLines.txtSubinventoryDescription_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveHeader"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
