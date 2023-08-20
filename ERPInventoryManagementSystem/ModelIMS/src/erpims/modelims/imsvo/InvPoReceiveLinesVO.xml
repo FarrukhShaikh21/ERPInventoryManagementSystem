@@ -17,6 +17,23 @@
     Name="AccInvItemVO"
     ViewObjectName="erpims.modelims.imsvo.InvItemVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSysGeneralValueVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SysGeneralValueActiveVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueActiveVC"/>
+    <ViewCriteriaUsage
+      Name="SysGeneralValueByValueSetIDVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueByValueSetIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_VALUE_SET_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[32]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtItemName"
     ListVOName="AccInvItemVO"
@@ -42,6 +59,25 @@
     </AttrArray>
     <DisplayCriteria
       Name="InvItemFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovReceiveMethodSno"
+    ListVOName="AccSysGeneralValueVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReceiveMethodSno"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ValueCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ValueDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="InvPoReceiveLines"
@@ -185,7 +221,15 @@
     PrecisionRule="true"
     EntityAttrName="ReceiveMethodSno"
     EntityUsage="InvPoReceiveLines"
-    AliasName="RECEIVE_METHOD_SNO"/>
+    AliasName="RECEIVE_METHOD_SNO"
+    LOVName="LovReceiveMethodSno">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtItemName"
     IsQueriable="false"
@@ -202,10 +246,28 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtUnitTypeName"
+    PrecisionRule="true"
+    EntityAttrName="txtUnitTypeName"
+    EntityUsage="InvPoReceiveLines"
+    AliasName="TXT_UNIT_TYPE_NAME"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <ViewLinkAccessor
     Name="InvItemVO"
     ViewLink="erpims.modelims.imsvo.InvItemInvPoReceivingLinesItemIdLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvUnitTypeVO"
+    ViewLink="erpims.modelims.imsvo.InvUnitTypeInvPoReceiveLinesUnitTypeLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
 </ViewObject>
