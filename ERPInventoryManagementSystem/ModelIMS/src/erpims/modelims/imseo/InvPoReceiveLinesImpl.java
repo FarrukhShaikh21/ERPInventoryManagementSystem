@@ -6,11 +6,17 @@ import erpfms.modelfms.fmseo.GlProjectsImpl;
 
 import erpglobals.modelglobals.ERPEntityImpl;
 
+import erpglobals.modelglobals.ERPGlobalPLSQLClass;
+
 import java.math.BigDecimal;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
+import oracle.jbo.JboException;
 import oracle.jbo.Key;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -757,7 +763,99 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         populateAttributeAsChanged(NETRECEIVED, gettxtNetReceived());
         populateAttributeAsChanged(POQUANTITY, gettxtPoQuantity());
        }
+        if (operation!=DML_DELETE) {
+                
+
+                      if (getRfqLinesSno() != null) {
+                          
+//                          doCheckBalanceQuantity("RFQ_LINES_SNO", "RfqLinesSno", "RFQ", getScmPurchaseRfqLines().getQuantity());
+                      }
+                      if (getBidLinesSno() != null) {
+//                          doCheckBalanceQuantity("BID_LINES_SNO", "BidLinesSno", "BID", getScmPurchaseBidLines().getQuantity());
+                      }
+
+                      if (getCompareSupplierSno() != null) {
+//                          doCheckBalanceQuantity("COMPARE_SUPPLIER_SNO", "CompareSupplierSno", "Compare",
+//                                                 getScmPurchaseBidCompSupplier().getQuantity());
+                      }
+                      if (getDemandLinesSno() != null) {
+//                          doCheckBalanceQuantity("DEMAND_LINES_SNO", "DemandLinesSno", "Demand",
+//                                                 getScmPurchaseDemandLines().getApproveQuantity());
+                      }
+                 
+              }
+
+
         super.doDML(operation, e);
+
+
+               if (1==1) {
+                   if (getDemandLinesSno() != null) {
+                       doUpdateSourceBalance("SCM_PURCHASE_DEMAND_LINES", "DEMAND_LINES_SNO", "DemandLinesSno",
+                                             "DEMAND_QUANTITY");
+                   }
+
+                   if (getRfqLinesSno() != null) {
+                       doUpdateSourceBalance("SCM_PURCHASE_RFQ_LINES", "RFQ_LINES_SNO", "RfqLinesSno", "QUANTITY");
+                   }
+                   if (getBidLinesSno() != null) {
+                       doUpdateSourceBalance("SCM_PURCHASE_BID_LINES", "BID_LINES_SNO", "BidLinesSno", "QUANTITY");
+                   }
+
+                   if (getCompareSupplierSno() != null) {
+                       doUpdateSourceBalance("SCM_PURCHASE_BID_COMP_SUPPLIER", "COMPARE_SUPPLIER_SNO", "CompareSupplierSno",
+                                             "QUANTITY");
+                   }
+               }
+        
     }
+    
+    public void doUpdateSourceBalance(String pTableName,String pDBColumn,String pGetter,String ERPQuantityColumn) {
+        PreparedStatement ps=null;
+        try {
+             ps =
+                getDBTransaction().createPreparedStatement("update "+pTableName+" rfl set rfl.is_complete=case when (select coalesce(sum(po_approve_quantity),0)-coalesce(sum(Cancel_Quantity),0) from scm_purchase_order_lines where "+pDBColumn+"=" +getAttribute(pGetter) +")=rfl."+ERPQuantityColumn+" then 'Y' else 'N' end ,rfl.remaining_balance=rfl."+ERPQuantityColumn+"-(select coalesce(sum(po_approve_quantity),0)-coalesce(sum(Cancel_Quantity),0) from scm_purchase_order_lines where "+pDBColumn+"=" +getAttribute(pGetter) + ") where rfl."+pDBColumn+"="+getAttribute(pGetter), getDBTransaction().DEFAULT);
+            ps.executeUpdate();
+        } catch (SQLException sqle) {
+            // TODO: Add catch code
+            throw new JboException(sqle.getMessage());
+        }
+        finally{
+            try {
+                ps.close();
+            } catch (SQLException f) {
+            }
+        }
+    }
+    public void doCheckBalanceQuantity(String pERPDBColumn, String pERPGetter,String pType,BigDecimal pERPSourceQuantity) {
+            String poquantity="0";
+           PreparedStatement ps=null;
+            try {
+                String erpconntype=ERPGlobalPLSQLClass.doErpGetConnTypeModel(getDBTransaction());
+                if (!erpconntype.equals("ERPORACLE")) {
+                ps = getDBTransaction().createPreparedStatement("start TRANSACTION", getDBTransaction().DEFAULT);
+                ps.executeUpdate();
+            }
+                ps= getDBTransaction().createPreparedStatement("select coalesce(sum(po_approve_quantity),0) PoQuantity from scm_purchase_order_lines where po_lines_sno!="+getPoLinesSno()+" and "+pERPDBColumn+"="+getAttribute(pERPGetter), getDBTransaction().DEFAULT);
+                ResultSet rs = ps.executeQuery();
+                rs.next();
+                poquantity=rs.getString(1);
+                
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            finally{
+                try {
+                    ps.close();
+                } catch (SQLException e) {
+                }
+            }
+            BigDecimal rfqRemainingQty=pERPSourceQuantity.subtract(new BigDecimal(poquantity));
+//           if (rfqRemainingQty.compareTo(getPoRequestQuantity())==-1) {
+//            throw new  JboException("Only ("+rfqRemainingQty+") "+pType+" remaining. Item ("+gettxtItemName()+","+gettxtInventoryOrgName()+") Before Insert Exception");
+//           }
+    }
+    
+    
 }
 
