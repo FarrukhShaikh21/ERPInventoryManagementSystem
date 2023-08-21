@@ -377,7 +377,7 @@
                                         </af:gridCell>
                                     </af:gridRow>
                                     <af:gridRow id="gr12">
-                                        <af:gridCell id="gc34" width="13%">
+                                        <af:gridCell id="gc34" width="13%" halign="center">
                                             <af:outputLabel value="#{bindings.DeliveryNote.hints.label}" id="ol8"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc35" width="87%" columnSpan="5" halign="stretch">
@@ -480,7 +480,7 @@
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.tooltip}"
-                                                          id="it14">
+                                                          id="it14" autoSubmit="true">
                                                 <f:validator binding="#{row.bindings.ReceivedQuantity.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.format}"/>
@@ -494,7 +494,7 @@
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.tooltip}"
-                                                          id="it15">
+                                                          id="it15" autoSubmit="true">
                                                 <f:validator binding="#{row.bindings.ExceedQuantity.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.format}"/>
@@ -508,21 +508,21 @@
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.tooltip}"
-                                                          id="it21">
+                                                          id="it21" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtPoQuantity.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.format}"/>
                                             </af:inputText>
                                         </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.label}"
-                                                   id="c6">
+                                                   id="c6" width="80" displayIndex="-1">
                                             <af:inputText value="#{row.bindings.RejectedQuantity.inputValue}"
                                                           label="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.label}"
                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.mandatory}"
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.tooltip}"
-                                                          id="it16">
+                                                          id="it16" autoSubmit="true">
                                                 <f:validator binding="#{row.bindings.RejectedQuantity.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.format}"/>
@@ -536,7 +536,7 @@
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.tooltip}"
-                                                          id="it17">
+                                                          id="it17" readOnly="true" partialTriggers="it16 it15 it14">
                                                 <f:validator binding="#{row.bindings.txtNetReceived.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.format}"/>

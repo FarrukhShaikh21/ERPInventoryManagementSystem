@@ -293,6 +293,12 @@
         <fixed-outcome>ERP-ADD-INV_0005_EDIT</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="ExeWithParaINV_0005_EDIT">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-QRY-INV_0005_EDIT</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -663,11 +669,22 @@
         <from-outcome>ERP-ADD-INV_0005_EDIT</from-outcome>
         <to-activity-id>CWPINV_0005_EDIT</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__115">
+        <from-outcome>ERP-QRY-INV_0005_EDIT</from-outcome>
+        <to-activity-id>ExeWithParaINV_0005_EDIT</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__113">
       <from-activity-id>CWPINV_0005_EDIT</from-activity-id>
       <control-flow-case id="__114">
         <from-outcome>ERP-ADD-INV_0005_EDIT</from-outcome>
+        <to-activity-id>INV_0005_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__116">
+      <from-activity-id>ExeWithParaINV_0005_EDIT</from-activity-id>
+      <control-flow-case id="__117">
+        <from-outcome>ERP-QRY-INV_0005_EDIT</from-outcome>
         <to-activity-id>INV_0005_EDIT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

@@ -21,5 +21,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="InvPoReceiveHeaderROIterator" id="PoReceiveHeaderSno">
+      <AttrNames>
+        <Item Value="PoReceiveHeaderSno"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

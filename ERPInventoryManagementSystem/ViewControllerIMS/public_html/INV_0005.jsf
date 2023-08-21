@@ -31,8 +31,18 @@
                                  emptyText="#{bindings.InvPoReceiveHeaderRO.viewable ? 'No data to display.' : 'Access Denied.'}"
                                  fetchSize="#{bindings.InvPoReceiveHeaderRO.rangeSize}" id="lv1"
                                  styleClass="WBDisplayBlockCenter">
-                      <af:listItem id="li2">
+                      <af:listItem id="li2" styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo">
                         <af:panelGroupLayout id="pgl11" styleClass="WBCardSize" layout="vertical">
+                          <af:inputText value="#{bindings.PoReceiveHeaderSno.inputValue}"
+                                        label="#{bindings.PoReceiveHeaderSno.hints.label}"
+                                        required="#{bindings.PoReceiveHeaderSno.hints.mandatory}"
+                                        columns="#{bindings.PoReceiveHeaderSno.hints.displayWidth}"
+                                        maximumLength="#{bindings.PoReceiveHeaderSno.hints.precision}"
+                                        shortDesc="#{bindings.PoReceiveHeaderSno.hints.tooltip}" id="it1"
+                                        rendered="false">
+                            <f:validator binding="#{bindings.PoReceiveHeaderSno.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.PoReceiveHeaderSno.format}"/>
+                          </af:inputText>
                           <af:panelBox text="PanelBox2" id="pb2" showHeader="never" showDisclosure="false">
                             <f:facet name="toolbar"/>
                             <af:panelGridLayout id="pgl4">
@@ -40,8 +50,8 @@
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                                   <af:panelGroupLayout id="pgl8" layout="horizontal">
                                     <af:link id="l3" partialSubmit="true" icon="#{resource['images:imgView.png']}"
-                                             styleClass="ERPLink" action="ERP-QRY-SCM_0018_EDIT"
-                                             shortDesc="BID Code, Click To View Record"/>
+                                             styleClass="ERPLink" action="ERP-QRY-INV_0005_EDIT"
+                                             shortDesc="Receive Code, Click To View Record"/>
                                     <af:spacer width="10" height="10" id="s3"/>
                                     <af:outputFormatted value="#{item.bindings.PoReceiveHeaderCode.inputValue}" id="of1"
                                                         styleClass="ERPHeroDetailColor">
@@ -55,7 +65,7 @@
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                                   <af:panelGroupLayout id="pgl5" layout="horizontal">
                                     <af:image source="#{resource['images:imgDocumentDate.png']}" id="i2"
-                                              shortDesc="Compare Date"/>
+                                              shortDesc="Receive Date"/>
                                     <af:outputFormatted value="#{item.bindings.ReceiveDate.inputValue}" id="of7"
                                                         styleClass="ERPHeroDetailColor">
                                       <af:convertDateTime pattern="#{bindings.ScmPurchaseBidCompHeaderRO.hints.CompareDate.format}"/>
@@ -81,8 +91,8 @@
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
                                   <af:panelGroupLayout id="pgl12" layout="horizontal">
                                     <af:image id="i3"
-                                              shortDesc="#{item.bindings.txtDemandHeaderCode.inputValue==null?'RFQ Code':'Demand Code'}"
-                                              source="#{resource['images:imgDocument.png']}"/>
+                                              source="#{resource['images:imgDocument.png']}"
+                                              shortDesc="PO Header Code"/>
                                     <af:spacer width="10" height="10" id="s4"/>
                                     <af:outputFormatted value="#{item.bindings.txtPoHeaderCode.inputValue}" id="of6"
                                                         styleClass="ERPHeroDetailColor">
@@ -106,25 +116,6 @@
                             </af:panelGridLayout>
                           </af:panelBox>
                         </af:panelGroupLayout>
-                        <af:panelGridLayout id="pgl7">
-                          <af:gridRow marginTop="5px" height="auto" id="gr6">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"/>
-                          </af:gridRow>
-                          <af:gridRow marginTop="5px" height="auto" id="gr7">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
-                          </af:gridRow>
-                          <af:gridRow marginTop="5px" height="auto" id="gr8">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
-                              <af:outputFormatted value="#{item.bindings.LocationId.inputValue}" id="of9">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.InvPoReceiveHeaderRO.hints.LocationId.format}"/>
-                              </af:outputFormatted>
-                            </af:gridCell>
-                          </af:gridRow>
-                          <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
-                          </af:gridRow>
-                        </af:panelGridLayout>
                       </af:listItem>
                     </af:listView>
                   </af:panelGroupLayout>

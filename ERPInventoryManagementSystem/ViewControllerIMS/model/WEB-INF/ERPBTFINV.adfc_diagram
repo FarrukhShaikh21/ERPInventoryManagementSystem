@@ -1233,9 +1233,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">969.7988</property>
+         name="y">1053.3965</property>
       <property
-         name="x">-410.30957</property>
+         name="x">-290.30957</property>
    </View>
    <ControlFlowCase
       islink="true"
@@ -1295,7 +1295,7 @@
       <property
          name="fromOutcome">ERP-ADD-INV_0005_EDIT</property>
       <property
-         name="sdm:polyPoints">B50,-556.5,975.44824,-532.98047,1001.09766,T50</property>
+         name="sdm:polyPoints">B50,-556.5,975.44824,-532.98047,1000.7471,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -1305,6 +1305,39 @@
       <property
          name="fromOutcome">ERP-ADD-INV_0005_EDIT</property>
       <property
-         name="sdm:polyPoints">R50,-491.98047,1055.0977,-451.30957,969.44824,L50</property>
+         name="sdm:polyPoints">R50,-491.98047,1054.7471,-331.30957,1053.0459,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall121">
+      <property
+         name="activityId">ExeWithParaINV_0005_EDIT</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeWithParaINV_0005_EDIT&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">959.44824</property>
+      <property
+         name="x">-347.64844</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase122"
+      from="View113"
+      to="MethodCall121">
+      <property
+         name="fromOutcome">ERP-QRY-INV_0005_EDIT</property>
+      <property
+         name="sdm:polyPoints">R50,-515.5,921.44824,-388.64844,959.09766,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase123"
+      from="MethodCall121"
+      to="View114">
+      <property
+         name="fromOutcome">ERP-QRY-INV_0005_EDIT</property>
+      <property
+         name="sdm:polyPoints">T50,-347.64844,905.09766,-249.30957,905.09766,-249.30957,1053.0459,R50</property>
    </ControlFlowCase>
 </SDM>

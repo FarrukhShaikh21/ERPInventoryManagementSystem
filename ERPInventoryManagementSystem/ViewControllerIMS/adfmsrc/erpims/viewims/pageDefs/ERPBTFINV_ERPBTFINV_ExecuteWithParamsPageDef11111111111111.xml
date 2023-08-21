@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47"
+                id="ERPBTFINV_ERPBTFINV_ExecuteWithParamsPageDef11111111111111" Package="erpims.viewims.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="InvPoReceiveHeaderCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvPoReceiveHeaderCRUDIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="InvPoReceiveHeaderCRUDIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="P_ADF_LOCATION_ID" NDType="java.lang.Integer"/>
+      <NamedData NDName="P_ADF_PO_RECEIVE_HEADER_SNO"
+                 NDValue="#{data.erpims_viewims_INV_0005PageDef.PoReceiveHeaderSno.inputValue}"
+                 NDType="java.lang.Integer"/>
+    </action>
+  </bindings>
+</pageDefinition>

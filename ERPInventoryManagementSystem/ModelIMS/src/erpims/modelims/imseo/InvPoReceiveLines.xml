@@ -472,7 +472,16 @@
     IsPersistent="false"
     IsQueriable="false"
     Type="java.lang.String"
-    ColumnType="VARCHAR"/>
+    ColumnType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveLines.txtItemName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="txtUnitTypeName"
     Precision="80"
