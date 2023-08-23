@@ -417,11 +417,14 @@
                                     <f:facet name="menus"/>
                                     <f:facet name="toolbar">
                                         <af:toolbar id="t2">
-                                            <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                       text="Add" disabled="#{!bindings.CreateInsert.enabled}"
-                                                       id="b1"/>
-                                            <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
-                                                       disabled="#{!bindings.Delete1.enabled}" id="b2"/>
+                                            <af:link actionListener="#{bindings.CreateInsert.execute}" disabled="#{!bindings.CreateInsert.enabled}"
+                                                       id="b1"
+                                                     icon="#{resource['images:imgAddRecord.png']}"
+                                                     partialSubmit="true"/>
+                                            <af:link actionListener="#{bindings.Delete1.execute}"
+                                                       disabled="#{!bindings.Delete1.enabled}" id="b2"
+                                                     icon="#{resource['images:imgDeleteRecord.png']}"
+                                                     partialSubmit="true"/>
                                         </af:toolbar>
                                     </f:facet>
                                     <f:facet name="statusbar"/>

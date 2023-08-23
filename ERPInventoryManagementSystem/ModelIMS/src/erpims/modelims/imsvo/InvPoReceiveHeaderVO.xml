@@ -82,6 +82,9 @@
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO"
     RowLevelBinds="true">
     <ViewCriteriaUsage
+      Name="ScmPurchaseOrderLinesBalanceAvailableVC"
+      FullName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO.ScmPurchaseOrderLinesBalanceAvailableVC"/>
+    <ViewCriteriaUsage
       Name="ScmPurchaseOrderLinesByPoHeaderSnoVC"
       FullName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO.ScmPurchaseOrderLinesByPoHeaderSnoVC"/>
     <ParameterMap>
