@@ -56,7 +56,6 @@
   </Attribute>
   <Attribute
     Name="PoLinesSno"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="PO_LINES_SNO"
@@ -147,7 +146,6 @@
   </Attribute>
   <Attribute
     Name="LineNo"
-    IsNotNull="true"
     Precision="6"
     Scale="0"
     ColumnName="LINE_NO"
@@ -166,7 +164,6 @@
   </Attribute>
   <Attribute
     Name="ItemId"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="ITEM_ID"
@@ -185,7 +182,6 @@
   </Attribute>
   <Attribute
     Name="UnitTypeSno"
-    IsNotNull="true"
     Precision="6"
     Scale="0"
     ColumnName="UNIT_TYPE_SNO"
@@ -204,7 +200,6 @@
   </Attribute>
   <Attribute
     Name="ReceivedQuantity"
-    IsNotNull="true"
     Precision="16"
     Scale="6"
     ColumnName="RECEIVED_QUANTITY"
@@ -299,7 +294,6 @@
   </Attribute>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="CREATED_BY"

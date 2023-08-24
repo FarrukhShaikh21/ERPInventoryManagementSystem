@@ -438,14 +438,14 @@
                                               fetchSize="#{bindings.InvPoReceiveLinesDetCRUD.rangeSize}" id="t1"
                                               partialTriggers="::b1 ::b2">
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.label}"
-                                                   id="c1" width="80">
+                                                   id="c1" width="50" displayIndex="-1">
                                             <af:inputText value="#{row.bindings.LineNo.inputValue}"
                                                           label="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.label}"
                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.mandatory}"
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.tooltip}"
-                                                          id="it12">
+                                                          id="it12" readOnly="true">
                                                 <f:validator binding="#{row.bindings.LineNo.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.format}"/>
@@ -459,7 +459,8 @@
                                                                           model="#{row.bindings.txtItemName.listOfValuesModel}"
                                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.mandatory}"
                                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.displayWidth}"
-                                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.tooltip}">
+                                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.tooltip}"
+                                                                          contentStyle="width:100%">
                                                 <f:validator binding="#{row.bindings.txtItemName.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:column>
@@ -475,8 +476,21 @@
                                                 <f:validator binding="#{row.bindings.txtUnitTypeName.validator}"/>
                                             </af:inputText>
                                         </af:column>
+                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.label}"
+                                                   id="c10">
+                                            <af:inputComboboxListOfValues id="txtSubinventoryDescriptionId"
+                                                                          popupTitle="Search and Select: #{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.label}"
+                                                                          value="#{row.bindings.txtSubinventoryDescription.inputValue}"
+                                                                          model="#{row.bindings.txtSubinventoryDescription.listOfValuesModel}"
+                                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.mandatory}"
+                                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.displayWidth}"
+                                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.tooltip}"
+                                                                          contentStyle="width:90%">
+                                                <f:validator binding="#{row.bindings.txtSubinventoryDescription.validator}"/>
+                                            </af:inputComboboxListOfValues>
+                                        </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
-                                                   id="c4" width="80">
+                                                   id="c4" width="70">
                                             <af:inputText value="#{row.bindings.ReceivedQuantity.inputValue}"
                                                           label="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.mandatory}"
@@ -490,7 +504,7 @@
                                             </af:inputText>
                                         </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.label}"
-                                                   id="c5" width="80">
+                                                   id="c5" width="70">
                                             <af:inputText value="#{row.bindings.ExceedQuantity.inputValue}"
                                                           label="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.label}"
                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.mandatory}"
@@ -504,7 +518,7 @@
                                             </af:inputText>
                                         </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
-                                                   id="c13">
+                                                   id="c13" width="70">
                                             <af:inputText value="#{row.bindings.txtPoQuantity.inputValue}"
                                                           label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.mandatory}"
@@ -518,7 +532,7 @@
                                             </af:inputText>
                                         </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.label}"
-                                                   id="c6" width="80" displayIndex="-1">
+                                                   id="c6" width="70" displayIndex="-1">
                                             <af:inputText value="#{row.bindings.RejectedQuantity.inputValue}"
                                                           label="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.label}"
                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.mandatory}"
@@ -532,7 +546,7 @@
                                             </af:inputText>
                                         </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.label}"
-                                                   id="c7">
+                                                   id="c7" width="70">
                                             <af:inputText value="#{row.bindings.txtNetReceived.inputValue}"
                                                           label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.label}"
                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.mandatory}"
@@ -568,18 +582,6 @@
                                                           id="it19">
                                                 <f:validator binding="#{row.bindings.txtProjectName.validator}"/>
                                             </af:inputText>
-                                        </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.label}"
-                                                   id="c10">
-                                            <af:inputComboboxListOfValues id="txtSubinventoryDescriptionId"
-                                                                          popupTitle="Search and Select: #{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.label}"
-                                                                          value="#{row.bindings.txtSubinventoryDescription.inputValue}"
-                                                                          model="#{row.bindings.txtSubinventoryDescription.listOfValuesModel}"
-                                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.mandatory}"
-                                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.displayWidth}"
-                                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.tooltip}">
-                                                <f:validator binding="#{row.bindings.txtSubinventoryDescription.validator}"/>
-                                            </af:inputComboboxListOfValues>
                                         </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceiveMethodSno.label}"
                                                    id="c11">

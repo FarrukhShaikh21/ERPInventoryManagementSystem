@@ -231,15 +231,21 @@ public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
         while(rsi.hasNext()) {
             Row nextRow=rsi.next();
             NameValuePairs receiveLinesNP=new NameValuePairs();
+            receiveLinesNP.setAttribute("ItemId", nextRow.getAttribute("ItemId"));
+            receiveLinesNP.setAttribute("UnitTypeSno", nextRow.getAttribute("UnitTypeSno"));
             receiveLinesNP.setAttribute("DemandLinesSno", nextRow.getAttribute("DemandLinesSno"));
             receiveLinesNP.setAttribute("CompareSupplierSno", nextRow.getAttribute("CompareSupplierSno"));
+            receiveLinesNP.setAttribute("BidLinesSno", nextRow.getAttribute("BidLinesSno"));
+            receiveLinesNP.setAttribute("PoLinesSno", nextRow.getAttribute("PoLinesSno"));
             receiveLinesNP.setAttribute("RfqLinesSno", nextRow.getAttribute("RfqLinesSno"));
-            receiveLinesNP.setAttribute("DemandLinesSno", nextRow.getAttribute("DemandLinesSno"));
-            receiveLinesNP.setAttribute("DemandLinesSno", nextRow.getAttribute("DemandLinesSno"));
-            receiveLinesNP.setAttribute("DemandLinesSno", nextRow.getAttribute("DemandLinesSno"));
-            receiveLinesNP.setAttribute("DemandLinesSno", nextRow.getAttribute("DemandLinesSno"));
-            receiveLinesNP.setAttribute("DemandLinesSno", nextRow.getAttribute("DemandLinesSno"));
-            receiveLinesNP.setAttribute("DemandLinesSno", nextRow.getAttribute("DemandLinesSno"));
+            receiveLinesNP.setAttribute("SubinventoryOrgSno", nextRow.getAttribute("SubinventoryOrgSno"));
+            receiveLinesNP.setAttribute("ReceivedQuantity", nextRow.getAttribute("RemainingBalance"));
+            receiveLinesNP.setAttribute("DepartmentId", nextRow.getAttribute("DepartmentId"));
+            receiveLinesNP.setAttribute("ProjectId", nextRow.getAttribute("ProjectId"));
+            receiveLinesNP.setAttribute("SubinventoryOrgSno", nextRow.getAttribute("SubinventoryOrgSno"));
+            receiveLinesNP.setAttribute("ReceiveMethodSno", "1");
+            Row initrow=getInvPoReceiveLinesVO().createAndInitRow(receiveLinesNP);
+            
             
 //         Row newRow=   
         }
