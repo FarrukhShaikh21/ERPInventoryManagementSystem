@@ -436,7 +436,8 @@
                                               selectionListener="#{bindings.InvPoReceiveLinesDetCRUD.collectionModel.makeCurrent}"
                                               rowSelection="single"
                                               fetchSize="#{bindings.InvPoReceiveLinesDetCRUD.rangeSize}" id="t1"
-                                              partialTriggers="::b1 ::b2">
+                                              partialTriggers="::b1 ::b2" scrollPolicy="page" autoHeightRows="5"
+                                              styleClass="AFStretchWidth">
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.label}"
                                                    id="c1" width="50" displayIndex="-1">
                                             <af:inputText value="#{row.bindings.LineNo.inputValue}"
@@ -472,7 +473,7 @@
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.tooltip}"
-                                                          id="it13">
+                                                          id="it13" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtUnitTypeName.validator}"/>
                                             </af:inputText>
                                         </af:column>
@@ -567,7 +568,7 @@
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.tooltip}"
-                                                          id="it18">
+                                                          id="it18" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtDepartmentName.validator}"/>
                                             </af:inputText>
                                         </af:column>
@@ -579,7 +580,7 @@
                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.displayWidth}"
                                                           maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.precision}"
                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.tooltip}"
-                                                          id="it19">
+                                                          id="it19" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtProjectName.validator}"/>
                                             </af:inputText>
                                         </af:column>

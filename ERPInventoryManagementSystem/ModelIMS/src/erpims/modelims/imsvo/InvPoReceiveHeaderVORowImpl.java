@@ -231,6 +231,7 @@ public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
         while(rsi.hasNext()) {
             Row nextRow=rsi.next();
             NameValuePairs receiveLinesNP=new NameValuePairs();
+            receiveLinesNP.setAttribute("LineNo", getInvPoReceiveLinesVO().getRowCount()+1);
             receiveLinesNP.setAttribute("ItemId", nextRow.getAttribute("ItemId"));
             receiveLinesNP.setAttribute("UnitTypeSno", nextRow.getAttribute("UnitTypeSno"));
             receiveLinesNP.setAttribute("DemandLinesSno", nextRow.getAttribute("DemandLinesSno"));
@@ -245,7 +246,7 @@ public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
             receiveLinesNP.setAttribute("SubinventoryOrgSno", nextRow.getAttribute("SubinventoryOrgSno"));
             receiveLinesNP.setAttribute("ReceiveMethodSno", "1");
             Row initrow=getInvPoReceiveLinesVO().createAndInitRow(receiveLinesNP);
-            
+            getInvPoReceiveLinesVO().insertRow(initrow);
             
 //         Row newRow=   
         }

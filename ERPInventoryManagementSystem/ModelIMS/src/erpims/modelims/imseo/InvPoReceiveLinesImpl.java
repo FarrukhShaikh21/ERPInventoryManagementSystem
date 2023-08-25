@@ -759,11 +759,12 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        
         if (operation!=DML_DELETE) {
         populateAttributeAsChanged(NETRECEIVED, gettxtNetReceived());
         populateAttributeAsChanged(POQUANTITY, gettxtPoQuantity());
        }
-        if (operation!=DML_DELETE) {
+        if (operation!=DML_DELETE && 2==1) {
                 
 
                       if (getRfqLinesSno() != null) {
@@ -789,23 +790,9 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         super.doDML(operation, e);
 
 
-               if (1==1) {
-                   if (getDemandLinesSno() != null) {
-                       doUpdateSourceBalance("SCM_PURCHASE_DEMAND_LINES", "DEMAND_LINES_SNO", "DemandLinesSno",
-                                             "DEMAND_QUANTITY");
-                   }
-
-                   if (getRfqLinesSno() != null) {
-                       doUpdateSourceBalance("SCM_PURCHASE_RFQ_LINES", "RFQ_LINES_SNO", "RfqLinesSno", "QUANTITY");
-                   }
-                   if (getBidLinesSno() != null) {
-                       doUpdateSourceBalance("SCM_PURCHASE_BID_LINES", "BID_LINES_SNO", "BidLinesSno", "QUANTITY");
-                   }
-
-                   if (getCompareSupplierSno() != null) {
-                       doUpdateSourceBalance("SCM_PURCHASE_BID_COMP_SUPPLIER", "COMPARE_SUPPLIER_SNO", "CompareSupplierSno",
-                                             "QUANTITY");
-                   }
+                   if (getPoLinesSno() != null) {
+                       doUpdateSourceBalance("SCM_PURCHASE_ORDER_LINES", "PO_LINES_SNO", "PoLinesSno",
+                                             "PO_APPROVE_QUANTITY");
                }
         
     }
@@ -814,7 +801,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         PreparedStatement ps=null;
         try {
              ps =
-                getDBTransaction().createPreparedStatement("update "+pTableName+" rfl set rfl.is_complete=case when (select coalesce(sum(po_approve_quantity),0)-coalesce(sum(Cancel_Quantity),0) from scm_purchase_order_lines where "+pDBColumn+"=" +getAttribute(pGetter) +")=rfl."+ERPQuantityColumn+" then 'Y' else 'N' end ,rfl.remaining_balance=rfl."+ERPQuantityColumn+"-(select coalesce(sum(po_approve_quantity),0)-coalesce(sum(Cancel_Quantity),0) from scm_purchase_order_lines where "+pDBColumn+"=" +getAttribute(pGetter) + ") where rfl."+pDBColumn+"="+getAttribute(pGetter), getDBTransaction().DEFAULT);
+                getDBTransaction().createPreparedStatement("update "+pTableName+" rfl set rfl.is_complete=case when (select coalesce(sum(po_quantity),0)-coalesce(sum(rejected_quantity),0) from inv_po_receive_lines where "+pDBColumn+"=" +getAttribute(pGetter) +")=rfl."+ERPQuantityColumn+" then 'Y' else 'N' end ,rfl.remaining_balance=rfl."+ERPQuantityColumn+"-(select coalesce(sum(po_quantity),0)-coalesce(sum(rejected_quantity),0) from inv_po_receive_lines where "+pDBColumn+"=" +getAttribute(pGetter) + ") where rfl."+pDBColumn+"="+getAttribute(pGetter), getDBTransaction().DEFAULT);
             ps.executeUpdate();
         } catch (SQLException sqle) {
             // TODO: Add catch code

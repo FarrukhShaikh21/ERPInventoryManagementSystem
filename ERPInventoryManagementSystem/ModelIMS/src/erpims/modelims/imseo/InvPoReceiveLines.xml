@@ -10,7 +10,8 @@
   DBObjectName="INV_PO_RECEIVE_LINES"
   AliasName="InvPoReceiveLines"
   BindingStyle="JDBC"
-  RowClass="erpims.modelims.imseo.InvPoReceiveLinesImpl">
+  RowClass="erpims.modelims.imseo.InvPoReceiveLinesImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
     <Attr Name="_superClass" Value="erpglobals.modelglobals.ERPEntityImpl"/>
@@ -246,7 +247,9 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_PO_RECEIVE_LINES">
+    TableName="INV_PO_RECEIVE_LINES"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -467,6 +470,8 @@
     IsQueriable="false"
     Type="java.lang.String"
     ColumnType="VARCHAR">
+    <TransientExpression><![CDATA[InvItem?.Description]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -475,6 +480,10 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="ItemId"/>
+    </Dependencies>
   </Attribute>
   <Attribute
     Name="txtUnitTypeName"
@@ -740,6 +749,21 @@
       <Item Value="erpims.modelims.imseo.InvPoReceiveLines.SubinventoryOrgSno"/>
     </AttrArray>
   </Key>
+  <validation:CompareValidationBean
+    Name="InvPoReceiveLinesPORejectBR"
+    ResId="erpims.modelims.imseo.InvPoReceiveLines_Rule_0"
+    OnAttribute="RejectedQuantity"
+    OperandType="ATTR"
+    Inverse="false"
+    CompareType="LESSTHANEQUALTO"
+    CompareValue="txtPoQuantity">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="RejectedQuantity"/>
+      <validation:Item
+        Value="txtPoQuantity"/>
+    </validation:OnAttributes>
+  </validation:CompareValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpims.modelims.ModelIMSBundle"/>

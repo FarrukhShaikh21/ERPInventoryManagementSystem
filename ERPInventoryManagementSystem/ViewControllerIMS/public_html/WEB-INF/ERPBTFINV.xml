@@ -299,6 +299,12 @@
         <fixed-outcome>ERP-QRY-INV_0005_EDIT</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="ExeINV_0005_EDIT">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>ERPBACKCRUD</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__7">
@@ -686,6 +692,20 @@
       <control-flow-case id="__117">
         <from-outcome>ERP-QRY-INV_0005_EDIT</from-outcome>
         <to-activity-id>INV_0005_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__118">
+      <from-activity-id>INV_0005_EDIT</from-activity-id>
+      <control-flow-case id="__119">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>ExeINV_0005_EDIT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__120">
+      <from-activity-id>ExeINV_0005_EDIT</from-activity-id>
+      <control-flow-case id="__121">
+        <from-outcome>ERPBACKCRUD</from-outcome>
+        <to-activity-id>INV_0005</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
