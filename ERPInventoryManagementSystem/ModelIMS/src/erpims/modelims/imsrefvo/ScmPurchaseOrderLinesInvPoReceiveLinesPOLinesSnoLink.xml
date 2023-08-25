@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ScmPurchaseOrderLinesInvPoReceiveLinesPOLinesSnoLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpims.modelims.imsrefeo.ScmPurchaseOrderLinesInvPoReceiveLinesPOLinesSnoAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesInvPoReceiveLinesPOLinesSnoLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="ScmPurchaseOrderLinesVO"
+    Cardinality="1"
+    Source="true"
+    Owner="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="ScmPurchaseOrderLinesVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO.PoLinesSno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="InvPoReceiveLinesVO"
+    Cardinality="-1"
+    Owner="erpims.modelims.imsvo.InvPoReceiveLinesVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="InvPoReceiveLinesVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imsvo.InvPoReceiveLinesVO.PoLinesSno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
+</ViewLink>

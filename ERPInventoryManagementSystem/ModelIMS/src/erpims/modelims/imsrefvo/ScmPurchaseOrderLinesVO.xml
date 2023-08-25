@@ -338,4 +338,9 @@
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewLinkAccessor
+    Name="InvPoReceiveLinesVO"
+    ViewLink="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesInvPoReceiveLinesPOLinesSnoLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

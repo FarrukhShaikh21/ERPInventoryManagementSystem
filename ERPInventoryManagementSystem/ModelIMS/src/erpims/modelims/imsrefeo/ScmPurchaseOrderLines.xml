@@ -569,6 +569,13 @@
     AssociationOtherEnd="erpims.modelims.imsrefeo.FkScmPurOrdLinPoHeadSnoAssoc.ScmPurchaseOrderLines"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvPoReceiveLines"
+    Association="erpims.modelims.imsrefeo.ScmPurchaseOrderLinesInvPoReceiveLinesPOLinesSnoAssoc"
+    AssociationEnd="erpims.modelims.imsrefeo.ScmPurchaseOrderLinesInvPoReceiveLinesPOLinesSnoAssoc.InvPoReceiveLines"
+    AssociationOtherEnd="erpims.modelims.imsrefeo.ScmPurchaseOrderLinesInvPoReceiveLinesPOLinesSnoAssoc.ScmPurchaseOrderLines"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkScmPurchaseOrderLines"
     PrimaryKey="true">
