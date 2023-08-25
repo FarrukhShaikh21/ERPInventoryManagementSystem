@@ -783,13 +783,13 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         populateAttributeAsChanged(NETRECEIVED, gettxtNetReceived());
         populateAttributeAsChanged(POQUANTITY, gettxtPoQuantity());
        }
-        if (operation!=DML_DELETE && 2==1) {
+        if (operation!=DML_DELETE ) {
                 
 
                       if (getPoLinesSno() != null) {
                           
 //                          doCheckBalanceQuantity("RFQ_LINES_SNO", "RfqLinesSno", "RFQ", getScmPurchaseRfqLines().getQuantity());
-//                          doCheckBalanceQuantity("PO_LINES_SNO", "PoLinesSno", "PO", getScmPurchaseRfqLines().getQuantity());
+                          doCheckBalanceQuantity("PO_LINES_SNO", "PoLinesSno", "PO",(BigDecimal) getScmPurchaseOrderLines().getAttribute("PoApproveQuantity"));
                       }
                       if (getBidLinesSno() != null) {
 //                          doCheckBalanceQuantity("BID_LINES_SNO", "BidLinesSno", "BID", getScmPurchaseBidLines().getQuantity());
@@ -843,7 +843,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
                 ps = getDBTransaction().createPreparedStatement("start TRANSACTION", getDBTransaction().DEFAULT);
                 ps.executeUpdate();
             }
-                ps= getDBTransaction().createPreparedStatement("select coalesce(sum(po_approve_quantity),0) PoQuantity from scm_purchase_order_lines where po_lines_sno!="+getPoLinesSno()+" and "+pERPDBColumn+"="+getAttribute(pERPGetter), getDBTransaction().DEFAULT);
+                ps= getDBTransaction().createPreparedStatement("select coalesce(sum(po_quantity),0)-coalesce(sum(rejected_quantity),0) PORecQuantity from inv_po_receive_lines where po_receive_lines_sno!="+getPoReceiveLinesSno()+" and "+pERPDBColumn+"="+getAttribute(pERPGetter), getDBTransaction().DEFAULT);
                 ResultSet rs = ps.executeQuery();
                 rs.next();
                 poquantity=rs.getString(1);
@@ -858,9 +858,9 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
                 }
             }
             BigDecimal rfqRemainingQty=pERPSourceQuantity.subtract(new BigDecimal(poquantity));
-//           if (rfqRemainingQty.compareTo(getPoRequestQuantity())==-1) {
-//            throw new  JboException("Only ("+rfqRemainingQty+") "+pType+" remaining. Item ("+gettxtItemName()+","+gettxtInventoryOrgName()+") Before Insert Exception");
-//           }
+           if (rfqRemainingQty.compareTo(getPoQuantity())==-1) {
+            throw new  JboException("Only ("+rfqRemainingQty+") "+pType+" remaining. Item ("+gettxtItemName()+","+getInvPoReceiveHeader().gettxtOrgDescription()+") Before Insert Exception");
+           }
     }
     
     
