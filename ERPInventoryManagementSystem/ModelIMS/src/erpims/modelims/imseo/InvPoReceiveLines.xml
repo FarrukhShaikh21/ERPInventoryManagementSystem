@@ -501,6 +501,29 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtPoQuantity"
+    ColumnName="TXT_PO_QUANTITY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ScmPurchaseOrderLines?.RemainingBalance]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="PoLinesSno"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvPoReceiveLines.txtPoQuantity_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveHeader"
     Association="erpims.modelims.imseo.FkInvPoRecLinesHeaderSnoAssoc"
@@ -637,6 +660,24 @@
       <Item Value="erpims.modelims.imseo.InvPoReceiveLines.PoLinesSno"/>
     </AttrArray>
   </Key>
+  <validation:CompareValidationBean
+    Name="InvPoReceiveLinesReceiveQtyPOQtyBR"
+    ResId="erpims.modelims.imseo.InvPoReceiveLines_Rule_0"
+    OnAttribute="ReceivedQuantity"
+    OperandType="ATTR"
+    Inverse="false"
+    CompareType="LESSTHANEQUALTO"
+    CompareValue="txtPoQuantity">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="ReceivedQuantity"/>
+      <validation:Item
+        Value="txtPoQuantity"/>
+    </validation:OnAttributes>
+    <validation:OnCondition
+      trustMode="untrusted"
+      Name="OnConditionExpr"><![CDATA[ReceivedQuantity!=null]]></validation:OnCondition>
+  </validation:CompareValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpims.modelims.ModelIMSBundle"/>

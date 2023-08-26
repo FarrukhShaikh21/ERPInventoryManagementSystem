@@ -104,7 +104,8 @@
           <Item Value="txtSubinventoryDescription"/>
           <Item Value="ReceiveMethodSno"/>
           <Item Value="ItemRemarks"/>
-          </AttrNames>
+          <Item Value="txtPoQuantity"/>
+        </AttrNames>
       </nodeDefinition>
     </tree>
     <action IterBinding="InvPoReceiveLinesDetCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"

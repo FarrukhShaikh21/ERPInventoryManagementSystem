@@ -56,6 +56,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         txtProjectName,
         txtDepartmentName,
         txtSubinventoryDescription,
+        txtPoQuantity,
         InvPoReceiveHeader,
         InvItem,
         InvUnitType,
@@ -63,8 +64,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         AdminCompany,
         InvSubinventoryOrg,
         ScmPurchaseOrderLines;
-        static AttributesEnum[] vals = null;
-        ;
+        private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -113,6 +113,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
     public static final int TXTPROJECTNAME = AttributesEnum.txtProjectName.index();
     public static final int TXTDEPARTMENTNAME = AttributesEnum.txtDepartmentName.index();
     public static final int TXTSUBINVENTORYDESCRIPTION = AttributesEnum.txtSubinventoryDescription.index();
+    public static final int TXTPOQUANTITY = AttributesEnum.txtPoQuantity.index();
     public static final int INVPORECEIVEHEADER = AttributesEnum.InvPoReceiveHeader.index();
     public static final int INVITEM = AttributesEnum.InvItem.index();
     public static final int INVUNITTYPE = AttributesEnum.InvUnitType.index();
@@ -537,6 +538,22 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         setAttributeInternal(TXTSUBINVENTORYDESCRIPTION, value);
     }
 
+
+    /**
+     * Gets the attribute value for txtPoQuantity, using the alias name txtPoQuantity.
+     * @return the value of txtPoQuantity
+     */
+    public BigDecimal gettxtPoQuantity() {
+        return (BigDecimal) getAttributeInternal(TXTPOQUANTITY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtPoQuantity.
+     * @param value value to set the txtPoQuantity
+     */
+    public void settxtPoQuantity(BigDecimal value) {
+        setAttributeInternal(TXTPOQUANTITY, value);
+    }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.

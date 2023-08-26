@@ -310,6 +310,14 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtPoQuantity"
+    PrecisionRule="true"
+    EntityAttrName="txtPoQuantity"
+    EntityUsage="InvPoReceiveLines"
+    AliasName="TXT_PO_QUANTITY"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <ViewLinkAccessor
     Name="InvItemVO"
     ViewLink="erpims.modelims.imsvo.InvItemInvPoReceivingLinesItemIdLink"

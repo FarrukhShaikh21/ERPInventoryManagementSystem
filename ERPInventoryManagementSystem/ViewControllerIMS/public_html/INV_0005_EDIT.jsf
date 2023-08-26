@@ -490,6 +490,20 @@
                                                 <f:validator binding="#{row.bindings.txtSubinventoryDescription.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:column>
+                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
+                                                   id="c5" width="80">
+                                            <af:inputText value="#{row.bindings.txtPoQuantity.inputValue}"
+                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
+                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.mandatory}"
+                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.displayWidth}"
+                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.precision}"
+                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.tooltip}"
+                                                          id="it15" readOnly="true">
+                                                <f:validator binding="#{row.bindings.txtPoQuantity.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.format}"/>
+                                            </af:inputText>
+                                        </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
                                                    id="c4" width="70">
                                             <af:inputText value="#{row.bindings.ReceivedQuantity.inputValue}"
