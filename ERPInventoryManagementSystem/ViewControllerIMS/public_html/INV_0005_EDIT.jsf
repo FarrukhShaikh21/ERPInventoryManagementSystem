@@ -58,7 +58,7 @@
                                                          action="#{pageFlowScope.OracleERPBean.doERPPopUnSuperviseRecord}"
                                                          disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.PoReceiveHeaderCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}"
                                                          partialTriggers="l7" shortDesc="Un Supervise Record">
-                                                    <af:setActionListener from="#{'ScmPurchaseBidCompHeaderCRUDIterator'}"
+                                                    <af:setActionListener from="#{'InvPoReceiveHeaderCRUDIterator'}"
                                                                           to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
                                                 </af:link>
                                                 <af:link text="Supervise" id="l19" partialSubmit="true"
@@ -67,7 +67,7 @@
                                                          action="#{pageFlowScope.OracleERPBean.doERPPopSupervisedRecord}"
                                                          disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.PoReceiveHeaderCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}"
                                                          partialTriggers="l7" shortDesc="Supervise Record">
-                                                    <af:setActionListener from="#{'ScmPurchaseBidCompHeaderCRUDIterator'}"
+                                                    <af:setActionListener from="#{'InvPoReceiveHeaderCRUDIterator'}"
                                                                           to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
                                                 </af:link>
                                                 <af:link text="Delete" id="l9"
@@ -420,7 +420,7 @@
                                             <af:link actionListener="#{bindings.CreateInsert.execute}" disabled="#{!bindings.CreateInsert.enabled}"
                                                        id="b1"
                                                      icon="#{resource['images:imgAddRecord.png']}"
-                                                     partialSubmit="true"/>
+                                                     partialSubmit="true" visible="false"/>
                                             <af:link actionListener="#{bindings.Delete1.execute}"
                                                        disabled="#{!bindings.Delete1.enabled}" id="b2"
                                                      icon="#{resource['images:imgDeleteRecord.png']}"
@@ -461,7 +461,7 @@
                                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.mandatory}"
                                                                           columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.displayWidth}"
                                                                           shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.tooltip}"
-                                                                          contentStyle="width:100%">
+                                                                          contentStyle="width:100%" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtItemName.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:column>

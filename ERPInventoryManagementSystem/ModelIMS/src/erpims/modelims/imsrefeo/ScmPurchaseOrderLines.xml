@@ -562,6 +562,26 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtRemainingPOQty"
+    ColumnName="TXT_REMAINING_POQTY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="SCM_PURCHASE_ORDER_LINES"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[(PoApproveQuantity==null?0:PoApproveQuantity) - (InvPoReceiveLines?.sum("ReceivedQuantity")==null?0:InvPoReceiveLines?.sum("ReceivedQuantity"))]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imsrefeo.ScmPurchaseOrderLines.txtRemainingPOQty_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="ScmPurchaseOrderHeader"
     Association="erpims.modelims.imsrefeo.FkScmPurOrdLinPoHeadSnoAssoc"

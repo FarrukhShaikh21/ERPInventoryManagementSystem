@@ -660,24 +660,29 @@
       <Item Value="erpims.modelims.imseo.InvPoReceiveLines.PoLinesSno"/>
     </AttrArray>
   </Key>
-  <validation:CompareValidationBean
+  <validation:ExpressionValidationBean
     Name="InvPoReceiveLinesReceiveQtyPOQtyBR"
-    ResId="erpims.modelims.imseo.InvPoReceiveLines_Rule_0"
-    OnAttribute="ReceivedQuantity"
-    OperandType="ATTR"
-    Inverse="false"
-    CompareType="LESSTHANEQUALTO"
-    CompareValue="txtPoQuantity">
+    OperandType="EXPR"
+    Inverse="false">
     <validation:OnAttributes>
       <validation:Item
         Value="ReceivedQuantity"/>
-      <validation:Item
-        Value="txtPoQuantity"/>
     </validation:OnAttributes>
     <validation:OnCondition
       trustMode="untrusted"
       Name="OnConditionExpr"><![CDATA[ReceivedQuantity!=null]]></validation:OnCondition>
-  </validation:CompareValidationBean>
+    <validation:MsgIds>
+      <validation:Item
+        Value="err_po_rec_qty_po_qty"/>
+    </validation:MsgIds>
+    <validation:TransientExpression
+      trustMode="untrusted"><![CDATA[if(PoLinesSno!=null && ReceivedQuantity > ScmPurchaseOrderLines?.txtRemainingPOQty+ (ReceivedQuantity==null?0:ReceivedQuantity))
+{
+adf.error.raise("err_po_rec_qty_po_qty");
+return false;
+}
+return true;]]></validation:TransientExpression>
+  </validation:ExpressionValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpims.modelims.ModelIMSBundle"/>

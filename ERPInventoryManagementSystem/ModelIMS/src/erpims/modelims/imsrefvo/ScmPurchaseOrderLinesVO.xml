@@ -266,6 +266,12 @@
     EntityAttrName="RemainingBalance"
     EntityUsage="ScmPurchaseOrderLines"
     AliasName="REMAINING_BALANCE"/>
+  <ViewAttribute
+    Name="txtRemainingPOQty"
+    PrecisionRule="true"
+    EntityAttrName="txtRemainingPOQty"
+    EntityUsage="ScmPurchaseOrderLines"
+    AliasName="TXT_REMAINING_POQTY"/>
   <ViewCriteria
     Name="ScmPurchaseOrderLinesByPoHeaderSnoVC"
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO"
