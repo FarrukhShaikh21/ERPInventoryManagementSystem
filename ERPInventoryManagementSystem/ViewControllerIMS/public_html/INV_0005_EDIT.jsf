@@ -491,7 +491,7 @@
                                             </af:inputComboboxListOfValues>
                                         </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
-                                                   id="c5" width="80">
+                                                   id="c5" width="60">
                                             <af:inputText value="#{row.bindings.txtPoQuantity.inputValue}"
                                                           label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
                                                           required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.mandatory}"
@@ -579,8 +579,8 @@
             </af:decorativeBox>
         </af:form>
         <f:facet name="metaContainer">
-            <af:resource type="javascript" source="/resources/js/ERPSCMJavaScript.js"/>
-            <af:resource type="css" source="/resources/css/ERPSCMStyleSheet.css"/>
+            <af:resource type="javascript" source="/resources/js/ERPINVJavaScript.js"/>
+            <af:resource type="css" source="/resources/css/ERPINVStyleSheet.css"/>
             <af:resource type="javascript" source="http://code.jquery.com/jquery-1.10.2.js"/>
         </f:facet>
     </af:document>

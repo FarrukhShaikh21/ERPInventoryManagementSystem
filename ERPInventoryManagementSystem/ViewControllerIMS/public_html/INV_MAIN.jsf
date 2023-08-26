@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="INV_MAIN.jsf" id="d1">
+        <af:serverListener type="customEvent" method="#{pageFlowScope.OracleERPBean.invhandleEvent}"/>
+        <af:clientListener type="load" method="Invload"/>    
         <af:form id="f1">
             <af:pageTemplate viewId="/ERPTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="ERPMain"/>
@@ -9,5 +11,8 @@
                 <f:facet name="ERPToolbar"/>
             </af:pageTemplate>
         </af:form>
+        <f:facet name="metaContainer">
+         <af:resource type="javascript" source="/resources/js/ERPINVAdaptiveJavaScript.js"/>
+        </f:facet>
     </af:document>
 </f:view>

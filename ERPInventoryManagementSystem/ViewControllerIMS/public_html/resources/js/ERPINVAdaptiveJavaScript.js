@@ -1,5 +1,5 @@
-function Scmload() {
-    console.log('Scmload');
+function Invload() {
+    console.log('Invload');
     var listener = new ResizeListener();
     if (listener._matchMediaQueryList) {
         listener._handleChange(listener._matchMediaQueryList);
