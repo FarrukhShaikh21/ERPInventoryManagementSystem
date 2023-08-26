@@ -504,62 +504,6 @@
                                                                   pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.format}"/>
                                             </af:inputText>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.label}"
-                                                   id="c5" width="70">
-                                            <af:inputText value="#{row.bindings.ExceedQuantity.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.tooltip}"
-                                                          id="it15" autoSubmit="true">
-                                                <f:validator binding="#{row.bindings.ExceedQuantity.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.ExceedQuantity.format}"/>
-                                            </af:inputText>
-                                        </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
-                                                   id="c13" width="70">
-                                            <af:inputText value="#{row.bindings.txtPoQuantity.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.tooltip}"
-                                                          id="it21" readOnly="true">
-                                                <f:validator binding="#{row.bindings.txtPoQuantity.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.format}"/>
-                                            </af:inputText>
-                                        </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.label}"
-                                                   id="c6" width="70" displayIndex="-1">
-                                            <af:inputText value="#{row.bindings.RejectedQuantity.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.tooltip}"
-                                                          id="it16" autoSubmit="true">
-                                                <f:validator binding="#{row.bindings.RejectedQuantity.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.RejectedQuantity.format}"/>
-                                            </af:inputText>
-                                        </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.label}"
-                                                   id="c7" width="70">
-                                            <af:inputText value="#{row.bindings.txtNetReceived.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.tooltip}"
-                                                          id="it17" readOnly="true" partialTriggers="it16 it15 it14">
-                                                <f:validator binding="#{row.bindings.txtNetReceived.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtNetReceived.format}"/>
-                                            </af:inputText>
-                                        </af:column>
                                         <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.label}"
                                                    id="c8">
                                             <af:inputText value="#{row.bindings.txtDepartmentName.inputValue}"

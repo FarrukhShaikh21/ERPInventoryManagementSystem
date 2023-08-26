@@ -191,18 +191,6 @@
     EntityUsage="InvPoReceiveLines"
     AliasName="RECEIVED_QUANTITY"/>
   <ViewAttribute
-    Name="RejectedQuantity"
-    PrecisionRule="true"
-    EntityAttrName="RejectedQuantity"
-    EntityUsage="InvPoReceiveLines"
-    AliasName="REJECTED_QUANTITY"/>
-  <ViewAttribute
-    Name="NetReceived"
-    PrecisionRule="true"
-    EntityAttrName="NetReceived"
-    EntityUsage="InvPoReceiveLines"
-    AliasName="NET_RECEIVED"/>
-  <ViewAttribute
     Name="DepartmentId"
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
@@ -322,34 +310,6 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="ExceedQuantity"
-    PrecisionRule="true"
-    EntityAttrName="ExceedQuantity"
-    EntityUsage="InvPoReceiveLines"
-    AliasName="EXCEED_QUANTITY"/>
-  <ViewAttribute
-    Name="PoQuantity"
-    PrecisionRule="true"
-    EntityAttrName="PoQuantity"
-    EntityUsage="InvPoReceiveLines"
-    AliasName="PO_QUANTITY"/>
-  <ViewAttribute
-    Name="txtNetReceived"
-    PrecisionRule="true"
-    EntityAttrName="txtNetReceived"
-    EntityUsage="InvPoReceiveLines"
-    AliasName="TXT_NET_RECEIVED"
-    IsQueriable="false"
-    IsPersistent="false"/>
-  <ViewAttribute
-    Name="txtPoQuantity"
-    IsQueriable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    EntityAttrName="txtPoQuantity"
-    EntityUsage="InvPoReceiveLines"
-    AliasName="TXT_PO_QUANTITY"/>
   <ViewLinkAccessor
     Name="InvItemVO"
     ViewLink="erpims.modelims.imsvo.InvItemInvPoReceivingLinesItemIdLink"

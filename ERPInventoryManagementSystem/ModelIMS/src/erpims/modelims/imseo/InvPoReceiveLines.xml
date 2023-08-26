@@ -220,46 +220,6 @@
     </Properties>
   </Attribute>
   <Attribute
-    Name="RejectedQuantity"
-    Precision="16"
-    Scale="6"
-    ColumnName="REJECTED_QUANTITY"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="INV_PO_RECEIVE_LINES"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvPoReceiveLines.RejectedQuantity_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
-    Name="NetReceived"
-    Precision="16"
-    Scale="6"
-    ColumnName="NET_RECEIVED"
-    SQLType="NUMERIC"
-    Type="java.lang.Integer"
-    ColumnType="NUMBER"
-    TableName="INV_PO_RECEIVE_LINES"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvPoReceiveLines.NetReceived_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
     Name="DepartmentId"
     Precision="10"
     Scale="0"
@@ -422,46 +382,6 @@
     </Properties>
   </Attribute>
   <Attribute
-    Name="ExceedQuantity"
-    Precision="16"
-    Scale="6"
-    ColumnName="EXCEED_QUANTITY"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="INV_PO_RECEIVE_LINES"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvPoReceiveLines.ExceedQuantity_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
-    Name="PoQuantity"
-    Precision="16"
-    Scale="6"
-    ColumnName="PO_QUANTITY"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="INV_PO_RECEIVE_LINES"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvPoReceiveLines.PoQuantity_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
     Name="txtItemName"
     Precision="100"
     ColumnName="TXT_ITEM_NAME"
@@ -580,56 +500,6 @@
           ResId="erpims.modelims.imseo.InvPoReceiveLines.txtSubinventoryDescription_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
-  </Attribute>
-  <Attribute
-    Name="txtNetReceived"
-    ColumnName="TXT_NET_RECEIVED"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="BIGINT"
-    IsQueriable="false"
-    IsPersistent="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[(ReceivedQuantity==null?0:ReceivedQuantity) - (RejectedQuantity==null?0:RejectedQuantity)]]></TransientExpression>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvPoReceiveLines.txtNetReceived_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-    <Dependencies>
-      <Item
-        Value="ReceivedQuantity"/>
-      <Item
-        Value="RejectedQuantity"/>
-    </Dependencies>
-  </Attribute>
-  <Attribute
-    Name="txtPoQuantity"
-    ColumnName="TXT_PO_QUANTITY"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="BIGINT"
-    IsPersistent="false"
-    IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[(ReceivedQuantity==null?0:ReceivedQuantity) - (ExceedQuantity==null?0:ExceedQuantity)]]></TransientExpression>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="erpims.modelims.imseo.InvPoReceiveLines.txtPoQuantity_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-    <Dependencies>
-      <Item
-        Value="ExceedQuantity"/>
-      <Item
-        Value="ReceivedQuantity"/>
-    </Dependencies>
   </Attribute>
   <AccessorAttribute
     Name="InvPoReceiveHeader"
@@ -767,21 +637,6 @@
       <Item Value="erpims.modelims.imseo.InvPoReceiveLines.PoLinesSno"/>
     </AttrArray>
   </Key>
-  <validation:CompareValidationBean
-    Name="InvPoReceiveLinesPORejectBR"
-    ResId="erpims.modelims.imseo.InvPoReceiveLines_Rule_0"
-    OnAttribute="RejectedQuantity"
-    OperandType="ATTR"
-    Inverse="false"
-    CompareType="LESSTHANEQUALTO"
-    CompareValue="txtPoQuantity">
-    <validation:OnAttributes>
-      <validation:Item
-        Value="RejectedQuantity"/>
-      <validation:Item
-        Value="txtPoQuantity"/>
-    </validation:OnAttributes>
-  </validation:CompareValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpims.modelims.ModelIMSBundle"/>

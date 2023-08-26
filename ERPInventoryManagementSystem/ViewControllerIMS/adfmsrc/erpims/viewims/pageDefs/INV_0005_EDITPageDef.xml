@@ -99,18 +99,12 @@
           <Item Value="txtItemName"/>
           <Item Value="txtUnitTypeName"/>
           <Item Value="ReceivedQuantity"/>
-          <Item Value="ExceedQuantity"/>
-          <Item Value="RejectedQuantity"/>
-          <Item Value="NetReceived"/>
           <Item Value="txtDepartmentName"/>
           <Item Value="txtProjectName"/>
           <Item Value="txtSubinventoryDescription"/>
           <Item Value="ReceiveMethodSno"/>
           <Item Value="ItemRemarks"/>
-          <Item Value="PoQuantity"/>
-          <Item Value="txtNetReceived"/>
-          <Item Value="txtPoQuantity"/>
-        </AttrNames>
+          </AttrNames>
       </nodeDefinition>
     </tree>
     <action IterBinding="InvPoReceiveLinesDetCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"

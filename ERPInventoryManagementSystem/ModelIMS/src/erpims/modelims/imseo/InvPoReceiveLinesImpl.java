@@ -42,8 +42,6 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         ItemId,
         UnitTypeSno,
         ReceivedQuantity,
-        RejectedQuantity,
-        NetReceived,
         DepartmentId,
         ProjectId,
         CreatedBy,
@@ -53,15 +51,11 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         ItemRemarks,
         SubinventoryOrgSno,
         ReceiveMethodSno,
-        ExceedQuantity,
-        PoQuantity,
         txtItemName,
         txtUnitTypeName,
         txtProjectName,
         txtDepartmentName,
         txtSubinventoryDescription,
-        txtNetReceived,
-        txtPoQuantity,
         InvPoReceiveHeader,
         InvItem,
         InvUnitType,
@@ -69,7 +63,8 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         AdminCompany,
         InvSubinventoryOrg,
         ScmPurchaseOrderLines;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -104,8 +99,6 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
     public static final int ITEMID = AttributesEnum.ItemId.index();
     public static final int UNITTYPESNO = AttributesEnum.UnitTypeSno.index();
     public static final int RECEIVEDQUANTITY = AttributesEnum.ReceivedQuantity.index();
-    public static final int REJECTEDQUANTITY = AttributesEnum.RejectedQuantity.index();
-    public static final int NETRECEIVED = AttributesEnum.NetReceived.index();
     public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
@@ -115,15 +108,11 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
     public static final int ITEMREMARKS = AttributesEnum.ItemRemarks.index();
     public static final int SUBINVENTORYORGSNO = AttributesEnum.SubinventoryOrgSno.index();
     public static final int RECEIVEMETHODSNO = AttributesEnum.ReceiveMethodSno.index();
-    public static final int EXCEEDQUANTITY = AttributesEnum.ExceedQuantity.index();
-    public static final int POQUANTITY = AttributesEnum.PoQuantity.index();
     public static final int TXTITEMNAME = AttributesEnum.txtItemName.index();
     public static final int TXTUNITTYPENAME = AttributesEnum.txtUnitTypeName.index();
     public static final int TXTPROJECTNAME = AttributesEnum.txtProjectName.index();
     public static final int TXTDEPARTMENTNAME = AttributesEnum.txtDepartmentName.index();
     public static final int TXTSUBINVENTORYDESCRIPTION = AttributesEnum.txtSubinventoryDescription.index();
-    public static final int TXTNETRECEIVED = AttributesEnum.txtNetReceived.index();
-    public static final int TXTPOQUANTITY = AttributesEnum.txtPoQuantity.index();
     public static final int INVPORECEIVEHEADER = AttributesEnum.InvPoReceiveHeader.index();
     public static final int INVITEM = AttributesEnum.InvItem.index();
     public static final int INVUNITTYPE = AttributesEnum.InvUnitType.index();
@@ -322,37 +311,6 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         setAttributeInternal(RECEIVEDQUANTITY, value);
     }
 
-    /**
-     * Gets the attribute value for RejectedQuantity, using the alias name RejectedQuantity.
-     * @return the value of RejectedQuantity
-     */
-    public BigDecimal getRejectedQuantity() {
-        return (BigDecimal) getAttributeInternal(REJECTEDQUANTITY);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for RejectedQuantity.
-     * @param value value to set the RejectedQuantity
-     */
-    public void setRejectedQuantity(BigDecimal value) {
-        setAttributeInternal(REJECTEDQUANTITY, value);
-    }
-
-    /**
-     * Gets the attribute value for NetReceived, using the alias name NetReceived.
-     * @return the value of NetReceived
-     */
-    public Integer getNetReceived() {
-        return (Integer) getAttributeInternal(NETRECEIVED);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for NetReceived.
-     * @param value value to set the NetReceived
-     */
-    public void setNetReceived(Integer value) {
-        setAttributeInternal(NETRECEIVED, value);
-    }
 
     /**
      * Gets the attribute value for DepartmentId, using the alias name DepartmentId.
@@ -498,37 +456,6 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         setAttributeInternal(RECEIVEMETHODSNO, value);
     }
 
-    /**
-     * Gets the attribute value for ExceedQuantity, using the alias name ExceedQuantity.
-     * @return the value of ExceedQuantity
-     */
-    public BigDecimal getExceedQuantity() {
-        return (BigDecimal) getAttributeInternal(EXCEEDQUANTITY);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for ExceedQuantity.
-     * @param value value to set the ExceedQuantity
-     */
-    public void setExceedQuantity(BigDecimal value) {
-        setAttributeInternal(EXCEEDQUANTITY, value);
-    }
-
-    /**
-     * Gets the attribute value for PoQuantity, using the alias name PoQuantity.
-     * @return the value of PoQuantity
-     */
-    public BigDecimal getPoQuantity() {
-        return (BigDecimal) getAttributeInternal(POQUANTITY);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for PoQuantity.
-     * @param value value to set the PoQuantity
-     */
-    public void setPoQuantity(BigDecimal value) {
-        setAttributeInternal(POQUANTITY, value);
-    }
 
     /**
      * Gets the attribute value for txtItemName, using the alias name txtItemName.
@@ -610,37 +537,6 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         setAttributeInternal(TXTSUBINVENTORYDESCRIPTION, value);
     }
 
-    /**
-     * Gets the attribute value for txtNetReceived, using the alias name txtNetReceived.
-     * @return the value of txtNetReceived
-     */
-    public BigDecimal gettxtNetReceived() {
-        return (BigDecimal) getAttributeInternal(TXTNETRECEIVED);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for txtNetReceived.
-     * @param value value to set the txtNetReceived
-     */
-    public void settxtNetReceived(BigDecimal value) {
-        setAttributeInternal(TXTNETRECEIVED, value);
-    }
-
-    /**
-     * Gets the attribute value for txtPoQuantity, using the alias name txtPoQuantity.
-     * @return the value of txtPoQuantity
-     */
-    public BigDecimal gettxtPoQuantity() {
-        return (BigDecimal) getAttributeInternal(TXTPOQUANTITY);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for txtPoQuantity.
-     * @param value value to set the txtPoQuantity
-     */
-    public void settxtPoQuantity(BigDecimal value) {
-        setAttributeInternal(TXTPOQUANTITY, value);
-    }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
@@ -779,11 +675,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
      */
     protected void doDML(int operation, TransactionEvent e) {
         
-        if (operation!=DML_DELETE) {
-        populateAttributeAsChanged(NETRECEIVED, gettxtNetReceived());
-        populateAttributeAsChanged(POQUANTITY, gettxtPoQuantity());
-       }
-        if (operation!=DML_DELETE ) {
+           if (operation!=DML_DELETE ) {
                 
 
                       if (getPoLinesSno() != null) {
@@ -821,7 +713,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
         PreparedStatement ps=null;
         try {
              ps =
-                getDBTransaction().createPreparedStatement("update "+pTableName+" rfl set rfl.is_complete=case when (select coalesce(sum(po_quantity),0)-coalesce(sum(rejected_quantity),0) from inv_po_receive_lines where "+pDBColumn+"=" +getAttribute(pGetter) +")=rfl."+ERPQuantityColumn+" then 'Y' else 'N' end ,rfl.remaining_balance=rfl."+ERPQuantityColumn+"-(select coalesce(sum(po_quantity),0)-coalesce(sum(rejected_quantity),0) from inv_po_receive_lines where "+pDBColumn+"=" +getAttribute(pGetter) + ") where rfl."+pDBColumn+"="+getAttribute(pGetter), getDBTransaction().DEFAULT);
+                getDBTransaction().createPreparedStatement("update "+pTableName+" rfl set rfl.is_complete=case when (select coalesce(sum(received_quantity),0) from inv_po_receive_lines where "+pDBColumn+"=" +getAttribute(pGetter) +")=rfl."+ERPQuantityColumn+" then 'Y' else 'N' end ,rfl.remaining_balance=rfl."+ERPQuantityColumn+"-(select coalesce(sum(received_quantity),0) from inv_po_receive_lines where "+pDBColumn+"=" +getAttribute(pGetter) + ") where rfl."+pDBColumn+"="+getAttribute(pGetter), getDBTransaction().DEFAULT);
             ps.executeUpdate();
         } catch (SQLException sqle) {
             // TODO: Add catch code
@@ -843,7 +735,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
                 ps = getDBTransaction().createPreparedStatement("start TRANSACTION", getDBTransaction().DEFAULT);
                 ps.executeUpdate();
             }
-                ps= getDBTransaction().createPreparedStatement("select coalesce(sum(po_quantity),0)-coalesce(sum(rejected_quantity),0) PORecQuantity from inv_po_receive_lines where po_receive_lines_sno!="+getPoReceiveLinesSno()+" and "+pERPDBColumn+"="+getAttribute(pERPGetter), getDBTransaction().DEFAULT);
+                ps= getDBTransaction().createPreparedStatement("select coalesce(sum(received_quantity),0) PORecQuantity from inv_po_receive_lines where po_receive_lines_sno!="+getPoReceiveLinesSno()+" and "+pERPDBColumn+"="+getAttribute(pERPGetter), getDBTransaction().DEFAULT);
                 ResultSet rs = ps.executeQuery();
                 rs.next();
                 poquantity=rs.getString(1);
@@ -858,7 +750,7 @@ public class InvPoReceiveLinesImpl extends ERPEntityImpl {
                 }
             }
             BigDecimal rfqRemainingQty=pERPSourceQuantity.subtract(new BigDecimal(poquantity));
-           if (rfqRemainingQty.compareTo(getPoQuantity())==-1) {
+           if (rfqRemainingQty.compareTo(getReceivedQuantity())==-1) {
             throw new  JboException("Only ("+rfqRemainingQty+") "+pType+" remaining. Item ("+gettxtItemName()+","+getInvPoReceiveHeader().gettxtOrgDescription()+") Before Insert Exception");
            }
     }
