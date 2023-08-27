@@ -13,11 +13,11 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full"
-  RowClass="erpglobals.modelglobals.ERPViewRowImpl"
-  ComponentClass="erpims.modelims.imsvo.InvPoReceiveLinesVOImpl">
+  RowClass="erpims.modelims.imsvo.InvPoReceiveLinesVORowImpl">
   <DesignTime>
     <Attr Name="_rowSuperClassName" Value="erpglobals.modelglobals.ERPViewRowImpl"/>
-    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="AccInvItemVO"
@@ -351,6 +351,12 @@
   <ViewLinkAccessor
     Name="ScmPurchaseOrderLinesVO"
     ViewLink="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesInvPoReceiveLinesPOLinesSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvPoReceiveHeaderVO"
+    ViewLink="erpims.modelims.imsvo.FkInvPoRecLinesHeaderSnoLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

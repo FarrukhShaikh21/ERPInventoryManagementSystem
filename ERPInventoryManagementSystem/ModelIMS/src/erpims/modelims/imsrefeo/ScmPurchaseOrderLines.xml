@@ -569,8 +569,8 @@
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
     TableName="SCM_PURCHASE_ORDER_LINES"
-    IsPersistent="false"
-    IsQueriable="false">
+    IsQueriable="false"
+    IsPersistent="false">
     <TransientExpression
       trustMode="untrusted"><![CDATA[(PoApproveQuantity==null?0:PoApproveQuantity) - (InvPoReceiveLines?.sum("ReceivedQuantity")==null?0:InvPoReceiveLines?.sum("ReceivedQuantity"))]]></TransientExpression>
     <Properties>

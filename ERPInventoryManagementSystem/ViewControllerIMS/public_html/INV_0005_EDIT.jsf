@@ -228,7 +228,7 @@
                                                                           required="#{bindings.txtOrgDescription.hints.mandatory}"
                                                                           columns="#{bindings.txtOrgDescription.hints.displayWidth}"
                                                                           shortDesc="#{bindings.txtOrgDescription.hints.tooltip}"
-                                                                          simple="true">
+                                                                          simple="true" autoSubmit="true">
                                                 <f:validator binding="#{bindings.txtOrgDescription.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:gridCell>
@@ -244,7 +244,7 @@
                                                                           required="#{bindings.txtPoHeaderCode.hints.mandatory}"
                                                                           columns="#{bindings.txtPoHeaderCode.hints.displayWidth}"
                                                                           shortDesc="#{bindings.txtPoHeaderCode.hints.tooltip}"
-                                                                          simple="true">
+                                                                          simple="true" autoSubmit="true">
                                                 <f:validator binding="#{bindings.txtPoHeaderCode.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.txtPoHeaderCode.format}"/>

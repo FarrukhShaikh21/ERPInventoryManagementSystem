@@ -271,7 +271,9 @@
     PrecisionRule="true"
     EntityAttrName="txtRemainingPOQty"
     EntityUsage="ScmPurchaseOrderLines"
-    AliasName="TXT_REMAINING_POQTY"/>
+    AliasName="TXT_REMAINING_POQTY"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <ViewCriteria
     Name="ScmPurchaseOrderLinesByPoHeaderSnoVC"
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO"

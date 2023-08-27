@@ -19,6 +19,7 @@ import oracle.jbo.RowSetIterator;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
+
     public static final int ENTITY_INVPORECEIVEHEADER = 0;
 
     /**
@@ -82,7 +83,8 @@ public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
         AccSysSystemParameterVO,
         AccAdminCompanyForCompVO,
         AccSysGeneralValueVO;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -104,6 +106,7 @@ public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
             return vals;
         }
     }
+
     public static final int PORECEIVEHEADERSNO = AttributesEnum.PoReceiveHeaderSno.index();
     public static final int PORECEIVEHEADERCODE = AttributesEnum.PoReceiveHeaderCode.index();
     public static final int POHEADERSNO = AttributesEnum.PoHeaderSno.index();
@@ -395,7 +398,7 @@ public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
     public void setLocationId(Integer value) {
         setAttributeInternal(LOCATIONID, value);
         setCompanyId(doGetCompanyIDByLocation(value==null?0:value.intValue(), getGlobalCompanyId()));
-
+        setInventoryOrgSno(null);
     }
 
     /**
@@ -412,6 +415,10 @@ public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
      */
     public void setInventoryOrgSno(Integer value) {
         setAttributeInternal(INVENTORYORGSNO, value);
+        setPoHeaderSno(null);
+        while(getInvPoReceiveLinesVO().getRowCount()>0) {
+            getInvPoReceiveLinesVO().first().remove();
+        }
     }
 
     /**
@@ -1012,6 +1019,14 @@ public class InvPoReceiveHeaderVORowImpl extends ERPViewRowImpl {
      */
     public RowSet getAccSysGeneralValueVO() {
         return (RowSet) getAttributeInternal(ACCSYSGENERALVALUEVO);
+    }
+    @Override
+    public boolean isAttributeUpdateable(int i) {
+        // TODO Implement this method
+        if (getIsSupervised().equals("Y") || getApprovalStatusSno() >2) {
+            return false;
+       }
+        return super.isAttributeUpdateable(i);
     }
 }
 
