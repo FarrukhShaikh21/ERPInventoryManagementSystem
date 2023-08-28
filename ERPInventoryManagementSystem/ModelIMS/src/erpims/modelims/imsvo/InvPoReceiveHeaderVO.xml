@@ -147,6 +147,9 @@
       <Item Value="TempDepartmentId"/>
       <Item Value="TempProjectId"/>
       <Item Value="DeliveryTermSno"/>
+      <Item Value="CompareHeaderSno"/>
+      <Item Value="RfqHeaderSno"/>
+      <Item Value="DemandHeaderSno"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="PoHeaderCode"/>
@@ -155,6 +158,9 @@
       <Item Value="TempDepartmentId"/>
       <Item Value="TempProjectId"/>
       <Item Value="DeliveryTermSno"/>
+      <Item Value="CompareHeaderSno"/>
+      <Item Value="RfqHeaderSno"/>
+      <Item Value="DemandHeaderSno"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PoHeaderCode"/>
