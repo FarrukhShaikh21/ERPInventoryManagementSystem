@@ -4,30 +4,30 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="InvPoReceiveHeaderCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvPoReceiveHeaderCRUDIterator"/>
-    <iterator Binds="InvPoReceiveLinesDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvPoReceiveLinesDetCRUDIterator"/>
+    <iterator Binds="InvItemReceiveHeaderCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvItemReceiveHeaderCRUDIterator"/>
+    <iterator Binds="InvItemReceiveLinesDetCRUD" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvItemReceiveLinesDetCRUDIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="PoReceiveHeaderSno">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="PoReceiveHeaderSno">
       <AttrNames>
-        <Item Value="PoReceiveHeaderSno"/>
+        <Item Value="ItemReceiveHeaderSno"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="PoReceiveHeaderCode">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="ItemReceiveHeaderCode">
       <AttrNames>
-        <Item Value="PoReceiveHeaderCode"/>
+        <Item Value="ItemReceiveHeaderCode"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="ReceiveDate">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="ReceiveDate">
       <AttrNames>
         <Item Value="ReceiveDate"/>
       </AttrNames>
     </attributeValues>
-    <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+    <listOfValues IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
                   id="txtLocationName"/>
-    <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtSupplierName"
+    <listOfValues IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtSupplierName"
                   id="txtSupplierName"/>
     <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtPoHeaderCode"
                   id="txtPoHeaderCode"/>

@@ -154,6 +154,9 @@
       Name="InvItemReceiveHeaderByReceiveHeaderSnoVC"
       FullName="erpims.modelims.imsvo.InvItemReceiveHeaderVO.InvItemReceiveHeaderByReceiveHeaderSnoVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="InvItemReceiveLinesDetCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvItemReceiveLinesVO"/>
   <ViewLinkUsage
     Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
     ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
@@ -171,5 +174,11 @@
     ViewLinkObjectName="erpims.modelims.imsvo.FkInvPoRecLinesHeaderSnoLink"
     SrcViewUsageName="erpims.modelims.imsam.ERPINVModule.InvPoReceiveHeaderCRUD"
     DstViewUsageName="erpims.modelims.imsam.ERPINVModule.InvPoReceiveLinesDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkInvItmReLineHeaderSnoLink1"
+    ViewLinkObjectName="erpims.modelims.imsvo.FkInvItmReLineHeaderSnoLink"
+    SrcViewUsageName="erpims.modelims.imsam.ERPINVModule.InvItemReceiveHeaderCRUD"
+    DstViewUsageName="erpims.modelims.imsam.ERPINVModule.InvItemReceiveLinesDetCRUD"
     Reversed="false"/>
 </AppModule>
