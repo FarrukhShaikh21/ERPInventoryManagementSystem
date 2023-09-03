@@ -17,10 +17,19 @@
     Scale="0"
     ColumnName="ITEM_RECEIVE_HEADER_SNO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_ITEM_RECEIVE_HEADER"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.ItemReceiveHeaderSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ItemReceiveHeaderCode"
     IsUnique="true"
@@ -29,9 +38,18 @@
     Scale="0"
     ColumnName="ITEM_RECEIVE_HEADER_CODE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.ItemReceiveHeaderCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="SourceTypeSno"
     IsNotNull="true"
@@ -41,7 +59,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.SourceTypeSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="SourceHeaderSno"
     IsNotNull="true"
@@ -49,16 +76,34 @@
     Scale="0"
     ColumnName="SOURCE_HEADER_SNO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.SourceHeaderSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ReceiveDate"
     ColumnName="RECEIVE_DATE"
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.ReceiveDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="DeliveryNote"
     Precision="100"
@@ -70,6 +115,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.DeliveryNote_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="DeliveryTermSno"
@@ -79,7 +132,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.DeliveryTermSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="SupplierSno"
     IsNotNull="true"
@@ -89,7 +151,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.SupplierSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Remarks"
     Precision="300"
@@ -101,6 +172,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="300"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.Remarks_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LocationId"
@@ -111,7 +190,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.LocationId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="InventoryOrgSno"
     IsNotNull="true"
@@ -121,7 +209,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.InventoryOrgSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="GlobalCompanyId"
     IsNotNull="true"
@@ -131,7 +228,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.GlobalCompanyId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CompanyId"
     IsUnique="true"
@@ -142,7 +248,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.CompanyId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TempProjectId"
     IsNotNull="true"
@@ -152,7 +267,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.TempProjectId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TempDepartmentId"
     IsNotNull="true"
@@ -162,7 +286,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.TempDepartmentId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CreatedBy"
     IsNotNull="true"
@@ -172,15 +305,34 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.CreatedBy_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CreatedDate"
     IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.CreatedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LastUpdatedBy"
     Precision="5"
@@ -189,14 +341,32 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.LastUpdatedBy_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LastUpdatedDate"
     ColumnName="LAST_UPDATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.LastUpdatedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="IsSupervised"
     IsNotNull="true"
@@ -205,10 +375,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="INV_ITEM_RECEIVE_HEADER">
+    TableName="INV_ITEM_RECEIVE_HEADER"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.IsSupervised_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SupervisedBy"
@@ -218,26 +397,53 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.SupervisedBy_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="SupervisedDate"
     ColumnName="SUPERVISED_DATE"
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.SupervisedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="IsUnsupervised"
-    IsNotNull="true"
     Precision="1"
     ColumnName="IS_UNSUPERVISED"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="INV_ITEM_RECEIVE_HEADER">
+    TableName="INV_ITEM_RECEIVE_HEADER"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.IsUnsupervised_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="UnSupervisedBy"
@@ -247,14 +453,33 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.UnSupervisedBy_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="UnSupervisedDate"
     ColumnName="UN_SUPERVISED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER"
+    RetrievedOnUpdate="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.UnSupervisedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="IsCancelled"
     IsNotNull="true"
@@ -263,10 +488,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="INV_ITEM_RECEIVE_HEADER">
+    TableName="INV_ITEM_RECEIVE_HEADER"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.IsCancelled_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CancelledBy"
@@ -276,14 +510,33 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.CancelledBy_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CancelledDate"
     ColumnName="CANCELLED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.CancelledDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ApprovalStatusSno"
     IsNotNull="true"
@@ -293,7 +546,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER"/>
+    TableName="INV_ITEM_RECEIVE_HEADER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveHeader.ApprovalStatusSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvItemReceiveLines"
     Association="erpims.modelims.imseo.FkInvItmReLineHeaderSnoAssoc"
@@ -322,4 +584,8 @@
       <Item Value="erpims.modelims.imseo.InvItemReceiveHeader.CompanyId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
 </Entity>

@@ -17,10 +17,19 @@
     Scale="0"
     ColumnName="ITEM_RECEIVE_LINES_SNO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_ITEM_RECEIVE_LINES"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.ItemReceiveLinesSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ItemReceiveHeaderSno"
     IsNotNull="true"
@@ -28,9 +37,18 @@
     Scale="0"
     ColumnName="ITEM_RECEIVE_HEADER_SNO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.ItemReceiveHeaderSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="SourceTypeSno"
     Precision="5"
@@ -39,16 +57,34 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.SourceTypeSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="SourceLinesSno"
     Precision="10"
     Scale="0"
     ColumnName="SOURCE_LINES_SNO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.SourceLinesSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LineNo"
     IsNotNull="true"
@@ -58,7 +94,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.LineNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ItemId"
     IsNotNull="true"
@@ -66,9 +111,18 @@
     Scale="0"
     ColumnName="ITEM_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.ItemId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="UnitTypeSno"
     IsNotNull="true"
@@ -78,7 +132,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.UnitTypeSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ReceivedQuantity"
     IsNotNull="true"
@@ -86,27 +149,54 @@
     Scale="6"
     ColumnName="RECEIVED_QUANTITY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.ReceivedQuantity_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="DepartmentId"
     Precision="10"
     Scale="0"
     ColumnName="DEPARTMENT_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.DepartmentId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ProjectId"
     Precision="10"
     Scale="0"
     ColumnName="PROJECT_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.ProjectId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CreatedBy"
     IsNotNull="true"
@@ -116,15 +206,33 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.CreatedBy_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.CreatedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LastUpdatedBy"
     Precision="5"
@@ -133,14 +241,24 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.LastUpdatedBy_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LastUpdatedDate"
     ColumnName="LAST_UPDATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="INV_ITEM_RECEIVE_LINES"/>
+    TableName="INV_ITEM_RECEIVE_LINES"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="ItemRemarks"
     Precision="500"
@@ -159,7 +277,7 @@
     Scale="0"
     ColumnName="SUBINVENTORY_ORG_SNO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_ITEM_RECEIVE_LINES"/>
   <Attribute
@@ -211,4 +329,8 @@
       <Item Value="erpims.modelims.imseo.InvItemReceiveLines.ItemReceiveHeaderSno"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpims.modelims.ModelIMSBundle"/>
+  </ResourceBundle>
 </Entity>
