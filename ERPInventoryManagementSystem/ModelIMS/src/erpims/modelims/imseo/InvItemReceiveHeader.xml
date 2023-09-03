@@ -581,7 +581,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_ITEM_RECEIVE_HEADER"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
@@ -613,6 +612,20 @@
     AssociationOtherEnd="erpims.modelims.imseo.InvSourceTypeInvItemRecHeadSourceTypeSnoAssoc.InvItemReceiveHeader"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="GlProjects"
+    Association="erpims.modelims.imseo.GlProjectsInvItemReceiveHeaderProjectIdAssoc"
+    AssociationEnd="erpims.modelims.imseo.GlProjectsInvItemReceiveHeaderProjectIdAssoc.GlProjects"
+    AssociationOtherEnd="erpims.modelims.imseo.GlProjectsInvItemReceiveHeaderProjectIdAssoc.InvItemReceiveHeader"
+    Type="erpfms.modelfms.fmseo.GlProjectsImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AdminCompany"
+    Association="erpims.modelims.imseo.AdminCompanyInvItemReceiveHeaderLocationIdAssoc"
+    AssociationEnd="erpims.modelims.imseo.AdminCompanyInvItemReceiveHeaderLocationIdAssoc.AdminCompany"
+    AssociationOtherEnd="erpims.modelims.imseo.AdminCompanyInvItemReceiveHeaderLocationIdAssoc.InvItemReceiveHeader"
+    Type="erpadm.modeladm.admeo.AdminCompanyImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkInvItemReceiveHeader"
     PrimaryKey="true">
@@ -643,6 +656,28 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvItemReceiveHeader.SourceTypeSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvItemReceiveHeader1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_PROJECTS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_ITEM_RECEIVE_HEADER1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvItemReceiveHeader.TempProjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvItemReceiveHeader2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADMIN_COMPANY_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_ITEM_RECEIVE_HEADER2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvItemReceiveHeader.LocationId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

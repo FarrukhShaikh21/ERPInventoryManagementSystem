@@ -13,6 +13,44 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccScmPurchaseOrderHeaderVO"
+    ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovSourceHeaderCode"
+    ListVOName="AccScmPurchaseOrderHeaderVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SourceHeaderCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="SourceHeaderCode"/>
+      <Item Value="TempDepartmentId"/>
+      <Item Value="TempProjectId"/>
+      <Item Value="SupplierSno"/>
+      <Item Value="DeliveryTermSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PoHeaderCode"/>
+      <Item Value="PoHeaderSno"/>
+      <Item Value="TempDepartmentId"/>
+      <Item Value="TempProjectId"/>
+      <Item Value="SupplierSno"/>
+      <Item Value="DeliveryTermSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PoHeaderCode"/>
+      <Item Value="PoDate"/>
+      <Item Value="txtSupplierName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="ScmPurchaseOrderHeaderFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItemReceiveHeader"
     Entity="erpims.modelims.imseo.InvItemReceiveHeader"/>
@@ -214,7 +252,15 @@
     PrecisionRule="true"
     EntityAttrName="SourceHeaderCode"
     EntityUsage="InvItemReceiveHeader"
-    AliasName="SOURCE_HEADER_CODE"/>
+    AliasName="SOURCE_HEADER_CODE"
+    LOVName="LovSourceHeaderCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtSourceHeaderCodeLovName"
     IsUpdateable="false"
@@ -241,6 +287,18 @@
   <ViewLinkAccessor
     Name="InvSourceTypeVO"
     ViewLink="erpims.modelims.imsvo.InvSourceTypeInvItemRecHeadSourceTypeSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlProjectsVO"
+    ViewLink="erpims.modelims.imsvo.GlProjectsInvItemReceiveHeaderProjectIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AdminCompanyVO"
+    ViewLink="erpims.modelims.imsvo.AdminCompanyInvItemReceiveHeaderLocationIdLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
