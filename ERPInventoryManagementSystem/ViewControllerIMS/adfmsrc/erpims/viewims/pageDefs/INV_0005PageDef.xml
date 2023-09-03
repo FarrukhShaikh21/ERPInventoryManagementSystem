@@ -5,25 +5,25 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erptemplate.viewtemp.pageDefs.ERPTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
-    <iterator Binds="InvPoReceiveHeaderRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvPoReceiveHeaderROIterator"/>
+    <iterator Binds="InvItemReceiveHeaderRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
+              id="InvItemReceiveHeaderROIterator"/>
   </executables>
   <bindings>
-    <tree IterBinding="InvPoReceiveHeaderROIterator" id="InvPoReceiveHeaderRO">
-      <nodeDefinition DefName="erpims.modelims.imsvo.InvPoReceiveHeaderVO" Name="InvPoReceiveHeaderRO0">
+    <tree IterBinding="InvItemReceiveHeaderROIterator" id="InvItemReceiveHeaderRO">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvItemReceiveHeaderVO" Name="InvItemReceiveHeaderRO">
         <AttrNames>
-          <Item Value="PoReceiveHeaderCode"/>
+          <Item Value="ItemReceiveHeaderCode"/>
           <Item Value="ReceiveDate"/>
           <Item Value="ApprovalStatusSno"/>
-          <Item Value="txtPoHeaderCode"/>
+          <Item Value="SourceHeaderCode"/>
           <Item Value="LocationId"/>
           <Item Value="txtLocationName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="InvPoReceiveHeaderROIterator" id="PoReceiveHeaderSno">
+    <attributeValues IterBinding="InvItemReceiveHeaderROIterator" id="ItemReceiveHeaderSno">
       <AttrNames>
-        <Item Value="PoReceiveHeaderSno"/>
+        <Item Value="ItemReceiveHeaderSno"/>
       </AttrNames>
     </attributeValues>
   </bindings>

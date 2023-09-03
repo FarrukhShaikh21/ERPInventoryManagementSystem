@@ -4,11 +4,12 @@
                 SkipValidation="true">
   <parameters/>
   <executables>
-    <iterator Binds="InvPoReceiveHeaderRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvPoReceiveHeaderROIterator"/>
+    <iterator Binds="InvItemReceiveHeaderRO" RangeSize="10" DataControl="ERPINVModuleDataControl"
+              id="InvItemReceiveHeaderROIterator"/>
   </executables>
   <bindings>
-    <action IterBinding="InvPoReceiveHeaderROIterator" id="CreateWithParams" RequiresUpdateModel="true"
-            Action="createWithParams"/>
+    <action IterBinding="InvItemReceiveHeaderROIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams" InstanceName="ERPINVModuleDataControl.InvItemReceiveHeaderRO"
+            DataControl="ERPINVModuleDataControl"/>
   </bindings>
 </pageDefinition>

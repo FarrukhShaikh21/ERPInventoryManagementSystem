@@ -3,11 +3,12 @@
                 id="ERPBTFINV_ERPBTFINV_ExecutePageDef11111111" Package="erpims.viewims.pageDefs" SkipValidation="true">
   <parameters/>
   <executables>
-    <iterator Binds="InvPoReceiveHeaderRO" RangeSize="25" DataControl="ERPINVModuleDataControl"
-              id="InvPoReceiveHeaderROIterator" Refresh="never"/>
+    <iterator Binds="InvItemReceiveHeaderRO" RangeSize="10" DataControl="ERPINVModuleDataControl"
+              id="InvItemReceiveHeaderROIterator"/>
   </executables>
   <bindings>
-    <action IterBinding="InvPoReceiveHeaderROIterator" id="Execute" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
+    <action IterBinding="InvItemReceiveHeaderROIterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute" InstanceName="ERPINVModuleDataControl.InvItemReceiveHeaderRO"
+            DataControl="ERPINVModuleDataControl"/>
   </bindings>
 </pageDefinition>

@@ -1328,7 +1328,7 @@
       <property
          name="fromOutcome">ERP-QRY-INV_0005_EDIT</property>
       <property
-         name="sdm:polyPoints">R50,-515.5,921.44824,-295.64844,1021.3965,L50</property>
+         name="sdm:polyPoints">R54,-515.5,924.94824,-295.64844,1021.3965,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -1338,7 +1338,7 @@
       <property
          name="fromOutcome">ERP-QRY-INV_0005_EDIT</property>
       <property
-         name="sdm:polyPoints">B50,-254.64844,1075.3965,-292.30957,1105.3447,T50</property>
+         name="sdm:polyPoints">B50,-254.64844,1075.3965,-288.80957,1105.3447,T56</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall124">

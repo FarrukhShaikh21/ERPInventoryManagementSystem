@@ -1,23 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-  <af:document title="SCM_0018.jsf" id="d1">
+  <af:document title="INV_0005.jsf" id="d1">
     <af:messages id="m1"/>
     <af:form id="f1">
       <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
         <af:dialog id="d2" type="ok">
           <f:facet name="buttonBar"/>
-          <af:panelGroupLayout layout="vertical" id="pgl2">
-            <af:panelHeader text="Search BID" id="ph1">
-              <af:query id="qryId1" headerText="Search" disclosed="true"
-                        value="#{bindings.ScmPurchaseBidCompHeaderFindVCQuery.queryDescriptor}"
-                        model="#{bindings.ScmPurchaseBidCompHeaderFindVCQuery.queryModel}"
-                        queryListener="#{bindings.ScmPurchaseBidCompHeaderFindVCQuery.processQuery}"
-                        queryOperationListener="#{bindings.ScmPurchaseBidCompHeaderFindVCQuery.processQueryOperation}"
-                        runQueryAutomatically="allSavedSearches" saveResultsLayout="never" saveQueryMode="hidden"
-                        modeChangeVisible="false"/>
-            </af:panelHeader>
-          </af:panelGroupLayout>
+          <af:panelGroupLayout layout="vertical" id="pgl2"/>
         </af:dialog>
       </af:popup>
       <af:pageTemplate viewId="/ERPTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
@@ -27,21 +17,21 @@
               <af:panelSplitter id="ps1">
                 <f:facet name="second">
                   <af:panelGroupLayout id="pgl3" layout="scroll" halign="center">
-                    <af:listView value="#{bindings.InvPoReceiveHeaderRO.collectionModel}" var="item"
-                                 emptyText="#{bindings.InvPoReceiveHeaderRO.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                 fetchSize="#{bindings.InvPoReceiveHeaderRO.rangeSize}" id="lv1"
+                    <af:listView value="#{bindings.InvItemReceiveHeaderRO.collectionModel}" var="item"
+                                 emptyText="#{bindings.InvItemReceiveHeaderRO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                 fetchSize="#{bindings.InvItemReceiveHeaderRO.rangeSize}" id="lv1"
                                  styleClass="WBDisplayBlockCenter">
                       <af:listItem id="li2" styleClass="WBDisplayBlock WBDisplayBlockPadding WBDisplayBlockCenterUndo">
                         <af:panelGroupLayout id="pgl11" styleClass="WBCardSize" layout="vertical">
-                          <af:inputText value="#{bindings.PoReceiveHeaderSno.inputValue}"
-                                        label="#{bindings.PoReceiveHeaderSno.hints.label}"
-                                        required="#{bindings.PoReceiveHeaderSno.hints.mandatory}"
-                                        columns="#{bindings.PoReceiveHeaderSno.hints.displayWidth}"
-                                        maximumLength="#{bindings.PoReceiveHeaderSno.hints.precision}"
-                                        shortDesc="#{bindings.PoReceiveHeaderSno.hints.tooltip}" id="it1"
+                          <af:inputText value="#{bindings.ItemReceiveHeaderSno.inputValue}"
+                                        label="#{bindings.ItemReceiveHeaderSno.hints.label}"
+                                        required="#{bindings.ItemReceiveHeaderSno.hints.mandatory}"
+                                        columns="#{bindings.ItemReceiveHeaderSno.hints.displayWidth}"
+                                        maximumLength="#{bindings.ItemReceiveHeaderSno.hints.precision}"
+                                        shortDesc="#{bindings.ItemReceiveHeaderSno.hints.tooltip}" id="it1"
                                         rendered="false">
-                            <f:validator binding="#{bindings.PoReceiveHeaderSno.validator}"/>
-                            <af:convertNumber groupingUsed="false" pattern="#{bindings.PoReceiveHeaderSno.format}"/>
+                            <f:validator binding="#{bindings.ItemReceiveHeaderSno.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.ItemReceiveHeaderSno.format}"/>
                           </af:inputText>
                           <af:panelBox text="PanelBox2" id="pb2" showHeader="never" showDisclosure="false">
                             <f:facet name="toolbar"/>
@@ -53,10 +43,10 @@
                                              styleClass="ERPLink" action="ERP-QRY-INV_0005_EDIT"
                                              shortDesc="Receive Code, Click To View Record"/>
                                     <af:spacer width="10" height="10" id="s3"/>
-                                    <af:outputFormatted value="#{item.bindings.PoReceiveHeaderCode.inputValue}" id="of1"
+                                    <af:outputFormatted value="#{item.bindings.ItemReceiveHeaderCode.inputValue}" id="of1"
                                                         styleClass="ERPHeroDetailColor">
                                       <af:convertNumber groupingUsed="false"
-                                                        pattern="#{bindings.InvPoReceiveHeaderRO.hints.PoReceiveHeaderCode.format}"/>
+                                                        pattern="#{bindings.InvItemReceiveHeaderRO.hints.ItemReceiveHeaderCode.format}"/>
                                     </af:outputFormatted>
                                   </af:panelGroupLayout>
                                 </af:gridCell>
@@ -68,7 +58,7 @@
                                               shortDesc="Receive Date"/>
                                     <af:outputFormatted value="#{item.bindings.ReceiveDate.inputValue}" id="of7"
                                                         styleClass="ERPHeroDetailColor">
-                                      <af:convertDateTime pattern="#{bindings.ScmPurchaseBidCompHeaderRO.hints.CompareDate.format}"/>
+                                      <af:convertDateTime pattern="#{bindings.InvItemReceiveHeaderRO.hints.ReceiveDate.format}"/>
                                     </af:outputFormatted>
                                     <f:facet name="separator">
                                       <af:spacer width="10" height="10" id="s2"/>
@@ -94,10 +84,10 @@
                                               source="#{resource['images:imgDocument.png']}"
                                               shortDesc="PO Header Code"/>
                                     <af:spacer width="10" height="10" id="s4"/>
-                                    <af:outputFormatted value="#{item.bindings.txtPoHeaderCode.inputValue}" id="of6"
+                                    <af:outputFormatted value="#{item.bindings.SourceHeaderCode.inputValue}" id="of6"
                                                         styleClass="ERPHeroDetailColor">
                                       <af:convertNumber groupingUsed="false"
-                                                        pattern="#{bindings.InvPoReceiveHeaderRO.hints.txtPoHeaderCode.format}"/>
+                                                        pattern="#{bindings.InvItemReceiveHeaderRO.hints.SourceHeaderCode.format}"/>
                                     </af:outputFormatted>
                                   </af:panelGroupLayout>
                                 </af:gridCell>
