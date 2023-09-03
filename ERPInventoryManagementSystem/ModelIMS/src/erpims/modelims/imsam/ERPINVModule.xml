@@ -144,6 +144,16 @@
   <ViewUsage
     Name="ScmPurchaseOrderHeaderVO1"
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO"/>
+  <ViewUsage
+    Name="InvItemReceiveHeaderRO"
+    ViewObjectName="erpims.modelims.imsvo.InvItemReceiveHeaderVO"/>
+  <ViewUsage
+    Name="InvItemReceiveHeaderCRUD"
+    ViewObjectName="erpims.modelims.imsvo.InvItemReceiveHeaderVO">
+    <ViewCriteriaUsage
+      Name="InvItemReceiveHeaderByReceiveHeaderSnoVC"
+      FullName="erpims.modelims.imsvo.InvItemReceiveHeaderVO.InvItemReceiveHeaderByReceiveHeaderSnoVC"/>
+  </ViewUsage>
   <ViewLinkUsage
     Name="InvInventoryOrgInvInventoryOrgInvOrgIdVL1"
     ViewLinkObjectName="erpims.modelims.imsvo.InvInventoryOrgInvInventoryOrgInvOrgIdVL"
