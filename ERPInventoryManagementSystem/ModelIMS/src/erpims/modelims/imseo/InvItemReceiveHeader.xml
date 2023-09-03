@@ -9,10 +9,13 @@
   DBObjectType="table"
   DBObjectName="INV_ITEM_RECEIVE_HEADER"
   AliasName="InvItemReceiveHeader"
-  BindingStyle="JDBC">
+  BindingStyle="JDBC"
+  RowClass="erpglobals.modelglobals.ERPEntityImpl">
+  <DesignTime>
+    <Attr Name="_superClass" Value="erpglobals.modelglobals.ERPEntityImpl"/>
+  </DesignTime>
   <Attribute
     Name="ItemReceiveHeaderSno"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="ITEM_RECEIVE_HEADER_SNO"
@@ -33,7 +36,6 @@
   <Attribute
     Name="ItemReceiveHeaderCode"
     IsUnique="true"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="ITEM_RECEIVE_HEADER_CODE"
@@ -52,7 +54,6 @@
   </Attribute>
   <Attribute
     Name="SourceTypeSno"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="SOURCE_TYPE_SNO"
@@ -144,7 +145,6 @@
   </Attribute>
   <Attribute
     Name="SupplierSno"
-    IsNotNull="true"
     Precision="8"
     Scale="0"
     ColumnName="SUPPLIER_SNO"
@@ -183,7 +183,6 @@
   </Attribute>
   <Attribute
     Name="LocationId"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="LOCATION_ID"
@@ -202,7 +201,6 @@
   </Attribute>
   <Attribute
     Name="InventoryOrgSno"
-    IsNotNull="true"
     Precision="6"
     Scale="0"
     ColumnName="INVENTORY_ORG_SNO"
@@ -221,7 +219,6 @@
   </Attribute>
   <Attribute
     Name="GlobalCompanyId"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="GLOBAL_COMPANY_ID"
@@ -241,7 +238,6 @@
   <Attribute
     Name="CompanyId"
     IsUnique="true"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="COMPANY_ID"
@@ -260,7 +256,6 @@
   </Attribute>
   <Attribute
     Name="TempProjectId"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="TEMP_PROJECT_ID"
@@ -279,7 +274,6 @@
   </Attribute>
   <Attribute
     Name="TempDepartmentId"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="TEMP_DEPARTMENT_ID"
@@ -298,7 +292,6 @@
   </Attribute>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="CREATED_BY"
@@ -317,7 +310,6 @@
   </Attribute>
   <Attribute
     Name="CreatedDate"
-    IsNotNull="true"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
@@ -414,7 +406,7 @@
     Type="java.sql.Date"
     ColumnType="DATE"
     TableName="INV_ITEM_RECEIVE_HEADER"
-    RetrievedOnInsert="true">
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -527,7 +519,7 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="INV_ITEM_RECEIVE_HEADER"
-    RetrievedOnInsert="true">
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -620,6 +612,20 @@
     <Dependencies>
       <Item
         Value="LocationId"/>
+    </Dependencies>
+  </Attribute>
+  <Attribute
+    Name="txtTempDepartmentName"
+    Precision="80"
+    ColumnName="TXT_TEMP_DEPARTMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Dependencies>
+      <Item
+        Value="TempDepartmentId"/>
     </Dependencies>
   </Attribute>
   <AccessorAttribute
