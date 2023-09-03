@@ -209,9 +209,39 @@
     EntityAttrName="ApprovalStatusSno"
     EntityUsage="InvItemReceiveHeader"
     AliasName="APPROVAL_STATUS_SNO"/>
+  <ViewAttribute
+    Name="SourceHeaderCode"
+    PrecisionRule="true"
+    EntityAttrName="SourceHeaderCode"
+    EntityUsage="InvItemReceiveHeader"
+    AliasName="SOURCE_HEADER_CODE"/>
+  <ViewAttribute
+    Name="txtSourceHeaderCodeLovName"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="txtSourceTypeName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSourceTypeName"
+    EntityUsage="InvItemReceiveHeader"
+    AliasName="TXT_SOURCE_TYPE_NAME"/>
   <ViewLinkAccessor
     Name="InvItemReceiveLinesVO"
     ViewLink="erpims.modelims.imsvo.FkInvItmReLineHeaderSnoLink"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvSourceTypeVO"
+    ViewLink="erpims.modelims.imsvo.InvSourceTypeInvItemRecHeadSourceTypeSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>
