@@ -17,6 +17,10 @@
     Name="AccScmPurchaseOrderHeaderVO"
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccInvSourceTypeVO"
+    ViewObjectName="erpims.modelims.imsvo.InvSourceTypeVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovSourceHeaderCode"
     ListVOName="AccScmPurchaseOrderHeaderVO"
@@ -29,7 +33,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
-      <Item Value="SourceHeaderCode"/>
+      <Item Value="SourceHeaderSno"/>
       <Item Value="TempDepartmentId"/>
       <Item Value="TempProjectId"/>
       <Item Value="SupplierSno"/>
@@ -46,10 +50,33 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PoHeaderCode"/>
       <Item Value="PoDate"/>
-      <Item Value="txtSupplierName"/>
     </AttrArray>
     <DisplayCriteria
       Name="ScmPurchaseOrderHeaderFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtSourceTypeName"
+    ListVOName="AccInvSourceTypeVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSourceTypeName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="SourceTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SourceTypeName"/>
+      <Item Value="SourceTypeSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SourceTypeName"/>
+      <Item Value="SourceTypeShortName"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="InvItemReceiveHeader"
@@ -278,7 +305,15 @@
     PrecisionRule="true"
     EntityAttrName="txtSourceTypeName"
     EntityUsage="InvItemReceiveHeader"
-    AliasName="TXT_SOURCE_TYPE_NAME"/>
+    AliasName="TXT_SOURCE_TYPE_NAME"
+    LOVName="LovtxtSourceTypeName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtLocationName"
     IsQueriable="false"
@@ -307,6 +342,12 @@
   <ViewLinkAccessor
     Name="AdminCompanyVO"
     ViewLink="erpims.modelims.imsvo.AdminCompanyInvItemReceiveHeaderLocationIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AdminCompanyVO1"
+    ViewLink="erpims.modelims.imsvo.AdminCompanyInvItemRecHeadTempDepartmentIdLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
