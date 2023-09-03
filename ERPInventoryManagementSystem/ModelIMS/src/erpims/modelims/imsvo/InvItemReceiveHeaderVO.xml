@@ -279,6 +279,14 @@
     EntityAttrName="txtSourceTypeName"
     EntityUsage="InvItemReceiveHeader"
     AliasName="TXT_SOURCE_TYPE_NAME"/>
+  <ViewAttribute
+    Name="txtLocationName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtLocationName"
+    EntityUsage="InvItemReceiveHeader"
+    AliasName="TXT_LOCATION_NAME"/>
   <ViewLinkAccessor
     Name="InvItemReceiveLinesVO"
     ViewLink="erpims.modelims.imsvo.FkInvItmReLineHeaderSnoLink"
