@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InvInventoryOrgInvItemRecHeadInventoryOrgSnoAssoc"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="InvInventoryOrg"
+    Cardinality="1"
+    Source="true"
+    Owner="erpims.modelims.imseo.InvInventoryOrg"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="InvInventoryOrg"/>
+      <Attr Name="_foreignKey" Value="erpims.modelims.imseo.InvInventoryOrg.PkInvInventoryOrg"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvInventoryOrg.InventoryOrgSno"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="InvItemReceiveHeader"
+    Cardinality="-1"
+    Owner="erpims.modelims.imseo.InvItemReceiveHeader">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="InvItemReceiveHeader"/>
+      <Attr Name="_foreignKey" Value="erpims.modelims.imseo.InvItemReceiveHeader.fk_InvItemReceiveHeader5"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvItemReceiveHeader.InventoryOrgSno"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

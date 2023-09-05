@@ -141,4 +141,9 @@
     ViewLink="erpims.modelims.imsrefvo.ScmDeliveryTermsInvPoReceiveHeaderDeliveryTermSnoLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvItemReceiveHeaderVO"
+    ViewLink="erpims.modelims.imsvo.ScmDeliveryTermsInvItemReceiveHeaderDeliveryTermSnoLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

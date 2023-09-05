@@ -68,6 +68,7 @@ public class InvInventoryOrgVORowImpl extends ERPViewRowImpl {
         AdminCompanyVO1,
         InvSubinventoryOrgVO,
         InvPoReceiveHeaderVO,
+        InvItemReceiveHeaderVO,
         AccSysGeneralValueVO,
         AccSysGeneralValueSubInvTypeVO,
         AccAdminCompanyVO,
@@ -143,6 +144,7 @@ public class InvInventoryOrgVORowImpl extends ERPViewRowImpl {
     public static final int ADMINCOMPANYVO1 = AttributesEnum.AdminCompanyVO1.index();
     public static final int INVSUBINVENTORYORGVO = AttributesEnum.InvSubinventoryOrgVO.index();
     public static final int INVPORECEIVEHEADERVO = AttributesEnum.InvPoReceiveHeaderVO.index();
+    public static final int INVITEMRECEIVEHEADERVO = AttributesEnum.InvItemReceiveHeaderVO.index();
     public static final int ACCSYSGENERALVALUEVO = AttributesEnum.AccSysGeneralValueVO.index();
     public static final int ACCSYSGENERALVALUESUBINVTYPEVO = AttributesEnum.AccSysGeneralValueSubInvTypeVO.index();
     public static final int ACCADMINCOMPANYVO = AttributesEnum.AccAdminCompanyVO.index();
@@ -816,6 +818,13 @@ public class InvInventoryOrgVORowImpl extends ERPViewRowImpl {
      */
     public RowIterator getInvPoReceiveHeaderVO() {
         return (RowIterator) getAttributeInternal(INVPORECEIVEHEADERVO);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link InvItemReceiveHeaderVO.
+     */
+    public RowIterator getInvItemReceiveHeaderVO() {
+        return (RowIterator) getAttributeInternal(INVITEMRECEIVEHEADERVO);
     }
 
     /**

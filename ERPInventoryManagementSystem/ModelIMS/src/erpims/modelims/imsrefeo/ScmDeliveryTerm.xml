@@ -197,6 +197,13 @@
     AssociationOtherEnd="erpims.modelims.imsrefeo.ScmDeliveryTermsInvPoReceiveHeaderDeliveryTermSnoAssoc.ScmDeliveryTerm"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InvItemReceiveHeader"
+    Association="erpims.modelims.imseo.ScmDeliveryTermsInvItemReceiveHeaderDeliveryTermSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.ScmDeliveryTermsInvItemReceiveHeaderDeliveryTermSnoAssoc.InvItemReceiveHeader"
+    AssociationOtherEnd="erpims.modelims.imseo.ScmDeliveryTermsInvItemReceiveHeaderDeliveryTermSnoAssoc.ScmDeliveryTerm"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkScmDeliveryTerm"
     PrimaryKey="true">

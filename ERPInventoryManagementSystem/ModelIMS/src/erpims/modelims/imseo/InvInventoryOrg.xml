@@ -733,6 +733,13 @@
     AssociationOtherEnd="erpims.modelims.imseo.InvInventoryOrgInvPoRecHeadInventoryOrgSnoAssoc.InvInventoryOrg"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InvItemReceiveHeader"
+    Association="erpims.modelims.imseo.InvInventoryOrgInvItemRecHeadInventoryOrgSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.InvInventoryOrgInvItemRecHeadInventoryOrgSnoAssoc.InvItemReceiveHeader"
+    AssociationOtherEnd="erpims.modelims.imseo.InvInventoryOrgInvItemRecHeadInventoryOrgSnoAssoc.InvInventoryOrg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="InvInventoryOrgOrganizationTypeSnoCheck">
     <DesignTime>

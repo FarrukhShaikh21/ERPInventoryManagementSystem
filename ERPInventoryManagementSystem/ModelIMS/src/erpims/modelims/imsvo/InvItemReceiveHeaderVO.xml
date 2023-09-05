@@ -12,7 +12,15 @@
   BindingStyle="JDBC"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpims.modelims.imsvo.InvItemReceiveHeaderVORowImpl"
+  ComponentClass="erpglobals.modelglobals.ERPViewObjectImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_objectSuperClassName" Value="erpglobals.modelglobals.ERPViewObjectImpl"/>
+    <Attr Name="_rowSuperClassName" Value="erpglobals.modelglobals.ERPViewRowImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Variable
     Name="P_ADF_ITEM_RECEIVE_HEADER_SNO"
     Kind="viewcriteria"
@@ -28,7 +36,11 @@
   <ViewAccessor
     Name="AccAdminCompanyTempDepVO"
     ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AdminCompanyDepartmentAccessWiseVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyDepartmentAccessWiseVC"/>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccSysGeneralValueVO"
     ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
@@ -49,11 +61,66 @@
   <ViewAccessor
     Name="AccAdminCompanyVO"
     ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AdminCompanyCompanyAccessWiseVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyCompanyAccessWiseVC"/>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="AccSysApprovalStatusVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysApprovalStatusVO"
+    RowLevelBinds="true"/>  
+<ViewAccessor
+    Name="AccSysSystemParameterVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysSystemParameterVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SysSystemParameterByGlobalCompanyVC"
+      FullName="erpadm.modeladm.admvo.SysSystemParameterVO.SysSystemParameterByGlobalCompanyVC"/>
+    <ViewCriteriaUsage
+      Name="SysSystemParameterByParameterVC"
+      FullName="erpadm.modeladm.admvo.SysSystemParameterVO.SysSystemParameterByParameterVC"/>
+  </ViewAccessor>  
+<ViewAccessor
+    Name="AccAdminCompanyForCompVO"
+    ViewObjectName="erpadm.modeladm.admvo.AdminCompanyVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AdminCompanyByCompCodeVC"
+      FullName="erpadm.modeladm.admvo.AdminCompanyVO.AdminCompanyByCompCodeVC"/>
+  </ViewAccessor>  
   <ViewAccessor
     Name="AccScmSupplierVO"
     ViewObjectName="erpims.modelims.imsrefvo.ScmSupplierVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccGlProjectsVO"
+    ViewObjectName="erpfms.modelfms.fmsvo.GlProjectsVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="GlProjectsByCompanyVC"
+      FullName="erpfms.modelfms.fmsvo.GlProjectsVO.GlProjectsByCompanyVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_COMPANY_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[CompanyId==null?-1:CompanyId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="AccInvInventoryOrgVO"
+    ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="InvInventoryOrgByLocationWiseVC"
+      FullName="erpims.modelims.imsvo.InvInventoryOrgVO.InvInventoryOrgByLocationWiseVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_LOCATION_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[LocationId==null?0:LocationId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovSourceHeaderCode"
     ListVOName="AccScmPurchaseOrderHeaderVO"
@@ -240,6 +307,76 @@
       <Item Value="SupplierShortCode"/>
     </AttrArray>
     <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtTempProjectName"
+    ListVOName="AccGlProjectsVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtTempProjectName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TempProjectId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ProjectName"/>
+      <Item Value="ProjectSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ProjectName"/>
+      <Item Value="ProjectCode"/>
+      <Item Value="ProjectShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="GlProjectsFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovApprovalStatusSno"
+    ListVOName="AccSysApprovalStatusVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ApprovalStatusSno"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ApprovalStatusSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StatusDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtOrgDescription"
+    ListVOName="AccInvInventoryOrgVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtOrgDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="InventoryOrgSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="OrgDescription"/>
+      <Item Value="InventoryOrgSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="OrgDescription"/>
+      <Item Value="OrgShortName"/>
+      <Item Value="InventoryOrgCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InvInventoryOrgVOFindVC"/>
   </ListBinding>
   <EntityUsage
     Name="InvItemReceiveHeader"
@@ -460,7 +597,15 @@
     PrecisionRule="true"
     EntityAttrName="ApprovalStatusSno"
     EntityUsage="InvItemReceiveHeader"
-    AliasName="APPROVAL_STATUS_SNO"/>
+    AliasName="APPROVAL_STATUS_SNO"
+    LOVName="LovApprovalStatusSno">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SourceHeaderCode"
     PrecisionRule="true"
@@ -549,6 +694,58 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtTempProjectName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtTempProjectName"
+    EntityUsage="InvItemReceiveHeader"
+    AliasName="TXT_TEMP_PROJECT_NAME"
+    LOVName="LovtxtTempProjectName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ShippedDate"
+    PrecisionRule="true"
+    EntityAttrName="ShippedDate"
+    EntityUsage="InvItemReceiveHeader"
+    AliasName="SHIPPED_DATE"/>
+  <ViewAttribute
+    Name="ReferenceNo"
+    PrecisionRule="true"
+    EntityAttrName="ReferenceNo"
+    EntityUsage="InvItemReceiveHeader"
+    AliasName="REFERENCE_NO"/>
+  <ViewAttribute
+    Name="txtOrgDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtOrgDescription"
+    EntityUsage="InvItemReceiveHeader"
+    AliasName="TXT_ORG_DESCRIPTION"
+    LOVName="LovtxtOrgDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtDeliveryTermName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtDeliveryTermName"
+    EntityUsage="InvItemReceiveHeader"
+    AliasName="TXT_DELIVERY_TERM_NAME"/>
   <ViewCriteria
     Name="InvItemReceiveHeaderByReceiveHeaderSnoVC"
     ViewObjectName="erpims.modelims.imsvo.InvItemReceiveHeaderVO"
@@ -617,6 +814,18 @@
   <ViewLinkAccessor
     Name="ScmSupplierVO"
     ViewLink="erpims.modelims.imsrefvo.ScmSupplierInvItemReceiveHeaderSupplierSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvInventoryOrgVO"
+    ViewLink="erpims.modelims.imsvo.InvInventoryOrgInvItemRecHeadInventoryOrgSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ScmDeliveryTermVO"
+    ViewLink="erpims.modelims.imsvo.ScmDeliveryTermsInvItemReceiveHeaderDeliveryTermSnoLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

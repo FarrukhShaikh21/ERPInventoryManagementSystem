@@ -10,7 +10,7 @@
               id="InvItemReceiveLinesDetCRUDIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="PoReceiveHeaderSno">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="ItemReceiveHeaderSno">
       <AttrNames>
         <Item Value="ItemReceiveHeaderSno"/>
       </AttrNames>
@@ -29,71 +29,71 @@
                   id="txtLocationName"/>
     <listOfValues IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtSupplierName"
                   id="txtSupplierName"/>
-    <listOfValues IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtPoHeaderCode"
+    <listOfValues IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovSourceHeaderCode"
                   id="txtPoHeaderCode"/>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="txtTempProjectName">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="txtTempProjectName">
       <AttrNames>
         <Item Value="txtTempProjectName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="txtTempDepartmentName">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="txtTempDepartmentName">
       <AttrNames>
         <Item Value="txtTempDepartmentName"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovApprovalStatusSno"
+    <list IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovApprovalStatusSno"
           id="ApprovalStatusSno" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="IsUnsupervised">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="IsUnsupervised">
       <AttrNames>
         <Item Value="IsUnsupervised"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="IsCancelled">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="IsCancelled">
       <AttrNames>
         <Item Value="IsCancelled"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="IsSupervised">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="IsSupervised">
       <AttrNames>
         <Item Value="IsSupervised"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="DeliveryNote">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="DeliveryNote">
       <AttrNames>
         <Item Value="DeliveryNote"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="Remarks">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="Remarks">
       <AttrNames>
         <Item Value="Remarks"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="ShippedDate">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="ShippedDate">
       <AttrNames>
         <Item Value="ShippedDate"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="InvPoReceiveHeaderCRUDIterator" id="Delete" RequiresUpdateModel="false"
+    <action IterBinding="InvItemReceiveHeaderCRUDIterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <action IterBinding="InvPoReceiveHeaderCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
+    <action IterBinding="InvItemReceiveHeaderCRUDIterator" id="CreateWithParams" RequiresUpdateModel="true"
             Action="createWithParams"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPINVModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="ERPINVModuleDataControl"/>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="ReferenceNo">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="ReferenceNo">
       <AttrNames>
         <Item Value="ReferenceNo"/>
       </AttrNames>
     </attributeValues>
-    <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtOrgDescription"
+    <listOfValues IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtOrgDescription"
                   id="txtOrgDescription"/>
-    <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="txtDeliveryTermName">
+    <attributeValues IterBinding="InvItemReceiveHeaderCRUDIterator" id="txtDeliveryTermName">
       <AttrNames>
         <Item Value="txtDeliveryTermName"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="InvPoReceiveLinesDetCRUDIterator" id="InvPoReceiveLinesDetCRUD">
-      <nodeDefinition DefName="erpims.modelims.imsvo.InvPoReceiveLinesVO" Name="InvPoReceiveLinesDetCRUD0">
+    <tree IterBinding="InvItemReceiveLinesDetCRUDIterator" id="InvItemReceiveLinesDetCRUD">
+      <nodeDefinition DefName="erpims.modelims.imsvo.InvItemReceiveLinesVO" Name="InvItemReceiveLinesDetCRUD0">
         <AttrNames>
           <Item Value="LineNo"/>
           <Item Value="txtItemName"/>
@@ -108,9 +108,9 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="InvPoReceiveLinesDetCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+    <action IterBinding="InvItemReceiveLinesDetCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="InvPoReceiveLinesDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+    <action IterBinding="InvItemReceiveLinesDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

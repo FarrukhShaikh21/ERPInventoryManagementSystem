@@ -69,7 +69,8 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
         SmCity,
         AdminCompany1,
         InvSubinventoryOrg,
-        InvPoReceiveHeader;
+        InvPoReceiveHeader,
+        InvItemReceiveHeader;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -139,6 +140,7 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
     public static final int ADMINCOMPANY1 = AttributesEnum.AdminCompany1.index();
     public static final int INVSUBINVENTORYORG = AttributesEnum.InvSubinventoryOrg.index();
     public static final int INVPORECEIVEHEADER = AttributesEnum.InvPoReceiveHeader.index();
+    public static final int INVITEMRECEIVEHEADER = AttributesEnum.InvItemReceiveHeader.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -823,6 +825,14 @@ public class InvInventoryOrgImpl extends ERPEntityImpl {
      */
     public RowIterator getInvPoReceiveHeader() {
         return (RowIterator) getAttributeInternal(INVPORECEIVEHEADER);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInvItemReceiveHeader() {
+        return (RowIterator) getAttributeInternal(INVITEMRECEIVEHEADER);
     }
 
 
