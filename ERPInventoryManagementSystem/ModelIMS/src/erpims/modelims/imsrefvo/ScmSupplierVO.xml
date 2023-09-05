@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_COMPANY_ID"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
   <EntityUsage
     Name="ScmSupplier"
     Entity="erpims.modelims.imsrefeo.ScmSupplier"/>
@@ -317,6 +321,105 @@
     EntityAttrName="UnSupervisedBy"
     EntityUsage="ScmSupplier"
     AliasName="UN_SUPERVISED_BY"/>
+  <ViewCriteria
+    Name="ScmSupplierVOFindVC"
+    ViewObjectName="erpims.modelims.imsrefvo.ScmSupplierVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ScmSupplierVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="SupplierShortCode"
+        ViewAttribute="SupplierShortCode"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="SupplierName"
+        ViewAttribute="SupplierName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="SupplierShortName"
+        ViewAttribute="SupplierShortName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Mobile"
+        ViewAttribute="Mobile"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Email"
+        ViewAttribute="Email"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="ScmSupplierByCompanyVC"
+    ViewObjectName="erpims.modelims.imsrefvo.ScmSupplierVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ScmSupplierVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="CompanyId"
+        ViewAttribute="CompanyId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_COMPANY_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="InvPoReceiveHeaderVO"
     ViewLink="erpims.modelims.imsvo.ScmSupplierInvPoReceiveHeaderSupplierSnoLink"
@@ -325,6 +428,16 @@
   <ViewLinkAccessor
     Name="ScmPurchaseOrderHeaderVO"
     ViewLink="erpims.modelims.imsrefvo.ScmSupplierScmPurchaseOrderHeaderSupplierSnoLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvItemReceiveHeaderVO"
+    ViewLink="erpims.modelims.imsrefvo.ScmSupplierInvItemReceiveHeaderSupplierSnoLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ScmPurchaseOrderHeaderVO1"
+    ViewLink="erpims.modelims.imsrefvo.ViewLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

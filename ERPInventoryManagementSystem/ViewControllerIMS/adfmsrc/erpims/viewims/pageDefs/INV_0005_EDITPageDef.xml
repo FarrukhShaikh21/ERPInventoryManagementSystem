@@ -29,7 +29,7 @@
                   id="txtLocationName"/>
     <listOfValues IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtSupplierName"
                   id="txtSupplierName"/>
-    <listOfValues IterBinding="InvPoReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtPoHeaderCode"
+    <listOfValues IterBinding="InvItemReceiveHeaderCRUDIterator" StaticList="false" Uses="LovtxtPoHeaderCode"
                   id="txtPoHeaderCode"/>
     <attributeValues IterBinding="InvPoReceiveHeaderCRUDIterator" id="txtTempProjectName">
       <AttrNames>
