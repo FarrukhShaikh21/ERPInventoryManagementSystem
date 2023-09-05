@@ -44,7 +44,8 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
         InvItem1,
         InvItem2,
         InvItem3,
-        InvPoReceiveLines;
+        InvPoReceiveLines,
+        InvItemReceiveLines;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -92,6 +93,7 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
     public static final int INVITEM2 = AttributesEnum.InvItem2.index();
     public static final int INVITEM3 = AttributesEnum.InvItem3.index();
     public static final int INVPORECEIVELINES = AttributesEnum.InvPoReceiveLines.index();
+    public static final int INVITEMRECEIVELINES = AttributesEnum.InvItemReceiveLines.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -433,6 +435,14 @@ public class InvUnitTypeImpl extends ERPEntityImpl {
      */
     public RowIterator getInvPoReceiveLines() {
         return (RowIterator) getAttributeInternal(INVPORECEIVELINES);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInvItemReceiveLines() {
+        return (RowIterator) getAttributeInternal(INVITEMRECEIVELINES);
     }
 
 

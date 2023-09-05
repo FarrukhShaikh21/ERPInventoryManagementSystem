@@ -391,6 +391,13 @@
     AssociationOtherEnd="erpims.modelims.imseo.InvUnitTypeInvPoReceiveLinesUnitTypeAssoc.InvUnitType"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InvItemReceiveLines"
+    Association="erpims.modelims.imseo.InvUnitTypeInvItemReceiveUnitTypeSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.InvUnitTypeInvItemReceiveUnitTypeSnoAssoc.InvItemReceiveLines"
+    AssociationOtherEnd="erpims.modelims.imseo.InvUnitTypeInvItemReceiveUnitTypeSnoAssoc.InvUnitType"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkInvUnitType"
     PrimaryKey="true">

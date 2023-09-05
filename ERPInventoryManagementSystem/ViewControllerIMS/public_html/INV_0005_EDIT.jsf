@@ -56,7 +56,7 @@
                                                          icon="#{resource['images:imgUnSuperviseRecord.png']}"
                                                          iconPosition="top"
                                                          action="#{pageFlowScope.OracleERPBean.doERPPopUnSuperviseRecord}"
-                                                         disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.PoReceiveHeaderCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}"
+                                                         disabled="#{bindings.IsSupervised.inputValue=='N' || bindings.ItemReceiveHeaderCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowUnsupervise=='N'}"
                                                          partialTriggers="l7" shortDesc="Un Supervise Record">
                                                     <af:setActionListener from="#{'InvPoReceiveHeaderCRUDIterator'}"
                                                                           to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
@@ -65,7 +65,7 @@
                                                          icon="#{resource['images:imgSuperviseRecord.png']}"
                                                          iconPosition="top"
                                                          action="#{pageFlowScope.OracleERPBean.doERPPopSupervisedRecord}"
-                                                         disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.PoReceiveHeaderCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}"
+                                                         disabled="#{bindings.IsSupervised.inputValue=='Y' || bindings.ItemReceiveHeaderCode.inputValue==null ||pageFlowScope.ERPMainTempBean.LERPAllowSupervise=='N'}"
                                                          partialTriggers="l7" shortDesc="Supervise Record">
                                                     <af:setActionListener from="#{'InvPoReceiveHeaderCRUDIterator'}"
                                                                           to="#{pageFlowScope.OracleERPBean.LIteratorName}"/>
@@ -127,7 +127,7 @@
                                     <af:gridRow marginTop="5px" height="auto" id="gr4" marginBottom="5px">
                                         <af:gridCell width="13%" id="gc4" marginEnd="5px" halign="center"
                                                      valign="middle">
-                                            <af:outputLabel value="#{bindings.PoReceiveHeaderCode.hints.label}" id="ol3"/>
+                                            <af:outputLabel value="#{bindings.ItemReceiveHeaderCode.hints.label}" id="ol3"/>
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="20%" id="gc5" halign="stretch"
                                                      valign="middle">
@@ -158,27 +158,27 @@
                                                           rendered="false">
                                                 <f:validator binding="#{bindings.IsSupervised.validator}"/>
                                             </af:inputText>
-                                            <af:inputText value="#{bindings.PoReceiveHeaderCode.inputValue}"
-                                                          label="#{bindings.PoReceiveHeaderCode.hints.label}"
-                                                          required="#{bindings.PoReceiveHeaderCode.hints.mandatory}"
-                                                          columns="#{bindings.PoReceiveHeaderCode.hints.displayWidth}"
-                                                          maximumLength="#{bindings.PoReceiveHeaderCode.hints.precision}"
-                                                          shortDesc="#{bindings.PoReceiveHeaderCode.hints.tooltip}"
+                                            <af:inputText value="#{bindings.ItemReceiveHeaderCode.inputValue}"
+                                                          label="#{bindings.ItemReceiveHeaderCode.hints.label}"
+                                                          required="#{bindings.ItemReceiveHeaderCode.hints.mandatory}"
+                                                          columns="#{bindings.ItemReceiveHeaderCode.hints.displayWidth}"
+                                                          maximumLength="#{bindings.ItemReceiveHeaderCode.hints.precision}"
+                                                          shortDesc="#{bindings.ItemReceiveHeaderCode.hints.tooltip}"
                                                           id="it3" simple="true" readOnly="true">
-                                                <f:validator binding="#{bindings.PoReceiveHeaderCode.validator}"/>
+                                                <f:validator binding="#{bindings.ItemReceiveHeaderCode.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.PoReceiveHeaderCode.format}"/>
+                                                                  pattern="#{bindings.ItemReceiveHeaderSno.format}"/>
                                             </af:inputText>
-                                            <af:inputText value="#{bindings.PoReceiveHeaderSno.inputValue}"
-                                                          label="#{bindings.PoReceiveHeaderSno.hints.label}"
-                                                          required="#{bindings.PoReceiveHeaderSno.hints.mandatory}"
-                                                          columns="#{bindings.PoReceiveHeaderSno.hints.displayWidth}"
-                                                          maximumLength="#{bindings.PoReceiveHeaderSno.hints.precision}"
-                                                          shortDesc="#{bindings.PoReceiveHeaderSno.hints.tooltip}"
+                                            <af:inputText value="#{bindings.ItemReceiveHeaderSno.inputValue}"
+                                                          label="#{bindings.ItemReceiveHeaderSno.hints.label}"
+                                                          required="#{bindings.ItemReceiveHeaderSno.hints.mandatory}"
+                                                          columns="#{bindings.ItemReceiveHeaderSno.hints.displayWidth}"
+                                                          maximumLength="#{bindings.ItemReceiveHeaderSno.hints.precision}"
+                                                          shortDesc="#{bindings.ItemReceiveHeaderSno.hints.tooltip}"
                                                           id="it1" rendered="false">
-                                                <f:validator binding="#{bindings.PoReceiveHeaderSno.validator}"/>
+                                                <f:validator binding="#{bindings.ItemReceiveHeaderSno.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.PoReceiveHeaderSno.format}"/>
+                                                                  pattern="#{bindings.ItemReceiveHeaderSno.format}"/>
                                             </af:inputText>
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="13%" id="gc6" halign="center"
@@ -428,139 +428,139 @@
                                         </af:toolbar>
                                     </f:facet>
                                     <f:facet name="statusbar"/>
-                                    <af:table value="#{bindings.InvPoReceiveLinesDetCRUD.collectionModel}" var="row"
-                                              rows="#{bindings.InvPoReceiveLinesDetCRUD.rangeSize}"
-                                              emptyText="#{bindings.InvPoReceiveLinesDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    <af:table value="#{bindings.InvItemReceiveLinesDetCRUD.collectionModel}" var="row"
+                                              rows="#{bindings.InvItemReceiveLinesDetCRUD.rangeSize}"
+                                              emptyText="#{bindings.InvItemReceiveLinesDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
                                               rowBandingInterval="0"
-                                              selectedRowKeys="#{bindings.InvPoReceiveLinesDetCRUD.collectionModel.selectedRow}"
-                                              selectionListener="#{bindings.InvPoReceiveLinesDetCRUD.collectionModel.makeCurrent}"
+                                              selectedRowKeys="#{bindings.InvItemReceiveLinesDetCRUD.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.InvItemReceiveLinesDetCRUD.collectionModel.makeCurrent}"
                                               rowSelection="single"
-                                              fetchSize="#{bindings.InvPoReceiveLinesDetCRUD.rangeSize}" id="t1"
+                                              fetchSize="#{bindings.InvItemReceiveLinesDetCRUD.rangeSize}" id="t1"
                                               partialTriggers="::b1 ::b2" scrollPolicy="page" autoHeightRows="5"
                                               styleClass="AFStretchWidth">
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.LineNo.label}"
                                                    id="c1" width="50" displayIndex="-1">
                                             <af:inputText value="#{row.bindings.LineNo.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.tooltip}"
+                                                          label="#{bindings.InvItemReceiveLinesDetCRUD.hints.LineNo.label}"
+                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.LineNo.mandatory}"
+                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.LineNo.displayWidth}"
+                                                          maximumLength="#{bindings.InvItemReceiveLinesDetCRUD.hints.LineNo.precision}"
+                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.LineNo.tooltip}"
                                                           id="it12" readOnly="true">
                                                 <f:validator binding="#{row.bindings.LineNo.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.LineNo.format}"/>
+                                                                  pattern="#{bindings.InvItemReceiveLinesDetCRUD.hints.LineNo.format}"/>
                                             </af:inputText>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtItemName.label}"
                                                    id="c2">
                                             <af:inputComboboxListOfValues id="txtItemNameId"
-                                                                          popupTitle="Search and Select: #{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.label}"
+                                                                          popupTitle="Search and Select: #{bindings.InvItemReceiveLinesDetCRUD.hints.txtItemName.label}"
                                                                           value="#{row.bindings.txtItemName.inputValue}"
                                                                           model="#{row.bindings.txtItemName.listOfValuesModel}"
-                                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.mandatory}"
-                                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.displayWidth}"
-                                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtItemName.tooltip}"
+                                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtItemName.mandatory}"
+                                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtItemName.displayWidth}"
+                                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtItemName.tooltip}"
                                                                           contentStyle="width:100%" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtItemName.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtUnitTypeName.label}"
                                                    id="c3">
                                             <af:inputText value="#{row.bindings.txtUnitTypeName.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtUnitTypeName.tooltip}"
+                                                          label="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtUnitTypeName.label}"
+                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtUnitTypeName.mandatory}"
+                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtUnitTypeName.displayWidth}"
+                                                          maximumLength="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtUnitTypeName.precision}"
+                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtUnitTypeName.tooltip}"
                                                           id="it13" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtUnitTypeName.validator}"/>
                                             </af:inputText>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtSubinventoryDescription.label}"
                                                    id="c10">
                                             <af:inputComboboxListOfValues id="txtSubinventoryDescriptionId"
-                                                                          popupTitle="Search and Select: #{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.label}"
+                                                                          popupTitle="Search and Select: #{bindings.InvItemReceiveLinesDetCRUD.hints.txtSubinventoryDescription.label}"
                                                                           value="#{row.bindings.txtSubinventoryDescription.inputValue}"
                                                                           model="#{row.bindings.txtSubinventoryDescription.listOfValuesModel}"
-                                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.mandatory}"
-                                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.displayWidth}"
-                                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtSubinventoryDescription.tooltip}"
+                                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtSubinventoryDescription.mandatory}"
+                                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtSubinventoryDescription.displayWidth}"
+                                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtSubinventoryDescription.tooltip}"
                                                                           contentStyle="width:90%">
                                                 <f:validator binding="#{row.bindings.txtSubinventoryDescription.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
                                                    id="c5" width="60">
                                             <af:inputText value="#{row.bindings.txtPoQuantity.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.tooltip}"
+                                                          label="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtPoQuantity.label}"
+                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtPoQuantity.mandatory}"
+                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtPoQuantity.displayWidth}"
+                                                          maximumLength="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtPoQuantity.precision}"
+                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtPoQuantity.tooltip}"
                                                           id="it15" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtPoQuantity.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtPoQuantity.format}"/>
+                                                                  pattern="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtPoQuantity.format}"/>
                                             </af:inputText>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
                                                    id="c4" width="70">
                                             <af:inputText value="#{row.bindings.ReceivedQuantity.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.tooltip}"
+                                                          label="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceivedQuantity.label}"
+                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceivedQuantity.mandatory}"
+                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceivedQuantity.displayWidth}"
+                                                          maximumLength="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceivedQuantity.precision}"
+                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceivedQuantity.tooltip}"
                                                           id="it14" autoSubmit="true">
                                                 <f:validator binding="#{row.bindings.ReceivedQuantity.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceivedQuantity.format}"/>
+                                                                  pattern="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceivedQuantity.format}"/>
                                             </af:inputText>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtDepartmentName.label}"
                                                    id="c8">
                                             <af:inputText value="#{row.bindings.txtDepartmentName.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtDepartmentName.tooltip}"
+                                                          label="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtDepartmentName.label}"
+                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtDepartmentName.mandatory}"
+                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtDepartmentName.displayWidth}"
+                                                          maximumLength="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtDepartmentName.precision}"
+                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtDepartmentName.tooltip}"
                                                           id="it18" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtDepartmentName.validator}"/>
                                             </af:inputText>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtProjectName.label}"
                                                    id="c9">
                                             <af:inputText value="#{row.bindings.txtProjectName.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.txtProjectName.tooltip}"
+                                                          label="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtProjectName.label}"
+                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtProjectName.mandatory}"
+                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtProjectName.displayWidth}"
+                                                          maximumLength="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtProjectName.precision}"
+                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.txtProjectName.tooltip}"
                                                           id="it19" readOnly="true">
                                                 <f:validator binding="#{row.bindings.txtProjectName.validator}"/>
                                             </af:inputText>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceiveMethodSno.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceiveMethodSno.label}"
                                                    id="c11">
                                             <af:selectOneChoice value="#{row.bindings.ReceiveMethodSno.inputValue}"
                                                                 label="#{row.bindings.ReceiveMethodSno.label}"
-                                                                required="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceiveMethodSno.mandatory}"
-                                                                shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.ReceiveMethodSno.tooltip}"
+                                                                required="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceiveMethodSno.mandatory}"
+                                                                shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.ReceiveMethodSno.tooltip}"
                                                                 id="soc3">
                                                 <f:selectItems value="#{row.bindings.ReceiveMethodSno.items}" id="si4"/>
                                                 <f:validator binding="#{row.bindings.ReceiveMethodSno.validator}"/>
                                             </af:selectOneChoice>
                                         </af:column>
-                                        <af:column headerText="#{bindings.InvPoReceiveLinesDetCRUD.hints.ItemRemarks.label}"
+                                        <af:column headerText="#{bindings.InvItemReceiveLinesDetCRUD.hints.ItemRemarks.label}"
                                                    id="c12">
                                             <af:inputText value="#{row.bindings.ItemRemarks.inputValue}"
-                                                          label="#{bindings.InvPoReceiveLinesDetCRUD.hints.ItemRemarks.label}"
-                                                          required="#{bindings.InvPoReceiveLinesDetCRUD.hints.ItemRemarks.mandatory}"
-                                                          columns="#{bindings.InvPoReceiveLinesDetCRUD.hints.ItemRemarks.displayWidth}"
-                                                          maximumLength="#{bindings.InvPoReceiveLinesDetCRUD.hints.ItemRemarks.precision}"
-                                                          shortDesc="#{bindings.InvPoReceiveLinesDetCRUD.hints.ItemRemarks.tooltip}"
+                                                          label="#{bindings.InvItemReceiveLinesDetCRUD.hints.ItemRemarks.label}"
+                                                          required="#{bindings.InvItemReceiveLinesDetCRUD.hints.ItemRemarks.mandatory}"
+                                                          columns="#{bindings.InvItemReceiveLinesDetCRUD.hints.ItemRemarks.displayWidth}"
+                                                          maximumLength="#{bindings.InvItemReceiveLinesDetCRUD.hints.ItemRemarks.precision}"
+                                                          shortDesc="#{bindings.InvItemReceiveLinesDetCRUD.hints.ItemRemarks.tooltip}"
                                                           id="it20">
                                                 <f:validator binding="#{row.bindings.ItemRemarks.validator}"/>
                                             </af:inputText>

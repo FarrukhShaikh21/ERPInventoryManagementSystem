@@ -301,12 +301,71 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_ITEM_RECEIVE_LINES"/>
+  <Attribute
+    Name="txtItemName"
+    Precision="80"
+    ColumnName="TXT_ITEM_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InvItem?.Description]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="ItemId"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.txtItemName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtUnitTypeName"
+    Precision="80"
+    ColumnName="TXT_UNIT_TYPE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="INV_ITEM_RECEIVE_LINES"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InvUnitType?.UnitTypeName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpims.modelims.imseo.InvItemReceiveLines.txtUnitTypeName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InvItemReceiveHeader"
     Association="erpims.modelims.imseo.FkInvItmReLineHeaderSnoAssoc"
     AssociationEnd="erpims.modelims.imseo.FkInvItmReLineHeaderSnoAssoc.InvItemReceiveHeader"
     AssociationOtherEnd="erpims.modelims.imseo.FkInvItmReLineHeaderSnoAssoc.InvItemReceiveLines"
     Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvItem"
+    Association="erpims.modelims.imseo.InvItemInvItemReceiveLinesItemIdAssoc"
+    AssociationEnd="erpims.modelims.imseo.InvItemInvItemReceiveLinesItemIdAssoc.InvItem"
+    AssociationOtherEnd="erpims.modelims.imseo.InvItemInvItemReceiveLinesItemIdAssoc.InvItemReceiveLines"
+    Type="erpims.modelims.imseo.InvItemImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InvUnitType"
+    Association="erpims.modelims.imseo.InvUnitTypeInvItemReceiveUnitTypeSnoAssoc"
+    AssociationEnd="erpims.modelims.imseo.InvUnitTypeInvItemReceiveUnitTypeSnoAssoc.InvUnitType"
+    AssociationOtherEnd="erpims.modelims.imseo.InvUnitTypeInvItemReceiveUnitTypeSnoAssoc.InvItemReceiveLines"
+    Type="erpims.modelims.imseo.InvUnitTypeImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkInvItemReceiveLines"
@@ -327,6 +386,28 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpims.modelims.imseo.InvItemReceiveLines.ItemReceiveHeaderSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvItemReceiveLines">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_INV_ITEM"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_ITEM_RECEIVE_LINES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvItemReceiveLines.ItemId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InvItemReceiveLines1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_INV_UNIT_TYPE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INV_ITEM_RECEIVE_LINES1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvItemReceiveLines.UnitTypeSno"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

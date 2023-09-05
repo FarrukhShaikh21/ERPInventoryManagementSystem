@@ -1425,4 +1425,9 @@
     ViewLink="erpims.modelims.imsvo.InvItemInvPoReceivingLinesItemIdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvItemReceiveLinesVO"
+    ViewLink="erpims.modelims.imsvo.InvItemInvItemReceiveLinesItemIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
