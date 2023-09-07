@@ -741,7 +741,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="INV_ITEM_RECEIVE_HEADER"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression

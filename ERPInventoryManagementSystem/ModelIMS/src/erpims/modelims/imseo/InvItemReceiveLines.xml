@@ -393,8 +393,7 @@
     Type="java.lang.String"
     ColumnType="CHAR"
     IsPersistent="false"
-    IsQueriable="false"
-    TableName="INV_ITEM_RECEIVE_LINES">
+    IsQueriable="false">
     <TransientExpression
       trustMode="untrusted"><![CDATA[InvSubinventoryOrg?.SubinventoryDescription]]></TransientExpression>
     <Properties>

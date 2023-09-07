@@ -20,6 +20,12 @@
     <ViewCriteriaUsage
       Name="InvSubinventoryOrgByInvOrgSnoVC"
       FullName="erpims.modelims.imsvo.InvSubinventoryOrgVO.InvSubinventoryOrgByInvOrgSnoVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_INVENTORY_ORG_SNO">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[InvItemReceiveHeaderVO?.SubinventoryOrgSno]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
   </ViewAccessor>
   <ListBinding
     Name="LovtxtSubinventoryDescription"
@@ -242,6 +248,12 @@
   <ViewLinkAccessor
     Name="InvSubinventoryOrgVO"
     ViewLink="erpims.modelims.imsvo.InvSubinvOrgInvItemRecLinesSubinventoryOrgSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvItemReceiveHeaderVO"
+    ViewLink="erpims.modelims.imsvo.FkInvItmReLineHeaderSnoLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
