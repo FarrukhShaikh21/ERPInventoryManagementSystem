@@ -13,6 +13,41 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccInvSubinventoryOrgVO"
+    ViewObjectName="erpims.modelims.imsvo.InvSubinventoryOrgVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="InvSubinventoryOrgByInvOrgSnoVC"
+      FullName="erpims.modelims.imsvo.InvSubinventoryOrgVO.InvSubinventoryOrgByInvOrgSnoVC"/>
+  </ViewAccessor>
+  <ListBinding
+    Name="LovtxtSubinventoryDescription"
+    ListVOName="AccInvSubinventoryOrgVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSubinventoryDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="SubinventoryOrgSno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SubinventoryDescription"/>
+      <Item Value="SubinventoryOrgSno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SubinventoryDescription"/>
+      <Item Value="SubinventoryOrgCode"/>
+      <Item Value="SubinventoryOrgShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InvSubinventoryOrgFindVC"
+      Hint="showAndExecute"/>
+  </ListBinding>
   <EntityUsage
     Name="InvItemReceiveLines"
     Entity="erpims.modelims.imseo.InvItemReceiveLines"/>
@@ -164,6 +199,22 @@
     EntityAttrName="txtProjectName"
     EntityUsage="InvItemReceiveLines"
     AliasName="TXT_PROJECT_NAME"/>
+  <ViewAttribute
+    Name="txtSubinventoryDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSubinventoryDescription"
+    EntityUsage="InvItemReceiveLines"
+    AliasName="TXT_SUBINVENTORY_DESCRIPTION"
+    LOVName="LovtxtSubinventoryDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="InvItemVO"
     ViewLink="erpims.modelims.imsvo.InvItemInvItemReceiveLinesItemIdLink"
@@ -185,6 +236,12 @@
   <ViewLinkAccessor
     Name="GlProjectsVO"
     ViewLink="erpims.modelims.imsvo.GlProjectsInvItemReceiveLinesProjectIDLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvSubinventoryOrgVO"
+    ViewLink="erpims.modelims.imsvo.InvSubinvOrgInvItemRecLinesSubinventoryOrgSnoLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

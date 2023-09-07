@@ -50,7 +50,8 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
         txtInventoryOrgName,
         CompanyId,
         InvInventoryOrg,
-        InvPoReceiveLines;
+        InvPoReceiveLines,
+        InvItemReceiveLines;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -104,6 +105,7 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int INVINVENTORYORG = AttributesEnum.InvInventoryOrg.index();
     public static final int INVPORECEIVELINES = AttributesEnum.InvPoReceiveLines.index();
+    public static final int INVITEMRECEIVELINES = AttributesEnum.InvItemReceiveLines.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -571,6 +573,14 @@ public class InvSubinventoryOrgImpl extends ERPEntityImpl {
      */
     public RowIterator getInvPoReceiveLines() {
         return (RowIterator) getAttributeInternal(INVPORECEIVELINES);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInvItemReceiveLines() {
+        return (RowIterator) getAttributeInternal(INVITEMRECEIVELINES);
     }
 
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InvSubinvOrgInvItemRecLinesSubinventoryOrgSnoAssoc"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="InvSubinventoryOrg"
+    Cardinality="1"
+    Source="true"
+    Owner="erpims.modelims.imseo.InvSubinventoryOrg"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="InvSubinventoryOrg"/>
+      <Attr Name="_foreignKey" Value="erpims.modelims.imseo.InvSubinventoryOrg.Primary1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvSubinventoryOrg.SubinventoryOrgSno"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="InvItemReceiveLines"
+    Cardinality="-1"
+    Owner="erpims.modelims.imseo.InvItemReceiveLines">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="InvItemReceiveLines"/>
+      <Attr Name="_foreignKey" Value="erpims.modelims.imseo.InvItemReceiveLines.fk_InvItemReceiveLines4"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpims.modelims.imseo.InvItemReceiveLines.SubinventoryOrgSno"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

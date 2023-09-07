@@ -17,6 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
 public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
 
+
     public static final int ENTITY_INVSUBINVENTORYORG = 0;
 
     /**
@@ -52,6 +53,7 @@ public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
         CompanyId,
         InvInventoryOrgVO,
         InvPoReceiveLinesVO,
+        InvItemReceiveLinesVO,
         AccSysGeneralValueVO,
         AccSysGeneralValueActiveVO;
         static AttributesEnum[] vals = null;
@@ -77,6 +79,7 @@ public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
 
     public static final int SUBINVENTORYORGSNO = AttributesEnum.SubinventoryOrgSno.index();
     public static final int SUBINVENTORYORGCODE = AttributesEnum.SubinventoryOrgCode.index();
@@ -107,6 +110,7 @@ public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int INVINVENTORYORGVO = AttributesEnum.InvInventoryOrgVO.index();
     public static final int INVPORECEIVELINESVO = AttributesEnum.InvPoReceiveLinesVO.index();
+    public static final int INVITEMRECEIVELINESVO = AttributesEnum.InvItemReceiveLinesVO.index();
     public static final int ACCSYSGENERALVALUEVO = AttributesEnum.AccSysGeneralValueVO.index();
     public static final int ACCSYSGENERALVALUEACTIVEVO = AttributesEnum.AccSysGeneralValueActiveVO.index();
 
@@ -575,6 +579,13 @@ public class InvSubinventoryOrgVORowImpl extends ViewRowImpl {
      */
     public RowIterator getInvPoReceiveLinesVO() {
         return (RowIterator) getAttributeInternal(INVPORECEIVELINESVO);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link InvItemReceiveLinesVO.
+     */
+    public RowIterator getInvItemReceiveLinesVO() {
+        return (RowIterator) getAttributeInternal(INVITEMRECEIVELINESVO);
     }
 
     /**

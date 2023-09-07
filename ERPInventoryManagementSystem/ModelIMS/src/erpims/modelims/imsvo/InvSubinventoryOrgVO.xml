@@ -457,4 +457,9 @@
     ViewLink="erpims.modelims.imsvo.InvSubinvOrgInvPoRecLinesSubinventoryOrgSnoLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InvItemReceiveLinesVO"
+    ViewLink="erpims.modelims.imsvo.InvSubinvOrgInvItemRecLinesSubinventoryOrgSnoLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
