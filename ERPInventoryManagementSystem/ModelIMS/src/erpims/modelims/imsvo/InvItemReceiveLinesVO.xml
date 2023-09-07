@@ -148,6 +148,22 @@
     EntityAttrName="txtItemName"
     EntityUsage="InvItemReceiveLines"
     AliasName="TXT_ITEM_NAME"/>
+  <ViewAttribute
+    Name="txtDepartmentName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtDepartmentName"
+    EntityUsage="InvItemReceiveLines"
+    AliasName="TXT_DEPARTMENT_NAME"/>
+  <ViewAttribute
+    Name="txtProjectName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtProjectName"
+    EntityUsage="InvItemReceiveLines"
+    AliasName="TXT_PROJECT_NAME"/>
   <ViewLinkAccessor
     Name="InvItemVO"
     ViewLink="erpims.modelims.imsvo.InvItemInvItemReceiveLinesItemIdLink"
@@ -157,6 +173,18 @@
   <ViewLinkAccessor
     Name="InvUnitTypeVO"
     ViewLink="erpims.modelims.imsvo.InvUnitTypeInvItemReceiveUnitTypeSnoLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AdminCompanyVO"
+    ViewLink="erpims.modelims.imsvo.AdminCompanyInvItemReceiveLinesDepartmentIDLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GlProjectsVO"
+    ViewLink="erpims.modelims.imsvo.GlProjectsInvItemReceiveLinesProjectIDLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
