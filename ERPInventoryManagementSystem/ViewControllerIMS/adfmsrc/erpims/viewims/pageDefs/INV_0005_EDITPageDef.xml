@@ -104,7 +104,6 @@
           <Item Value="txtSubinventoryDescription"/>
           <Item Value="ReceiveMethodSno"/>
           <Item Value="ItemRemarks"/>
-          <Item Value="txtPoQuantity"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

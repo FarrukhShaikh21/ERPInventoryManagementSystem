@@ -27,6 +27,23 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+ <ViewAccessor
+    Name="AccSysGeneralValueVO"
+    ViewObjectName="erpadm.modeladm.admvo.SysGeneralValueVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SysGeneralValueActiveVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueActiveVC"/>
+    <ViewCriteriaUsage
+      Name="SysGeneralValueByValueSetIDVC"
+      FullName="erpadm.modeladm.admvo.SysGeneralValueVO.SysGeneralValueByValueSetIDVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_VALUE_SET_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[32]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor> 
   <ListBinding
     Name="LovtxtSubinventoryDescription"
     ListVOName="AccInvSubinventoryOrgVO"
@@ -53,6 +70,25 @@
     <DisplayCriteria
       Name="InvSubinventoryOrgFindVC"
       Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovReceiveMethodSno"
+    ListVOName="AccSysGeneralValueVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReceiveMethodSno"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ValueCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ValueDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="InvItemReceiveLines"
@@ -172,7 +208,15 @@
     PrecisionRule="true"
     EntityAttrName="ReceiveMethodSno"
     EntityUsage="InvItemReceiveLines"
-    AliasName="RECEIVE_METHOD_SNO"/>
+    AliasName="RECEIVE_METHOD_SNO"
+    LOVName="LovReceiveMethodSno">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtUnitTypeName"
     PrecisionRule="true"

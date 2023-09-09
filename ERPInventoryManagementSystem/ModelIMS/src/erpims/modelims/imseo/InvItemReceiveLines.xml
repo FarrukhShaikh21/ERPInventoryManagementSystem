@@ -298,7 +298,7 @@
     Scale="0"
     ColumnName="RECEIVE_METHOD_SNO"
     SQLType="NUMERIC"
-    Type="java.lang.Integer"
+    Type="java.lang.String"
     ColumnType="NUMBER"
     TableName="INV_ITEM_RECEIVE_LINES"/>
   <Attribute
