@@ -233,27 +233,46 @@
                                             </af:inputComboboxListOfValues>
                                         </af:gridCell>
                                         <af:gridCell id="gc24" width="13%" halign="center" valign="middle">
-                                            <af:outputLabel value="#{bindings.txtPoHeaderCode.hints.label}" id="ol11"/>
+                                            <af:outputLabel value="#{bindings.txtSourceTypeName.hints.label}" id="ol11"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc25" width="20%" halign="stretch" valign="middle">
-                                            <af:inputComboboxListOfValues id="txtPoHeaderCodeId"
-                                                                          popupTitle="Search and Select: #{bindings.txtPoHeaderCode.hints.label}"
-                                                                          value="#{bindings.txtPoHeaderCode.inputValue}"
-                                                                          label="#{bindings.txtPoHeaderCode.hints.label}"
-                                                                          model="#{bindings.txtPoHeaderCode.listOfValuesModel}"
-                                                                          required="#{bindings.txtPoHeaderCode.hints.mandatory}"
-                                                                          columns="#{bindings.txtPoHeaderCode.hints.displayWidth}"
-                                                                          shortDesc="#{bindings.txtPoHeaderCode.hints.tooltip}"
-                                                                          simple="true" autoSubmit="true">
-                                                <f:validator binding="#{bindings.txtPoHeaderCode.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.txtPoHeaderCode.format}"/>
+                                            <af:inputComboboxListOfValues id="txtSourceTypeNameId"
+                                                                          popupTitle="Search and Select: #{bindings.txtSourceTypeName.hints.label}"
+                                                                          value="#{bindings.txtSourceTypeName.inputValue}"
+                                                                          label="#{bindings.txtSourceTypeName.hints.label}"
+                                                                          model="#{bindings.txtSourceTypeName.listOfValuesModel}"
+                                                                          required="#{bindings.txtSourceTypeName.hints.mandatory}"
+                                                                          columns="#{bindings.txtSourceTypeName.hints.displayWidth}"
+                                                                          shortDesc="#{bindings.txtSourceTypeName.hints.tooltip}"
+                                                                          simple="true">
+                                                <f:validator binding="#{bindings.txtSourceTypeName.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:gridCell>
                                         <af:gridCell id="gc26" width="13%" halign="center" valign="middle">
-                                            <af:outputLabel value="#{bindings.txtSupplierName.hints.label}" id="ol10"/>
+                                            <af:outputLabel value="#{bindings.SourceHeaderCode.hints.label}" id="ol15"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc27" width="21%" valign="middle">
+                                            <af:inputComboboxListOfValues id="sourceHeaderCodeId"
+                                                                          popupTitle="Search and Select: #{bindings.SourceHeaderCode.hints.label}"
+                                                                          value="#{bindings.SourceHeaderCode.inputValue}"
+                                                                          label="#{bindings.SourceHeaderCode.hints.label}"
+                                                                          model="#{bindings.SourceHeaderCode.listOfValuesModel}"
+                                                                          required="#{bindings.SourceHeaderCode.hints.mandatory}"
+                                                                          columns="#{bindings.SourceHeaderCode.hints.displayWidth}"
+                                                                          shortDesc="#{bindings.SourceHeaderCode.hints.tooltip}"
+                                                                          simple="true">
+                                                <f:validator binding="#{bindings.SourceHeaderCode.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.SourceHeaderCode.format}"/>
+                                            </af:inputComboboxListOfValues>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                        <af:gridCell width="13%" id="gc10" halign="center" valign="middle">
+                                            <af:outputLabel value="#{bindings.txtSupplierName.hints.label}" id="ol10"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="20%" id="gc11" halign="stretch"
+                                                     valign="middle">
                                             <af:inputComboboxListOfValues id="iclov2"
                                                                           popupTitle="Search and Select: #{bindings.txtSupplierName.hints.label}"
                                                                           value="#{bindings.txtSupplierName.inputValue}"
@@ -266,13 +285,11 @@
                                                 <f:validator binding="#{bindings.txtSupplierName.validator}"/>
                                             </af:inputComboboxListOfValues>
                                         </af:gridCell>
-                                    </af:gridRow>
-                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-                                        <af:gridCell width="13%" id="gc10" halign="center" valign="middle">
+                                        <af:gridCell width="13%" id="gc13" halign="center" valign="middle">
                                             <af:outputLabel value="#{bindings.txtTempDepartmentName.hints.label}"
                                                             id="ol5"/>
                                         </af:gridCell>
-                                        <af:gridCell marginStart="5px" width="20%" id="gc11" halign="stretch"
+                                        <af:gridCell marginStart="5px" width="20%" id="gc14" halign="stretch"
                                                      valign="middle">
                                             <af:inputText value="#{bindings.txtTempDepartmentName.inputValue}"
                                                           label="#{bindings.txtTempDepartmentName.hints.label}"
@@ -284,11 +301,12 @@
                                                 <f:validator binding="#{bindings.txtTempDepartmentName.validator}"/>
                                             </af:inputText>
                                         </af:gridCell>
-                                        <af:gridCell width="13%" id="gc13" halign="center" valign="middle">
+                                        <af:gridCell id="gc12" width="13%" marginStart="5px" marginEnd="5px"
+                                                     halign="center" valign="middle">
                                             <af:outputLabel value="#{bindings.txtTempProjectName.hints.label}"
                                                             id="ol4"/>
                                         </af:gridCell>
-                                        <af:gridCell marginStart="5px" width="20%" id="gc14" halign="stretch"
+                                        <af:gridCell marginStart="5px" width="21%" id="gc15" halign="stretch"
                                                      valign="middle">
                                             <af:inputText value="#{bindings.txtTempProjectName.inputValue}"
                                                           label="#{bindings.txtTempProjectName.hints.label}"
@@ -299,36 +317,6 @@
                                                           id="it4" simple="true" readOnly="true">
                                                 <f:validator binding="#{bindings.txtTempProjectName.validator}"/>
                                             </af:inputText>
-                                        </af:gridCell>
-                                        <af:gridCell id="gc12" width="13%" marginStart="5px" marginEnd="5px"
-                                                     halign="center" valign="middle">
-                                            <af:outputLabel value="#{bindings.ApprovalStatusSno.label}" id="ol7"/>
-                                        </af:gridCell>
-                                        <af:gridCell marginStart="5px" width="21%" id="gc15" halign="stretch"
-                                                     valign="middle">
-                                            <af:panelGroupLayout id="pgl10" layout="horizontal"
-                                                                 styleClass="AFStretchWidth">
-                                                <af:selectOneChoice value="#{bindings.ApprovalStatusSno.inputValue}"
-                                                                    label="#{bindings.ApprovalStatusSno.label}"
-                                                                    required="#{bindings.ApprovalStatusSno.hints.mandatory}"
-                                                                    shortDesc="#{bindings.ApprovalStatusSno.hints.tooltip}"
-                                                                    id="soc1" simple="true" contentStyle="width:100%"
-                                                                    rendered="#{bindings.ApprovalStatusSno.inputValue!=1 &amp;&amp; bindings.ApprovalStatusSno.inputValue!=2}">
-                                                    <f:selectItems value="#{bindings.ApprovalStatusSno.items}"
-                                                                   id="si1"/>
-                                                    <f:validator binding="#{bindings.ApprovalStatusSno.validator}"/>
-                                                </af:selectOneChoice>
-                                                <af:selectOneChoice label="Label 1"
-                                                                    value="#{bindings.ApprovalStatusSno.inputValue}"
-                                                                    id="soc2"
-                                                                    simple="true" contentStyle="width:100%"
-                                                                    autoSubmit="true"
-                                                                    visible="#{bindings.ApprovalStatusSno.inputValue==1 || bindings.ApprovalStatusSno.inputValue==2}"
-                                                                    rendered="#{bindings.ApprovalStatusSno.inputValue==1 || bindings.ApprovalStatusSno.inputValue==2}">
-                                                    <af:selectItem label="Prepared" value="1" id="si2"/>
-                                                    <af:selectItem label="Reviewed" value="2" id="si3"/>
-                                                </af:selectOneChoice>
-                                            </af:panelGroupLayout>
                                         </af:gridCell>
                                     </af:gridRow>
                                     <af:gridRow id="gr11">
@@ -361,10 +349,40 @@
                                             </af:inputText>
                                         </af:gridCell>
                                         <af:gridCell id="gc2" width="13%" halign="center">
-                                            <af:outputLabel value="#{bindings.txtDeliveryTermName.hints.label}" id="ol14"/>
+                                            <af:outputLabel value="#{bindings.ApprovalStatusSno.label}" id="ol7"/>
                                         </af:gridCell>
                                         <af:gridCell id="gc28" columnSpan="1" halign="stretch" valign="middle"
                                                      width="21%" rowSpan="1">
+                                            <af:panelGroupLayout id="pgl10" layout="horizontal"
+                                                                 styleClass="AFStretchWidth">
+                                                <af:selectOneChoice value="#{bindings.ApprovalStatusSno.inputValue}"
+                                                                    label="#{bindings.ApprovalStatusSno.label}"
+                                                                    required="#{bindings.ApprovalStatusSno.hints.mandatory}"
+                                                                    shortDesc="#{bindings.ApprovalStatusSno.hints.tooltip}"
+                                                                    id="soc1" simple="true" contentStyle="width:100%"
+                                                                    rendered="#{bindings.ApprovalStatusSno.inputValue!=1 &amp;&amp; bindings.ApprovalStatusSno.inputValue!=2}">
+                                                    <f:selectItems value="#{bindings.ApprovalStatusSno.items}"
+                                                                   id="si1"/>
+                                                    <f:validator binding="#{bindings.ApprovalStatusSno.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:selectOneChoice label="Label 1"
+                                                                    value="#{bindings.ApprovalStatusSno.inputValue}"
+                                                                    id="soc2" simple="true" contentStyle="width:100%"
+                                                                    autoSubmit="true"
+                                                                    visible="#{bindings.ApprovalStatusSno.inputValue==1 || bindings.ApprovalStatusSno.inputValue==2}"
+                                                                    rendered="#{bindings.ApprovalStatusSno.inputValue==1 || bindings.ApprovalStatusSno.inputValue==2}">
+                                                    <af:selectItem label="Prepared" value="1" id="si2"/>
+                                                    <af:selectItem label="Reviewed" value="2" id="si3"/>
+                                                </af:selectOneChoice>
+                                            </af:panelGroupLayout>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow id="gr12">
+                                        <af:gridCell id="gc37" width="13%">
+                                            <af:outputLabel value="#{bindings.txtDeliveryTermName.hints.label}"
+                                                            id="ol14"/>
+                                        </af:gridCell>
+                                        <af:gridCell id="gc36" width="21%">
                                             <af:inputText value="#{bindings.txtDeliveryTermName.inputValue}"
                                                           label="#{bindings.txtDeliveryTermName.hints.label}"
                                                           required="#{bindings.txtDeliveryTermName.hints.mandatory}"
@@ -375,12 +393,10 @@
                                                 <f:validator binding="#{bindings.txtDeliveryTermName.validator}"/>
                                             </af:inputText>
                                         </af:gridCell>
-                                    </af:gridRow>
-                                    <af:gridRow id="gr12">
                                         <af:gridCell id="gc34" width="13%" halign="center">
                                             <af:outputLabel value="#{bindings.DeliveryNote.hints.label}" id="ol8"/>
                                         </af:gridCell>
-                                        <af:gridCell id="gc35" width="87%" columnSpan="5" halign="stretch">
+                                        <af:gridCell id="gc35" width="53%" columnSpan="3" halign="stretch">
                                             <af:inputText value="#{bindings.DeliveryNote.inputValue}"
                                                           label="#{bindings.DeliveryNote.hints.label}"
                                                           required="#{bindings.DeliveryNote.hints.mandatory}"

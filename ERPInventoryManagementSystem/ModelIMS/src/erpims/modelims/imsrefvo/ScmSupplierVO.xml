@@ -435,9 +435,4 @@
     ViewLink="erpims.modelims.imsrefvo.ScmSupplierInvItemReceiveHeaderSupplierSnoLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="ScmPurchaseOrderHeaderVO1"
-    ViewLink="erpims.modelims.imsrefvo.ViewLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
 </ViewObject>

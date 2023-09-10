@@ -9,7 +9,11 @@
   DBObjectType="table"
   DBObjectName="INV_ITEM_RECEIVE_LINES"
   AliasName="InvItemReceiveLines"
-  BindingStyle="JDBC">
+  BindingStyle="JDBC"
+  RowClass="erpglobals.modelglobals.ERPEntityImpl">
+  <DesignTime>
+    <Attr Name="_superClass" Value="erpglobals.modelglobals.ERPEntityImpl"/>
+  </DesignTime>
   <Attribute
     Name="ItemReceiveLinesSno"
     IsNotNull="true"
@@ -32,7 +36,6 @@
   </Attribute>
   <Attribute
     Name="ItemReceiveHeaderSno"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="ITEM_RECEIVE_HEADER_SNO"
@@ -87,7 +90,6 @@
   </Attribute>
   <Attribute
     Name="LineNo"
-    IsNotNull="true"
     Precision="6"
     Scale="0"
     ColumnName="LINE_NO"
@@ -106,7 +108,6 @@
   </Attribute>
   <Attribute
     Name="ItemId"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="ITEM_ID"
@@ -125,7 +126,6 @@
   </Attribute>
   <Attribute
     Name="UnitTypeSno"
-    IsNotNull="true"
     Precision="6"
     Scale="0"
     ColumnName="UNIT_TYPE_SNO"
@@ -144,7 +144,6 @@
   </Attribute>
   <Attribute
     Name="ReceivedQuantity"
-    IsNotNull="true"
     Precision="16"
     Scale="6"
     ColumnName="RECEIVED_QUANTITY"
@@ -199,7 +198,6 @@
   </Attribute>
   <Attribute
     Name="CreatedBy"
-    IsNotNull="true"
     Precision="5"
     Scale="0"
     ColumnName="CREATED_BY"

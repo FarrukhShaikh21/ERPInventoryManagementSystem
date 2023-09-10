@@ -98,6 +98,8 @@
     Type="java.sql.Date"
     ColumnType="DATE"
     TableName="INV_ITEM_RECEIVE_HEADER">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -228,6 +230,7 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="INV_ITEM_RECEIVE_HEADER">
+    <TransientExpression><![CDATA[erpglobals.modelglobals.ERPGlobalPLSQLClass.doGetModelGlobalDefCompany()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -540,7 +543,8 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="INV_ITEM_RECEIVE_HEADER">
+    TableName="INV_ITEM_RECEIVE_HEADER"
+    DefaultValue="1">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -577,8 +581,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[InvSourceType?.SourceTypeName]]></TransientExpression>
+    <TransientExpression><![CDATA[InvSourceType?.SourceTypeName]]></TransientExpression>
     <Dependencies>
       <Item
         Value="SourceTypeSno"/>
@@ -601,8 +604,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[AdminCompany?.CompanyName]]></TransientExpression>
+    <TransientExpression><![CDATA[AdminCompany?.CompanyName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -625,10 +627,8 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[AdminCompany1?.CompanyName]]></TransientExpression>
-    <RecalcCondition
-      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[AdminCompany1?.CompanyName]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Dependencies>
       <Item
         Value="TempDepartmentId"/>
@@ -643,8 +643,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[ScmSupplier?.SupplierName]]></TransientExpression>
+    <TransientExpression><![CDATA[ScmSupplier?.SupplierName]]></TransientExpression>
     <Dependencies>
       <Item
         Value="SupplierSno"/>
@@ -659,10 +658,8 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[GlProjects?.ProjectName]]></TransientExpression>
-    <RecalcCondition
-      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[GlProjects?.ProjectName]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -721,8 +718,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[InvInventoryOrg?.OrgDescription]]></TransientExpression>
+    <TransientExpression><![CDATA[InvInventoryOrg?.OrgDescription]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -745,8 +741,7 @@
     ColumnType="CHAR"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[ScmDeliveryTerm?.DeliveryTermName]]></TransientExpression>
+    <TransientExpression><![CDATA[ScmDeliveryTerm?.DeliveryTermName]]></TransientExpression>
     <Dependencies>
       <Item
         Value="DeliveryTermSno"/>

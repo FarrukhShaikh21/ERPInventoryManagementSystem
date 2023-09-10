@@ -6,6 +6,8 @@ import erpfms.modelfms.fmseo.GlProjectsImpl;
 
 import erpglobals.modelglobals.ERPEntityImpl;
 
+import erpglobals.modelglobals.ERPGlobalPLSQLClass;
+
 import java.math.BigDecimal;
 
 import java.sql.Date;
@@ -924,6 +926,14 @@ public class InvItemReceiveHeaderImpl extends ERPEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation == DML_INSERT) {
+            String result =
+                ERPGlobalPLSQLClass.doGetPrimaryKeyValueModel(getDBTransaction(), "ITEM_RECEIVE_HEADER_CODE",
+                                                              this.getEntityDef().getSource(), "COMPANY_ID",
+                                                              getCompanyId().toString());
+            populateAttributeAsChanged(ITEMRECEIVEHEADERCODE, Integer.parseInt(result));
+
+        }
         super.doDML(operation, e);
     }
 }

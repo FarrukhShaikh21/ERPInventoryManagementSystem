@@ -23,7 +23,7 @@
     <ParameterMap>
       <PIMap Variable="P_ADF_INVENTORY_ORG_SNO">
         <TransientExpression
-          trustMode="untrusted"><![CDATA[InvItemReceiveHeaderVO?.SubinventoryOrgSno]]></TransientExpression>
+          trustMode="untrusted"><![CDATA[InvItemReceiveHeaderVO?.InventoryOrgSno]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>

@@ -16,9 +16,9 @@
   RowClass="erpims.modelims.imsvo.InvItemReceiveHeaderVORowImpl"
   ComponentClass="erpglobals.modelglobals.ERPViewObjectImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access"/>
     <Attr Name="_objectSuperClassName" Value="erpglobals.modelglobals.ERPViewObjectImpl"/>
     <Attr Name="_rowSuperClassName" Value="erpglobals.modelglobals.ERPViewRowImpl"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Variable
@@ -107,6 +107,23 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+<ViewAccessor
+    Name="AccAccScmPurchaseOrderLinesVO"
+    ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="ScmPurchaseOrderLinesBalanceAvailableVC"
+      FullName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO.ScmPurchaseOrderLinesBalanceAvailableVC"/>
+    <ViewCriteriaUsage
+      Name="ScmPurchaseOrderLinesByPoHeaderSnoVC"
+      FullName="erpims.modelims.imsrefvo.ScmPurchaseOrderLinesVO.ScmPurchaseOrderLinesByPoHeaderSnoVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_PO_HEADER_SNO">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[SourceHeaderSno==null?-1:SourceHeaderSno]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>  
   <ViewAccessor
     Name="AccInvInventoryOrgVO"
     ViewObjectName="erpims.modelims.imsvo.InvInventoryOrgVO"
