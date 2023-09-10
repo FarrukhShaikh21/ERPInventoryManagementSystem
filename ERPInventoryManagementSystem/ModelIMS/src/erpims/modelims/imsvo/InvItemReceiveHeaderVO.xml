@@ -28,7 +28,21 @@
   <ViewAccessor
     Name="AccScmPurchaseOrderHeaderVO"
     ViewObjectName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="ScmPurchaseOrderHeaderByInvOrgVC"
+      FullName="erpims.modelims.imsrefvo.ScmPurchaseOrderHeaderVO.ScmPurchaseOrderHeaderByInvOrgVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_INVENTORY_ORG_SNO">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[InventoryOrgSno==null?-1:InventoryOrgSno]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_LOCATION_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[LocationId==null?-1:LocationId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccInvSourceTypeVO"
     ViewObjectName="erpims.modelims.imsvo.InvSourceTypeVO"

@@ -74,7 +74,6 @@
   </Attribute>
   <Attribute
     Name="SourceHeaderSno"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="SOURCE_HEADER_SNO"
